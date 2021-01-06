@@ -2,7 +2,7 @@
 
 Binary search
 
-Time - O(n*log(max(bloomDay[i])))
+Time - O(n*log(max))
 Space - O(1)
 
 */
