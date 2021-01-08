@@ -7,10 +7,10 @@ Space - O(n)
 
 */
 
-const getNearestLeft = (arr) => {
+const getNearestSmallestOnLeft = (arr) => {
 
   const stack = [];
-  const nearestLeft = [];
+  const nearestSmallestOnLeft = [];
 
   for (let i = 0; i < arr.length; i++) {
     while (stack.length != 0 && arr[stack[stack.length - 1]] >= arr[i]) {
@@ -18,21 +18,21 @@ const getNearestLeft = (arr) => {
     }
 
     if (stack.length === 0) {
-      nearestLeft.push(-1);
+      nearestSmallestOnLeft.push(-1);
     } else {
-      nearestLeft.push(stack[stack.length - 1]);
+      nearestSmallestOnLeft.push(stack[stack.length - 1]);
     }
 
     stack.push(i);
   }
 
-  return nearestLeft;
+  return nearestSmallestOnLeft;
 };
 
-const getNearestRight = (arr) => {
+const getNearestSmallestOnRight = (arr) => {
 
   const stack = [];
-  const nearestRight = [];
+  const nearestSmallestOnRight = [];
 
   for (let i = arr.length - 1; i >= 0; i--) {
     while (stack.length != 0 && arr[stack[stack.length - 1]] >= arr[i]) {
@@ -40,15 +40,15 @@ const getNearestRight = (arr) => {
     }
 
     if (stack.length === 0) {
-      nearestRight.push(arr.length);
+      nearestSmallestOnRight.push(arr.length);
     } else {
-      nearestRight.push(stack[stack.length - 1]);
+      nearestSmallestOnRight.push(stack[stack.length - 1]);
     }
 
     stack.push(i);
   }
 
-  return nearestRight.reverse();
+  return nearestSmallestOnRight.reverse();
 };
 
 const largestRectangleArea = function (arr) {
@@ -57,12 +57,12 @@ const largestRectangleArea = function (arr) {
     return 0;
   }
 
-  const nearestLeft = getNearestLeft(arr), nearestRight = getNearestRight(arr);
+  const nearestSmallestOnLeft = getNearestSmallestOnLeft(arr), nearestSmallestOnRight = getNearestSmallestOnRight(arr);
 
   let maxArea = -Number.MAX_VALUE, currArea = 0;
 
   for (let i = 0; i < arr.length; i++) {
-    currArea = arr[i] * (nearestRight[i] - nearestLeft[i] - 1);
+    currArea = arr[i] * (nearestSmallestOnRight[i] - nearestSmallestOnLeft[i] - 1);
     if (currArea > maxArea) {
       maxArea = currArea;
     }
