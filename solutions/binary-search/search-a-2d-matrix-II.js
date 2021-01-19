@@ -40,3 +40,31 @@ const searchMatrix = function (matrix, target) {
 
 };
 
+/*
+
+Modified binary search
+
+Time - O(m+n)
+Space - O(1)
+
+*/
+
+const searchMatrix2 = function(matrix, target) {
+
+    let row=matrix.length-1,col=0;
+    
+    while(row>=0 && col<matrix[0].length){
+        if(matrix[row][col]===target){
+            return true;
+        }
+        else if(matrix[row][col]>target){
+            row--;
+        }
+        else{
+            col++;
+        }
+    }
+    
+    return false;
+    
+};
