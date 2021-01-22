@@ -43,17 +43,14 @@ Space - O(1)
 
 const maxVowels2 = function(s, k) {
     
-    let i=0,j=0, currCount=0, maxCount=0;
+    let i=0,currCount=0,maxCount=0;
     
-    while(j<s.length){
-        if(j-i+1<=k){   
-            if(isVowel(s.charAt(j))){
-                currCount++;
-                maxCount=Math.max(maxCount,currCount);
-            }
-            j++;
+    for(let j=0;j<s.length;j++){
+        if(isVowel(s.charAt(j))){
+            currCount++;
         }
-        else{
+        if(j-i+1===k){   
+            maxCount=Math.max(maxCount,currCount);
             if(isVowel(s.charAt(i))){
                 currCount--;
             }

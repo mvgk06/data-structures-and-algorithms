@@ -34,3 +34,33 @@ const longestOnes = function(arr, k) {
     return maxLength;
     
 };
+
+/* 
+
+Sliding window
+
+Time - O(n)
+Space - O(1)
+
+*/
+
+const longestOnes2 = function(arr, k) {
+    
+    let i=0,maxSize=0,currFlips=0;
+    
+    for(let j=0;j<arr.length;j++){
+        if(arr[j]===0){
+            currFlips++;
+        }
+        if(currFlips>k){
+            if(arr[i]===0){
+                currFlips--;
+            }
+            i++;
+        }
+        maxSize=Math.max(maxSize,j-i+1);
+    }
+    
+    return maxSize;
+      
+};

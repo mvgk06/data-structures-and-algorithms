@@ -33,7 +33,7 @@ const getFirstNegative= function(arr,k){
 
 /* 
 
-Sliding window
+Sliding window + Queue
 
 Time - O(n)
 Space - O(1)
@@ -44,26 +44,25 @@ const Deque=require("../../data-structures/deque.js");
 
 const getFirstNegative2=function(arr,k){
     
-    let i=0,j=0;
-    const output=[], deque=new Deque();
+    let i=0;
+    const output=[], queue=new Deque();
 
-    while(j<arr.length){
+    for(let j=0;j<arr.length;j++){
         if(arr[j]<0){
-            deque.push(arr[j]);
+            queue.push(arr[j]);
         }
         if(j-i+1===k){
-            if(deque.getSize()===0){
+            if(queue.getSize()===0){
                 output.push(0);
             }
             else{
-                output.push(deque.getFront());
+                output.push(queue.getFront());
             }
-            if(arr[i]===deque.getFront()){
-                deque.deque();
+            if(arr[i]===queue.getFront()){
+                queue.deque();
             }
             i++;
         }
-        j++;
     }
 
     return output;
