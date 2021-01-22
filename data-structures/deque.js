@@ -1,4 +1,4 @@
-class node {
+class Node {
   constructor(value, prev = null, next = null) {
     this.value = value;
     this.next = next;
@@ -6,7 +6,7 @@ class node {
   }
 }
 
-class deque {
+class Deque {
   constructor() {
     this.front = null;
     this.rear = null;
@@ -14,7 +14,7 @@ class deque {
   }
 
   push(value) {
-    const element = new node(value);
+    const element = new Node(value);
     if (this.size === 0) {
       this.front = element;
       this.rear = element;
@@ -29,13 +29,15 @@ class deque {
   pop() {
     if (this.size !== 0) {
       this.rear = this.rear.prev;
-      this.rear.next = null;
+      if(this.rear){
+        this.rear.next = null;
+      }
       this.size--;
     }
   }
 
   enque(value) {
-    const element = new node(value);
+    const element = new Node(value);
     if (this.size === 0) {
       this.front = element;
       this.rear = element;
@@ -50,25 +52,27 @@ class deque {
   deque() {
     if (this.size !== 0) {
       this.front = this.front.next;
-      this.front.prev = null;
+      if(this.front){
+        this.front.prev = null;
+      }
       this.size--;
     }
   }
 
   getFront() {
-    return this.front && this.front.value;
+    return this.front ? this.front.value:null;
   }
 
   getRear() {
-    return this.rear && this.rear.value;
+    return this.rear ? this.rear.value:null;
   }
 
-  isEmpty() {
-    return this.size === 0 ? true : false;
+  getSize() {
+    return this.size;
   }
 
   print() {
-    const output = [];
+    const output=[];
     for (let curr = this.front; curr != null; curr = curr.next) {
       output.push(curr.value);
     }
@@ -76,4 +80,4 @@ class deque {
   }
 }
 
-module.exports = deque;
+module.exports = Deque;
