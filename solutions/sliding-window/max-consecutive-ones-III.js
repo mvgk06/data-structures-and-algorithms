@@ -53,10 +53,12 @@ const longestOnes2 = function(arr, k) {
             currFlips++;
         }
         if(currFlips>k){
-            if(arr[i]===0){
-                currFlips--;
+            while(currFlips>k && i<arr.length){
+                if(arr[i]===0){
+                    currFlips--;
+                }
+                i++;
             }
-            i++;
         }
         maxSize=Math.max(maxSize,j-i+1);
     }
