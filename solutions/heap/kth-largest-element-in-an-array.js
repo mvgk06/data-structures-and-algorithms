@@ -25,7 +25,7 @@ const findKthLargest = function(nums, k) {
 
 Min Heap
 
-Time - O(nlogn)
+Time - O(nlogk)
 Space - O(k)
 
 */
