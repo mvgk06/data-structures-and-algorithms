@@ -1,7 +1,7 @@
-const minHeap = require("./min-heap.js");
-const maxHeap = require("./max-heap.js");
+const MinHeap = require("./min-heap.js");
+const MaxHeap = require("./max-heap.js");
 
-const minh = new minHeap();
+const minh = new MinHeap();
 
 console.log(minh.getMin());
 
@@ -26,7 +26,7 @@ console.log(minh.size);
 
 console.log("-------------------------------");
 
-const maxh = new maxHeap();
+const maxh = new MaxHeap();
 
 console.log(maxh.getMax());
 

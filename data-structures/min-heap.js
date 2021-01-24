@@ -1,8 +1,7 @@
-class minHeap {
+class MinHeap {
   constructor() {
     this.arr = [];
     this.size = 0;
-    this.min;
   }
 
   parent(index) {
@@ -21,35 +20,34 @@ class minHeap {
     this.arr[this.size] = value;
     this.size++;
 
-    let curr = this.size - 1;
-
-    for (let parent = this.parent(curr); parent >= 0; parent = this.parent(curr)) {
-      if (this.arr[curr] < this.arr[parent]) {
-        const temp = this.arr[curr];
-        this.arr[curr] = this.arr[parent];
-        this.arr[parent] = temp;
+    let curr=this.size-1, parent=this.parent(curr);
+        
+      while(parent>=0 && this.arr[curr]<this.arr[parent]){
+          const temp=this.arr[curr];
+          this.arr[curr]=this.arr[parent];
+          this.arr[parent]=temp;
+          curr=parent;
+          parent=this.parent(curr);
       }
-      curr = this.parent(curr);
-    }
   }
 
   minHeapify(index) {
-    let currSmallest = index;
-    const left = this.leftChild(currSmallest), right = this.rightChild(currSmallest);
+    let currMin = index;
+    const left = this.leftChild(currMin), right = this.rightChild(currMin);
 
-    if (left < this.size && this.arr[left] < this.arr[currSmallest]) {
-      currSmallest = left;
+    if (left < this.size && this.arr[left] < this.arr[currMin]) {
+      currMin = left;
     }
 
-    if (right < this.size && this.arr[right] < this.arr[currSmallest]) {
-      currSmallest = right;
+    if (right < this.size && this.arr[right] < this.arr[currMin]) {
+      currMin = right;
     }
 
-    if (currSmallest != index) {
-      const temp = this.arr[currSmallest];
-      this.arr[currSmallest] = this.arr[index];
+    if (currMin != index) {
+      const temp = this.arr[currMin];
+      this.arr[currMin] = this.arr[index];
       this.arr[index] = temp;
-      this.minHeapify(currSmallest);
+      this.minHeapify(currMin);
     }
   }
 
@@ -62,30 +60,29 @@ class minHeap {
   deleteMin() {
     if (this.size === 1) {
       this.size--;
-    } else {
+    } 
+    else {
       this.arr[0] = this.arr[this.size - 1];
       this.size--;
-
-      for (let curr = 0; curr < this.size; curr++) {
-        this.minHeapify(curr);
-      }
+      this.minHeapify(0);
     }
   }
 
-  buildMinHeap() {
-    for (let i = Math.floor(this.size / 2) - 1; i >= 0; i--) {
+  buildMinHeap(arr) {
+    this.arr=arr;
+    this.size=arr.length;
+    for (let i = Math.floor((this.size-1)/ 2); i >= 0; i--) {
       this.minHeapify(i);
     }
   }
   print() {
-    this.arr.forEach((item) => {
-      process.stdout.write(item + " ");
-    });
+    console.log(this.arr);
   }
 
   clear() {
+    this.arr=[];
     this.size = 0;
   }
 }
 
-module.exports = minHeap;
+module.exports = MinHeap;
