@@ -36,7 +36,7 @@ const getFirstNegative= function(arr,k){
 Sliding window + Queue
 
 Time - O(n)
-Space - O(1)
+Space - O(n)
 
 */
 
