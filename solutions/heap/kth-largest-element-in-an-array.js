@@ -3,7 +3,7 @@
 Sorting
 
 Time - O(nlogn)
-Space - O(1)
+Space - O(n)
 
 */
 
@@ -37,8 +37,11 @@ const findKthLargest2 = function(nums, k) {
     const minHeap=new MinHeap();
     
     for(let i=0;i<nums.length;i++){
-        minHeap.insert(nums[i]);
-        if(minHeap.size>k){
+        const currObject={};
+        currObject.key=nums[i];
+        currObject.value=nums[i];
+        minHeap.insert(currObject);
+        if(minHeap.getSize()>k){
             minHeap.deleteMin();
         }
     }
