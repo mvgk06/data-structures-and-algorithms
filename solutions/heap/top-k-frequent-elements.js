@@ -25,10 +25,7 @@ const topKFrequent = function(nums, k) {
     const minHeap = new MinHeap();
     
     for(let key of map.keys()){
-        const currObject={};
-        currObject.key=map.get(key);
-        currObject.value=key;
-        minHeap.insert(currObject);
+        minHeap.insert(map.get(key),key);
         if(minHeap.getSize()>k){
             minHeap.deleteMin();
         }
@@ -37,7 +34,7 @@ const topKFrequent = function(nums, k) {
     const output=[];
     
     while(minHeap.getSize()>0){
-        output.push(minHeap.getMin());
+        output.push(minHeap.getMin().value);
         minHeap.deleteMin();
     }
     

@@ -25,16 +25,13 @@ const frequencySort = function(s) {
     const maxHeap = new MaxHeap();
     
     for(let key of map.keys()){
-        const currObject={};
-        currObject.key=map.get(key);
-        currObject.value=key;
-        maxHeap.insert(currObject);
+        maxHeap.insert(map.get(key),key);
     }
         
     let output="";
     
     while(maxHeap.getSize()>0){
-        const value=maxHeap.getMax();
+        const value=maxHeap.getMax().value;
         output+=value.repeat(map.get(value));
         maxHeap.deleteMax();
     }

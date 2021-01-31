@@ -40,11 +40,7 @@ const kClosest2 = function(points, k) {
     const maxHeap=new MaxHeap();
     
     for(let i=0;i<points.length;i++){
-        const currObject={};
-        currObject.key=getDistance(points[i]);
-        currObject.value=[points[i][0],points[i][1]];
-        maxHeap.insert(currObject);
-        
+        maxHeap.insert(getDistance(points[i]),[points[i][0],points[i][1]]);
         if(maxHeap.getSize()>k){
             maxHeap.deleteMax();
         }
@@ -53,7 +49,7 @@ const kClosest2 = function(points, k) {
     const output=[];
     
     while(maxHeap.getSize()>0){
-        output.push(maxHeap.getMax());
+        output.push(maxHeap.getMax().value);
         maxHeap.deleteMax();
     }
     

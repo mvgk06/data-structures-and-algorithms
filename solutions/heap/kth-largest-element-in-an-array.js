@@ -37,15 +37,12 @@ const findKthLargest2 = function(nums, k) {
     const minHeap=new MinHeap();
     
     for(let i=0;i<nums.length;i++){
-        const currObject={};
-        currObject.key=nums[i];
-        currObject.value=nums[i];
-        minHeap.insert(currObject);
+        minHeap.insert(nums[i],nums[i]);
         if(minHeap.getSize()>k){
             minHeap.deleteMin();
         }
     }
     
-    return minHeap.getMin();
+    return minHeap.getMin().value;
     
 };
