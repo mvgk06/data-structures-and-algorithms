@@ -32,7 +32,7 @@ const longestSubarray = function(nums, limit) {
 
 /*
 
-Sliding window 
+Sliding window + Deque
 
 Time - O(n)
 Space - O(n)
