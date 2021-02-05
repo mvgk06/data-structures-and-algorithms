@@ -55,6 +55,7 @@ const numberOfSubstrings2 = function(s) {
         }
         
         while(i<s.length && map.size===3){
+            result+=(s.length-j);
             map.set(s.charAt(i),map.get(s.charAt(i))-1);
             if(map.get(s.charAt(i))===0){
                 map.delete(s.charAt(i));
@@ -62,7 +63,6 @@ const numberOfSubstrings2 = function(s) {
             i++;
         }
         
-        result+=i;
     }
     
     return result;
