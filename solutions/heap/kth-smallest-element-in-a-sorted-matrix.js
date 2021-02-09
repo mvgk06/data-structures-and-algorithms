@@ -16,7 +16,7 @@ const kthSmallest = function(matrix, k) {
     for(let i=0;i<matrix.length;i++){
         for(let j=0;j<matrix[i].length;j++){
             maxHeap.insert(matrix[i][j],matrix[i][j]);
-            if(maxHeap.size>k){
+            if(maxHeap.getSize()>k){
                 maxHeap.deleteMax();
             }
         }
