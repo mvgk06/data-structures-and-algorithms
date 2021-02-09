@@ -8,21 +8,26 @@ class MaxHeap {
     return Math.floor((index - 1) / 2);
   }
 
-  leftChild(index) {
+  left(index) {
     return 2 * index + 1;
   }
 
-  rightChild(index) {
+  right(index) {
     return 2 * index + 2;
   }
 
-  insert(value) {
-    this.arr[this.size] = value;
+  hasMorePriority(curr,parent){
+    return this.arr[curr].key>this.arr[parent].key; 
+    // (this.arr[curr].key===this.arr[parent].key && this.arr[curr].value < this.arr[parent].value)
+  }
+
+  insert(key,value) {
+    this.arr[this.size]={key:key,value:value};
     this.size++;
 
     let curr = this.size - 1, parent = this.parent(curr);
 
-    while(parent>=0 && this.arr[curr]>this.arr[parent]) {
+    while(parent>=0 && this.hasMorePriority(curr,parent)) {
       const temp = this.arr[curr];
       this.arr[curr] = this.arr[parent];
       this.arr[parent] = temp;
@@ -33,13 +38,13 @@ class MaxHeap {
 
   maxHeapify(index) {
     let currMax = index;
-    const left = this.leftChild(currMax), right = this.rightChild(currMax);
+    const left = this.left(currMax), right = this.right(currMax);
 
-    if (left < this.size && this.arr[left] > this.arr[currMax]) {
+    if (left < this.size && this.hasMorePriority(left,currMax)) {
       currMax = left;
     }
 
-    if (right < this.size && this.arr[right] > this.arr[currMax]) {
+    if (right < this.size && this.hasMorePriority(right,currMax)) {
       currMax = right;
     }
 
@@ -58,28 +63,33 @@ class MaxHeap {
   }
 
   deleteMax() {
-    if (this.size === 1) {
-      this.size--;
-    } 
-    else {
-      this.arr[0] = this.arr[this.size - 1];
-      this.size--;
-      this.maxHeapify(0);
+    if(this.size>0){
+      if (this.size === 1) {
+        this.size--;
+      } 
+      else {
+        this.arr[0] = this.arr[this.size - 1];
+        this.size--;
+        this.maxHeapify(0);
+      }
     }
   }
 
   buildMaxHeap(arr) {
-    this.arr=arr;
+    for(let i=0;i<arr.length;i++){
+      this.arr[i]={key:arr[i],value:arr[i]};
+    }
     this.size=arr.length;
-    for (let i = Math.floor((this.size-1)/ 2); i >= 0; i--) {
+    const parentOfLastNode=this.parent(this.size-1);
+    for (let i = parentOfLastNode; i >= 0; i--) {
       this.maxHeapify(i);
     }
   }
 
-  print() {
-    console.log(this.arr);
+  getSize(){
+    return this.size;
   }
-
+  
   clear() {
     this.arr=[];
     this.size = 0;
