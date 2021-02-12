@@ -33,24 +33,24 @@ Space - O(k)
 
 */
 
-const MaxHeap=require("../../data-structures/max-heap.js");
+const Heap=require("../../data-structures/heap.js");
 
 const kClosest2 = function(points, k) {
     
-    const maxHeap=new MaxHeap();
+    const maxHeap=new Heap((curr,parent)=>curr.key>parent.key);
     
     for(let i=0;i<points.length;i++){
         maxHeap.insert(getDistance(points[i]),[points[i][0],points[i][1]]);
         if(maxHeap.getSize()>k){
-            maxHeap.deleteMax();
+            maxHeap.deleteTop();
         }
     }
     
     const output=[];
     
     while(maxHeap.getSize()>0){
-        output.push(maxHeap.getMax().value);
-        maxHeap.deleteMax();
+        output.push(maxHeap.getTop().value);
+        maxHeap.deleteTop();
     }
     
     return output;

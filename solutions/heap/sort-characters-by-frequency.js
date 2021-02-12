@@ -7,7 +7,7 @@ Space - O(n)
 
 */
 
-const MaxHeap=require("../../data-structures/max-heap.js");
+const Heap=require("../../data-structures/heap.js");
 
 const frequencySort = function(s) {
     
@@ -22,7 +22,7 @@ const frequencySort = function(s) {
         }
     }
     
-    const maxHeap = new MaxHeap();
+    const maxHeap = new Heap((curr,parent)=>curr.key>parent.key);
     
     for(let key of map.keys()){
         maxHeap.insert(map.get(key),key);
@@ -31,9 +31,9 @@ const frequencySort = function(s) {
     let output="";
     
     while(maxHeap.getSize()>0){
-        const value=maxHeap.getMax().value;
+        const value=maxHeap.getTop().value;
         output+=value.repeat(map.get(value));
-        maxHeap.deleteMax();
+        maxHeap.deleteTop();
     }
     
     return output;

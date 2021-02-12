@@ -2,17 +2,17 @@
 
 Min Heap
 
-Time - O(n*logn)
+Time - O(nlogn)
 Space - O(n)
 
 */
 
-const minHeap=require("../../data-structures/min-heap.js");
+const Heap=require("../../data-structures/heap.js");
 
 const eatenApples = function(apples, days) {
 
     let i=0, currDay=1, result=0;
-    const minHeap=new MinHeap();
+    const minHeap=new Heap((curr,parent)=>curr.key<parent.key);
     
     // Keep eating apples until they are fresh
     while(i<apples.length || minHeap.getSize()>0){
@@ -23,14 +23,14 @@ const eatenApples = function(apples, days) {
         }
         
         // Remove all roten apples
-        while(minHeap.getSize()>0 && minHeap.getMin().key<=currDay){
-            minHeap.deleteMin();
+        while(minHeap.getSize()>0 && minHeap.getTop().key<=currDay){
+            minHeap.deleteTop();
         }
        
         // Eat an apple if exist and update the result
         if(minHeap.getSize()>0){
-            const currMin=minHeap.getMin();
-            minHeap.deleteMin();
+            const currMin=minHeap.getTop();
+            minHeap.deleteTop();
             currMin.value=currMin.value-1;
             result++;
             if(currMin.value>0){

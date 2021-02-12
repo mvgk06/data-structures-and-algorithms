@@ -30,19 +30,19 @@ Space - O(k)
 
 */
 
-const MinHeap = require("../../data-structures/min-heap.js")
+const Heap = require("../../data-structures/heap.js")
 
 const findKthLargest2 = function(nums, k) {
     
-    const minHeap=new MinHeap();
+    const minHeap=new Heap((curr,parent)=>curr.key<parent.key);
     
     for(let i=0;i<nums.length;i++){
         minHeap.insert(nums[i],nums[i]);
         if(minHeap.getSize()>k){
-            minHeap.deleteMin();
+            minHeap.deleteTop();
         }
     }
     
-    return minHeap.getMin().value;
+    return minHeap.getTop().value;
     
 };

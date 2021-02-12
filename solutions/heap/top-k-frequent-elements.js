@@ -7,7 +7,7 @@ Space - O(n)
 
 */
 
-const MinHeap = require("../../data-structures/min-heap.js");
+const Heap = require("../../data-structures/heap.js");
 
 const topKFrequent = function(nums, k) {
     
@@ -22,20 +22,20 @@ const topKFrequent = function(nums, k) {
         }
     }
     
-    const minHeap = new MinHeap();
+    const minHeap = new Heap((curr,parent)=>curr.key<parent.key);
     
     for(let key of map.keys()){
         minHeap.insert(map.get(key),key);
         if(minHeap.getSize()>k){
-            minHeap.deleteMin();
+            minHeap.deleteTop();
         }
     }
     
     const output=[];
     
     while(minHeap.getSize()>0){
-        output.push(minHeap.getMin().value);
-        minHeap.deleteMin();
+        output.push(minHeap.getTop().value);
+        minHeap.deleteTop();
     }
     
     return output;

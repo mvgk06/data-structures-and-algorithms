@@ -7,7 +7,7 @@ Space - O(n)
 
 */
 
-const MaxHeap=require("../../data-structures/max-heap.js")
+const Heap=require("../../data-structures/heap.js")
 
 const rearrangeBarcodes = function(barcodes) {
     
@@ -22,7 +22,7 @@ const rearrangeBarcodes = function(barcodes) {
         }
     }
     
-    const maxHeap=new MaxHeap();
+    const maxHeap=new Heap((curr,parent)=>curr.key>parent.key);
     
     for(let key of map.keys()){
         maxHeap.insert(map.get(key),key);
@@ -32,8 +32,8 @@ const rearrangeBarcodes = function(barcodes) {
     let currIndex=0;
     
     while(maxHeap.getSize()>0){
-        const currMax=maxHeap.getMax();
-        maxHeap.deleteMax();
+        const currMax=maxHeap.getTop();
+        maxHeap.deleteTop();
         while(currMax.key>0){
             output[currIndex]=currMax.value;
             currMax.key=currMax.key-1;

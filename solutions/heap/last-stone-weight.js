@@ -7,22 +7,24 @@ Space - O(n)
 
 */
 
+const Heap=require("../../data-structures/heap.js");
+
 const lastStoneWeight = function(stones) {
     
-    const maxHeap=new MaxHeap();
+    const maxHeap=new Heap((curr,parent)=>curr.key>parent.key);
     
     for(let i=0;i<stones.length;i++){
         maxHeap.insert(stones[i],stones[i]);
     }
     
     while(maxHeap.getSize()>1){
-        let first=maxHeap.getMax().value;
-        maxHeap.deleteMax();
+        let first=maxHeap.getTop().value;
+        maxHeap.deleteTop();
         if(maxHeap.getSize()===0){
             return first;
         }
-        let second=maxHeap.getMax().value;
-        maxHeap.deleteMax();
+        let second=maxHeap.getTop().value;
+        maxHeap.deleteTop();
         if(first!=second){
             const result=Math.abs(first-second);
             maxHeap.insert(result,result);
@@ -30,7 +32,7 @@ const lastStoneWeight = function(stones) {
     }
     
     if(maxHeap.getSize()===1){
-        return maxHeap.getMax().value;
+        return maxHeap.getTop().value;
     }
     return 0;
 };
