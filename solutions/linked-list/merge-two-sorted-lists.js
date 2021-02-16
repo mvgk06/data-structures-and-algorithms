@@ -1,6 +1,6 @@
 /*
 
-Brute force
+Two pointer
 
 Time - O(n)
 Space - O(1)

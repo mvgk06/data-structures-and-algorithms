@@ -36,7 +36,7 @@ Space - O(1)
 
 */
 
-const hasCycle = function(head) {
+const hasCycle2 = function(head) {
  
     let slow=head, fast=head;
     
