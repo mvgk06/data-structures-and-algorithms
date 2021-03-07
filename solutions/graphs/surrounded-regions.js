@@ -2,8 +2,8 @@
 
 DFS
 
-Time - O(n^2)
-Space - O(n^2)
+Time - O(n*m)
+Space - O(n*m)
 
 */
 
@@ -55,8 +55,8 @@ const solve = function(board) {
 
 BFS
 
-Time - O(n^2)
-Space - O(n^2)
+Time - O(n*m)
+Space - O(n*m)
 
 */
 

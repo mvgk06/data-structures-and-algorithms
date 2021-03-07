@@ -2,8 +2,8 @@
 
 DFS
 
-Time - O(n^2)
-Space - O(n^2)
+Time - O(n*m)
+Space - O(n*m)
 
 */
 
@@ -46,8 +46,8 @@ const numIslands = function(grid) {
 
 BFS
 
-Time - O(n^2)
-Space - O(n^2)
+Time - O(n*m)
+Space - O(n*m)
 
 */
 
