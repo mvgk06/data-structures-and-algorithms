@@ -51,6 +51,8 @@ Space - O(n*m)
 
 */
 
+const Deque=require("../../data-structures/deque.js");
+
 const isValid=(grid,visited,row,col)=>{
     return row>=0 && row<grid.length && col>=0 && col<grid[row].length && !visited[row][col] && grid[row][col]==="1";
 }

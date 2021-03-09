@@ -60,6 +60,8 @@ Space - O(n*m)
 
 */
 
+const Deque=require("../../data-structures/deque.js");
+
 const isValid=(board,visited,i,j)=>{
     return i>=0 && i<board.length && j>=0 && j<board[i].length && board[i][j]==="O" && !visited[i][j];
 }

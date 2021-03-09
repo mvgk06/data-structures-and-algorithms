@@ -63,6 +63,8 @@ Space - O(n*m)
 
 */
 
+const Deque=require("../../data-structures/deque.js");
+
 const bfs=(grid,visited,i,j)=>{
     
     const queue=new Deque();
