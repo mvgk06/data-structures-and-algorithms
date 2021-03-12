@@ -1,0 +1,43 @@
+/*
+
+DFS
+
+Time - O(n^2)
+Space - O(n^2)
+
+*/
+
+const dfs=(grid,visited,i,j)=>{
+    if(i<0 || i>=grid.length || j<0 || j>=grid[i].length || visited[i][j] || grid[i][j]===0){
+        return 0;
+    }
+    
+    visited[i][j]=true;
+    const top=dfs(grid,visited,i+1,j);
+    const right=dfs(grid,visited,i,j+1);
+    const bottom=dfs(grid,visited,i-1,j);
+    const left=dfs(grid,visited,i,j-1);
+    
+    return 1+top+right+bottom+left;
+}
+
+const maxAreaOfIsland = function(grid) {
+    
+    const visited=new Array(grid.length);
+    
+    for(let i=0;i<grid.length;i++){
+        visited[i]=new Array(grid[i].length);
+        visited[i].fill(false);
+    }
+    
+    let result=0;
+    for(let i=0;i<grid.length;i++){
+        for(let j=0;j<grid[i].length;j++){
+            if(!visited[i][j] && grid[i][j]===1){
+                result=Math.max(result,dfs(grid,visited,i,j));
+            }
+        }
+    }
+    
+    return result;
+};
