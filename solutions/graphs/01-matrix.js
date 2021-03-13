@@ -7,6 +7,8 @@ Space - O(n^2)
 
 */
 
+const Deque=require("../../data-structures/deque.js");
+
 const isValid=(matrix,i,j,visited)=>{
     return i>=0 && i<matrix.length && j>=0 && j<matrix[i].length && !visited[i][j] && matrix[i][j]!=0;
 }
