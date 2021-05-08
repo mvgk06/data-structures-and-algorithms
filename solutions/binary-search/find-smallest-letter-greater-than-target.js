@@ -9,12 +9,12 @@ Space - O(1)
 
 const nextGreatestLetter = function (letters, target) {
 
-    let start = 0, end = letters.length - 1, mid, result = -1;
+    let start = 0, end = letters.length - 1, mid, result = letters[0];
 
     while (start <= end) {
         mid = Math.floor(start + (end - start) / 2);
-        if (letters[mid].charCodeAt(0) > target.charCodeAt(0)) {
-            result = mid;
+        if (letters[mid]>target) {
+            result = letters[mid];
             end = mid - 1;
         }
         else {
@@ -22,9 +22,5 @@ const nextGreatestLetter = function (letters, target) {
         }
     }
 
-    if (result === -1) {
-        return letters[0];
-    }
-
-    return letters[result];
+    return result;
 };
