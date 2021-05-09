@@ -7,56 +7,53 @@ Space - O(1)
 
 */
 
-const possibleToShipPackages = (weights, D, currCapacity) => {
+ const canShipWithinDays=(weights,maxDays,maxCapacity)=>{
 
-    let days = 0, currWeight = 0;
-
-    for (let i = 0; i < weights.length; i++) {
-        if (currWeight + weights[i] > currCapacity) {
-            currWeight = weights[i];
-            days++;
-
-            if (days > D) {
-                return false;
+    let currCapacity=0, daysPassed=1, i=0;
+    
+    while(i<weights.length){
+        if(weights[i]>maxCapacity){
+            return false;
+        }
+        else{
+            if(currCapacity+weights[i]<=maxCapacity){
+               currCapacity+=weights[i];
+                i++;
+            }
+            else{
+                currCapacity=0;
+                daysPassed++;
             }
         }
-        else {
-            currWeight += weights[i];
-        }
     }
-
-    // To ship the last package we need a day
-    days++;
-
-    if (days <= D) {
+    
+    if(daysPassed<=maxDays){
         return true;
     }
-
     return false;
+}
 
-};
-
-const shipWithinDays = function (weights, D) {
-
-    let max = Number.MIN_VALUE, sum = 0;
-
-    for (let i = 0; i < weights.length; i++) {
-        max = Math.max(max, weights[i]);
-        sum += weights[i];
+const shipWithinDays = function(weights, maxDays) {
+    
+    let minWeight=Number.MAX_VALUE, totalWeight=0;
+    
+    for(let i=0;i<weights.length;i++){
+        minWeight=Math.min(minWeight,weights[i]);
+        totalWeight+=weights[i];
     }
-
-    let start = max, end = sum, mid, result = -1;
-
-    while (start <= end) {
-        mid = Math.floor(start + (end - start) / 2);
-        if (possibleToShipPackages(weights, D, mid)) {
-            result = mid;
-            end = mid - 1;
+    
+    let start=minWeight, end=totalWeight, mid, result=-1;
+    
+    while(start<=end){
+        mid=Math.floor(start+(end-start)/2);
+        if(canShipWithinDays(weights,maxDays,mid)){
+            result=mid;
+            end=mid-1;
         }
-        else {
-            start = mid + 1;
+        else{
+            start=mid+1;
         }
     }
-
+    
     return result;
 };

@@ -1,6 +1,6 @@
 /* 
 
-Map
+Set
 
 Time - O(n) 
 Space - O(n)
@@ -9,15 +9,14 @@ Space - O(n)
 
 const findDuplicate1 = function (nums) {
 
-  const map = new Map();
-
-  for (let item of nums) {
-    if (map.has(item)) {
-      return item;
-    } else {
-      map.set(item, 1);
+  const set=new Set();
+    
+    for(let i=0;i<nums.length;i++){
+      if(set.has(nums[i])){
+          return nums[i];
+      }
+      set.add(nums[i]);
     }
-  }
 };
 
 /* 
