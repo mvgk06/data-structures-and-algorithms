@@ -8,48 +8,47 @@ Space - O(1)
 */
 
 
-const numberOfBouquetsPossible = (bloomDay, m, k, currDay) => {
-
-    let count = 0, bouquets = 0;
-
-    for (let i = 0; i < bloomDay.length; i++) {
-        if (currDay >= bloomDay[i]) {
-            count++;
-            if (count === k) {
-                count = 0;
+const isBouquetPossible=(bloomDay,m,k,mid)=>{
+    
+    let flowers=0, bouquets=0;
+    for(let i=0;i<bloomDay.length;i++){
+        if(mid>=bloomDay[i]){
+            flowers++;
+            if(flowers===k){
                 bouquets++;
+                flowers=0;
             }
         }
-        else {
-            count = 0;
+        else{
+            flowers=0;
+        }
+        if(bouquets===m){
+            return true;
         }
     }
-
-    return bouquets;
-};
+    
+    return false;
+}
 
 const minDays = function (bloomDay, m, k) {
 
-    let min = Number.MAX_VALUE, max = -Number.MAX_VALUE;
-
-    for (let i = 0; i < bloomDay.length; i++) {
-        min = Math.min(min, bloomDay[i]);
-        max = Math.max(max, bloomDay[i]);
+    let max=-Number.MAX_VALUE;
+    
+    for(let i=0;i<bloomDay.length;i++){
+        max=Math.max(max,bloomDay[i]);
     }
-
-    let start = min, end = max, mid, result = -1;
-
-    while (start <= end) {
-        mid = Math.floor(start + (end - start) / 2);
-        const bouquets = numberOfBouquetsPossible(bloomDay, m, k, mid);
-        if (bouquets >= m) {
-            result = mid;
-            end = mid - 1;
+    
+    let start=1, end=max, result=-1;
+    while(start<=end){
+        const mid=Math.floor(start+(end-start)/2);
+        if(isBouquetPossible(bloomDay,m,k,mid)){
+            result=mid;
+            end=mid-1;
         }
-        else {
-            start = mid + 1;
+        else{
+            start=mid+1;
         }
     }
-
+    
     return result;
 };
