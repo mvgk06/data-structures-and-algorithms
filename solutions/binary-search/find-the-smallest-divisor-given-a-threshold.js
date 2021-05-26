@@ -18,11 +18,7 @@ const isValidDivisor = (nums, threshold, curr) => {
         }
     }
 
-    if (sum <= threshold) {
-        return true;
-    }
-
-    return false;
+    return true;
 
 };
 
