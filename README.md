@@ -1,3 +1,3 @@
 ## About
 
-This repository contains common data structures and algorithms implementations along with solutions to algorithmic problems.
+Implementation of data structures and algorithms along with solutions to algorithmic problems.
