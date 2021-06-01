@@ -3,7 +3,7 @@
 Backtracking
 
 Time - O(2^n)
-Space - O(1)
+Space - O(n)
 
 */
 
