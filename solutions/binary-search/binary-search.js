@@ -1,8 +1,15 @@
 /*
 
-Binary search
+Problem
+https://leetcode.com/problems/binary-search/
 
-Time - O(log n)
+Approach
+- Divide the array into two.
+- If the mid is equal to the target return it.
+- Else if the mid is smaller than the target then search on the right subarray.
+- Else search on the left subarray.
+
+Time - O(log(n))
 Space - O(1)
 
 */
