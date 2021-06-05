@@ -1,8 +1,15 @@
 /*
 
-Binary search
+Problem
+https://leetcode.com/problems/first-bad-version/
 
-Time - O(log n)
+Approach
+- Consider the range from 0 to n as the search space.
+- Divide the range into two.
+- If the mid is a bad version, mark it as potential result and search on the left subarray.
+- Else search on the right subarray.
+
+Time - O(log(n))
 Space - O(1)
 
 */

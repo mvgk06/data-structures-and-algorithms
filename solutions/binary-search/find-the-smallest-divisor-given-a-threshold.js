@@ -1,8 +1,14 @@
 /*
 
-Binary search
+Problem
+https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/
 
-Time - O(n*log(max))
+Approach
+- Consider the range from 1 to maximum element as the search space.
+- If using the mid as the divisor the sum of division of all the elements by the divisor is less than or equal to the threshold then mark it as potential result and search on the left subarray.
+- Else search on the right subarray.
+
+Time - O(nlog(max))
 Space - O(1)
 
 */

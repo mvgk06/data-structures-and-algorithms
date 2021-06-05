@@ -1,8 +1,14 @@
 /* 
 
-Binary search
+Problem
+https://leetcode.com/problems/find-smallest-letter-greater-than-target/
 
-Time - O(log n)
+Approach
+- Divide the array into two.
+- If the mid is greater than the target, mark it as potential result and search on the left subarray.
+- Else search on the right subarray.
+
+Time - O(log(n))
 Space - O(1)
 
 */
@@ -13,7 +19,7 @@ const nextGreatestLetter = function (letters, target) {
 
     while (start <= end) {
         mid = Math.floor(start + (end - start) / 2);
-        if (letters[mid]>target) {
+        if (letters[mid] > target) {
             result = letters[mid];
             end = mid - 1;
         }
