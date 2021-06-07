@@ -1,91 +1,42 @@
 /*
 
-Backtracking
+Problem
+https://leetcode.com/problems/generate-parentheses/
 
-Time - O(n^2)
-Space - O(n)
-
-*/
-
-const isBalancedBrackets = (s) => {
-
-    const stack = [];
-
-    for (let i = 0; i < s.length; i++) {
-        if (s.charAt(i) === "(") {
-            stack.push(s.charAt(i));
-        }
-        else {
-            if (stack.length == 0) {
-                return false;
-            }
-            else {
-                if (stack[stack.length - 1] == "(") {
-                    stack.pop();
-                }
-            }
-        }
-    }
-
-    if (stack.length != 0) {
-        return false;
-    }
-
-    return true;
-
-};
-
-const generateBrackets = (n, currIndex, currBracketPair) => {
-    if (currIndex === 2 * n) {
-        if (isBalancedBrackets(currBracketPair)) {
-            console.log(currBracketPair);
-        }
-        return;
-    }
-
-    if (currIndex === 0) {
-        generateBrackets(n, currIndex + 1, currBracketPair + "(");
-    }
-    else {
-        generateBrackets(n, currIndex + 1, currBracketPair + "(");
-        generateBrackets(n, currIndex + 1, currBracketPair + ")");
-    }
-    return;
-};
-
-const generateBalancedBrackets = (n) => {
-    const currBracketPair = "";
-    generateBrackets(n, 0, currBracketPair);
-};
-
-
-/*
-
-Backtracking
+Approach
+- The length of n pairs of balanced brackets is 2*n.
+- For each index, I have two choices either I can have an open bracket or a closed bracket but inorder for the brackets to be balanced we have to check
+    - If the number of opening brackets is less than n only then I choose an opening bracket.
+    - If the number of opening brackets is greater than the closing brackets only then I choose a closing bracket.
+- After making a choice, recursively solve the smaller sub problems.
+- Backtrack, undo the choice that was made (this will be taken care by recursion as strings are primitive) and try other choices.
+- If the length of current solution is equal to 2*n then store the current solution in the result. 
 
 Time - O(2^n)
 Space - O(n)
 
 */
 
-const generateBrackets2 = (n, currIndex, currBracketPair, openBrackets, closedBrackets) => {
-    if (currIndex === 2 * n) {
-        console.log(currBracketPair);
+const generateParenthesisHelper = (n, curr, openCount, closeCount, result) => {
+
+    if (curr.length === 2 * n) {
+        result.push(curr);
         return;
     }
 
-    if (openBrackets < n) {
-        generateBrackets(n, currIndex + 1, currBracketPair + "(", openBrackets + 1, closedBrackets);
+    if (openCount < n) {
+        generateParenthesisHelper(n, curr + "(", openCount + 1, closeCount, result);
     }
 
-    if (closedBrackets < openBrackets) {
-        generateBrackets(n, currIndex + 1, currBracketPair + ")", openBrackets, closedBrackets + 1);
+    if (openCount > closeCount) {
+        generateParenthesisHelper(n, curr + ")", openCount, closeCount + 1, result);
     }
 
     return;
 };
 
-const generateBalancedBrackets2 = (n) => {
-    const currBracketPair = "";
-    generateBrackets2(n, 0, currBracketPair, 0, 0);
+const generateParenthesis = function (n) {
+    const result = [], curr = "";
+    generateParenthesisHelper(n, curr, 0, 0, result);
+    return result;
 };
