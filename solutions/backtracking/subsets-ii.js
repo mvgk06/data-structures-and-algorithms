@@ -10,6 +10,7 @@ Approach
         - Else I will have only one choice that is to not pick the current element.
     - Else I have two choices either I pick the current element or I don't pick the current element.
 - After making a choice, recursively solve the smaller sub problems.
+- Backtrack, undo the choice that was made and try other choices.
 - If the end of the array is reached there are no more choices to make so store the current subset in the result.
 
 Time - O(2^n)
