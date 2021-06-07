@@ -1,6 +1,12 @@
 /*
 
-Backtracking
+Problem
+https://leetcode.com/problems/subsets/
+
+Approach
+- For every element I have two choices either I pick the current element or I don't pick the current element.
+- After making a choice, recursively solve the smaller sub problems.
+- If the end of the array is reached there are no more choices to make so store the current subset in the result.
 
 Time - O(2^n)
 Space - O(n)
