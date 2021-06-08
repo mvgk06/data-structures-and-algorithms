@@ -1,6 +1,9 @@
 /*
 
-Recursion
+Approach
+- If the current element is equal to the key then print it.
+- Recursively solve the smaller sub problems.
+- If the end of the array is reached then return.
 
 Time - O(n)
 Space - O(n)
