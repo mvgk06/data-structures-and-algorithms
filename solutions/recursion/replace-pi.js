@@ -1,6 +1,9 @@
 /*
 
-Recursion
+Approach
+- If the current char is equal to p and next char is equal to i then replace it with 3.14.
+- Recursively solve the smaller sub problems.
+- If end of the array is reached then return the string.
 
 Time - O(n)
 Space - O(n)

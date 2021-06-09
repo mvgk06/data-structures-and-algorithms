@@ -1,6 +1,9 @@
 /*
 
-Recursion
+Approach
+- Recursively solve the smaller sub problems.
+- Print the current number.
+- If the number becomes equal to 0 then return.
 
 Time - O(n)
 Space - O(n)

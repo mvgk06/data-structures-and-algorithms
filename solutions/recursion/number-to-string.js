@@ -1,6 +1,9 @@
 /*
 
-Recursion
+Approach
+- Get the ending digit, convert it into a string.
+- Recursively solve the smaller sub problems.
+- If the number is less than 10 then this is the last digit, convert it into a string, add it to the result and return the result.
 
 Time - O(n)
 Space - O(n)
