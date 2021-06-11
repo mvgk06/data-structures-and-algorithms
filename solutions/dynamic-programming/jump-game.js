@@ -46,8 +46,8 @@ const canJumpHelper = (nums, currIndex, memo) => {
 
 const canJump = function (nums) {
     const memo = new Array(nums.length).fill(1);
-    canJumpHelper(nums, 0, memo);
-    if (memo[nums.length - 1] === 0) {
+    const result = canJumpHelper(nums, 0, memo);
+    if (result === 0) {
         return true;
     }
     return false;
