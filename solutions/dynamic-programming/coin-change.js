@@ -15,7 +15,19 @@ Approach
 Time - O(n*amount)
 Space - O(n*amount)
 
+2. Bottom up
+- Create a memo array and initialize the base cases.
+- For each index in the memo, if the current coin value is less than equal to the amount then I have two choices either I pick or don't pick the current coin.
+- Else I have only one choice that is to not pick the current coin.
+- Use the memo to get the solution of the smaller sub problems.
+- Return the cell (n,amount) which contins the solution for the main problem.
+
+Time - O(n*amount)
+Space - O(n*amount)
+
 */
+
+/* Top down */
 
 const coinChangeHelper = (coins, amount, currIndex, memo) => {
 
@@ -43,13 +55,47 @@ const coinChangeHelper = (coins, amount, currIndex, memo) => {
 };
 
 const coinChange = function (coins, amount) {
-    const memo = new Array(coins.length);
-    for (let i = 0; i < coins.length; i++) {
+    const memo = new Array(coins.length + 1);
+    for (let i = 0; i < memo.length; i++) {
         memo[i] = new Array(amount + 1).fill(-1);
     }
     const result = coinChangeHelper(coins, amount, 0, memo);
     if (result != Number.MAX_VALUE) {
-        return res;
+        return result;
+    }
+    return -1;
+};
+
+/* Bottom up */
+
+const coinChange2 = function (coins, amount) {
+    const memo = new Array(coins.length + 1);
+    for (let i = 0; i < memo.length; i++) {
+        memo[i] = new Array(amount + 1).fill(-1);
+    }
+
+    for (let j = 0; j < memo[0].length; j++) {
+        memo[0][j] = Number.MAX_VALUE;
+    }
+
+    for (let i = 0; i < memo.length; i++) {
+        memo[i][0] = 0;
+    }
+
+    for (let i = 1; i < memo.length; i++) {
+        for (let j = 1; j < memo[i].length; j++) {
+            if (coins[i - 1] <= j) {
+                memo[i][j] = Math.min(1 + memo[i][j - coins[i - 1]], memo[i - 1][j]);
+            }
+            else {
+                memo[i][j] = memo[i - 1][j];
+            }
+        }
+    }
+
+    const result = memo[coins.length][amount];
+    if (result != Number.MAX_VALUE) {
+        return result;
     }
     return -1;
 };
