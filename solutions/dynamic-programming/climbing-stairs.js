@@ -15,7 +15,18 @@ Approach
 Time - O(n)
 Space - O(n)
 
+2. Bottom up
+- Create a memo array and initialize the base cases.
+- For each stair I have two options either I can go to the 1st stair or the 2nd stair.
+- Use the memo to get the solution of the smaller sub problems.
+- Return the nth index of memo which contains the solution for the main problem.
+
+Time - O(n)
+Space - O(n)
+
 */
+
+/* Top down */
 
 const climbStairsHelper = (n, currStair, memo) => {
 
@@ -38,6 +49,20 @@ const climbStairsHelper = (n, currStair, memo) => {
 };
 
 const climbStairs = function (n) {
-    const memo = new Array(n).fill(-1);
+    const memo = new Array(n + 1).fill(-1);
     return climbStairsHelper(n, 0, memo);
+};
+
+/* Bottom up */
+
+const climbStairs2 = function (n) {
+    const memo = new Array(n + 1).fill(0);
+    memo[1] = 1;
+    memo[2] = 2;
+
+    for (let i = 3; i < memo.length; i++) {
+        memo[i] = memo[i - 1] + memo[i - 2];
+    }
+
+    return memo[n];
 };

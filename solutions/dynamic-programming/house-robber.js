@@ -14,7 +14,18 @@ Approach
 Time - O(n)
 Space - O(n)
 
+2. Bottom up
+- Create a memo array and initialize with the base cases.
+- For every index I have two choices I can either rob the house or don't rob the house.
+- Use the memo to get the solutions of smaller sub problems.
+- Return the nth index of memo which contains the solution for the main problem. 
+
+Time - O(n)
+Space - O(n)
+
 */
+
+/* Top down */
 
 const robHelper = (nums, currIndex, memo) => {
 
@@ -35,6 +46,20 @@ const robHelper = (nums, currIndex, memo) => {
 };
 
 const rob = function (nums) {
-    const memo = new Array(nums.length).fill(-1);
+    const memo = new Array(nums.length + 1).fill(-1);
     return robHelper(nums, 0, memo);
+};
+
+/* Bottom up */
+
+const rob2 = function (nums) {
+    const memo = new Array(nums.length + 1).fill(0);
+    memo[1] = nums[0];
+    memo[2] = Math.max(nums[0], nums[1]);
+
+    for (let i = 3; i < memo.length; i++) {
+        memo[i] = Math.max(nums[i - 1] + memo[i - 2], memo[i - 1]);
+    }
+
+    return memo[nums.length];
 };
