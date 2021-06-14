@@ -6,7 +6,7 @@ https://leetcode.com/problems/climbing-stairs/
 Approach
 
 1. Top down
-- For each stair I have two options either I can go to the 1st stair or the 2nd stair.
+- For each stair I have two choices either I can go to the 1st stair or the 2nd stair.
 - Recursively solve the smaller sub problems and store the solutions in an array.
 - If the top of the stair is reached then return 1 to indicate that we have found a way to reach the top.
 - If the current stair becomes more than the top then return 0 to indicate that there is no way to reach the top.
@@ -16,8 +16,8 @@ Time - O(n)
 Space - O(n)
 
 2. Bottom up
-- Create a memo array and initialize the base cases.
-- For each stair I have two options either I can go to the 1st stair or the 2nd stair.
+- Create a memo array and initialize with base cases.
+- For each stair I have two choices either I could have came from the stair i-1 or i-2.
 - Use the memo to get the solution of the smaller sub problems.
 - Return the nth index of memo which contains the solution for the main problem.
 

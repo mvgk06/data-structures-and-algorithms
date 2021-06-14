@@ -15,7 +15,18 @@ Approach
 Time - O(m*n)
 Space - O(m*n)
 
+2. Bottom up
+- Create a memo array and initialize with base cases.
+- For every cell (i,j), I have two choices either I could have came from the left or top.
+- Use the memo to get the solution of the smaller sub problems.
+- Return the cell (m-1,n-1) which contains the solution for the main problem.
+
+Time - O(m*n)
+Space - O(m*n)
+
 */
+
+/* Top down */
 
 const numberOfWaysToDestination = (m, n, row, col, memo) => {
 
@@ -41,11 +52,38 @@ const numberOfWaysToDestination = (m, n, row, col, memo) => {
 
 const uniquePaths = function (m, n) {
 
-    const memo = new Array(m);
-    for (let i = 0; i < m; i++) {
-        memo[i] = new Array(n).fill(-1);
+    const memo = new Array(m + 1);
+    for (let i = 0; i < memo.length; i++) {
+        memo[i] = new Array(n + 1).fill(-1);
     }
 
     return numberOfWaysToDestination(m, n, 0, 0, memo);
+
+};
+
+/* Bottom up */
+
+const uniquePaths2 = function (m, n) {
+
+    const memo = new Array(m + 1);
+    for (let i = 0; i < memo.length; i++) {
+        memo[i] = new Array(n + 1).fill(0);
+    }
+
+    for (let j = 0; j < memo[0].length; j++) {
+        memo[0][j] = 1;
+    }
+
+    for (let i = 0; i < memo.length; i++) {
+        memo[i][0] = 1;
+    }
+
+    for (let i = 1; i < memo.length; i++) {
+        for (let j = 1; j < memo[i].length; j++) {
+            memo[i][j] = memo[i][j - 1] + memo[i - 1][j];
+        }
+    }
+
+    return memo[m - 1][n - 1];
 
 };
