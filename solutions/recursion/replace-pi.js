@@ -8,6 +8,8 @@ Approach
 Time - O(n)
 Space - O(n)
 
+n - size of string
+
 */
 
 const replacePi = (s, currIndex) => {

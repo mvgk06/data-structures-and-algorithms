@@ -8,6 +8,8 @@ Approach
 Time - O(n)
 Space - O(n)
 
+n - number of items
+
 */
 
 const firstOccurrence = (arr, key, currIndex) => {

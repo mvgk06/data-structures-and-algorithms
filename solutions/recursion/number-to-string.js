@@ -8,6 +8,8 @@ Approach
 Time - O(n)
 Space - O(n)
 
+n - number
+
 */
 
 const numberMap = {

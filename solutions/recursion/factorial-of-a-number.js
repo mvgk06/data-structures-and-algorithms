@@ -7,6 +7,8 @@ Approach
 Time - O(n)
 Space - O(n)
 
+n - number
+
 */
 
 const factorial = (n) => {

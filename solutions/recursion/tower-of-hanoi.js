@@ -8,6 +8,8 @@ Approach
 Time - O(2^n)
 Space - O(n)
 
+n - number of plates
+
 */
 
 const movePlates = (n, src, dest, helper) => {

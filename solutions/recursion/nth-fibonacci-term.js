@@ -7,6 +7,8 @@ Approach
 Time - O(2^n)
 Space - O(n)
 
+n - number
+
 */
 
 const fib = (n) => {

@@ -9,6 +9,8 @@ Approach
 Time - O(n)
 Space - O(n)
 
+n - number of items
+
 */
 
 const lastOccurrence = (arr, key, currIndex) => {
