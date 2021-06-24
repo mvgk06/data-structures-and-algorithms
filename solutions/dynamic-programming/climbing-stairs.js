@@ -6,23 +6,25 @@ https://leetcode.com/problems/climbing-stairs/
 Approach
 
 1. Top down
-- For each stair I have two choices either I can go to the 1st stair or the 2nd stair.
-- Recursively solve the smaller sub problems and store the solutions in an array.
+- For each stair, we have two choices either I can go to the 1st stair or the 2nd stair.
+- After making the choice, recursively solve the smaller sub-problems and store the solutions in an array.
 - If the top of the stair is reached then return 1 to indicate that we have found a way to reach the top.
 - If the current stair becomes more than the top then return 0 to indicate that there is no way to reach the top.
-- If the current sub problem is already computed return it instead of recomputing them again.
+- If the current subproblem is already computed return it instead of recomputing them again.
 
 Time - O(n)
 Space - O(n)
 
 2. Bottom up
 - Create a memo array and initialize with base cases.
-- For each stair I have two choices either I could have came from the stair i-1 or i-2.
-- Use the memo to get the solution of the smaller sub problems.
-- Return the nth index of memo which contains the solution for the main problem.
+- For each stair, we have two choices either we can go to the 1st or the 2nd stair.
+- Use the memo to get the solution of the smaller sub-problems.
+- Return the last element of the memo which contains the solution for the main problem.
 
 Time - O(n)
 Space - O(n)
+
+n - number of stairs
 
 */
 
@@ -49,7 +51,7 @@ const climbStairsHelper = (n, currStair, memo) => {
 };
 
 const climbStairs = function (n) {
-    const memo = new Array(n + 1).fill(-1);
+    const memo = new Array(n).fill(-1);
     return climbStairsHelper(n, 0, memo);
 };
 
