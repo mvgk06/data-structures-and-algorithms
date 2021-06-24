@@ -32,6 +32,8 @@ Space - O(n)
 Time - O(n)
 Space - O(1)
 
+n - number
+
 */
 
 /* Top down */
