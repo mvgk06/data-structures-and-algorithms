@@ -19,7 +19,7 @@ Space - O(n*amount)
 - Create a memo array and initialize with base cases.
 - For each index, we have two choices either we can pick or don't pick the coin.
 - Use the memo to get the solutions to the smaller sub-problems.
-- Return the cell (n-1, amount) which contains the solution to the main problem.
+- Return the cell (n, amount) which contains the solution to the main problem.
 
 Time - O(n*amount)
 Space - O(n*amount)
@@ -72,18 +72,9 @@ const change = function (amount, coins) {
 
 const change2 = function (amount, coins) {
 
-    const memo = new Array(coins.length);
+    const memo = new Array(coins.length + 1);
     for (let i = 0; i < memo.length; i++) {
-        memo[i] = new Array(amount + 1).fill(-1);
-    }
-
-    for (let j = 0; j < memo[0].length; j++) {
-        if (j % coins[0] === 0) {
-            memo[0][j] = 1;
-        }
-        else {
-            memo[0][j] = 0;
-        }
+        memo[i] = new Array(amount + 1).fill(0);
     }
 
     for (let i = 0; i < memo.length; i++) {
@@ -92,14 +83,14 @@ const change2 = function (amount, coins) {
 
     for (let i = 1; i < memo.length; i++) {
         for (let j = 1; j < memo[i].length; j++) {
-            if (coins[i] <= j) {
-                memo[i][j] = (memo[i][j - coins[i]] + memo[i - 1][j]);
+            if (coins[i - 1] <= j) {
+                memo[i][j] = (memo[i][j - coins[i - 1]] + memo[i - 1][j]);
             }
             else {
-                memo[i][j] = (memo[i - 1][j]);
+                memo[i][j] = memo[i - 1][j];
             }
         }
     }
 
-    return memo[coins.length - 1][amount];
+    return memo[coins.length][amount];
 };
