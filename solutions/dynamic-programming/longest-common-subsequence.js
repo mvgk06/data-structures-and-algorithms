@@ -24,6 +24,9 @@ Space - O(n*m)
 Time - O(n*m)
 Space - O(n*m)
 
+n - size of string 1 
+m - size of string 2
+
 */
 
 /* Top down */
