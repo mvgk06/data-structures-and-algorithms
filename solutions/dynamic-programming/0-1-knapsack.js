@@ -18,7 +18,7 @@ Space - O(n*capacity)
 - Create a memo array and initialize with base cases.
 - For each index, we have two choices either we pick or don't pick the current element.
 - Use the memo to get the solutions of smaller sub-problems.
-- Return the cell (n-1, capacity) which contains the solution of the main problem.
+- Return the cell (n, capacity) which contains the solution of the main problem.
 
 Time - O(n*capacity)
 Space - O(n*capacity)
@@ -81,13 +81,13 @@ const knapsack = (weights, profits, capacity) => {
 /* Bottom up */
 
 const choicesMade = (weights, profits, capacity, memo) => {
-    let i = weights.length - 1, j = capacity, currProfit = memo[i][j];
+    let i = weights.length, j = capacity, currProfit = memo[i][j];
     const choices = [];
     while (i > 0 && j > 0) {
         if (memo[i][j] !== memo[i - 1][j]) {
-            choices.push(i);
-            currProfit -= profits[i];
-            j = (j - weights[i]);
+            choices.push(i - 1);
+            currProfit -= profits[i - 1];
+            j = (j - weights[i - 1]);
         }
         i = i - 1;
     }
@@ -96,28 +96,15 @@ const choicesMade = (weights, profits, capacity, memo) => {
 };
 
 const knapsack2 = (weights, profits, capacity) => {
-    const memo = new Array(weights.length);
+    const memo = new Array(weights.length + 1);
     for (let i = 0; i < memo.length; i++) {
-        memo[i] = new Array(capacity + 1).fill(-1);
-    }
-
-    for (let i = 0; i < memo.length; i++) {
-        memo[i][0] = 0;
-    }
-
-    for (let j = 1; j < memo[0].length; j++) {
-        if (weights[0] <= j) {
-            memo[0][j] = profits[0];
-        }
-        else {
-            memo[0][j] = 0;
-        }
+        memo[i] = new Array(capacity + 1).fill(0);
     }
 
     for (let i = 1; i < memo.length; i++) {
         for (let j = 1; j < memo[i].length; j++) {
-            if (weights[i] <= j) {
-                memo[i][j] = Math.max(profits[i] + memo[i - 1][j - weights[i]], memo[i - 1][j]);
+            if (weights[i - 1] <= j) {
+                memo[i][j] = Math.max(profits[i - 1] + memo[i - 1][j - weights[i - 1]], memo[i - 1][j]);
             }
             else {
                 memo[i][j] = memo[i - 1][j];
@@ -127,7 +114,7 @@ const knapsack2 = (weights, profits, capacity) => {
 
     choicesMade(weights, profits, capacity, memo);
 
-    return memo[weights.length - 1][capacity];
+    return memo[weights.length][capacity];
 };
 
 /* Bottom up (2 arrays) */
@@ -145,12 +132,12 @@ const knapsack3 = (weights, profits, capacity) => {
         }
     }
 
-    for (let i = 1; i < weights.length; i++) {
+    for (let i = 2; i <= weights.length; i++) {
         const currMemo = new Array(capacity + 1);
         currMemo[0] = 0;
         for (let j = 1; j < currMemo.length; j++) {
-            if (weights[i] <= j) {
-                currMemo[j] = Math.max(profits[i] + prevMemo[j - weights[i]], prevMemo[j]);
+            if (weights[i - 1] <= j) {
+                currMemo[j] = Math.max(profits[i - 1] + prevMemo[j - weights[i - 1]], prevMemo[j]);
             }
             else {
                 currMemo[j] = prevMemo[j];
@@ -179,10 +166,10 @@ const knapsack4 = (weights, profits, capacity) => {
         }
     }
 
-    for (let i = 1; i < weights.length; i++) {
+    for (let i = 2; i <= weights.length; i++) {
         for (let j = memo.length - 1; j >= 0; j--) {
-            if (weights[i] <= j) {
-                memo[j] = Math.max(profits[i] + memo[j - weights[i]], memo[j]);
+            if (weights[i - 1] <= j) {
+                memo[j] = Math.max(profits[i - 1] + memo[j - weights[i - 1]], memo[j]);
             }
         }
     }

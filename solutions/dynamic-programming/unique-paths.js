@@ -6,23 +6,26 @@ https://leetcode.com/problems/unique-paths/
 Approach
 
 1. Top down
-- For every cell (row,col) I have two choices either I can go right or down.
-- Recursively solve the smaller sub problems and store the solutions in an array.
-- If the row and col becomes invalid return 0 to indicate that no path is available.
-- If the destination cell (m-1,n-1) is reached return 1 to indicate that a path is found.
-- If the current sub problem is already computed return the computed solution instead of recomputing them.
+- For each cell (row, col), we have two choices either we can go right or down.
+- After making a choice, recursively solve the smaller subproblems and store the solutions in an array.
+- If the row or col becomes invalid, then return 0 to indicate that no path is available.
+- If the destination cell (m-1,n-1) is reached, then return 1 to indicate that a path is found.
+- If the current subproblem is already computed, then return it instead of recomputing them.
 
 Time - O(m*n)
 Space - O(m*n)
 
 2. Bottom up
 - Create a memo array and initialize with base cases.
-- For every cell (i,j), I have two choices either I could have came from the left or top.
-- Use the memo to get the solution of the smaller sub problems.
-- Return the cell (m-1,n-1) which contains the solution for the main problem.
+- For each cell (i, j), we have two choices either we can go right or down.
+- Use the memo to get the solution of the smaller sub-problems.
+- Return the cell (m-1,n-1) that contains the solution for the main problem.
 
 Time - O(m*n)
 Space - O(m*n)
+
+m - number of rows
+n - number of columns
 
 */
 
@@ -52,9 +55,9 @@ const numberOfWaysToDestination = (m, n, row, col, memo) => {
 
 const uniquePaths = function (m, n) {
 
-    const memo = new Array(m + 1);
+    const memo = new Array(m);
     for (let i = 0; i < memo.length; i++) {
-        memo[i] = new Array(n + 1).fill(-1);
+        memo[i] = new Array(n).fill(-1);
     }
 
     return numberOfWaysToDestination(m, n, 0, 0, memo);
