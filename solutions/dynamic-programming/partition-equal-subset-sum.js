@@ -21,7 +21,7 @@ Space - O(n*(sum/2))
 - Create a memo array and initialize with base cases.
 - For each index, we have two choices either we pick or don't pick the current element.
 - Use the memo to get the solutions to the smaller sub-problems.
-- Return the cell (n-1,sum/2) which contains the solution for the main problem.
+- Return the cell (n,sum/2) which contains the solution for the main problem.
 
 Time - O(n*(sum/2))
 Space - O(n*(sum/2))
@@ -97,18 +97,13 @@ const canPartition2 = function (nums) {
         return false;
     }
 
-    const memo = new Array(nums.length);
+    const memo = new Array(nums.length + 1);
     for (let i = 0; i < memo.length; i++) {
         memo[i] = new Array((sum / 2) + 1).fill(-1);
     }
 
     for (let j = 0; j < memo[0].length; j++) {
-        if (nums[0] === j) {
-            memo[0][j] = 1;
-        }
-        else {
-            memo[0][j] = 0;
-        }
+        memo[0][j] = 0;
     }
 
     for (let i = 0; i < memo.length; i++) {
@@ -117,8 +112,8 @@ const canPartition2 = function (nums) {
 
     for (let i = 1; i < memo.length; i++) {
         for (let j = 1; j < memo[i].length; j++) {
-            if (nums[i] <= j) {
-                memo[i][j] = (memo[i - 1][j - nums[i]] || memo[i - 1][j]);
+            if (nums[i - 1] <= j) {
+                memo[i][j] = (memo[i - 1][j - nums[i - 1]] || memo[i - 1][j]);
             }
             else {
                 memo[i][j] = memo[i - 1][j];
@@ -126,7 +121,7 @@ const canPartition2 = function (nums) {
         }
     }
 
-    const result = memo[nums.length - 1][sum / 2];
+    const result = memo[nums.length][sum / 2];
 
     if (result === 1) {
         return true;
