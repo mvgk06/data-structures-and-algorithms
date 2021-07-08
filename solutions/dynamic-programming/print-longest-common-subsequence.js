@@ -5,7 +5,7 @@ https://leetcode.com/problems/longest-common-subsequence/
 
 Approach
 
-- Find the length of the LCS using the bottom-up approach.
+- Find the length of the longest common subseqeuence using the bottom-up approach.
 - Traverse the memo from the bottom and find the choices that were made.
 
 Time - O(n*m)

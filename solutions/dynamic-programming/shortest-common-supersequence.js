@@ -5,8 +5,8 @@ https://leetcode.com/problems/shortest-common-supersequence/
 
 Approach
 
-- Find the length of the LCS using bottom-up approach.
-- Traverse the memo from the bottom and find the SCS.
+- Find the length of the longest common subseqeuence using bottom-up approach.
+- Traverse the memo from the bottom and find the shortest common supersequence.
 
 Time - O(n*m)
 Space - O(n*m)

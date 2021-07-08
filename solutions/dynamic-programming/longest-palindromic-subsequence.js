@@ -7,21 +7,16 @@ Approach
 
 1. Top down
 - Use the given string as s1 and use the reverse of s1 as s2.
-- Use two pointers to compare each character of both the strings.
-- For each index, if the current character in both the strings is equal then move both the pointers else either one of the two pointers.
-- After making the choice, recursively solve the smaller sub-problems and store the solution in an array.
-- If any one of the pointers reaches the end of the string then return 0 to indicate that no longest palindromic subsequence exists.
-- If the current subproblem is already computed, then return it instead of computing them again.
+- The length of the longest palindromic subsequence is equal to the length of longest common subseqeuence of s1 and s2.
+- Find the length of the longest common subseqeuence for s1 and s2 using top-down approach.
 
 Time - O(n^2)
 Space - O(n^2)
 
 2. Bottom up
 - Use the given string as s1 and use the reverse of s1 as s2.
-- Create a memo array and initialize with base cases.
-- For each index, if the current character in both the strings is equal then move both the pointers else either one of the two pointers.
-- Use the memo to get the solutions of smaller sub-problems.
-- Return the cell (n, n) which contains the solution for the main problem.
+- The length of the longest palindromic subsequence is equal to the length of longest common subseqeuence of s1 and s2.
+- Find the longest common subseqeuence of s1 and s2 using bottom-up approach.
 
 Time - O(n^2)
 Space - O(n^2)
@@ -46,9 +41,9 @@ const longestPalindromeSubsequenceHelper = (s1, s2, i, j, memo) => {
         memo[i][j] = 1 + longestPalindromeSubsequenceHelper(s1, s2, i + 1, j + 1, memo);
     }
     else {
-        const reduceS1 = longestPalindromeSubsequenceHelper(s1, s2, i + 1, j, memo);
-        const reduceS2 = longestPalindromeSubsequenceHelper(s1, s2, i, j + 1, memo);
-        memo[i][j] = Math.max(reduceS1, reduceS2);
+        const choice1 = longestPalindromeSubsequenceHelper(s1, s2, i + 1, j, memo);
+        const choice2 = longestPalindromeSubsequenceHelper(s1, s2, i, j + 1, memo);
+        memo[i][j] = Math.max(choice1, choice2);
     }
 
     return memo[i][j];

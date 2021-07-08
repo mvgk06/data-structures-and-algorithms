@@ -5,8 +5,8 @@ https://leetcode.com/problems/shortest-common-supersequence/
 
 Approach
 
-- Find the length of the LCS using bottom-up approach.
-- The length of the SCS is (m-LCS)+(n-LCS)+LCS which is m+n-LCS.
+- Find the length of the longest common subseqeuence (LCS) using bottom-up approach.
+- The length of the shortest common supersequence is (m-LCS)+(n-LCS)+LCS which is m+n-LCS.
 
 Time - O(n*m)
 Space - O(n*m)
