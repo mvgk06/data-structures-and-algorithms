@@ -66,15 +66,20 @@ const solve = function (n) {
 
 const solve2 = function (n) {
     const memo = new Array(n + 1).fill(0);
-    memo[0] = 1;
-    memo[1] = 1;
-    memo[2] = 2;
-    memo[3] = 4;
+    memo[n] = 1;
 
-    for (let i = 4; i < memo.length; i++) {
-        memo[i] = memo[i - 1] + memo[i - 2] + memo[i - 3];
+    for (let i = n - 1; i >= 0; i--) {
+        if (i + 1 <= n && i + 2 <= n && i + 3 <= n) {
+            memo[i] = memo[i + 1] + memo[i + 2] + memo[i + 3];
+        }
+        else if (i + 1 <= n && i + 2 <= n) {
+            memo[i] = memo[i + 1] + memo[i + 2];
+        }
+        else if (i + 1 <= n) {
+            memo[i] = memo[i + 1];
+        }
     }
 
-    const result = memo[n];
+    const result = memo[0];
     console.log(result);
 };
