@@ -162,7 +162,8 @@ const solve3 = (n, profits, weights, capacity) => {
         }
         prevMemo = [...currMemo];
     }
-    return prevMemo[capacity];
+    const result = prevMemo[capacity];
+    console.log(result);
 };
 
 /* Bottom up (1 array) */
@@ -185,5 +186,6 @@ const solve4 = (n, profits, weights, capacity) => {
             }
         }
     }
-    return memo[capacity];
+    const result = memo[capacity];
+    console.log(result);
 };
