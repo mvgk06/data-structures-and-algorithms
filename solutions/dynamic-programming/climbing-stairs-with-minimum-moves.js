@@ -16,6 +16,9 @@ Approach
 - If out of bounds, then return a maximum value to indicate that last stair is not reachable.
 - If the current subproblem is already computed then return it instead of recomputing them.
 
+Time - O(n*k)
+Space - O(n)
+
 2. Bottom up
 - Create a memo and initialize with base cases.
 - Each state in the memo represents the minimum number of moves to reach the last stair from the current stair.  
