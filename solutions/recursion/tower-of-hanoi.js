@@ -1,5 +1,9 @@
 /*
 
+Problem
+
+https://www.pepcoding.com/resources/online-java-foundation/introduction-to-recursion/toh-official/ojquestion
+
 Approach
 - Recursively move n-1 plates from src to helper using dest.
 - Move the last plate from src to dest.
@@ -17,6 +21,10 @@ const movePlates = (n, src, dest, helper) => {
         return;
     }
     movePlates(n - 1, src, helper, dest);
-    console.log(`Move from ${src} to ${dest}`);
+    console.log(`${n}[${src} -> ${dest}]`);
     movePlates(n - 1, helper, dest, src);
+};
+
+const solve = (n, src, dest, helper) => {
+    movePlates(n, src, dest, helper);
 };
