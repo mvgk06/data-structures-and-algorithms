@@ -4,6 +4,8 @@ Problem
 
 https://www.pepcoding.com/resources/online-java-foundation/stacks-and-queues/balanced-brackets-official/ojquestion
 
+https://leetcode.com/problems/valid-parentheses/
+
 Approach
 - There are three cases when the brackets are invalid, the opening brackets are more than closing, the closing brackets are more than opening and the opening bracket 
 is not matching the closing bracket.
