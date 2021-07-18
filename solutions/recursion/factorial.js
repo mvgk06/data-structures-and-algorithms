@@ -22,8 +22,7 @@ const fact = (n) => {
     return n * fact(n - 1);
 };
 
-const solve = () => {
-    const n = parseInt(read());
+const solve = (n) => {
     const result = fact(n);
     console.log(result);
 };
