@@ -4,6 +4,8 @@ Problem
 
 https://www.pepcoding.com/resources/online-java-foundation/dynamic-programming-and-greedy/min-cost-maze-traversal-official/ojquestion
 
+https://leetcode.com/problems/minimum-path-sum
+
 Approach
 
 1. Top down
