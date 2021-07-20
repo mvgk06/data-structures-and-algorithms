@@ -42,7 +42,7 @@ const reverseList = function (head) {
 
 /* Iterative */
 
-const reverseList = function (head) {
+const reverseList2 = function (head) {
     let prev = null, curr = head;
     while (curr != null) {
         const next = curr.next;
