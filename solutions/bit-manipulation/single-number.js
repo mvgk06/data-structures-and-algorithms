@@ -1,6 +1,7 @@
 /*
 
 Problem
+
 https://leetcode.com/problems/single-number/
 
 Approach
@@ -25,7 +26,6 @@ n - number of elements
 /* Hashmap */
 
 const singleNumber = function (arr) {
-
     const map = new Map();
     for (let i = 0; i < arr.length; i++) {
         if (map.has(arr[i])) {
@@ -35,23 +35,19 @@ const singleNumber = function (arr) {
             map.set(arr[i], 1);
         }
     }
-
     for (let key of map.keys()) {
         if (map.get(key) === 1) {
             return key;
         }
     }
-
 };
 
 /* Bit manipulation */
 
 const singleNumber2 = function (arr) {
-
     let result = 0;
     for (let i = 0; i < arr.length; i++) {
         result ^= arr[i];
     }
-
     return result;
 };
