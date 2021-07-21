@@ -7,8 +7,8 @@ https://leetcode.com/problems/valid-anagram/
 Approach
 
 1. Sorting
-- Sort the elements.
-- If all the characters match, then return true.
+- Sort both the strings.
+- If both the strings match, then return true.
 - Else return false.
 
 Time - O(n*log(n))
@@ -21,6 +21,8 @@ Space - O(1)
 
 Time - O(n)
 Space - O(n)
+
+n - size of the string
 
 */
 
@@ -36,18 +38,7 @@ const sortInc = (a, b) => {
 const isAnagram = function (s, t) {
     s = s.split("").sort(sortInc).join("");
     t = t.split("").sort(sortInc).join("");
-    let i = 0, j = 0;
-    while (i < s.length && j < t.length) {
-        if (s[i] != t[j]) {
-            return false;
-        }
-        i++;
-        j++;
-    }
-    if (i < s.length || j < t.length) {
-        return false;
-    }
-    return true;
+    return s === t;
 };
 
 /* Hashing */
