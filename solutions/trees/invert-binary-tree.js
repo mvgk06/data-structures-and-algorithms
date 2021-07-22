@@ -44,15 +44,15 @@ const invertTree = function (root) {
 
 /* BFS */
 
-const Deque = require("../../data-structures/deque.js");
+const Queue = require("../../data-structures/queue.js");
 
 const invertTree2 = function (root) {
   if (root === null) {
     return null;
   }
 
-  const queue = new Deque();
-  queue.push(root);
+  const queue = new Queue();
+  queue.enque(root);
 
   while (queue.getSize() > 0) {
 
@@ -63,11 +63,11 @@ const invertTree2 = function (root) {
     curr.right = left;
 
     if (right != null) {
-      queue.push(right);
+      queue.enque(right);
     }
 
     if (left != null) {
-      queue.push(left);
+      queue.enque(left);
     }
   }
 

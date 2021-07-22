@@ -47,12 +47,12 @@ const isSameTree = function (p, q) {
 
 /* BFS */
 
-const Deque = require("../../data-structures/deque.js");
+const Queue = require("../../data-structures/queue.js");
 
 const isSameTree2 = function (p, q) {
-    const queue = new Deque();
-    queue.push(p);
-    queue.push(q);
+    const queue = new Queue();
+    queue.enque(p);
+    queue.enque(q);
     while (queue.getSize() > 0) {
         const curr1 = queue.getFront();
         queue.deque();
@@ -64,10 +64,10 @@ const isSameTree2 = function (p, q) {
         else if (curr1 === null || curr2 === null || curr1.val != curr2.val) {
             return false;
         }
-        queue.push(curr1.left);
-        queue.push(curr2.left);
-        queue.push(curr1.right);
-        queue.push(curr2.right);
+        queue.enque(curr1.left);
+        queue.enque(curr2.left);
+        queue.enque(curr1.right);
+        queue.enque(curr2.right);
     }
     return true;
 };
