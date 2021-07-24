@@ -1,42 +1,78 @@
 /*
 
-DFS
+Problem
+
+https://leetcode.com/problems/employee-importance/
+
+Approach
+
+1. DFS
+- Construct the graph.
+- Perform dfs and add the importance of all the subordinates of the given employee id.
+- Return the result.
 
 Time - O(n+e)
-Space - O(n)
+Space - O(n+e)
+
+2. BFS
+- Construct the graph.
+- Perform bfs and add the importance of all the subordinates of the given employee id.
+- Return the result.
+
+Time - O(n+e)
+Space - O(n+e)
+
+n - number of nodes
+e - number of edges
 
 */
 
-const GetImportance = function(employees, id) {
-    
-    const visited=new Array(employees.length);
-    visited.fill(false);
-    
-    const empMap=new Map();
-    
-    for(let i=0;i<employees.length;i++){
-        empMap.set(employees[i].id,employees[i]);
-    }
-    
-    let result=0;
-    
-    const dfs=(curr)=>{
+/* DFS */
 
-        if(visited[curr]){
-            return;
-        }
-
-        visited[curr]=true;
-        result+=empMap.get(curr).importance;
-        
-        for(let i=0;i<empMap.get(curr).subordinates.length;i++){
-            if(!visited[empMap.get(curr).subordinates[i]]){
-                dfs(empMap.get(curr).subordinates[i]);
-            }
+const GetImportance = function (emp, id) {
+    const graph = new Array(id + 1);
+    for (let i = 0; i < graph.length; i++) {
+        if (emp[i]) {
+            graph[emp[i].id] = [emp[i].importance, emp[i].subordinates];
         }
     }
+    let result = 0;
+    const getImportanceHelper = (curr) => {
+        result += graph[curr][0];
+        for (const adj of graph[curr][1]) {
+            getImportanceHelper(adj);
+        }
+    };
+    getImportanceHelper(id);
+    return result;
+};
 
-    dfs(id);
-    
+/* BFS */
+
+const Queue = require("../../data-structures/queue.js");
+
+const getImportanceHelper2 = (graph, src) => {
+    const queue = new Queue();
+    queue.enque(src);
+    let result = 0;
+    while (queue.getSize() > 0) {
+        const curr = queue.getFront();
+        queue.deque();
+        result += graph[curr][0];
+        for (const adj of graph[curr][1]) {
+            queue.enque(adj);
+        }
+    }
+    return result;
+};
+
+const GetImportance2 = function (emp, id) {
+    const graph = new Array(id + 1);
+    for (let i = 0; i < graph.length; i++) {
+        if (emp[i]) {
+            graph[emp[i].id] = [emp[i].importance, emp[i].subordinates];
+        }
+    }
+    const result = getImportanceHelper2(graph, id);
     return result;
 };
