@@ -1,6 +1,7 @@
 /*
 
 Problem
+
 https://leetcode.com/problems/first-bad-version/
 
 Approach
@@ -12,14 +13,13 @@ Approach
 Time - O(log(n))
 Space - O(1)
 
+n - number of elements
+
 */
 
 const solution = function (isBadVersion) {
-
     return function (n) {
-
         let start = 0, end = n, mid, result = -1;
-
         while (start <= end) {
             mid = Math.floor(start + (end - start) / 2);
             if (isBadVersion(mid)) {
