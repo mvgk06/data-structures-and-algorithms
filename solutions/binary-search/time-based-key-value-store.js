@@ -1,6 +1,7 @@
 /*
 
 Problem
+
 https://leetcode.com/problems/time-based-key-value-store/
 
 Approach
@@ -11,8 +12,15 @@ Approach
 - If the mid has a timestamp less than or equal to the given timestamp then mark it as potential result and search on the right subarray.
 - Else search on the left subarray.
 
-Time (for 1 operation) - Set O(1) | Get O(log(n))
+Set
+Time - O(1)
 Space - O(n)
+
+Get
+Time - O(log(n))
+Space - O(n)
+
+n - number of elements
 
 */
 
@@ -29,11 +37,9 @@ TimeMap.prototype.set = function (key, value, timestamp) {
 
 TimeMap.prototype.get = function (key, timestamp) {
     const arr = this.store[key];
-
     if (!arr) {
         return "";
     }
-
     let start = 0, end = arr.length - 1, result = "";
     while (start <= end) {
         const mid = Math.floor(start + (end - start) / 2);
@@ -45,6 +51,5 @@ TimeMap.prototype.get = function (key, timestamp) {
             end = mid - 1;
         }
     }
-
     return result;
 };
