@@ -1,6 +1,7 @@
 /* 
 
 Problem
+
 https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/
 
 Approach
@@ -12,12 +13,13 @@ Approach
 Time - O(nlog(sum))
 Space - O(1)
 
+n - number of elements
+sum - total weight
+
 */
 
 const canShipWithinDays = (weights, maxDays, maxCapacity) => {
-
     let currCapacity = 0, daysPassed = 1, i = 0;
-
     while (i < weights.length) {
         if (weights[i] > maxCapacity) {
             return false;
@@ -33,7 +35,6 @@ const canShipWithinDays = (weights, maxDays, maxCapacity) => {
             }
         }
     }
-
     if (daysPassed <= maxDays) {
         return true;
     }
@@ -41,16 +42,12 @@ const canShipWithinDays = (weights, maxDays, maxCapacity) => {
 };
 
 const shipWithinDays = function (weights, maxDays) {
-
     let minWeight = Number.MAX_VALUE, totalWeight = 0;
-
     for (let i = 0; i < weights.length; i++) {
         minWeight = Math.min(minWeight, weights[i]);
         totalWeight += weights[i];
     }
-
     let start = minWeight, end = totalWeight, mid, result = -1;
-
     while (start <= end) {
         mid = Math.floor(start + (end - start) / 2);
         if (canShipWithinDays(weights, maxDays, mid)) {
@@ -61,6 +58,5 @@ const shipWithinDays = function (weights, maxDays) {
             start = mid + 1;
         }
     }
-
     return result;
 };
