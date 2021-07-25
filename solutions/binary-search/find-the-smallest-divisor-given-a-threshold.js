@@ -1,6 +1,7 @@
 /*
 
 Problem
+
 https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/
 
 Approach
@@ -11,33 +12,28 @@ Approach
 Time - O(nlog(max))
 Space - O(1)
 
+n - number of elements
+max - maximum element
+
 */
 
 const isValidDivisor = (nums, threshold, curr) => {
-
     let sum = 0;
-
     for (let i = 0; i < nums.length; i++) {
         sum += Math.ceil(nums[i] / curr);
         if (sum > threshold) {
             return false;
         }
     }
-
     return true;
-
 };
 
 const smallestDivisor = function (nums, threshold) {
-
     let max = -Number.MAX_VALUE;
-
     for (let i = 0; i < nums.length; i++) {
         max = Math.max(max, nums[i]);
     }
-
     let start = 1, end = max, mid, result = -1;
-
     while (start <= end) {
         mid = Math.floor(start + (end - start) / 2);
         if (isValidDivisor(nums, threshold, mid)) {
@@ -48,6 +44,5 @@ const smallestDivisor = function (nums, threshold) {
             start = mid + 1;
         }
     }
-
     return result;
 };
