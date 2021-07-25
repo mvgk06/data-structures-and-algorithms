@@ -1,6 +1,7 @@
 /*
 
 Problem
+
 https://leetcode.com/problems/peak-index-in-a-mountain-array/
 
 Approach
@@ -12,12 +13,12 @@ Approach
 Time - O(log(n))
 Space - O(1)
 
+n - number of elements
+
 */
 
 const peakIndexInMountainArray = function (arr) {
-
     let start = 0, end = arr.length - 1, mid;
-
     while (start <= end) {
         mid = Math.floor(start + (end - start) / 2);
         if (mid === 0) {
@@ -44,6 +45,5 @@ const peakIndexInMountainArray = function (arr) {
             }
         }
     }
-
     return -1;
 };
