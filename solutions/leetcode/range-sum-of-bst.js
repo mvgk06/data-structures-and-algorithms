@@ -12,10 +12,9 @@ Approach
 - If the root is null, then return 0.
 
 Time - O(n)
-Space - O(h)
+Space - O(n)
 
 n - number of nodes
-h - height of the tree
 
 */
 

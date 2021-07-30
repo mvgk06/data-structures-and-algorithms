@@ -13,7 +13,7 @@ Approach
 - If the root is null then return null.
 
 Time - O(n)
-Space - O(h)
+Space - O(n)
 
 2. BFS
 - Create a queue and push the root.
@@ -22,11 +22,9 @@ Space - O(h)
 - Return the root.
 
 Time - O(n)
-Space - O(w)
+Space - O(n)
 
 n - number of nodes
-h - height of the tree
-w - width of the tree
 
 */
 

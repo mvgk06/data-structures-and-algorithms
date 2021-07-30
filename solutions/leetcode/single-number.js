@@ -6,7 +6,7 @@ https://leetcode.com/problems/single-number/
 
 Approach
 
-1. Hashmap
+1. Hashing
 - Store the occurrences of the numbers using a map.
 - If the frequency of a number is 1, then return it.
 
@@ -23,7 +23,7 @@ n - number of elements
 
 */
 
-/* Hashmap */
+/* Hashing */
 
 const singleNumber = function (arr) {
     const map = new Map();

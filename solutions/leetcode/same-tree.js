@@ -12,7 +12,7 @@ Approach
 - If either of the nodes are null or not equal, then return false.
 
 Time - O(n)
-Space - O(h)
+Space - O(n)
 
 2. BFS
 - Push both the nodes into the queue.
@@ -23,11 +23,9 @@ Space - O(h)
 - Return true.
 
 Time - O(n)
-Space - O(w)
+Space - O(n)
 
 n - number of nodes
-h - height of the tree
-w - width of the tree
 
 */
 

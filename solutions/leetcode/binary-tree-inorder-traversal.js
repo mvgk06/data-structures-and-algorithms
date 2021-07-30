@@ -13,7 +13,7 @@ Approach
 - If the root is null return.
 
 Time - O(n)
-Space - O(h)
+Space - O(n)
 
 2. Iterative
 - Create a stack, and push the root along with 1 (it indicates the number of times we have visited the node).
@@ -25,10 +25,9 @@ Space - O(h)
 - Return the result.
 
 Time - O(n)
-Space - O(h)
+Space - O(n)
 
 n - number of nodes
-h - height of the tree
 
 */
 
