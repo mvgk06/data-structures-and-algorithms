@@ -2,8 +2,6 @@
 
 Problem
 
-https://www.pepcoding.com/resources/online-java-foundation/dynamic-programming-and-greedy/fibonacci-dp-official/ojquestion
-
 https://leetcode.com/problems/fibonacci-number/
 
 Approach
@@ -43,54 +41,47 @@ n - number
 
 /* Top down */
 
-const fib = (n, memo) => {
+const fibHelper = (n, memo) => {
     if (n <= 1) {
         return n;
     }
-
     if (memo[n] != -1) {
         return memo[n];
     }
-
-    const first = fib(n - 1, memo);
-    const second = fib(n - 2, memo);
+    const first = fibHelper(n - 1, memo);
+    const second = fibHelper(n - 2, memo);
     memo[n] = first + second;
     return memo[n];
 };
 
-const solve = function (n) {
+const fib = function (n) {
     const memo = new Array(n + 1).fill(-1);
-    return fib(n, memo);
+    return fibHelper(n, memo);
 };
 
 /* Bottom up */
 
-const solve2 = function (n) {
+const fib2 = function (n) {
     const memo = new Array(n + 1).fill(-1);
     memo[0] = 0;
     memo[1] = 1;
-
     for (let i = 2; i < memo.length; i++) {
         memo[i] = memo[i - 1] + memo[i - 2];
     }
-
     return memo[n];
 };
 
 /* Bottom up (2 elements) */
 
-const solve3 = function (n) {
+const fib3 = function (n) {
     let first = 0, second = 1;
-
     if (n === 0) {
         return first;
     }
-
     for (let i = 2; i <= n; i++) {
         const third = first + second;
         first = second;
         second = third;
     }
-
     return second;
 };

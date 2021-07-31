@@ -2,15 +2,13 @@
 
 Problem
 
-https://www.pepcoding.com/resources/online-java-foundation/dynamic-programming-and-greedy/climb-stairs-official/ojquestion
-
 https://leetcode.com/problems/climbing-stairs/
 
 Approach
 
 1. Top down
 - Each state represents the number of ways to reach the last stair from current stair.
-- For each stair, we have three choices either we can go to 1st, 2nd or the 3rd stair.
+- For each stair, we have two choices either we can go to 1st or the 2nd stair.
 - After making the choice, recursively solve the smaller sub-problems and store the solutions in the memo.
 - If the last stair is reached, then return 1 to indicate that we have found a way.
 - If out of bounds, then return 0 to indicate that last stair is not reachable.
@@ -22,9 +20,9 @@ Space - O(n)
 2. Bottom up
 - Create a memo array and initialize with base cases.
 - Each state represents the number of ways to reach the last stair from current stair.
-- For each stair, we have three choices either we can go to 1st, 2nd or the 3rd stair.
+- For each stair, we have two choices either we can go to 1st or the 2nd stair.
 - Use the memo to get the solution of the smaller sub-problems.
-- Return the last element of the memo which is the number of ways to reach the last stair from 0.
+- Return the last element of the memo which is the number of ways to reach the last stair.
 
 Time - O(n)
 Space - O(n)
@@ -35,51 +33,39 @@ n - number of stairs
 
 /* Top down */
 
-const waysToClimb = (n, currStair, memo) => {
-
+const climbStairsHelper = (n, currStair, memo) => {
     if (currStair === n) {
         return 1;
     }
-
     if (currStair > n) {
         return 0;
     }
-
     if (memo[currStair] != -1) {
         return memo[currStair];
     }
-
-    const first = waysToClimb(n, currStair + 1, memo);
-    const second = waysToClimb(n, currStair + 2, memo);
-    const third = waysToClimb(n, currStair + 3, memo);
-    memo[currStair] = first + second + third;
+    const firstStair = climbStairsHelper(n, currStair + 1, memo);
+    const secondStair = climbStairsHelper(n, currStair + 2, memo);
+    memo[currStair] = firstStair + secondStair;
     return memo[currStair];
 };
 
-const solve = function (n) {
+const climbStairs = function (n) {
     const memo = new Array(n).fill(-1);
-    const result = waysToClimb(n, 0, memo);
-    console.log(result);
+    return climbStairsHelper(n, 0, memo);
 };
 
 /* Bottom up */
 
-const solve2 = function (n) {
+const climbStairs = function (n) {
     const memo = new Array(n + 1).fill(0);
     memo[n] = 1;
-
     for (let i = n - 1; i >= 0; i--) {
-        if (i + 1 <= n && i + 2 <= n && i + 3 <= n) {
-            memo[i] = memo[i + 1] + memo[i + 2] + memo[i + 3];
-        }
-        else if (i + 1 <= n && i + 2 <= n) {
+        if (i + 1 <= n && i + 2 <= n) {
             memo[i] = memo[i + 1] + memo[i + 2];
         }
         else if (i + 1 <= n) {
             memo[i] = memo[i + 1];
         }
     }
-
-    const result = memo[0];
-    console.log(result);
+    return memo[0];
 };
