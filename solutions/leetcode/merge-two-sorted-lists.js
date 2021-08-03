@@ -26,40 +26,26 @@ const mergeTwoLists = function (l1, l2) {
     if (l2 === null) {
         return l1;
     }
-    let left = l1, right = l2, head = null, tail = null, isFirstNode = true;
+    let left = l1, right = l2, dummy = new ListNode(0), curr = dummy;
     while (left != null && right != null) {
         if (left.val <= right.val) {
-            if (isFirstNode) {
-                head = left;
-                tail = left;
-                isFirstNode = false;
-            }
-            else {
-                tail.next = left;
-                tail = left;
-            }
+            curr.next = left;
+            curr = curr.next;
             left = left.next;
         }
         else {
-            if (isFirstNode) {
-                head = right;
-                tail = right;
-                isFirstNode = false;
-            }
-            else {
-                tail.next = right;
-                tail = right;
-            }
+            curr.next = right;
+            curr = curr.next;
             right = right.next;
         }
     }
     if (left != null) {
-        tail.next = left;
-        tail = left;
+        curr.next = left;
+        curr = curr.next;
     }
     else if (right != null) {
-        tail.next = right;
-        tail = right;
+        curr.next = right;
+        curr = curr.next;
     }
-    return head;
+    return dummy.next;
 };
