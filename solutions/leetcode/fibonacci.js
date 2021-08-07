@@ -26,7 +26,7 @@ Space - O(n)
 Time - O(n)
 Space - O(n)
 
-3. Bottom up (2 elements)
+3. Bottom up (space optimized)
 - To compute the current subproblem we only need the solution of the previous two sub-problems.
 - So keep two variables to store the solutions of the previous two sub-problems.
 - Initialize the variables with the base case.
@@ -71,7 +71,7 @@ const fib2 = function (n) {
     return memo[n];
 };
 
-/* Bottom up (2 elements) */
+/* Bottom up (space optimized) */
 
 const fib3 = function (n) {
     let first = 0, second = 1;

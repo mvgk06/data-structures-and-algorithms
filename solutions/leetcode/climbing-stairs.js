@@ -56,16 +56,12 @@ const climbStairs = function (n) {
 
 /* Bottom up */
 
-const climbStairs = function (n) {
+const climbStairs2 = function (n) {
     const memo = new Array(n + 1).fill(0);
     memo[n] = 1;
-    for (let i = n - 1; i >= 0; i--) {
-        if (i + 1 <= n && i + 2 <= n) {
-            memo[i] = memo[i + 1] + memo[i + 2];
-        }
-        else if (i + 1 <= n) {
-            memo[i] = memo[i + 1];
-        }
+    memo[n - 1] = 1;
+    for (let i = n - 2; i >= 0; i--) {
+        memo[i] = memo[i + 1] + memo[i + 2];
     }
     return memo[0];
 };
