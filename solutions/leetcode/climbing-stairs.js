@@ -27,6 +27,15 @@ Space - O(n)
 Time - O(n)
 Space - O(n)
 
+3. Bottom up (space optimized)
+- To compute the current state, we need only the previous two states.
+- Use two variables first, second to keep track of the previous two states.
+- Compute the solution for the current state and update the previous states.
+- Return the final state that contains the solution for the main problem.
+
+Time - O(n)
+Space - O(1)
+
 n - number of stairs
 
 */
@@ -64,4 +73,16 @@ const climbStairs2 = function (n) {
         memo[i] = memo[i + 1] + memo[i + 2];
     }
     return memo[0];
+};
+
+/* Bottom up (space optimized) */
+
+const climbStairs3 = function (n) {
+    let first = 1, second = 1;
+    for (let i = n - 2; i >= 0; i--) {
+        const curr = first + second;
+        first = second;
+        second = curr;
+    }
+    return second;
 };
