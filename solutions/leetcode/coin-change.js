@@ -36,6 +36,13 @@ Space - O(n*amount)
 Time - O(n*amount)
 Space - O(amount)
 
+4. Optimal path
+- Traverse the memo backwards from the final state to the base state.
+- Based on the transitions compute the optimal path.
+
+Time - O(n)
+Space - O(1)
+
 n - number of elements
 amount - total amount
 
@@ -130,4 +137,21 @@ const coinChange3 = function (coins, amount) {
         return result;
     }
     return -1;
+};
+
+/* Optimal path */
+
+const optimalPath = (coins, amount, memo) => {
+    const path = [];
+    let i = coins.length, j = amount;
+    while (i > 0 && j > 0) {
+        if (coins[i - 1] <= j && 1 + memo[i][j - coins[i - 1]] < memo[i - 1][j]) {
+            path.push(i - 1);
+            j -= coins[i - 1];
+        }
+        else {
+            i -= 1;
+        }
+    }
+    return path.reverse();
 };
