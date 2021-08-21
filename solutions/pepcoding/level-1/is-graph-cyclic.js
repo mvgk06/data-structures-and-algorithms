@@ -19,11 +19,11 @@ Space - O(n+e)
 
 2. BFS
 - For each unvisited node perform bfs to visit the nodes.
-- Mark the current node as visited and enque it into the queue.
-- While the queue is not empty, deque a node.
+- Mark the current node as visited and enque it along with its parent (-1) as a pair into the queue.
+- While the queue is not empty, deque a pair containing a node and its parent.
 - Visit all the adjacent nodes of the current node.
-- If the adjacent node is not yet visited, mark it as visited, enque it into the queue and update the parent of adjacent as current node.
-- Else if it is visited and it is not equal to the parent node, then return true.
+- If the adjacent node is not yet visited, mark it as visited, enque it along with its parent (current node) as a pair into the queue.
+- Else if the adjacent node is visited and it is not equal to the parent node, then return true.
 - Else return false.
 
 Time - O(n+e)
@@ -71,18 +71,17 @@ const solve = (n, graph) => {
 
 const Queue = require("../../../data-structures/queue");
 
-const bfs = (graph, visited, curr, parent) => {
+const bfs = (graph, visited, curr) => {
     const queue = new Queue();
     visited[curr] = true;
-    queue.enque(curr);
+    queue.enque([curr, -1]);
     while (queue.getSize() > 0) {
-        const curr = queue.getFront();
+        const [curr, parent] = queue.getFront();
         queue.deque();
         for (const adjacent of graph[curr]) {
             if (!visited[adjacent]) {
                 visited[adjacent] = true;
-                queue.enque(adjacent);
-                parent[adjacent] = curr;
+                queue.enque([adjacent, curr]);
             }
             else if (visited[adjacent] && adjacent != parent[curr]) {
                 return true;
@@ -94,16 +93,14 @@ const bfs = (graph, visited, curr, parent) => {
 
 const solve2 = (n, graph) => {
     const visited = new Array(n).fill(false);
-    const parent = new Array(n).fill(-1);
     let result = false;
     for (let i = 0; i < n; i++) {
         if (!visited[i]) {
-            const isCyclic = bfs(graph, visited, i, parent);
+            const isCyclic = bfs(graph, visited, i);
             if (isCyclic) {
                 result = true;
                 break;
             }
-            parent.fill(-1);
         }
     }
     console.log(result);
