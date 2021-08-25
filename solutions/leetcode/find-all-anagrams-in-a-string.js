@@ -14,8 +14,8 @@ Space - O(1)
 
 2. Sliding window
 - Use two pointers i,j to represent the window.
-- Add the current element into the window.
-- If the size of the window is equal to string 2 and if the window is an anagram then push i into the result and shrink the window.
+- Include the current element in the window.
+- If the condition is valid, update the result and shrink the window.
 - Expand the window.
 
 Time - O(n+m)

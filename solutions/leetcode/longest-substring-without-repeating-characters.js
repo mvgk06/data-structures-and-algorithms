@@ -14,9 +14,9 @@ Space - O(n)
 
 2. Sliding window
 - Use two pointers i,j to represent the window.
-- Shrink the window until the window contains unique characters.
-- Add the current element into the window.
-- Update the result and expand the window.
+- Shrink the window as long as the condition is not valid.
+- Include the current element in the window and update the result.
+- Expand the window.
 
 Time - O(n)
 Space - O(n)
