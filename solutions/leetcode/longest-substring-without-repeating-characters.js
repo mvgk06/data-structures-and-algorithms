@@ -13,9 +13,11 @@ Time - O(n^2)
 Space - O(n)
 
 2. Sliding window
-- Use two pointers i,j to represent the window.
-- Shrink the window as long as the condition is not valid.
-- Include the current element in the window and update the result.
+- The window is valid when it contains unique elements.
+- Use two pointers start, end to represent the start and the end of the window.
+- Use a set to check if the window is valid or not.
+- Shrink the window as long as it is invalid and update the set.
+- Include the current element in the set and update the result.
 - Expand the window.
 
 Time - O(n)
@@ -49,17 +51,17 @@ const lengthOfLongestSubstring = function (s) {
 
 const lengthOfLongestSubstring = function (s) {
     const set = new Set();
-    let i = 0, j = 0, result = 0;
-    while (j < s.length) {
-        while (i < s.length && set.has(s[j])) {
-            if (set.has(s[i])) {
-                set.delete(s[i]);
+    let start = 0, end = 0, result = 0;
+    while (end < s.length) {
+        while (start < s.length && set.has(s[end])) {
+            if (set.has(s[start])) {
+                set.delete(s[start]);
             }
-            i++;
+            start++;
         }
-        set.add(s[j]);
-        result = Math.max(result, j - i + 1);
-        j++;
+        set.add(s[end]);
+        result = Math.max(result, end - start + 1);
+        end++;
     }
     return result;
 };

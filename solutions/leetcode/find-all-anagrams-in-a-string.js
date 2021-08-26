@@ -13,9 +13,11 @@ Time - O(n^2)
 Space - O(1)
 
 2. Sliding window
-- Use two pointers i,j to represent the window.
-- Include the current element in the window.
-- If the condition is valid, update the result and shrink the window.
+- The window is valid if it's an anagram of the given string.
+- Use two pointers start, end to represent the start and the end of the window.
+- Use two frequency arrays to check if the window is valid or not. 
+- Update the frequency of current element.
+- If the window is valid, then update the result, frequency array and shrink the window.
 - Expand the window.
 
 Time - O(n+m)
@@ -73,21 +75,21 @@ const findAnagrams2 = function (s, p) {
         const id = p.charCodeAt(i) - 97;
         pCount[id] += 1;
     }
-    let i = 0, j = 0;
-    while (j < s.length) {
-        const id = s.charCodeAt(j) - 97;
+    let start = 0, end = 0;
+    while (end < s.length) {
+        const id = s.charCodeAt(end) - 97;
         sCount[id] += 1;
-        if (j - i + 1 === p.length) {
+        if (end - start + 1 === p.length) {
             if (isAnagram2(sCount, pCount)) {
-                result.push(i);
+                result.push(start);
             }
-            const id = s.charCodeAt(i) - 97;
+            const id = s.charCodeAt(start) - 97;
             if (sCount[id] > 0) {
                 sCount[id] -= 1;
             }
-            i++;
+            start++;
         }
-        j++;
+        end++;
     }
     return result;
 };

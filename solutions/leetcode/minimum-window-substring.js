@@ -13,9 +13,11 @@ Time - O(n^3)
 Space - O(n+m)
 
 2. Sliding window
-- Use two pointers i,j to represent the window.
-- Include the current element in the window.
-- Shrink the window as long as the condition is valid and update the result.
+- The window is valid when every character in string 2 is included in the window or in other words the frequency of the characters in the window should be greater than or equal to that of string 2.
+- Use two pointers start, end to represent the start and the end of the window.
+- Use two maps to check if the window is valid or not.
+- Update the frequency of the current element.
+- Shrink the window as long as it is valid, update the result and the map.
 - Expand the window.
 
 Time - O(n+m)
@@ -30,7 +32,7 @@ m - size of string 2
 
 const isValid = (sMap, tMap) => {
     for (const key of tMap.keys()) {
-        if (!sMap.get(key) || tMap.get(key) > sMap.get(key)) {
+        if (!sMap.get(key) || sMap.get(key) < tMap.get(key)) {
             return false;
         }
     }
@@ -71,7 +73,7 @@ const minWindow = function (s, t) {
 
 const isValid2 = (sMap, tMap) => {
     for (const key of tMap.keys()) {
-        if (!sMap.get(key) || tMap.get(key) > sMap.get(key)) {
+        if (!sMap.get(key) || sMap.get(key) < tMap.get(key)) {
             return false;
         }
     }
@@ -89,31 +91,31 @@ const minWindow = function (s, t) {
         }
     }
     const sMap = new Map();
-    let i = 0, j = 0, result = "", size = Number.MAX_VALUE;
-    while (j < s.length) {
-        if (sMap.has(s[j])) {
-            sMap.set(s[j], sMap.get(s[j]) + 1);
+    let start = 0, end = 0, result = "", size = Number.MAX_VALUE;
+    while (end < s.length) {
+        if (sMap.has(s[end])) {
+            sMap.set(s[end], sMap.get(s[end]) + 1);
         }
         else {
-            sMap.set(s[j], 1);
+            sMap.set(s[end], 1);
         }
-        while (i < s.length && j - i + 1 >= t.length && isValid2(sMap, tMap)) {
-            if (j - i + 1 <= size) {
-                size = j - i + 1;
-                result = s.substring(i, j + 1);
+        while (start < s.length && end - start + 1 >= t.length && isValid2(sMap, tMap)) {
+            if (end - start + 1 <= size) {
+                size = end - start + 1;
+                result = s.substring(start, end + 1);
             }
-            if (sMap.has(s[i])) {
-                const count = sMap.get(s[i]);
+            if (sMap.has(s[start])) {
+                const count = sMap.get(s[start]);
                 if (count === 1) {
-                    sMap.delete(s[i]);
+                    sMap.delete(s[start]);
                 }
                 else {
-                    sMap.set(s[i], count - 1);
+                    sMap.set(s[start], count - 1);
                 }
             }
-            i++;
+            start++;
         }
-        j++;
+        end++;
     }
     return result;
 };
