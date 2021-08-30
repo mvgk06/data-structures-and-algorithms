@@ -12,7 +12,6 @@ class Deque {
     this.rear = null;
     this.size = 0;
   }
-
   push(value) {
     const element = new Node(value);
     if (this.size === 0) {
@@ -25,17 +24,15 @@ class Deque {
     }
     this.size++;
   }
-
   pop() {
     if (this.size !== 0) {
       this.rear = this.rear.prev;
-      if(this.rear){
+      if (this.rear) {
         this.rear.next = null;
       }
       this.size--;
     }
   }
-
   enque(value) {
     const element = new Node(value);
     if (this.size === 0) {
@@ -48,35 +45,30 @@ class Deque {
     }
     this.size++;
   }
-
   deque() {
     if (this.size !== 0) {
       this.front = this.front.next;
-      if(this.front){
+      if (this.front) {
         this.front.prev = null;
       }
       this.size--;
     }
   }
-
   getFront() {
-    return this.front ? this.front.value:null;
+    return this.front ? this.front.value : null;
   }
-
   getRear() {
-    return this.rear ? this.rear.value:null;
+    return this.rear ? this.rear.value : null;
   }
-
   getSize() {
     return this.size;
   }
-
-  print() {
-    const output=[];
-    for (let curr = this.front; curr != null; curr = curr.next) {
-      output.push(curr.value);
+  * generator() {
+    let curr = this.front;
+    while (curr != null) {
+      yield curr.value;
+      curr = curr.next;
     }
-    console.log(output);
   }
 }
 
