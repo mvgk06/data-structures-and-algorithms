@@ -11,7 +11,7 @@ Approach
 - For each cell we have to sum the values of top and diagonal cells.
 - Recursively solve the smaller sub-problems and store the solution in the memo.
 - If i or j becomes negative, then return 0.
-- If the i is 0 or i is equal the j then return 1.
+- If j is equal to 0 or i then return 1.
 - If the current subproblem is already solved, then return it instead of recomputing them.
 - Recursivley compute the pascal triangle from the last row.
 
@@ -37,7 +37,7 @@ const generateHelper = (memo, i, j) => {
     if (i < 0 || j < 0) {
         return 0;
     }
-    if (i === 0 || i === j) {
+    if (j === 0 || j === i) {
         memo[i][j] = 1;
         return memo[i][j];
     }
@@ -56,8 +56,8 @@ const generate = function (n) {
         memo[i] = new Array(i + 1).fill(-1);
     }
     memo[0][0] = 1;
-    for (let i = 0; i < memo[n - 1].length; i++) {
-        generateHelper(memo, n - 1, i);
+    for (let j = 0; j < n; j++) {
+        generateHelper(memo, n - 1, j);
     }
     return memo;
 };
