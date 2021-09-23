@@ -49,7 +49,7 @@ const diameterOfBinaryTree = function (root) {
 
 /* Optimized */
 
-const diameterOfBinaryTree = function (root) {
+const diameterOfBinaryTree2 = function (root) {
     let result = 0;
     const longestPath = (root) => {
         if (root === null) {
