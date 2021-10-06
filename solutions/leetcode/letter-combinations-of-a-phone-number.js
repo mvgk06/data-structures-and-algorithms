@@ -8,8 +8,8 @@ Approach
 
 1. Recursive
 - For each digit, we have at most 4 choices where we can pick any of the characters that maps to that digit.
-- Recursively solve the smaller sub problems.
-- Backtrack, undo the choice that was made and continue with other choices.
+- After making a choice, recursively solve for the smaller sub problems.
+- Backtrack, undo the choice that was made (this will be taken care by recursion as strings are passed by value) and try other choices.
 - If the end of the digits is reached, then add the current combination to the result and return.
 
 Time - O(4^n)
@@ -28,15 +28,14 @@ n - number of digits
 
 /* Recursive */
 
-const letterCombinationsHelper = (digits, map, result, index, curr) => {
-    if (index === digits.length) {
+const letterCombinationsHelper = (digits, map, result, i, curr) => {
+    if (i === digits.length) {
         result.push(curr);
         return;
     }
-
-    const string = map[digits[index]];
-    for (let i = 0; i < string.length; i++) {
-        letterCombinationsHelper(digits, map, result, index + 1, curr + string[i]);
+    const string = map[digits[i]];
+    for (let j = 0; j < string.length; j++) {
+        letterCombinationsHelper(digits, map, result, i + 1, curr + string[j]);
     }
 };
 
@@ -58,7 +57,6 @@ const letterCombinations = function (digits) {
     letterCombinationsHelper(digits, map, result, 0, curr);
     return result;
 };
-
 
 /* Iterative */
 
