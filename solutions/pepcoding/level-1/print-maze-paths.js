@@ -11,13 +11,13 @@ Approach
 - If cell (n-1,m-1) is reached, then push the current path into the result and return.
 - If out of bounds, then return.
 
-Time - O(2^i)
-Space - O(i+j)
+Time - O(2^a)
+Space - O(a+a*b)
 
 n - number of rows
 m - number of columns
-i - length of the longest path
-j - number of paths
+a - length of the longest path
+b - number of paths
 
 */
 
