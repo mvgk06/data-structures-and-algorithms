@@ -63,13 +63,6 @@ class Deque {
   getSize() {
     return this.size;
   }
-  * generator() {
-    let curr = this.front;
-    while (curr != null) {
-      yield curr.value;
-      curr = curr.next;
-    }
-  }
 }
 
 module.exports = Deque;
