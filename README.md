@@ -10,7 +10,7 @@ This repo contains the implementation of common data structures and algorithms a
 | Deque          | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/data-structures/deque.js) |
 | Heap           | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/data-structures/heap.js)  |
 
-## Leetcode Solutions [126]
+## Leetcode Solutions [127]
 
 ### Easy [75]
 
@@ -57,7 +57,7 @@ This repo contains the implementation of common data structures and algorithms a
 | 415  | Add Strings                                              | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/add-strings.js)                                              |
 | 485  | Max Consecutive Ones                                     | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/max-consecutive-ones.js)                                     |
 | 504  | Base 7                                                   | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/base-7.js)                                                   |
-| 509  | Fibonacci Number                                         | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/fibonacci.js)                                                |
+| 509  | Fibonacci Number                                         | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/fibonacci-number.js)                                         |
 | 543  | Diameter of Binary Tree                                  | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/diameter-of-binary-tree.js)                                  |
 | 551  | Student Attendance Record I                              | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/student-attendance-record-I.js)                              |
 | 680  | Valid Palindrome II                                      | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/valid-palindrome-II.js)                                      |
@@ -92,7 +92,7 @@ This repo contains the implementation of common data structures and algorithms a
 | 2000 | Reverse Prefix of Word                                   | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/problems/reverse-prefix-of-word.js)                          |
 | 2016 | Maximum Difference Between Increasing Elements           | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/problems/maximum-difference-between-increasing-elements.js)  |
 
-### Medium [48]
+### Medium [49]
 
 | #    | Problem                                                                    | Solution                                                                                                                                                                                   |
 | :--- | :------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -101,6 +101,7 @@ This repo contains the implementation of common data structures and algorithms a
 | 17   | Letter Combinations of a Phone Number                                      | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/letter-combinations-of-a-phone-number.js)                                      |
 | 33   | Search in Rotated Sorted Array                                             | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/search-in-rotated-sorted-array.js)                                             |
 | 34   | Find First and Last Position of Element in Sorted Array                    | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/find-first-and-last-position-of-element-in-sorted-array.js)                    |
+| 45   | Jump Game II                                                               | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/jump-game-II.js)                                                               |
 | 62   | Unique Paths                                                               | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/unique-paths.js)                                                               |
 | 63   | Unique Paths II                                                            | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/unique-paths-II.js)                                                            |
 | 64   | Minimum Path Sum                                                           | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/minimum-path-sum.js)                                                           |
@@ -153,9 +154,9 @@ This repo contains the implementation of common data structures and algorithms a
 | 76   | Minimum Window Substring | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/minimum-window-substring.js) |
 | 239  | Sliding Window Maximum   | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/sliding-window-maximum.js)   |
 
-## Pepcoding Solutions [37]
+## Pepcoding Solutions [40]
 
-### Level 1 [37]
+### Level 1 [40]
 
 #### Recursion and Backtracking [24]
 
@@ -186,11 +187,14 @@ This repo contains the implementation of common data structures and algorithms a
 | N Queens                    | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/n-queens.js)                    |
 | Knights Tour                | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/knights-tour.js)                |
 
-#### Dynamic Programming and Greedy [2]
-| Problem         | Solution                                                                                                                                 |
-| :-------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
-| Fibonacci DP    | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/fibonacci-dp.js)    |
-| Climbing Stairs | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/climbing-stairs.js) |
+#### Dynamic Programming and Greedy [5]
+| Problem                             | Solution                                                                                                                                                     |
+| :---------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Fibonacci DP                        | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/fibonacci-dp.js)                        |
+| Climbing Stairs                     | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/climbing-stairs.js)                     |
+| Climbing Stairs with Variable Jumps | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/climbing-stairs-with-variable-jumps.js) |
+| Climbing Stairs with Minimum Moves  | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/climbing-stairs-with-minimum-moves.js)  |
+| Min Cost in Maze Traversal          | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/min-cost-in-maze-traversal.js)          |
 
 #### Graphs [11]
 
