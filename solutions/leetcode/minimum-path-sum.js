@@ -7,22 +7,22 @@ https://leetcode.com/problems/minimum-path-sum/
 Approach
 
 1. Top down
-- Each state in the memo[i][j] represents the minimum path sum if we start from the current cell (i,j).
+- The memo[i][j] represents the minimum path sum if we start from the current cell (i,j).
 - For each cell we have two choices either we go right or down.
 - After making a choice, recursively solve the smaller sub-problems and store the solutions in the memo.
 - If i or j becomes invalid, then return 1e5 to indicate that the sum is not valid.
 - If the cell (n-1,m-1) is reached, then return the cell value which is the minimum path sum.
-- If the current subproblem is already computed, then return it instead of recomputing them.
+- If the current subproblem is already solved, then return it's solution instead of recomputing the solution again.
 
 Time - O(n*m)
 Space - O(n*m)
 
 2. Bottom up
 - Create a memo array and initialize the base cases.
-- Each state in the memo[i][j] represents the minimum path sum if we start from the current cell (i,j).
+- The memo[i][j] represents the minimum path sum if we start from the current cell (i,j).
 - For each cell we have two choices either we go right or down.
 - Use the memo to get the solutions for smaller sub-problems.
-- Return the cell (0,0) of memo which gives the solution to the main problem.
+- Return memo[0][0] which contains the solution for the main problem.
 
 Time - O(n*m)
 Space - O(n*m)
@@ -32,7 +32,7 @@ Space - O(n*m)
 - Use two arrays current and next to keep track of the sub-problems.
 - Compute the current row using the current and the next row.
 - Update the next as current row.
-- Return first element of the next row which gives the solution to the main problem.
+- Return first element of the next row which contains the solution for the main problem.
 
 Time - O(n*m)
 Space - O(n)

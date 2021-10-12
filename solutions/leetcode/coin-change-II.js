@@ -12,7 +12,7 @@ Approach
 - After making the choice, recursively solve the smaller sub-problems and store the solution in the memo.
 - If the index is out of bounds and if the amount is 0, then return 1 to indicate that we have found a way.
 - Else return 0 to indicate that no way is possible.
-- If the current subproblem is already computed, then return it instead of recomputing it again.
+- If the current subproblem is already solved, then return it's solution instead of recomputing the solution again.
 
 Time - O(n*amount)
 Space - O(n*amount)

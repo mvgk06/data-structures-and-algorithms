@@ -12,7 +12,7 @@ Approach
 - After making the choice, recursively solve the smaller sub-problems and store the solutions in the memo.
 - If the last stair is reached, then return 1 to indicate that we have found a way.
 - If out of bounds, then return 0 to indicate that last stair is not reachable.
-- If the current subproblem is already computed, then return it instead of recomputing it again.
+- If the current subproblem is already solved, then return it's solution instead of recomputing the solution again.
 
 Time - O(n)
 Space - O(n)

@@ -12,7 +12,7 @@ Approach
 - After making the choice, recursively solve the smaller sub-problems and store the solution in the memo.
 - If index is out of bounds, if the amount is 0 then the minimum number of coins required is 0.
 - Else it is not possible to get the required amount so return a maximum number.
-- If the current subproblem is already computed, then return it instead of recomputing it again.
+- If the current subproblem is already solved, then return it's solution instead of recomputing the solution again.
 
 Time - O(n*amount)
 Space - O(n*amount)

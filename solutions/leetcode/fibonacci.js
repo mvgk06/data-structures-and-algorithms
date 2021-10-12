@@ -11,7 +11,7 @@ Approach
 - For each index, the fibonacci is the sum of the previous two fibonacci.
 - After making the choice, recursively solve the smaller sub-problems and store the solution in the memo.
 - If n is less than equal to 1, then return n.
-- If the current subproblem is already computed, then return it instead of recomputing it again.
+- If the current subproblem is already solved, then return it's solution instead of recomputing the solution again.
 
 Time - O(n)
 Space - O(n)
