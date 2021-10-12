@@ -2,8 +2,6 @@
 
 This repo contains the implementation of common data structures and algorithms along with solutions to various problems.
 
----
-
 ## Data Structures [3]
 
 | Data structure | Implementation                                                                                                     |
@@ -11,8 +9,6 @@ This repo contains the implementation of common data structures and algorithms a
 | Queue          | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/data-structures/queue.js) |
 | Deque          | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/data-structures/deque.js) |
 | Heap           | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/data-structures/heap.js)  |
-
----
 
 ## Leetcode Solutions [126]
 
@@ -156,8 +152,6 @@ This repo contains the implementation of common data structures and algorithms a
 | 51   | N Queens                 | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/n-queens.js)                 |
 | 76   | Minimum Window Substring | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/minimum-window-substring.js) |
 | 239  | Sliding Window Maximum   | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/sliding-window-maximum.js)   |
-
----
 
 ## Pepcoding Solutions [37]
 
