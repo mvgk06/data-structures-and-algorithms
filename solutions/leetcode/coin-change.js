@@ -7,19 +7,19 @@ https://leetcode.com/problems/coin-change/
 Approach
 
 1. Top down
-- Each state in the memo[i][j] represents the minimum coins required to get the amount j if we can pick elements till ith index.
+- The memo[i][j] represents the minimum coins required to get the amount j if we can pick elements till ith index.
 - For each index, we have two choices either we pick or don't pick the current coin.
 - After making the choice, recursively solve the smaller sub-problems and store the solution in the memo.
 - If index is out of bounds, if the amount is 0 then the minimum number of coins required is 0.
 - Else it is not possible to get the required amount so return a maximum number.
-- If the current subproblem is already computed then return it instead of recomputing them again.
+- If the current subproblem is already computed, then return it instead of recomputing it again.
 
 Time - O(n*amount)
 Space - O(n*amount)
 
 2. Bottom up
 - Create a memo array and initialize the base cases.
-- Each state in the memo[i][j] represents the minimum coins required to get the amount j if the size of the input is i.
+- The memo[i][j] represents the minimum coins required to get the amount j when the size of the input is i.
 - For each index, we have two choices either we pick or don't pick the current coin.
 - Use the memo to get the solution of the smaller sub-problems.
 - Return the cell (n, amount) which contains the solution for the main problem.
