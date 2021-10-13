@@ -154,9 +154,9 @@ This repo contains the implementation of common data structures and algorithms a
 | 76   | Minimum Window Substring | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/minimum-window-substring.js) |
 | 239  | Sliding Window Maximum   | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/sliding-window-maximum.js)   |
 
-## Pepcoding Solutions [40]
+## Pepcoding Solutions [42]
 
-### Level 1 [40]
+### Level 1 [42]
 
 #### Recursion and Backtracking [24]
 
@@ -187,7 +187,7 @@ This repo contains the implementation of common data structures and algorithms a
 | N Queens                    | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/n-queens.js)                    |
 | Knights Tour                | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/knights-tour.js)                |
 
-#### Dynamic Programming and Greedy [5]
+#### Dynamic Programming and Greedy [7]
 | Problem                             | Solution                                                                                                                                                     |
 | :---------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Fibonacci DP                        | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/fibonacci-dp.js)                        |
@@ -195,6 +195,8 @@ This repo contains the implementation of common data structures and algorithms a
 | Climbing Stairs with Variable Jumps | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/climbing-stairs-with-variable-jumps.js) |
 | Climbing Stairs with Minimum Moves  | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/climbing-stairs-with-minimum-moves.js)  |
 | Min Cost in Maze Traversal          | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/min-cost-in-maze-traversal.js)          |
+| Goldmine                            | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/goldmine.js)                            |
+| Target Sum Subsets DP               | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/target-sum-subsets-dp.js)               |
 
 #### Graphs [11]
 
