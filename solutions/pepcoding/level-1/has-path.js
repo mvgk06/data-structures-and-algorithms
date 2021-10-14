@@ -6,7 +6,7 @@ https://www.pepcoding.com/resources/online-java-foundation/graphs/has-path-offic
 
 Approach
 - Mark the current node as visited.
-- Go through all the adjacent nodes of the current node and recursively check if a path exists from the adjacent to the destination node.
+- Recursively visit all the adjacent nodes of the current node and check if a path exists from the adjacent to the destination node.
 - If the path exists, then return true.
 - Else try other adjacent nodes.
 - Return false if no path exists.
