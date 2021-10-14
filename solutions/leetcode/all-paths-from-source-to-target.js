@@ -14,7 +14,7 @@ Time - O(k^n)
 Space - O(n)
 
 k - maximum number of adjacent nodes
-n - number of nodes from source to destination
+n - maximum number of nodes from source to destination
 
 */
 
