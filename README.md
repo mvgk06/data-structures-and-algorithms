@@ -154,9 +154,9 @@ This repo contains the implementation of common data structures and algorithms a
 | 76   | Minimum Window Substring | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/minimum-window-substring.js) |
 | 239  | Sliding Window Maximum   | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/sliding-window-maximum.js)   |
 
-## Pepcoding Solutions [43]
+## Pepcoding Solutions [44]
 
-### Level 1 [43]
+### Level 1 [44]
 
 #### Recursion and Backtracking [24]
 
@@ -187,7 +187,7 @@ This repo contains the implementation of common data structures and algorithms a
 | N Queens                    | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/n-queens.js)                    |
 | Knights Tour                | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/knights-tour.js)                |
 
-#### Dynamic Programming and Greedy [8]
+#### Dynamic Programming and Greedy [9]
 
 | Problem                             | Solution                                                                                                                                                     |
 | :---------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -199,6 +199,7 @@ This repo contains the implementation of common data structures and algorithms a
 | Goldmine                            | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/goldmine.js)                            |
 | Target Sum Subsets DP               | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/target-sum-subsets-dp.js)               |
 | Zero One Knapsack                   | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/zero-one-knapsack.js)                   |
+| Unbounded Knapsack                   | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/unbounded-knapsack.js)                   |
 
 #### Graphs [11]
 
