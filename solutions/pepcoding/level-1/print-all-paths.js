@@ -19,21 +19,21 @@ n - maximum number of nodes from source to destination
 */
 
 const printAllPaths = (graph, curr, dest, visited, path) => {
-    if (visited[curr]) {
-        return;
-    }
-    if (curr === dest) {
-        console.log(path);
-        return;
-    }
-    visited[curr] = true;
-    for (const adjacent of graph[curr]) {
-        printAllPaths(graph, adjacent, dest, visited, path + adjacent);
-    }
-    visited[curr] = false;
+  if (visited[curr]) {
+    return;
+  }
+  if (curr === dest) {
+    console.log(path);
+    return;
+  }
+  visited[curr] = true;
+  for (const adjacent of graph[curr]) {
+    printAllPaths(graph, adjacent, dest, visited, path + adjacent);
+  }
+  visited[curr] = false;
 };
 
 const solve = (n, graph, src, dest) => {
-    const visited = new Array(n + 1).fill(false);
-    printAllPaths(graph, src, dest, visited, src.toString());
+  const visited = new Array(n + 1).fill(false);
+  printAllPaths(graph, src, dest, visited, src.toString());
 };

@@ -22,23 +22,23 @@ e - number of edges
 */
 
 const hasPath = (graph, curr, dest, visited) => {
-    if (visited[curr]) {
-        return false;
-    }
-    if (curr === dest) {
-        return true;
-    }
-    visited[curr] = true;
-    for (const adjacent of graph[curr]) {
-        if (hasPath(graph, adjacent, dest, visited)) {
-            return true;
-        }
-    }
+  if (visited[curr]) {
     return false;
+  }
+  if (curr === dest) {
+    return true;
+  }
+  visited[curr] = true;
+  for (const adjacent of graph[curr]) {
+    if (hasPath(graph, adjacent, dest, visited)) {
+      return true;
+    }
+  }
+  return false;
 };
 
 const solve = (n, graph, src, dest) => {
-    const visited = new Array(n + 1).fill(false);
-    const result = hasPath(graph, src, dest, visited);
-    console.log(result);
+  const visited = new Array(n + 1).fill(false);
+  const result = hasPath(graph, src, dest, visited);
+  console.log(result);
 };

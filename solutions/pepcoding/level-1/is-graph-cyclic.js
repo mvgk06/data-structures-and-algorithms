@@ -37,34 +37,33 @@ e - number of edges
 /* DFS */
 
 const dfs = (graph, visited, curr, parent) => {
-    visited[curr] = true;
-    for (const adjacent of graph[curr]) {
-        if (!visited[adjacent]) {
-            const isCyclic = dfs(graph, visited, adjacent, curr);
-            if (isCyclic) {
-                return true;
-            }
-        }
-        else if (visited[adjacent] && adjacent != parent) {
-            return true;
-        }
+  visited[curr] = true;
+  for (const adjacent of graph[curr]) {
+    if (!visited[adjacent]) {
+      const isCyclic = dfs(graph, visited, adjacent, curr);
+      if (isCyclic) {
+        return true;
+      }
+    } else if (visited[adjacent] && adjacent != parent) {
+      return true;
     }
-    return false;
+  }
+  return false;
 };
 
 const solve = (n, graph) => {
-    const visited = new Array(n).fill(false);
-    let result = false;
-    for (let i = 0; i < n; i++) {
-        if (!visited[i]) {
-            const isCyclic = dfs(graph, visited, i, -1);
-            if (isCyclic) {
-                result = true;
-                break;
-            }
-        }
+  const visited = new Array(n).fill(false);
+  let result = false;
+  for (let i = 0; i < n; i++) {
+    if (!visited[i]) {
+      const isCyclic = dfs(graph, visited, i, -1);
+      if (isCyclic) {
+        result = true;
+        break;
+      }
     }
-    console.log(result);
+  }
+  console.log(result);
 };
 
 /* BFS */
@@ -72,36 +71,35 @@ const solve = (n, graph) => {
 const Queue = require("../../../data-structures/queue");
 
 const bfs = (graph, visited, curr) => {
-    const queue = new Queue();
-    visited[curr] = true;
-    queue.enque([curr, -1]);
-    while (queue.getSize() > 0) {
-        const [curr, parent] = queue.getFront();
-        queue.deque();
-        for (const adjacent of graph[curr]) {
-            if (!visited[adjacent]) {
-                visited[adjacent] = true;
-                queue.enque([adjacent, curr]);
-            }
-            else if (visited[adjacent] && adjacent != parent[curr]) {
-                return true;
-            }
-        }
+  const queue = new Queue();
+  visited[curr] = true;
+  queue.enque([curr, -1]);
+  while (queue.getSize() > 0) {
+    const [curr, parent] = queue.getFront();
+    queue.deque();
+    for (const adjacent of graph[curr]) {
+      if (!visited[adjacent]) {
+        visited[adjacent] = true;
+        queue.enque([adjacent, curr]);
+      } else if (visited[adjacent] && adjacent != parent[curr]) {
+        return true;
+      }
     }
-    return false;
+  }
+  return false;
 };
 
 const solve2 = (n, graph) => {
-    const visited = new Array(n).fill(false);
-    let result = false;
-    for (let i = 0; i < n; i++) {
-        if (!visited[i]) {
-            const isCyclic = bfs(graph, visited, i);
-            if (isCyclic) {
-                result = true;
-                break;
-            }
-        }
+  const visited = new Array(n).fill(false);
+  let result = false;
+  for (let i = 0; i < n; i++) {
+    if (!visited[i]) {
+      const isCyclic = bfs(graph, visited, i);
+      if (isCyclic) {
+        result = true;
+        break;
+      }
     }
-    console.log(result);
+  }
+  console.log(result);
 };

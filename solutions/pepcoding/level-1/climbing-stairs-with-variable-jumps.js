@@ -35,43 +35,43 @@ k - maximum jump length
 /* Top down */
 
 const waysToClimb = (i, n, jumps, memo) => {
-    if (i === n) {
-        return 1;
-    }
-    if (i > n) {
-        return 0;
-    }
-    if (memo[i] != -1) {
-        return memo[i];
-    }
-    let ways = 0;
-    for (let j = 1; j <= jumps[i]; j++) {
-        ways += waysToClimb(i + j, n, jumps, memo);
-    }
-    memo[i] = ways;
+  if (i === n) {
+    return 1;
+  }
+  if (i > n) {
+    return 0;
+  }
+  if (memo[i] != -1) {
     return memo[i];
+  }
+  let ways = 0;
+  for (let j = 1; j <= jumps[i]; j++) {
+    ways += waysToClimb(i + j, n, jumps, memo);
+  }
+  memo[i] = ways;
+  return memo[i];
 };
 
 const solve = (n, jumps) => {
-    const memo = new Array(n + 1).fill(-1);
-    const result = waysToClimb(0, n, jumps, memo);
-    console.log(result);
+  const memo = new Array(n + 1).fill(-1);
+  const result = waysToClimb(0, n, jumps, memo);
+  console.log(result);
 };
 
 /* Bottom up */
 
 const solve2 = (n, jumps) => {
-    const memo = new Array(n + 1).fill(0);
-    memo[n] = 1;
-    for (let i = n - 1; i >= 0; i--) {
-        let ways = 0;
-        for (let j = 1; j <= jumps[i]; j++) {
-            if (i + j <= n) {
-                ways += memo[i + j];
-            }
-        }
-        memo[i] = ways;
+  const memo = new Array(n + 1).fill(0);
+  memo[n] = 1;
+  for (let i = n - 1; i >= 0; i--) {
+    let ways = 0;
+    for (let j = 1; j <= jumps[i]; j++) {
+      if (i + j <= n) {
+        ways += memo[i + j];
+      }
     }
-    const result = memo[0];
-    console.log(result);
+    memo[i] = ways;
+  }
+  const result = memo[0];
+  console.log(result);
 };

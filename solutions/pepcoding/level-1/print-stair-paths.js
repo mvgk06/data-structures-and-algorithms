@@ -20,23 +20,24 @@ k - number of ways
 */
 
 const helper = (n, index, curr, result) => {
-    if (index === n) {
-        result.push(curr);
-        return;
-    }
-    if (index > n) {
-        return;
-    }
-    helper(n, index + 1, curr + "1", result);
-    helper(n, index + 2, curr + "2", result);
-    helper(n, index + 3, curr + "3", result);
+  if (index === n) {
+    result.push(curr);
     return;
+  }
+  if (index > n) {
+    return;
+  }
+  helper(n, index + 1, curr + "1", result);
+  helper(n, index + 2, curr + "2", result);
+  helper(n, index + 3, curr + "3", result);
+  return;
 };
 
 const solve = (n) => {
-    const curr = "", result = [];
-    helper(n, 0, curr, result);
-    for (let i = 0; i < result.length; i++) {
-        console.log(result[i]);
-    }
+  const curr = "",
+    result = [];
+  helper(n, 0, curr, result);
+  for (let i = 0; i < result.length; i++) {
+    console.log(result[i]);
+  }
 };

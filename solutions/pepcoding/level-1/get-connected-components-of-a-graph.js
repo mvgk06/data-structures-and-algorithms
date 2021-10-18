@@ -36,27 +36,27 @@ e - number of edges
 /* DFS */
 
 const getConnectedComponents = (graph, curr, visited, path) => {
-    if (visited[curr]) {
-        return;
-    }
-    visited[curr] = true;
-    path.push(curr);
-    for (const adjacent of graph[curr]) {
-        getConnectedComponents(graph, adjacent, visited, path);
-    }
+  if (visited[curr]) {
+    return;
+  }
+  visited[curr] = true;
+  path.push(curr);
+  for (const adjacent of graph[curr]) {
+    getConnectedComponents(graph, adjacent, visited, path);
+  }
 };
 
 const solve = (n, graph) => {
-    const visited = new Array(n).fill(false);
-    const result = [];
-    for (let i = 0; i < visited.length; i++) {
-        if (!visited[i]) {
-            const path = [];
-            getConnectedComponents(graph, i, visited, path);
-            result.push(path);
-        }
+  const visited = new Array(n).fill(false);
+  const result = [];
+  for (let i = 0; i < visited.length; i++) {
+    if (!visited[i]) {
+      const path = [];
+      getConnectedComponents(graph, i, visited, path);
+      result.push(path);
     }
-    console.log(result);
+  }
+  console.log(result);
 };
 
 /* BFS */
@@ -64,31 +64,31 @@ const solve = (n, graph) => {
 const Queue = require("../../../data-structures/queue.js");
 
 const getConnectedComponents2 = (graph, src, visited, path) => {
-    const queue = new Queue();
-    visited[src] = true;
-    queue.enque(src);
-    while (queue.getSize() > 0) {
-        const curr = queue.getFront();
-        queue.deque();
-        path.push(curr);
-        for (const adjacent of graph[curr]) {
-            if (!visited[adjacent]) {
-                visited[adjacent] = true;
-                queue.enque(adjacent);
-            }
-        }
+  const queue = new Queue();
+  visited[src] = true;
+  queue.enque(src);
+  while (queue.getSize() > 0) {
+    const curr = queue.getFront();
+    queue.deque();
+    path.push(curr);
+    for (const adjacent of graph[curr]) {
+      if (!visited[adjacent]) {
+        visited[adjacent] = true;
+        queue.enque(adjacent);
+      }
     }
+  }
 };
 
 const solve2 = (n, graph) => {
-    const visited = new Array(n).fill(false);
-    const result = [];
-    for (let i = 0; i < visited.length; i++) {
-        if (!visited[i]) {
-            const path = [];
-            getConnectedComponents2(graph, i, visited, path);
-            result.push(path);
-        }
+  const visited = new Array(n).fill(false);
+  const result = [];
+  for (let i = 0; i < visited.length; i++) {
+    if (!visited[i]) {
+      const path = [];
+      getConnectedComponents2(graph, i, visited, path);
+      result.push(path);
     }
-    console.log(result);
+  }
+  console.log(result);
 };

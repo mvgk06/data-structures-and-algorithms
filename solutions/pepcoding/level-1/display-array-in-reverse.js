@@ -17,13 +17,13 @@ n - number of elements
 */
 
 const helper = (n, arr) => {
-    if (n === 0) {
-        return;
-    }
-    console.log(arr[n - 1]);
-    helper(n - 1, arr);
+  if (n === 0) {
+    return;
+  }
+  console.log(arr[n - 1]);
+  helper(n - 1, arr);
 };
 
 const solve = (n, arr) => {
-    helper(n, arr);
+  helper(n, arr);
 };

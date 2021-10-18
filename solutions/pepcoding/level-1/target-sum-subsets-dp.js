@@ -45,102 +45,95 @@ target - sum of the subset
 /* Top down */
 
 const targetSum = (arr, index, target, memo) => {
-    if (index === 0) {
-        if (target === 0) {
-            memo[index] = 1;
-        }
-        else {
-            memo[index] = 0;
-        }
-        return memo[index];
+  if (index === 0) {
+    if (target === 0) {
+      memo[index] = 1;
+    } else {
+      memo[index] = 0;
     }
-    if (memo[index][target] != -1) {
-        return memo[index][target];
-    }
-    if (arr[index] <= target) {
-        const pick = targetSum(arr, index - 1, target - arr[index], memo);
-        const dontPick = targetSum(arr, index - 1, target, memo);
-        memo[index][target] = (pick || dontPick);
-    }
-    else {
-        const dontPick = targetSum(arr, index - 1, target, memo);
-        memo[index][target] = dontPick;
-    }
+    return memo[index];
+  }
+  if (memo[index][target] != -1) {
     return memo[index][target];
+  }
+  if (arr[index] <= target) {
+    const pick = targetSum(arr, index - 1, target - arr[index], memo);
+    const dontPick = targetSum(arr, index - 1, target, memo);
+    memo[index][target] = pick || dontPick;
+  } else {
+    const dontPick = targetSum(arr, index - 1, target, memo);
+    memo[index][target] = dontPick;
+  }
+  return memo[index][target];
 };
 
 const solve = (n, arr, target) => {
-    const memo = new Array(n);
-    for (let i = 0; i < memo.length; i++) {
-        memo[i] = new Array(target + 1).fill(-1);
-    }
-    const result = targetSum(arr, arr.length - 1, target, memo);
-    if (result === 1) {
-        console.log(true);
-    }
-    else {
-        console.log(false);
-    }
+  const memo = new Array(n);
+  for (let i = 0; i < memo.length; i++) {
+    memo[i] = new Array(target + 1).fill(-1);
+  }
+  const result = targetSum(arr, arr.length - 1, target, memo);
+  if (result === 1) {
+    console.log(true);
+  } else {
+    console.log(false);
+  }
 };
 
 /* Bottom up */
 
 const solve2 = (n, arr, target) => {
-    const memo = new Array(n + 1);
-    for (let i = 0; i < memo.length; i++) {
-        memo[i] = new Array(target + 1).fill(-1);
+  const memo = new Array(n + 1);
+  for (let i = 0; i < memo.length; i++) {
+    memo[i] = new Array(target + 1).fill(-1);
+  }
+  for (let i = 0; i < memo.length; i++) {
+    memo[i][0] = 1;
+  }
+  for (let j = 1; j < memo.length; j++) {
+    memo[0][j] = 0;
+  }
+  for (let i = 1; i < memo.length; i++) {
+    for (let j = 1; j < memo[i].length; j++) {
+      if (arr[i - 1] <= j) {
+        memo[i][j] = memo[i - 1][j - arr[i - 1]] || memo[i - 1][j];
+      } else {
+        memo[i][j] = memo[i - 1][j];
+      }
     }
-    for (let i = 0; i < memo.length; i++) {
-        memo[i][0] = 1;
-    }
-    for (let j = 1; j < memo.length; j++) {
-        memo[0][j] = 0;
-    }
-    for (let i = 1; i < memo.length; i++) {
-        for (let j = 1; j < memo[i].length; j++) {
-            if (arr[i - 1] <= j) {
-                memo[i][j] = (memo[i - 1][j - arr[i - 1]] || memo[i - 1][j]);
-            }
-            else {
-                memo[i][j] = memo[i - 1][j];
-            }
-        }
-    }
-    const result = memo[n][target];
-    if (result === 1) {
-        console.log(true);
-    }
-    else {
-        console.log(false);
-    }
+  }
+  const result = memo[n][target];
+  if (result === 1) {
+    console.log(true);
+  } else {
+    console.log(false);
+  }
 };
 
 /* Bottom up (space optimized) */
 
 const solve3 = (n, arr, target) => {
-    let prev = new Array(target + 1);
-    prev[0] = 1;
-    for (let j = 1; j < prev.length; j++) {
-        prev[j] = 0;
+  let prev = new Array(target + 1);
+  prev[0] = 1;
+  for (let j = 1; j < prev.length; j++) {
+    prev[j] = 0;
+  }
+  for (let i = 1; i <= n; i++) {
+    const curr = new Array(target + 1);
+    curr[0] = 1;
+    for (let j = 1; j <= target; j++) {
+      if (arr[i - 1] <= j) {
+        curr[j] = prev[j - arr[i - 1]] || prev[j];
+      } else {
+        curr[j] = prev[j];
+      }
     }
-    for (let i = 1; i <= n; i++) {
-        const curr = new Array(target + 1);
-        curr[0] = 1;
-        for (let j = 1; j <= target; j++) {
-            if (arr[i - 1] <= j) {
-                curr[j] = (prev[j - arr[i - 1]] || prev[j]);
-            }
-            else {
-                curr[j] = prev[j];
-            }
-        }
-        prev = [...curr];
-    }
-    const result = prev[target];
-    if (result === 1) {
-        console.log(true);
-    }
-    else {
-        console.log(false);
-    }
+    prev = [...curr];
+  }
+  const result = prev[target];
+  if (result === 1) {
+    console.log(true);
+  } else {
+    console.log(false);
+  }
 };

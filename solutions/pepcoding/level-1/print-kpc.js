@@ -19,35 +19,36 @@ n - size of the string
 */
 
 const helper = (s, map, i, curr, result) => {
-    if (i === s.length) {
-        if (curr.length === s.length) {
-            result.push(curr);
-        }
-        return;
+  if (i === s.length) {
+    if (curr.length === s.length) {
+      result.push(curr);
     }
-    const str = map[s[i]];
-    for (let j = 0; j < str.length; j++) {
-        helper(s, map, i + 1, curr + str[j], result);
-        helper(s, map, i + 1, curr, result);
-    }
+    return;
+  }
+  const str = map[s[i]];
+  for (let j = 0; j < str.length; j++) {
+    helper(s, map, i + 1, curr + str[j], result);
+    helper(s, map, i + 1, curr, result);
+  }
 };
 
 const solve = (s) => {
-    const map = {
-        "0": ".;",
-        "1": "abc",
-        "2": "def",
-        "3": "ghi",
-        "4": "jkl",
-        "5": "mno",
-        "6": "pqrs",
-        "7": "tu",
-        "8": "vwx",
-        "9": "yz",
-    };
-    const curr = "", result = [];
-    helper(s, map, 0, curr, result);
-    for (let i = 0; i < result.length; i++) {
-        console.log(result[i]);
-    }
+  const map = {
+    0: ".;",
+    1: "abc",
+    2: "def",
+    3: "ghi",
+    4: "jkl",
+    5: "mno",
+    6: "pqrs",
+    7: "tu",
+    8: "vwx",
+    9: "yz",
+  };
+  const curr = "",
+    result = [];
+  helper(s, map, 0, curr, result);
+  for (let i = 0; i < result.length; i++) {
+    console.log(result[i]);
+  }
 };

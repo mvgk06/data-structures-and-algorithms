@@ -17,13 +17,13 @@ m - exponent
 */
 
 const helper = (n, m) => {
-    if (m === 0) {
-        return 1;
-    }
-    return n * helper(n, m - 1);
+  if (m === 0) {
+    return 1;
+  }
+  return n * helper(n, m - 1);
 };
 
 const solve = (n, m) => {
-    const result = helper(n, m);
-    console.log(result);
+  const result = helper(n, m);
+  console.log(result);
 };

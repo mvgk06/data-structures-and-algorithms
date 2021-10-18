@@ -45,98 +45,91 @@ m - number of columns
 /* Top down */
 
 const maxGold = (arr, i, j, memo) => {
-    if (i < 0 || i === arr.length || j < 0 || j === arr[i].length) {
-        return 0;
-    }
-    if (memo[i][j] != -1) {
-        return memo[i][j];
-    }
-    const topRight = maxGold(arr, i - 1, j + 1, memo);
-    const right = maxGold(arr, i, j + 1, memo);
-    const bottomRight = maxGold(arr, i + 1, j + 1, memo);
-    memo[i][j] = arr[i][j] + Math.max(topRight, right, bottomRight);
+  if (i < 0 || i === arr.length || j < 0 || j === arr[i].length) {
+    return 0;
+  }
+  if (memo[i][j] != -1) {
     return memo[i][j];
+  }
+  const topRight = maxGold(arr, i - 1, j + 1, memo);
+  const right = maxGold(arr, i, j + 1, memo);
+  const bottomRight = maxGold(arr, i + 1, j + 1, memo);
+  memo[i][j] = arr[i][j] + Math.max(topRight, right, bottomRight);
+  return memo[i][j];
 };
 
 const solve = (n, m, arr) => {
-    const memo = new Array(n);
-    for (let i = 0; i < n; i++) {
-        memo[i] = new Array(m).fill(-1);
-    }
-    let result = 0;
-    for (let i = 0; i < arr.length; i++) {
-        result = Math.max(result, maxGold(arr, i, 0, memo));
-    }
-    console.log(result);
+  const memo = new Array(n);
+  for (let i = 0; i < n; i++) {
+    memo[i] = new Array(m).fill(-1);
+  }
+  let result = 0;
+  for (let i = 0; i < arr.length; i++) {
+    result = Math.max(result, maxGold(arr, i, 0, memo));
+  }
+  console.log(result);
 };
 
 /* Bottom up */
 
 const solve2 = (n, m, arr) => {
-    const memo = new Array(n);
+  const memo = new Array(n);
+  for (let i = 0; i < n; i++) {
+    memo[i] = new Array(m).fill(0);
+  }
+  for (let j = m - 1; j >= 0; j--) {
     for (let i = 0; i < n; i++) {
-        memo[i] = new Array(m).fill(0);
-    }
-    for (let j = m - 1; j >= 0; j--) {
-        for (let i = 0; i < n; i++) {
-            if (j === m - 1) {
-                memo[i][j] = arr[i][j];
-            }
-            else if (i === 0) {
-                if (n === 1) {
-                    memo[i][j] = arr[i][j] + memo[i][j + 1];
-                }
-                else {
-                    memo[i][j] = arr[i][j] + Math.max(memo[i][j + 1], memo[i + 1][j + 1]);
-                }
-
-            }
-            else if (i === n - 1) {
-                memo[i][j] = arr[i][j] + Math.max(memo[i - 1][j + 1], memo[i][j + 1]);
-            }
-            else {
-                memo[i][j] = arr[i][j] + Math.max(memo[i - 1][j + 1], memo[i][j + 1], memo[i + 1][j + 1]);
-            }
+      if (j === m - 1) {
+        memo[i][j] = arr[i][j];
+      } else if (i === 0) {
+        if (n === 1) {
+          memo[i][j] = arr[i][j] + memo[i][j + 1];
+        } else {
+          memo[i][j] = arr[i][j] + Math.max(memo[i][j + 1], memo[i + 1][j + 1]);
         }
+      } else if (i === n - 1) {
+        memo[i][j] = arr[i][j] + Math.max(memo[i - 1][j + 1], memo[i][j + 1]);
+      } else {
+        memo[i][j] =
+          arr[i][j] +
+          Math.max(memo[i - 1][j + 1], memo[i][j + 1], memo[i + 1][j + 1]);
+      }
     }
-    let result = 0;
-    for (let i = 0; i < n; i++) {
-        result = Math.max(result, memo[i][0]);
-    }
-    console.log(result);
+  }
+  let result = 0;
+  for (let i = 0; i < n; i++) {
+    result = Math.max(result, memo[i][0]);
+  }
+  console.log(result);
 };
 
 /* Bottom up (space optimized) */
 
 const solve3 = (n, m, arr) => {
-    let next = new Array(n);
+  let next = new Array(n);
+  for (let i = 0; i < n; i++) {
+    next[i] = arr[i][m - 1];
+  }
+  for (let j = m - 2; j >= 0; j--) {
+    const curr = new Array(n);
     for (let i = 0; i < n; i++) {
-        next[i] = arr[i][m - 1];
-    }
-    for (let j = m - 2; j >= 0; j--) {
-        const curr = new Array(n);
-        for (let i = 0; i < n; i++) {
-            if (i === 0) {
-                if (n === 1) {
-                    curr[i] = arr[i][j] + next[i];
-                }
-                else {
-                    curr[i] = arr[i][j] + Math.max(next[i], next[i + 1]);
-                }
-
-            }
-            else if (i === n - 1) {
-                curr[i] = arr[i][j] + Math.max(next[i - 1], next[i]);
-            }
-            else {
-                curr[i] = arr[i][j] + Math.max(next[i - 1], next[i], next[i + 1]);
-            }
+      if (i === 0) {
+        if (n === 1) {
+          curr[i] = arr[i][j] + next[i];
+        } else {
+          curr[i] = arr[i][j] + Math.max(next[i], next[i + 1]);
         }
-        next = [...curr];
+      } else if (i === n - 1) {
+        curr[i] = arr[i][j] + Math.max(next[i - 1], next[i]);
+      } else {
+        curr[i] = arr[i][j] + Math.max(next[i - 1], next[i], next[i + 1]);
+      }
     }
-    let result = 0;
-    for (let i = 0; i < n; i++) {
-        result = Math.max(result, next[i]);
-    }
-    console.log(result);
+    next = [...curr];
+  }
+  let result = 0;
+  for (let i = 0; i < n; i++) {
+    result = Math.max(result, next[i]);
+  }
+  console.log(result);
 };

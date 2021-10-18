@@ -18,14 +18,14 @@ n - number
 */
 
 const helper = (n) => {
-    if (n === 0) {
-        return;
-    }
-    console.log(n);
-    helper(n - 1);
-    console.log(n);
+  if (n === 0) {
+    return;
+  }
+  console.log(n);
+  helper(n - 1);
+  console.log(n);
 };
 
 const solve = (n) => {
-    helper(n);
+  helper(n);
 };

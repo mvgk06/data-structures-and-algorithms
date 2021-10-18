@@ -24,28 +24,29 @@ c - maximum jump length
 */
 
 const helper = (n, m, i, j, curr, result) => {
-    if (i === n - 1 && j === m - 1) {
-        result.push(curr);
-        return;
-    }
-    if (i >= n || j >= m) {
-        return;
-    }
-    for (let k = 1; k < m; k++) {
-        helper(n, m, i, j + k, curr + `h${k}`, result);
-    }
-    for (let k = 1; k < n; k++) {
-        helper(n, m, i + k, j, curr + `v${k}`, result);
-    }
-    for (let k = 1; k < n && k < m; k++) {
-        helper(n, m, i + k, j + k, curr + `d${k}`, result);
-    }
+  if (i === n - 1 && j === m - 1) {
+    result.push(curr);
+    return;
+  }
+  if (i >= n || j >= m) {
+    return;
+  }
+  for (let k = 1; k < m; k++) {
+    helper(n, m, i, j + k, curr + `h${k}`, result);
+  }
+  for (let k = 1; k < n; k++) {
+    helper(n, m, i + k, j, curr + `v${k}`, result);
+  }
+  for (let k = 1; k < n && k < m; k++) {
+    helper(n, m, i + k, j + k, curr + `d${k}`, result);
+  }
 };
 
 const solve = (n, m) => {
-    const curr = "", result = [];
-    helper(n, m, 0, 0, curr, result);
-    for (let i = 0; i < result.length; i++) {
-        console.log(result[i]);
-    }
+  const curr = "",
+    result = [];
+  helper(n, m, 0, 0, curr, result);
+  for (let i = 0; i < result.length; i++) {
+    console.log(result[i]);
+  }
 };

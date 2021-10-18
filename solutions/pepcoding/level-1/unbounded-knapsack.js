@@ -44,74 +44,75 @@ capacity - total capacity
 /* Top down */
 
 const knapsack = (profits, weights, capacity, index, memo) => {
-    if (index < 0 || capacity <= 0) {
-        return 0;
-    }
-    if (memo[index][capacity] != -1) {
-        return memo[index][capacity];
-    }
-    if (weights[index] <= capacity) {
-        const pick = profits[index] + knapsack(profits, weights, capacity - weights[index], index, memo);
-        const dontPick = knapsack(profits, weights, capacity, index - 1, memo);
-        memo[index][capacity] = Math.max(pick, dontPick);
-    }
-    else {
-        const dontPick = knapsack(profits, weights, capacity, index - 1, memo);
-        memo[index][capacity] = dontPick;
-    }
+  if (index < 0 || capacity <= 0) {
+    return 0;
+  }
+  if (memo[index][capacity] != -1) {
     return memo[index][capacity];
+  }
+  if (weights[index] <= capacity) {
+    const pick =
+      profits[index] +
+      knapsack(profits, weights, capacity - weights[index], index, memo);
+    const dontPick = knapsack(profits, weights, capacity, index - 1, memo);
+    memo[index][capacity] = Math.max(pick, dontPick);
+  } else {
+    const dontPick = knapsack(profits, weights, capacity, index - 1, memo);
+    memo[index][capacity] = dontPick;
+  }
+  return memo[index][capacity];
 };
 
 const solve = (n, profits, weights, capacity) => {
-    const memo = new Array(n);
-    for (let i = 0; i < memo.length; i++) {
-        memo[i] = new Array(capacity + 1).fill(-1);
-    }
-    const result = knapsack(profits, weights, capacity, n - 1, memo);
-    console.log(result);
+  const memo = new Array(n);
+  for (let i = 0; i < memo.length; i++) {
+    memo[i] = new Array(capacity + 1).fill(-1);
+  }
+  const result = knapsack(profits, weights, capacity, n - 1, memo);
+  console.log(result);
 };
 
 /* Bottom up */
 
 const solve2 = (n, profits, weights, capacity) => {
-    const memo = new Array(n + 1);
-    for (let i = 0; i < memo.length; i++) {
-        memo[i] = new Array(capacity + 1).fill(-1);
+  const memo = new Array(n + 1);
+  for (let i = 0; i < memo.length; i++) {
+    memo[i] = new Array(capacity + 1).fill(-1);
+  }
+  for (let i = 0; i < memo.length; i++) {
+    for (let j = 0; j < memo[i].length; j++) {
+      if (i === 0 || j === 0) {
+        memo[i][j] = 0;
+      } else if (weights[i - 1] <= j) {
+        memo[i][j] = Math.max(
+          profits[i - 1] + memo[i][j - weights[i - 1]],
+          memo[i - 1][j]
+        );
+      } else {
+        memo[i][j] = memo[i - 1][j];
+      }
     }
-    for (let i = 0; i < memo.length; i++) {
-        for (let j = 0; j < memo[i].length; j++) {
-            if (i === 0 || j === 0) {
-                memo[i][j] = 0;
-            }
-            else if (weights[i - 1] <= j) {
-                memo[i][j] = Math.max(profits[i - 1] + memo[i][j - weights[i - 1]], memo[i - 1][j]);
-            }
-            else {
-                memo[i][j] = memo[i - 1][j];
-            }
-        }
-    }
-    const result = memo[n][capacity];
-    console.log(result);
+  }
+  const result = memo[n][capacity];
+  console.log(result);
 };
 
 /* Bottom up (space optimized) */
 
 const solve3 = (n, profits, weights, capacity) => {
-    let prev = new Array(capacity + 1).fill(0);
-    for (let i = 1; i <= n; i++) {
-        const curr = new Array(capacity + 1);
-        curr[0] = 0;
-        for (let j = 1; j < curr.length; j++) {
-            if (weights[i - 1] <= j) {
-                curr[j] = Math.max(profits[i - 1] + curr[j - weights[i - 1]], prev[j]);
-            }
-            else {
-                curr[j] = prev[j];
-            }
-        }
-        prev = [...curr];
+  let prev = new Array(capacity + 1).fill(0);
+  for (let i = 1; i <= n; i++) {
+    const curr = new Array(capacity + 1);
+    curr[0] = 0;
+    for (let j = 1; j < curr.length; j++) {
+      if (weights[i - 1] <= j) {
+        curr[j] = Math.max(profits[i - 1] + curr[j - weights[i - 1]], prev[j]);
+      } else {
+        curr[j] = prev[j];
+      }
     }
-    const result = prev[capacity];
-    console.log(result);
+    prev = [...curr];
+  }
+  const result = prev[capacity];
+  console.log(result);
 };

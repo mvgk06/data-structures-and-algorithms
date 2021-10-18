@@ -36,32 +36,45 @@ m - number of columns
 /* DFS */
 
 const visitIsland = (graph, visited, paths, i, j) => {
-    if (i < 0 || i >= graph.length || j < 0 || j >= graph[i].length || visited[i][j] || graph[i][j] === 1) {
-        return;
-    }
-    visited[i][j] = true;
-    for (let k = 0; k < paths.length; k++) {
-        const row = i + paths[k][0], col = j + paths[k][1];
-        visitIsland(graph, visited, paths, row, col);
-    }
+  if (
+    i < 0 ||
+    i >= graph.length ||
+    j < 0 ||
+    j >= graph[i].length ||
+    visited[i][j] ||
+    graph[i][j] === 1
+  ) {
+    return;
+  }
+  visited[i][j] = true;
+  for (let k = 0; k < paths.length; k++) {
+    const row = i + paths[k][0],
+      col = j + paths[k][1];
+    visitIsland(graph, visited, paths, row, col);
+  }
 };
 
 const solve = function (n, graph) {
-    const visited = new Array(n);
-    for (let i = 0; i < visited.length; i++) {
-        visited[i] = new Array(graph[i].length).fill(false);
+  const visited = new Array(n);
+  for (let i = 0; i < visited.length; i++) {
+    visited[i] = new Array(graph[i].length).fill(false);
+  }
+  const paths = [
+    [-1, 0],
+    [0, 1],
+    [0, -1],
+    [1, 0],
+  ];
+  let result = 0;
+  for (let i = 0; i < graph.length; i++) {
+    for (let j = 0; j < graph[i].length; j++) {
+      if (graph[i][j] === 0 && !visited[i][j]) {
+        visitIsland(graph, visited, paths, i, j);
+        result += 1;
+      }
     }
-    const paths = [[-1, 0], [0, 1], [0, -1], [1, 0]];
-    let result = 0;
-    for (let i = 0; i < graph.length; i++) {
-        for (let j = 0; j < graph[i].length; j++) {
-            if (graph[i][j] === 0 && !visited[i][j]) {
-                visitIsland(graph, visited, paths, i, j);
-                result += 1;
-            }
-        }
-    }
-    console.log(result);
+  }
+  console.log(result);
 };
 
 /* BFS */
@@ -69,40 +82,53 @@ const solve = function (n, graph) {
 const Queue = require("../../../data-structures/queue.js");
 
 const isValid = (graph, visited, i, j) => {
-    return i >= 0 && i < graph.length && j >= 0 && j < graph[i].length && !visited[i][j] && graph[i][j] === 0;
+  return (
+    i >= 0 &&
+    i < graph.length &&
+    j >= 0 &&
+    j < graph[i].length &&
+    !visited[i][j] &&
+    graph[i][j] === 0
+  );
 };
 
 const visitIsland2 = (graph, visited, paths, i, j) => {
-    const queue = new Queue();
-    queue.enque([i, j]);
-    visited[i][j] = true;
-    while (queue.getSize() > 0) {
-        const [r, c] = queue.getFront();
-        queue.deque();
-        for (let k = 0; k < paths.length; k++) {
-            const row = r + paths[k][0], col = c + paths[k][1];
-            if (isValid(graph, visited, row, col)) {
-                visited[row][col] = true;
-                queue.enque([row, col]);
-            }
-        }
+  const queue = new Queue();
+  queue.enque([i, j]);
+  visited[i][j] = true;
+  while (queue.getSize() > 0) {
+    const [r, c] = queue.getFront();
+    queue.deque();
+    for (let k = 0; k < paths.length; k++) {
+      const row = r + paths[k][0],
+        col = c + paths[k][1];
+      if (isValid(graph, visited, row, col)) {
+        visited[row][col] = true;
+        queue.enque([row, col]);
+      }
     }
+  }
 };
 
 const solve2 = function (n, m, graph) {
-    const visited = new Array(n);
-    for (let i = 0; i < visited.length; i++) {
-        visited[i] = new Array(m).fill(false);
+  const visited = new Array(n);
+  for (let i = 0; i < visited.length; i++) {
+    visited[i] = new Array(m).fill(false);
+  }
+  const paths = [
+    [-1, 0],
+    [0, 1],
+    [0, -1],
+    [1, 0],
+  ];
+  let result = 0;
+  for (let i = 0; i < graph.length; i++) {
+    for (let j = 0; j < graph[i].length; j++) {
+      if (graph[i][j] === 0 && !visited[i][j]) {
+        visitIsland2(graph, visited, paths, i, j);
+        result += 1;
+      }
     }
-    const paths = [[-1, 0], [0, 1], [0, -1], [1, 0]];
-    let result = 0;
-    for (let i = 0; i < graph.length; i++) {
-        for (let j = 0; j < graph[i].length; j++) {
-            if (graph[i][j] === 0 && !visited[i][j]) {
-                visitIsland2(graph, visited, paths, i, j);
-                result += 1;
-            }
-        }
-    }
-    console.log(result);
+  }
+  console.log(result);
 };
