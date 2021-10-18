@@ -148,15 +148,15 @@ This repo contains the implementation of common data structures and algorithms a
 
 ### Hard [3]
 
-| #    | Problem                  | Solution                                                                                                                                 |
-| :--- | :----------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
-| 51   | N Queens                 | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/n-queens.js)                 |
-| 76   | Minimum Window Substring | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/minimum-window-substring.js) |
-| 239  | Sliding Window Maximum   | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/sliding-window-maximum.js)   |
+| #   | Problem                  | Solution                                                                                                                                 |
+| :-- | :----------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
+| 51  | N Queens                 | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/n-queens.js)                 |
+| 76  | Minimum Window Substring | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/minimum-window-substring.js) |
+| 239 | Sliding Window Maximum   | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/sliding-window-maximum.js)   |
 
-## Pepcoding Solutions [44]
+## Pepcoding Solutions [46]
 
-### Level 1 [44]
+### Level 1 [46]
 
 #### Recursion and Backtracking [24]
 
@@ -187,7 +187,7 @@ This repo contains the implementation of common data structures and algorithms a
 | N Queens                    | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/n-queens.js)                    |
 | Knights Tour                | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/knights-tour.js)                |
 
-#### Dynamic Programming and Greedy [9]
+#### Dynamic Programming and Greedy [11]
 
 | Problem                             | Solution                                                                                                                                                     |
 | :---------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -199,7 +199,9 @@ This repo contains the implementation of common data structures and algorithms a
 | Goldmine                            | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/goldmine.js)                            |
 | Target Sum Subsets DP               | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/target-sum-subsets-dp.js)               |
 | Zero One Knapsack                   | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/zero-one-knapsack.js)                   |
-| Unbounded Knapsack                   | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/unbounded-knapsack.js)                   |
+| Unbounded Knapsack                  | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/unbounded-knapsack.js)                  |
+| Fractional Knapsack                 | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/fractional-knapsack.js)                 |
+| Count Binary Strings                | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/count-binary-strings.js)                |
 
 #### Graphs [11]
 
