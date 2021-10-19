@@ -154,9 +154,9 @@ This repo contains the implementation of common data structures and algorithms a
 | 76  | Minimum Window Substring | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/minimum-window-substring.js) |
 | 239 | Sliding Window Maximum   | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/sliding-window-maximum.js)   |
 
-## Pepcoding Solutions [46]
+## Pepcoding Solutions [47]
 
-### Level 1 [46]
+### Level 1 [47]
 
 #### Recursion and Backtracking [24]
 
@@ -203,12 +203,13 @@ This repo contains the implementation of common data structures and algorithms a
 | Fractional Knapsack                 | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/fractional-knapsack.js)                 |
 | Count Binary Strings                | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/count-binary-strings.js)                |
 
-#### Graphs [11]
+#### Graphs [12]
 
 | Problem                             | Solution                                                                                                                                                     |
 | :---------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Has Path                            | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/has-path.js)                            |
 | Print All Paths                     | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/print-all-paths.js)                     |
+| Multisolver                         | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/multisolver.js)                         |
 | Get Connected Components Of A Graph | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/get-connected-components-of-a-graph.js) |
 | Is Graph Connected                  | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/is-graph-connected.js)                  |
 | Number Of Islands                   | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/number-of-islands.js)                   |
