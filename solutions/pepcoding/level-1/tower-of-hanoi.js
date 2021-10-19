@@ -17,14 +17,14 @@ n - number of plates
 */
 
 const helper = (n, src, dest, helper) => {
-  if (n === 0) {
-    return;
-  }
-  helper(n - 1, src, helper, dest);
-  console.log(`${n}[${src} -> ${dest}]`);
-  helper(n - 1, helper, dest, src);
+	if (n === 0) {
+		return;
+	}
+	helper(n - 1, src, helper, dest);
+	console.log(`${n}[${src} -> ${dest}]`);
+	helper(n - 1, helper, dest, src);
 };
 
 const solve = (n, src, dest, helper) => {
-  helper(n, src, dest, helper);
+	helper(n, src, dest, helper);
 };

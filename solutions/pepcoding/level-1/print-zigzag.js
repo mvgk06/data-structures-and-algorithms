@@ -16,16 +16,16 @@ n - number
 */
 
 const helper = (n) => {
-  if (n === 0) {
-    return;
-  }
-  process.stdout.write(`${n} `);
-  helper(n - 1);
-  process.stdout.write(`${n} `);
-  helper(n - 1);
-  process.stdout.write(`${n} `);
+	if (n === 0) {
+		return;
+	}
+	process.stdout.write(`${n} `);
+	helper(n - 1);
+	process.stdout.write(`${n} `);
+	helper(n - 1);
+	process.stdout.write(`${n} `);
 };
 
 const solve = (n) => {
-  helper(n);
+	helper(n);
 };

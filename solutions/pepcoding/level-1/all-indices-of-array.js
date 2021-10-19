@@ -17,19 +17,19 @@ n - number of elements
 */
 
 const helper = (arr, key, i, result) => {
-  if (i === arr.length) {
-    return;
-  }
-  if (arr[i] === key) {
-    result.push(i);
-  }
-  helper(arr, key, i + 1, result);
+	if (i === arr.length) {
+		return;
+	}
+	if (arr[i] === key) {
+		result.push(i);
+	}
+	helper(arr, key, i + 1, result);
 };
 
 const solve = (arr, key) => {
-  const result = [];
-  helper(arr, key, 0, result);
-  for (let i = 0; i < result.length; i++) {
-    console.log(result[i]);
-  }
+	const result = [];
+	helper(arr, key, 0, result);
+	for (let i = 0; i < result.length; i++) {
+		console.log(result[i]);
+	}
 };

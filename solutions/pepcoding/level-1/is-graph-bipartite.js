@@ -38,76 +38,71 @@ e - number of edges
 /* DFS */
 
 const dfs = (graph, colors, curr, color) => {
-  colors[curr] = color;
-  for (const adjacent of graph[curr]) {
-    if (colors[adjacent] === -1) {
-      const isBipartite = dfs(
-        graph,
-        colors,
-        adjacent,
-        colors[curr] === 0 ? 1 : 0
-      );
-      if (!isBipartite) {
-        return false;
-      }
-    } else if (colors[adjacent] != -1 && colors[adjacent] === colors[curr]) {
-      return false;
-    }
-  }
-  return true;
+	colors[curr] = color;
+	for (const adjacent of graph[curr]) {
+		if (colors[adjacent] === -1) {
+			const isBipartite = dfs(graph, colors, adjacent, colors[curr] === 0 ? 1 : 0);
+			if (!isBipartite) {
+				return false;
+			}
+		} else if (colors[adjacent] != -1 && colors[adjacent] === colors[curr]) {
+			return false;
+		}
+	}
+	return true;
 };
 
 const solve = (n, graph) => {
-  const colors = new Array(n).fill(-1);
-  let result = true;
-  for (let i = 0; i < colors.length; i++) {
-    if (colors[i] === -1) {
-      if (!dfs(graph, colors, i, 0)) {
-        result = false;
-        break;
-      }
-    }
-  }
-  console.log(result);
+	const colors = new Array(n).fill(-1);
+	let result = true;
+	for (let i = 0; i < colors.length; i++) {
+		if (colors[i] === -1) {
+			if (!dfs(graph, colors, i, 0)) {
+				result = false;
+				break;
+			}
+		}
+	}
+	console.log(result);
 };
 
 /* BFS */
 
-const Queue = require("../../../data-structures/queue");
+const Queue = require('../../../data-structures/queue');
 
 const bfs = (graph, colors, src) => {
-  const queue = new Queue();
-  queue.enque(src);
-  colors[src] = 0;
-  while (queue.getSize() > 0) {
-    const curr = queue.getFront();
-    queue.deque();
-    for (const adjacent of graph[curr]) {
-      if (colors[adjacent] === -1) {
-        if (colors[curr] === 0) {
-          colors[adjacent] = 1;
-        } else {
-          colors[adjacent] = 0;
-        }
-        queue.enque(adjacent);
-      } else if (colors[adjacent] != -1 && colors[adjacent] === colors[curr]) {
-        return false;
-      }
-    }
-  }
-  return true;
+	const queue = new Queue();
+	queue.enque(src);
+	colors[src] = 0;
+	while (queue.getSize() > 0) {
+		const curr = queue.getFront();
+		queue.deque();
+		for (const adjacent of graph[curr]) {
+			if (colors[adjacent] === -1) {
+				if (colors[curr] === 0) {
+					colors[adjacent] = 1;
+				} else {
+					colors[adjacent] = 0;
+				}
+				queue.enque(adjacent);
+			} else if (colors[adjacent] != -1 && colors[adjacent] === colors[curr]) {
+				return false;
+			}
+		}
+	}
+	return true;
 };
 
 const solve2 = (n, graph) => {
-  const colors = new Array(n).fill(-1);
-  let result = true;
-  for (let i = 0; i < colors.length; i++) {
-    if (colors[i] === -1) {
-      if (!bfs(graph, colors, i)) {
-        result = false;
-        break;
-      }
-    }
-  }
-  console.log(result);
+	const colors = new Array(n).fill(-1);
+	let result = true;
+	for (let i = 0; i < colors.length; i++) {
+		if (colors[i] === -1) {
+			if (!bfs(graph, colors, i)) {
+				result = false;
+				break;
+			}
+		}
+	}
+	console.log(result);
 };

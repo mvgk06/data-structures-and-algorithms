@@ -18,26 +18,26 @@ e - number of edges
 
 */
 
-const Queue = require("../../../data-structures/queue");
+const Queue = require('../../../data-structures/queue');
 
 const bfs = (graph, visited, src) => {
-  const queue = new Queue();
-  visited[src] = true;
-  queue.enque([src, src.toString()]);
-  while (queue.getSize() > 0) {
-    const [curr, path] = queue.getFront();
-    queue.deque();
-    console.log(curr.toString() + "@" + path);
-    for (const adjacent of graph[curr]) {
-      if (!visited[adjacent]) {
-        visited[adjacent] = true;
-        queue.enque([adjacent, path + adjacent.toString()]);
-      }
-    }
-  }
+	const queue = new Queue();
+	visited[src] = true;
+	queue.enque([src, src.toString()]);
+	while (queue.getSize() > 0) {
+		const [curr, path] = queue.getFront();
+		queue.deque();
+		console.log(curr.toString() + '@' + path);
+		for (const adjacent of graph[curr]) {
+			if (!visited[adjacent]) {
+				visited[adjacent] = true;
+				queue.enque([adjacent, path + adjacent.toString()]);
+			}
+		}
+	}
 };
 
 const solve = (graph, src) => {
-  const visited = new Array(n).fill(false);
-  bfs(graph, visited, src);
+	const visited = new Array(n).fill(false);
+	bfs(graph, visited, src);
 };

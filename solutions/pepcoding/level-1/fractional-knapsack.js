@@ -19,25 +19,25 @@ n - number of items
 */
 
 const solve = (n, values, weights, capacity) => {
-  const arr = [];
-  for (let i = 0; i < n; i++) {
-    arr.push([values[i], weights[i]]);
-  }
-  arr.sort((a, b) => {
-    if (a[0] / a[1] > b[0] / b[1]) {
-      return -1;
-    }
-    return 1;
-  });
-  let result = 0;
-  for (let i = 0; i < n; i++) {
-    if (arr[i][1] <= capacity) {
-      result += arr[i][0];
-      capacity -= arr[i][1];
-    } else {
-      result += (arr[i][0] / arr[i][1]) * capacity;
-      break;
-    }
-  }
-  console.log(result);
+	const arr = [];
+	for (let i = 0; i < n; i++) {
+		arr.push([values[i], weights[i]]);
+	}
+	arr.sort((a, b) => {
+		if (a[0] / a[1] > b[0] / b[1]) {
+			return -1;
+		}
+		return 1;
+	});
+	let result = 0;
+	for (let i = 0; i < n; i++) {
+		if (arr[i][1] <= capacity) {
+			result += arr[i][0];
+			capacity -= arr[i][1];
+		} else {
+			result += (arr[i][0] / arr[i][1]) * capacity;
+			break;
+		}
+	}
+	console.log(result);
 };

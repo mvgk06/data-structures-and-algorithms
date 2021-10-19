@@ -18,32 +18,32 @@ e - number of edges
 
 */
 
-const Queue = require("../../../data-structures/queue");
+const Queue = require('../../../data-structures/queue');
 
 const bfs = (graph, visited, src, time) => {
-  const queue = new Queue();
-  visited[src] = true;
-  queue.enque(src);
-  let result = 1;
-  while (queue.getSize() > 0 && time > 0) {
-    const size = queue.getSize();
-    for (let i = 0; i < size; i++) {
-      const curr = queue.getFront();
-      queue.deque();
-      for (const adjacent of graph[curr]) {
-        if (!visited[adjacent]) {
-          visited[adjacent] = true;
-          queue.enque(adjacent);
-          result++;
-        }
-      }
-      time--;
-    }
-  }
-  console.log(result);
+	const queue = new Queue();
+	visited[src] = true;
+	queue.enque(src);
+	let result = 1;
+	while (queue.getSize() > 0 && time > 0) {
+		const size = queue.getSize();
+		for (let i = 0; i < size; i++) {
+			const curr = queue.getFront();
+			queue.deque();
+			for (const adjacent of graph[curr]) {
+				if (!visited[adjacent]) {
+					visited[adjacent] = true;
+					queue.enque(adjacent);
+					result++;
+				}
+			}
+			time--;
+		}
+	}
+	console.log(result);
 };
 
 const solve = (n, graph, src, time) => {
-  const visited = new Array(n).fill(false);
-  bfs(graph, visited, src, time);
+	const visited = new Array(n).fill(false);
+	bfs(graph, visited, src, time);
 };

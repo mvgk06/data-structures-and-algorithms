@@ -18,16 +18,16 @@ n - size of the string
 */
 
 const helper = (s, i, curr) => {
-  if (i === s.length) {
-    console.log(curr);
-    return;
-  }
-  helper(s, i + 1, curr + s[i]);
-  helper(s, i + 1, curr);
-  return;
+	if (i === s.length) {
+		console.log(curr);
+		return;
+	}
+	helper(s, i + 1, curr + s[i]);
+	helper(s, i + 1, curr);
+	return;
 };
 
 const solve = (s) => {
-  const curr = "";
-  helper(s, 0, curr);
+	const curr = '';
+	helper(s, 0, curr);
 };

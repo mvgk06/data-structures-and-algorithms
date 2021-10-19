@@ -35,51 +35,50 @@ n - size of the string
 /* Top down */
 
 const countBinaryStrings = (n, end, memo) => {
-  if (n <= 1) {
-    return n;
-  }
-  if (memo[n][end] != -1) {
-    return memo[n][end];
-  }
-  if (end === 0) {
-    const pickOne = countBinaryStrings(n - 1, 1, memo);
-    memo[n][end] = pickOne;
-  } else {
-    const pickZero = countBinaryStrings(n - 1, 0, memo);
-    const pickOne = countBinaryStrings(n - 1, 1, memo);
-    memo[n][end] = pickZero + pickOne;
-  }
-  return memo[n][end];
+	if (n <= 1) {
+		return n;
+	}
+	if (memo[n][end] != -1) {
+		return memo[n][end];
+	}
+	if (end === 0) {
+		const pickOne = countBinaryStrings(n - 1, 1, memo);
+		memo[n][end] = pickOne;
+	} else {
+		const pickZero = countBinaryStrings(n - 1, 0, memo);
+		const pickOne = countBinaryStrings(n - 1, 1, memo);
+		memo[n][end] = pickZero + pickOne;
+	}
+	return memo[n][end];
 };
 
 const solve = (n) => {
-  const memo = new Array(n + 1);
-  for (let i = 0; i < memo.length; i++) {
-    memo[i] = new Array(2).fill(-1);
-  }
-  const result =
-    countBinaryStrings(n, 0, memo) + countBinaryStrings(n, 1, memo);
-  console.log(result);
+	const memo = new Array(n + 1);
+	for (let i = 0; i < memo.length; i++) {
+		memo[i] = new Array(2).fill(-1);
+	}
+	const result = countBinaryStrings(n, 0, memo) + countBinaryStrings(n, 1, memo);
+	console.log(result);
 };
 
 /* Bottom up */
 
 const solve2 = (n) => {
-  const memo = new Array(n + 1);
-  for (let i = 0; i < memo.length; i++) {
-    memo[i] = new Array(2).fill(-1);
-  }
-  for (let i = 0; i < memo.length; i++) {
-    for (let j = 0; j < memo[i].length; j++) {
-      if (i <= 1) {
-        memo[i][j] = i;
-      } else if (j === 0) {
-        memo[i][j] = memo[i - 1][j + 1];
-      } else {
-        memo[i][j] = memo[i - 1][j - 1] + memo[i - 1][j];
-      }
-    }
-  }
-  const result = memo[n][0] + memo[n][1];
-  console.log(result);
+	const memo = new Array(n + 1);
+	for (let i = 0; i < memo.length; i++) {
+		memo[i] = new Array(2).fill(-1);
+	}
+	for (let i = 0; i < memo.length; i++) {
+		for (let j = 0; j < memo[i].length; j++) {
+			if (i <= 1) {
+				memo[i][j] = i;
+			} else if (j === 0) {
+				memo[i][j] = memo[i - 1][j + 1];
+			} else {
+				memo[i][j] = memo[i - 1][j - 1] + memo[i - 1][j];
+			}
+		}
+	}
+	const result = memo[n][0] + memo[n][1];
+	console.log(result);
 };

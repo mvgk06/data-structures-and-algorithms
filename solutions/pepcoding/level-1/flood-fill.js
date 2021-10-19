@@ -22,33 +22,33 @@ a - length of the longest path
 */
 
 const helper = (mat, i, j, visited, curr) => {
-  if (
-    i < 0 ||
-    i >= mat.length ||
-    j < 0 ||
-    j >= mat[i].length ||
-    visited[i][j] ||
-    mat[i][j] === 1
-  ) {
-    return;
-  }
-  if (i === mat.length - 1 && j === mat[i].length - 1) {
-    console.log(curr);
-    return;
-  }
-  visited[i][j] = true;
-  helper(mat, i - 1, j, visited, curr + "t");
-  helper(mat, i, j - 1, visited, curr + "l");
-  helper(mat, i + 1, j, visited, curr + "d");
-  helper(mat, i, j + 1, visited, curr + "r");
-  visited[i][j] = false;
+	if (
+		i < 0 ||
+		i >= mat.length ||
+		j < 0 ||
+		j >= mat[i].length ||
+		visited[i][j] ||
+		mat[i][j] === 1
+	) {
+		return;
+	}
+	if (i === mat.length - 1 && j === mat[i].length - 1) {
+		console.log(curr);
+		return;
+	}
+	visited[i][j] = true;
+	helper(mat, i - 1, j, visited, curr + 't');
+	helper(mat, i, j - 1, visited, curr + 'l');
+	helper(mat, i + 1, j, visited, curr + 'd');
+	helper(mat, i, j + 1, visited, curr + 'r');
+	visited[i][j] = false;
 };
 
 const solve = (n, m, mat) => {
-  const visited = new Array(n);
-  for (let i = 0; i < n; i++) {
-    visited[i] = new Array(m).fill(false);
-  }
-  const curr = "";
-  helper(mat, 0, 0, visited, curr);
+	const visited = new Array(n);
+	for (let i = 0; i < n; i++) {
+		visited[i] = new Array(m).fill(false);
+	}
+	const curr = '';
+	helper(mat, 0, 0, visited, curr);
 };

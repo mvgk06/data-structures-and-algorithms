@@ -18,16 +18,16 @@ m - exponent
 */
 
 const helper = (n, m) => {
-  if (m === 0) {
-    return 1;
-  }
-  if (m % 2 === 0) {
-    return helper(n, m / 2) * helper(n, m / 2);
-  }
-  return n * helper(n, (m - 1) / 2) * helper(n, (m - 1) / 2);
+	if (m === 0) {
+		return 1;
+	}
+	if (m % 2 === 0) {
+		return helper(n, m / 2) * helper(n, m / 2);
+	}
+	return n * helper(n, (m - 1) / 2) * helper(n, (m - 1) / 2);
 };
 
 const solve = (n, m) => {
-  const result = helper(n, m);
-  console.log(result);
+	const result = helper(n, m);
+	console.log(result);
 };

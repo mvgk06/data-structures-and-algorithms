@@ -17,16 +17,16 @@ n - number of elements
 */
 
 const helper = (n, arr, key) => {
-  if (n === 0) {
-    return -1;
-  }
-  if (arr[n - 1] === key) {
-    return n - 1;
-  }
-  return helper(n - 1, arr, key);
+	if (n === 0) {
+		return -1;
+	}
+	if (arr[n - 1] === key) {
+		return n - 1;
+	}
+	return helper(n - 1, arr, key);
 };
 
 const solve = (n, arr, key) => {
-  const result = helper(n, arr, key);
-  console.log(result);
+	const result = helper(n, arr, key);
+	console.log(result);
 };

@@ -18,20 +18,20 @@ n - number of elements
 */
 
 const helper = (arr, i, curr, sum, target) => {
-  if (i === arr.length) {
-    if (sum === target) {
-      console.log(curr);
-    }
-    return;
-  }
-  curr.push(arr[i]);
-  helper(arr, i + 1, curr, sum + arr[i], target);
-  curr.pop();
-  helper(arr, i + 1, curr, sum, target);
-  return;
+	if (i === arr.length) {
+		if (sum === target) {
+			console.log(curr);
+		}
+		return;
+	}
+	curr.push(arr[i]);
+	helper(arr, i + 1, curr, sum + arr[i], target);
+	curr.pop();
+	helper(arr, i + 1, curr, sum, target);
+	return;
 };
 
 const solve = (arr, target) => {
-  const curr = [];
-  helper(arr, 0, curr, 0, target);
+	const curr = [];
+	helper(arr, 0, curr, 0, target);
 };
