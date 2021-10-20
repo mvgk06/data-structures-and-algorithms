@@ -35,14 +35,14 @@ e - number of edges
 
 /* DFS */
 
-const getConnectedComponents = (graph, curr, visited, path) => {
+const dfs = (graph, curr, visited, path) => {
 	if (visited[curr]) {
 		return;
 	}
 	visited[curr] = true;
 	path.push(curr);
 	for (const adjacent of graph[curr]) {
-		getConnectedComponents(graph, adjacent, visited, path);
+		dfs(graph, adjacent, visited, path);
 	}
 };
 
@@ -52,7 +52,7 @@ const solve = (n, graph) => {
 	for (let i = 0; i < visited.length; i++) {
 		if (!visited[i]) {
 			const path = [];
-			getConnectedComponents(graph, i, visited, path);
+			dfs(graph, i, visited, path);
 			result.push(path);
 		}
 	}
@@ -63,7 +63,7 @@ const solve = (n, graph) => {
 
 const Queue = require('../../../data-structures/queue.js');
 
-const getConnectedComponents2 = (graph, src, visited, path) => {
+const bfs = (graph, src, visited, path) => {
 	const queue = new Queue();
 	visited[src] = true;
 	queue.enque(src);
@@ -86,7 +86,7 @@ const solve2 = (n, graph) => {
 	for (let i = 0; i < visited.length; i++) {
 		if (!visited[i]) {
 			const path = [];
-			getConnectedComponents2(graph, i, visited, path);
+			bfs(graph, i, visited, path);
 			result.push(path);
 		}
 	}
