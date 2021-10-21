@@ -7,7 +7,7 @@ https://www.pepcoding.com/resources/online-java-foundation/graphs/is-graph-conne
 Approach
 
 1. DFS
-- Perform dfs from node 0.
+- Perform dfs from the source node.
 - Mark the current node as visited.
 - Recursively visit all the adjacent nodes of the current node.
 - If the current node is visited, then return.
@@ -18,10 +18,10 @@ Time - O(n+e)
 Space - O(n+e)
 
 2. BFS
-- perform bfs from node 0.
+- Perform bfs from the source node.
 - Mark the current node as visited and enque it into the queue.
 - While the queue is not empty, deque a node.
-- Visit all the adjacent nodes of the current node which are not yet visited and mark them as visited and enque them into the queue.
+- Visit all the adjacent nodes of the current node which are not yet visited, mark them as visited and enque them into the queue.
 - If any of the node is not visited, then return false.
 - Else return true. 
 
@@ -35,19 +35,19 @@ e - number of edges
 
 /* DFS */
 
-const isConnected = (graph, curr, visited) => {
+const dfs = (graph, curr, visited) => {
 	if (visited[curr]) {
 		return;
 	}
 	visited[curr] = true;
 	for (const adjacent of graph[curr]) {
-		isConnected(graph, adjacent, visited);
+		dfs(graph, adjacent, visited);
 	}
 };
 
 const solve = (n, graph) => {
 	const visited = new Array(n).fill(false);
-	isConnected(graph, 0, visited);
+	dfs(graph, 0, visited);
 	for (let i = 0; i < visited.length; i++) {
 		if (!visited[i]) {
 			console.log(false);
@@ -61,7 +61,7 @@ const solve = (n, graph) => {
 
 const Queue = require('../../../data-structures/queue.js');
 
-const isConnected2 = (graph, src, visited) => {
+const bfs = (graph, src, visited) => {
 	const queue = new Queue();
 	visited[src] = true;
 	queue.enque(src);
@@ -79,7 +79,7 @@ const isConnected2 = (graph, src, visited) => {
 
 const solve2 = (n, graph) => {
 	const visited = new Array(n).fill(false);
-	isConnected2(graph, 0, visited);
+	bfs(graph, 0, visited);
 	for (let i = 0; i < visited.length; i++) {
 		if (!visited[i]) {
 			console.log(false);

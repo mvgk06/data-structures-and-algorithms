@@ -21,7 +21,7 @@ Space - O(n*m)
 - From each land cell that is not visited, perform bfs to visit the cells.
 - Mark the current cell as visited and enque it into the queue.
 - While the queue is not empty, deque a cell.
-- Visit all the adjacent cells of the current cell which are not yet visited and mark them as visited and enque them into the queue.
+- Visit all the adjacent cells of the current cell which are not yet visited, mark them as visited and enque them into the queue.
 - After visiting all the cells in the current component, increment the result by 1.
 - Return the result. 
 
@@ -35,7 +35,7 @@ m - number of columns
 
 /* DFS */
 
-const visitIsland = (graph, visited, paths, i, j) => {
+const dfs = (graph, visited, paths, i, j) => {
 	if (
 		i < 0 ||
 		i >= graph.length ||
@@ -50,7 +50,7 @@ const visitIsland = (graph, visited, paths, i, j) => {
 	for (let k = 0; k < paths.length; k++) {
 		const row = i + paths[k][0],
 			col = j + paths[k][1];
-		visitIsland(graph, visited, paths, row, col);
+		dfs(graph, visited, paths, row, col);
 	}
 };
 
@@ -69,7 +69,7 @@ const solve = function (n, graph) {
 	for (let i = 0; i < graph.length; i++) {
 		for (let j = 0; j < graph[i].length; j++) {
 			if (graph[i][j] === 0 && !visited[i][j]) {
-				visitIsland(graph, visited, paths, i, j);
+				dfs(graph, visited, paths, i, j);
 				result += 1;
 			}
 		}
@@ -92,7 +92,7 @@ const isValid = (graph, visited, i, j) => {
 	);
 };
 
-const visitIsland2 = (graph, visited, paths, i, j) => {
+const bfs = (graph, visited, paths, i, j) => {
 	const queue = new Queue();
 	queue.enque([i, j]);
 	visited[i][j] = true;
@@ -125,7 +125,7 @@ const solve2 = function (n, m, graph) {
 	for (let i = 0; i < graph.length; i++) {
 		for (let j = 0; j < graph[i].length; j++) {
 			if (graph[i][j] === 0 && !visited[i][j]) {
-				visitIsland2(graph, visited, paths, i, j);
+				bfs(graph, visited, paths, i, j);
 				result += 1;
 			}
 		}
