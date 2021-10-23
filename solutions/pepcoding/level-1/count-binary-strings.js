@@ -42,12 +42,12 @@ const countBinaryStrings = (n, end, memo) => {
 		return memo[n][end];
 	}
 	if (end === 0) {
-		const pickOne = countBinaryStrings(n - 1, 1, memo);
-		memo[n][end] = pickOne;
+		const endsWithOne = countBinaryStrings(n - 1, end + 1, memo);
+		memo[n][end] = endsWithOne;
 	} else {
-		const pickZero = countBinaryStrings(n - 1, 0, memo);
-		const pickOne = countBinaryStrings(n - 1, 1, memo);
-		memo[n][end] = pickZero + pickOne;
+		const endsWithZero = countBinaryStrings(n - 1, end - 1, memo);
+		const endsWithOne = countBinaryStrings(n - 1, end, memo);
+		memo[n][end] = endsWithZero + endsWithOne;
 	}
 	return memo[n][end];
 };
