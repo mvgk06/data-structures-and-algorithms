@@ -154,9 +154,9 @@ This repo contains the implementation of common data structures and algorithms a
 | 76  | Minimum Window Substring | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/minimum-window-substring.js) |
 | 239 | Sliding Window Maximum   | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/sliding-window-maximum.js)   |
 
-## Pepcoding Solutions [48]
+## Pepcoding Solutions [52]
 
-### Level 1 [48]
+### Level 1 [52]
 
 #### Recursion and Backtracking [24]
 
@@ -204,7 +204,17 @@ This repo contains the implementation of common data structures and algorithms a
 | Count Binary Strings                | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/count-binary-strings.js)                |
 | Arrange Buildings                   | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/arrange-buildings.js)                   |
 
-#### Graphs [12]
+### Tree [3]
+
+| Size, Sum, Maximum and Height of a Binary Tree | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/size-sum-maximum-and-height-of-a-binary-tree.js) |
+| Level Order Traversal of Binary Tree | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/level-order-traversal-of-binary-tree.js) |
+| Iterative Pre, Post and Inorder Traversal of Binary Tree | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/iterative-pre-post-and-inorder-traversal-of-binary-tree.js) |
+
+### Hashmap and Heap [1]
+
+| Highest Frequency Character | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/highest-frequency-character.js) |
+
+#### Graph [12]
 
 | Problem                             | Solution                                                                                                                                                     |
 | :---------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
