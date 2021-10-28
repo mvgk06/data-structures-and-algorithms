@@ -1,8 +1,12 @@
-# About
+## About
 
-This repo contains the implementation of common data structures and algorithms along with solutions to various problems.
+Implementation of common data structures and algorithms along with solutions to various problems in JavaScript.
 
-## Data Structures [3]
+## Implementations
+
+<details>
+
+<summary>Data Structures [3]</summary>
 
 | Data structure | Implementation                                                                                                     |
 | :------------- | :----------------------------------------------------------------------------------------------------------------- |
@@ -10,9 +14,13 @@ This repo contains the implementation of common data structures and algorithms a
 | Deque          | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/data-structures/deque.js) |
 | Heap           | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/data-structures/heap.js)  |
 
+</details>
+
 ## Leetcode Solutions [127]
 
-### Easy [75]
+<details>
+
+<summary>Easy [75]</summary>
 
 | #    | Problem                                                  | Solution                                                                                                                                                                 |
 | :--- | :------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -92,7 +100,11 @@ This repo contains the implementation of common data structures and algorithms a
 | 2000 | Reverse Prefix of Word                                   | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/problems/reverse-prefix-of-word.js)                          |
 | 2016 | Maximum Difference Between Increasing Elements           | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/problems/maximum-difference-between-increasing-elements.js)  |
 
-### Medium [49]
+</details>
+
+<details>
+
+<summary>Medium [49]</summary>
 
 | #    | Problem                                                                    | Solution                                                                                                                                                                                   |
 | :--- | :------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -146,7 +158,11 @@ This repo contains the implementation of common data structures and algorithms a
 | 1438 | Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit.js) |
 | 1482 | Minimum Number of Days to Make m Bouquets                                  | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/minimum-number-of-days-to-make-m-bouquets.js)                                  |
 
-### Hard [3]
+</details>
+
+<details>
+
+<summary>Hard [3]</summary>
 
 | #   | Problem                  | Solution                                                                                                                                 |
 | :-- | :----------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
@@ -154,11 +170,15 @@ This repo contains the implementation of common data structures and algorithms a
 | 76  | Minimum Window Substring | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/minimum-window-substring.js) |
 | 239 | Sliding Window Maximum   | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/sliding-window-maximum.js)   |
 
+</details>
+
 ## Pepcoding Solutions [52]
 
 ### Level 1 [52]
 
-#### Recursion and Backtracking [24]
+<details>
+
+<summary>Recursion and Backtracking [24]</summary>
 
 | Problem                     | Solution                                                                                                                                             |
 | :-------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -187,7 +207,11 @@ This repo contains the implementation of common data structures and algorithms a
 | N Queens                    | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/n-queens.js)                    |
 | Knights Tour                | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/knights-tour.js)                |
 
-#### Dynamic Programming and Greedy [12]
+</details>
+
+<details>
+
+<summary>Dynamic Programming and Greedy [12]</summary>
 
 | Problem                             | Solution                                                                                                                                                     |
 | :---------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -204,7 +228,11 @@ This repo contains the implementation of common data structures and algorithms a
 | Count Binary Strings                | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/count-binary-strings.js)                |
 | Arrange Buildings                   | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/arrange-buildings.js)                   |
 
-### Tree [3]
+</details>
+
+<details>
+
+<summary>Tree [3]</summary>
 
 | Problem                                                  | Solution                                                                                                                                                                         |
 | :------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -212,13 +240,20 @@ This repo contains the implementation of common data structures and algorithms a
 | Level Order Traversal of Binary Tree                     | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/level-order-traversal-of-binary-tree.js)                    |
 | Iterative Pre, Post and Inorder Traversal of Binary Tree | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/iterative-pre-post-and-inorder-traversal-of-binary-tree.js) |
 
-### Hashmap and Heap [1]
+</details>
+
+<details>
+<summary>Hashmap and Heap [1]</summary>
 
 | Problem                     | Solution                                                                                                                                             |
 | :-------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Highest Frequency Character | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/highest-frequency-character.js) |
 
-#### Graph [12]
+</details>
+
+<details>
+
+<summary>Graph [12]</summary>
 
 | Problem                             | Solution                                                                                                                                                     |
 | :---------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -234,3 +269,5 @@ This repo contains the implementation of common data structures and algorithms a
 | Is Graph Cyclic                     | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/is-graph-cyclic.js)                     |
 | Is Graph Bipartite                  | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/is-graph-bipartite.js)                  |
 | Spread Of Infection                 | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/spread-of-infection.js)                 |
+
+</details>
