@@ -206,12 +206,16 @@ This repo contains the implementation of common data structures and algorithms a
 
 ### Tree [3]
 
-| Size, Sum, Maximum and Height of a Binary Tree | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/size-sum-maximum-and-height-of-a-binary-tree.js) |
-| Level Order Traversal of Binary Tree | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/level-order-traversal-of-binary-tree.js) |
+| Problem                                                  | Solution                                                                                                                                                                         |
+| :------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Size, Sum, Maximum and Height of a Binary Tree           | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/size-sum-maximum-and-height-of-a-binary-tree.js)            |
+| Level Order Traversal of Binary Tree                     | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/level-order-traversal-of-binary-tree.js)                    |
 | Iterative Pre, Post and Inorder Traversal of Binary Tree | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/iterative-pre-post-and-inorder-traversal-of-binary-tree.js) |
 
 ### Hashmap and Heap [1]
 
+| Problem                     | Solution                                                                                                                                             |
+| :-------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Highest Frequency Character | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/highest-frequency-character.js) |
 
 #### Graph [12]
