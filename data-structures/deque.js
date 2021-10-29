@@ -1,10 +1,4 @@
-class Node {
-	constructor(value, prev = null, next = null) {
-		this.value = value;
-		this.next = next;
-		this.prev = prev;
-	}
-}
+const DoublyLinkedListNode = require('./doubly-linked-list-node');
 
 class Deque {
 	constructor() {
@@ -13,7 +7,7 @@ class Deque {
 		this.size = 0;
 	}
 	push(value) {
-		const element = new Node(value);
+		const element = new DoublyLinkedListNode(value);
 		if (this.size === 0) {
 			this.front = element;
 			this.rear = element;
@@ -34,7 +28,7 @@ class Deque {
 		}
 	}
 	enque(value) {
-		const element = new Node(value);
+		const element = new DoublyLinkedListNode(value);
 		if (this.size === 0) {
 			this.front = element;
 			this.rear = element;

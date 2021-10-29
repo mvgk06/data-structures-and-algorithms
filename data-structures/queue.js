@@ -1,9 +1,4 @@
-class Node {
-	constructor(value, next = null) {
-		this.value = value;
-		this.next = next;
-	}
-}
+const LinkedListNode = require('./linked-list-node');
 
 class Queue {
 	constructor() {
@@ -12,7 +7,7 @@ class Queue {
 		this.size = 0;
 	}
 	enque(value) {
-		const element = new Node(value);
+		const element = new LinkedListNode(value);
 		if (this.size === 0) {
 			this.front = element;
 			this.rear = element;
