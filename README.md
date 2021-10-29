@@ -172,9 +172,9 @@ Implementation of common data structures and algorithms along with solutions to 
 
 </details>
 
-## Pepcoding Solutions [54]
+## Pepcoding Solutions [55]
 
-### Level 1 [54]
+### Level 1 [55]
 
 <details>
 
@@ -232,7 +232,7 @@ Implementation of common data structures and algorithms along with solutions to 
 
 <details>
 
-<summary>Tree [5]</summary>
+<summary>Tree [6]</summary>
 
 | Problem                                                  | Solution                                                                                                                                                                         |
 | :------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -241,6 +241,7 @@ Implementation of common data structures and algorithms along with solutions to 
 | Iterative Pre, Post and Inorder Traversal of Binary Tree | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/iterative-pre-post-and-inorder-traversal-of-binary-tree.js) |
 | Find and NodeToRootPath in Binary Tree                   | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/find-and-node-to-root-path-in-binary-tree.js)               |
 | Print K Levels Down                                      | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/print-k-levels-down.js)                                     |
+| Print Nodes K Distance Away                              | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/print-nodes-k-distance-away.js)                             |
 
 </details>
 
