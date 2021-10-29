@@ -58,8 +58,7 @@ const coinChangeHelper = (coins, amt, i, memo) => {
 		const pick = 1 + coinChangeHelper(coins, amt - coins[i], i, memo);
 		const dontPick = coinChangeHelper(coins, amt, i - 1, memo);
 		memo[i][amt] = Math.min(pick, dontPick);
-	}
-	else {
+	} else {
 		const dontPick = coinChangeHelper(coins, amt, i - 1, memo);
 		memo[i][amt] = dontPick;
 	}
@@ -94,10 +93,7 @@ const coinChange2 = function (coins, amount) {
 	for (let i = 1; i < memo.length; i++) {
 		for (let j = 1; j < memo[i].length; j++) {
 			if (coins[i - 1] <= j) {
-				memo[i][j] = Math.min(
-					1 + memo[i][j - coins[i - 1]],
-					memo[i - 1][j]
-				);
+				memo[i][j] = Math.min(1 + memo[i][j - coins[i - 1]], memo[i - 1][j]);
 			} else {
 				memo[i][j] = memo[i - 1][j];
 			}

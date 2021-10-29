@@ -30,46 +30,46 @@ n - size of the string
 /* Brute force */
 
 const numberOfSubstrings = function (s) {
-    const map = new Map();
-    let result = 0;
-    for (let i = 0; i < s.length; i++) {
-        for (let j = i; j < s.length; j++) {
-            if (map.has(s[j])) {
-                map.set(s[j], map.get(s[j]) + 1);
-            }
-            else {
-                map.set(s[j], 1);
-            }
-            if (map.size === 3) {
-                result++;
-            }
-        }
-        map.clear();
-    }
-    return result;
+	const map = new Map();
+	let result = 0;
+	for (let i = 0; i < s.length; i++) {
+		for (let j = i; j < s.length; j++) {
+			if (map.has(s[j])) {
+				map.set(s[j], map.get(s[j]) + 1);
+			} else {
+				map.set(s[j], 1);
+			}
+			if (map.size === 3) {
+				result++;
+			}
+		}
+		map.clear();
+	}
+	return result;
 };
 
 /* Sliding window */
 
 const numberOfSubstrings2 = function (s) {
-    const map = new Map();
-    let start = 0, end = 0, result = 0;
-    while (end < s.length) {
-        if (map.has(s[end])) {
-            map.set(s[end], map.get(s[end]) + 1);
-        }
-        else {
-            map.set(s[end], 1);
-        }
-        while (start < s.length && map.size === 3) {
-            result += s.length - end;
-            map.set(s[start], map.get(s[start]) - 1);
-            if (map.get(s[start]) === 0) {
-                map.delete(s[start]);
-            }
-            start++;
-        }
-        end++;
-    }
-    return result;
+	const map = new Map();
+	let start = 0,
+		end = 0,
+		result = 0;
+	while (end < s.length) {
+		if (map.has(s[end])) {
+			map.set(s[end], map.get(s[end]) + 1);
+		} else {
+			map.set(s[end], 1);
+		}
+		while (start < s.length && map.size === 3) {
+			result += s.length - end;
+			map.set(s[start], map.get(s[start]) - 1);
+			if (map.get(s[start]) === 0) {
+				map.delete(s[start]);
+			}
+			start++;
+		}
+		end++;
+	}
+	return result;
 };

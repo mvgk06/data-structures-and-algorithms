@@ -37,49 +37,48 @@ n - number of elements
 /* Sorting */
 
 const majorityElement = function (nums) {
-    nums.sort((a, b) => {
-        if (a < b) {
-            return -1;
-        }
-        return 1;
-    });
-    return nums[Math.floor((nums.length) / 2)];
+	nums.sort((a, b) => {
+		if (a < b) {
+			return -1;
+		}
+		return 1;
+	});
+	return nums[Math.floor(nums.length / 2)];
 };
 
 /* Hashing */
 
 const majorityElement2 = function (nums) {
-    const map = new Map();
-    for (let i = 0; i < nums.length; i++) {
-        if (map.has(nums[i])) {
-            map.set(nums[i], map.get(nums[i]) + 1);
-        }
-        else {
-            map.set(nums[i], 1);
-        }
-    }
-    for (let key of map.keys()) {
-        if (map.get(key) > Math.floor(nums.length / 2)) {
-            return key;
-        }
-    }
+	const map = new Map();
+	for (let i = 0; i < nums.length; i++) {
+		if (map.has(nums[i])) {
+			map.set(nums[i], map.get(nums[i]) + 1);
+		} else {
+			map.set(nums[i], 1);
+		}
+	}
+	for (let key of map.keys()) {
+		if (map.get(key) > Math.floor(nums.length / 2)) {
+			return key;
+		}
+	}
 };
 
 /* Boyer moore voting */
 
 const majorityElement3 = function (nums) {
-    let count = 1, result = nums[0];
-    for (let i = 1; i < nums.length; i++) {
-        if (nums[i] === result) {
-            count++;
-        }
-        else {
-            count--;
-        }
-        if (count == 0) {
-            count = 1;
-            result = nums[i];
-        }
-    }
-    return result;
+	let count = 1,
+		result = nums[0];
+	for (let i = 1; i < nums.length; i++) {
+		if (nums[i] === result) {
+			count++;
+		} else {
+			count--;
+		}
+		if (count == 0) {
+			count = 1;
+			result = nums[i];
+		}
+	}
+	return result;
 };

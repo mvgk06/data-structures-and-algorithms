@@ -31,45 +31,46 @@ n - number of nodes
 /* DFS */
 
 const invertTree = function (root) {
-  if (root === null) {
-    return null;
-  }
-  const temp = root.left;
-  root.left = root.right;
-  root.right = temp;
-  invertTree(root.left);
-  invertTree(root.right);
-  return root;
+	if (root === null) {
+		return null;
+	}
+	const temp = root.left;
+	root.left = root.right;
+	root.right = temp;
+	invertTree(root.left);
+	invertTree(root.right);
+	return root;
 };
 
 /* BFS */
 
-const Queue = require("../../data-structures/queue.js");
+const Queue = require('../../data-structures/queue.js');
 
 const invertTree2 = function (root) {
-  if (root === null) {
-    return null;
-  }
+	if (root === null) {
+		return null;
+	}
 
-  const queue = new Queue();
-  queue.enque(root);
+	const queue = new Queue();
+	queue.enque(root);
 
-  while (queue.getSize() > 0) {
+	while (queue.getSize() > 0) {
+		const curr = queue.getFront(),
+			left = curr.left,
+			right = curr.right;
+		queue.deque();
 
-    const curr = queue.getFront(), left = curr.left, right = curr.right;
-    queue.deque();
+		curr.left = right;
+		curr.right = left;
 
-    curr.left = right;
-    curr.right = left;
+		if (right != null) {
+			queue.enque(right);
+		}
 
-    if (right != null) {
-      queue.enque(right);
-    }
+		if (left != null) {
+			queue.enque(left);
+		}
+	}
 
-    if (left != null) {
-      queue.enque(left);
-    }
-  }
-
-  return root;
+	return root;
 };

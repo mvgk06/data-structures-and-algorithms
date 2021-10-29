@@ -53,95 +53,94 @@ n - number of houses
 /* Top down */
 
 const robHelper = (nums, start, i, memo) => {
-    if (i < start) {
-        return 0;
-    }
-    if (memo[i] != -1) {
-        return memo[i];
-    }
-    const rob = nums[i] + robHelper(nums, start, i - 2, memo);
-    const dontRob = robHelper(nums, start, i - 1, memo);
-    memo[i] = Math.max(rob, dontRob);
-    return memo[i];
+	if (i < start) {
+		return 0;
+	}
+	if (memo[i] != -1) {
+		return memo[i];
+	}
+	const rob = nums[i] + robHelper(nums, start, i - 2, memo);
+	const dontRob = robHelper(nums, start, i - 1, memo);
+	memo[i] = Math.max(rob, dontRob);
+	return memo[i];
 };
 
 const rob = function (nums) {
-    if (nums.length === 1) {
-        return nums[0];
-    }
-    const memo = new Array(nums.length).fill(-1);
-    const skipFirstHouse = robHelper(nums, 1, nums.length - 1, memo);
-    memo.fill(-1);
-    const skipLastHouse = robHelper(nums, 0, nums.length - 2, memo);
-    return Math.max(skipFirstHouse, skipLastHouse);
+	if (nums.length === 1) {
+		return nums[0];
+	}
+	const memo = new Array(nums.length).fill(-1);
+	const skipFirstHouse = robHelper(nums, 1, nums.length - 1, memo);
+	memo.fill(-1);
+	const skipLastHouse = robHelper(nums, 0, nums.length - 2, memo);
+	return Math.max(skipFirstHouse, skipLastHouse);
 };
 
 /* Bottom up */
 
 const robHelper2 = (nums, memo, skipFirst) => {
-    memo[1] = skipFirst ? 0 : nums[0];
-    memo[2] = skipFirst ? nums[1] : Math.max(nums[0], nums[1]);
-    for (let i = 3; i < memo.length; i++) {
-        memo[i] = Math.max(nums[i - 1] + memo[i - 2], memo[i - 1]);
-    }
-    return skipFirst ? memo[nums.length] : memo[nums.length - 1];
+	memo[1] = skipFirst ? 0 : nums[0];
+	memo[2] = skipFirst ? nums[1] : Math.max(nums[0], nums[1]);
+	for (let i = 3; i < memo.length; i++) {
+		memo[i] = Math.max(nums[i - 1] + memo[i - 2], memo[i - 1]);
+	}
+	return skipFirst ? memo[nums.length] : memo[nums.length - 1];
 };
 
 const rob2 = function (nums) {
-    if (nums.length === 1) {
-        return nums[0];
-    }
-    const memo = new Array(nums.length + 1).fill(-1);
-    const skipFirstHouse = robHelper2(nums, memo, true);
-    const skipLastHouse = robHelper2(nums, memo, false);
-    return Math.max(skipFirstHouse, skipLastHouse);
+	if (nums.length === 1) {
+		return nums[0];
+	}
+	const memo = new Array(nums.length + 1).fill(-1);
+	const skipFirstHouse = robHelper2(nums, memo, true);
+	const skipLastHouse = robHelper2(nums, memo, false);
+	return Math.max(skipFirstHouse, skipLastHouse);
 };
 
 /* Bottom up (space optimized) */
 
 const robHelper3 = (nums, skipFirst) => {
-    let prev2 = skipFirst ? 0 : nums[0];
-    let prev = skipFirst ? nums[1] : Math.max(nums[0], nums[1]);
-    for (let i = 3; i <= nums.length; i++) {
-        const curr = Math.max(nums[i - 1] + prev2, prev);
-        prev2 = prev;
-        prev = curr;
-    }
-    return skipFirst ? prev : prev2;
+	let prev2 = skipFirst ? 0 : nums[0];
+	let prev = skipFirst ? nums[1] : Math.max(nums[0], nums[1]);
+	for (let i = 3; i <= nums.length; i++) {
+		const curr = Math.max(nums[i - 1] + prev2, prev);
+		prev2 = prev;
+		prev = curr;
+	}
+	return skipFirst ? prev : prev2;
 };
 
 const rob3 = function (nums) {
-    if (nums.length === 1) {
-        return nums[0];
-    }
-    const skipFirstHouse = robHelper3(nums, true);
-    const skipLastHouse = robHelper3(nums, false);
-    return Math.max(skipFirstHouse, skipLastHouse);
+	if (nums.length === 1) {
+		return nums[0];
+	}
+	const skipFirstHouse = robHelper3(nums, true);
+	const skipLastHouse = robHelper3(nums, false);
+	return Math.max(skipFirstHouse, skipLastHouse);
 };
 
 /* Optimal path */
 
 const optimalPath = (nums, memo) => {
-    if (memo.length === 1) {
-        return [0];
-    }
-    if (memo.length === 2) {
-        if (nums[0] > nums[1]) {
-            return [0];
-        }
-        return [1];
-    }
-    const path = [];
-    let i = memo.length;
-    while (i >= 3) {
-        if (memo[i] === nums[i - 1] + memo[i - 2]) {
-            path.push(i - 1);
-            i -= 2;
-        }
-        else {
-            i -= 1;
-        }
-    }
-    path.push(i - 1);
-    return path.reverse();
+	if (memo.length === 1) {
+		return [0];
+	}
+	if (memo.length === 2) {
+		if (nums[0] > nums[1]) {
+			return [0];
+		}
+		return [1];
+	}
+	const path = [];
+	let i = memo.length;
+	while (i >= 3) {
+		if (memo[i] === nums[i - 1] + memo[i - 2]) {
+			path.push(i - 1);
+			i -= 2;
+		} else {
+			i -= 1;
+		}
+	}
+	path.push(i - 1);
+	return path.reverse();
 };

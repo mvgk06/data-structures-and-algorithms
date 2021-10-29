@@ -34,56 +34,58 @@ n - number of nodes
 /* DFS */
 
 const dfs = (grid, visited, i) => {
-    visited[i] = true;
-    for (let j = 0; j < grid[i].length; j++) {
-        if (grid[i][j] === 1 && !visited[j]) {
-            dfs(grid, visited, j);
-        }
-    }
+	visited[i] = true;
+	for (let j = 0; j < grid[i].length; j++) {
+		if (grid[i][j] === 1 && !visited[j]) {
+			dfs(grid, visited, j);
+		}
+	}
 };
 
 const findCircleNum = function (isConnected) {
-    const n = isConnected.length, visited = new Array(n);
-    visited.fill(false);
-    let result = 0;
-    for (let i = 0; i < n; i++) {
-        if (!visited[i]) {
-            dfs(isConnected, visited, i);
-            result++;
-        }
-    }
-    return result;
+	const n = isConnected.length,
+		visited = new Array(n);
+	visited.fill(false);
+	let result = 0;
+	for (let i = 0; i < n; i++) {
+		if (!visited[i]) {
+			dfs(isConnected, visited, i);
+			result++;
+		}
+	}
+	return result;
 };
 
 /* BFS */
 
-const Queue = require("../../data-structures/queue.js");
+const Queue = require('../../data-structures/queue.js');
 
 const bfs = (grid, visited, i) => {
-    const queue = new Queue();
-    visited[i] = true;
-    queue.enque(i);
-    while (queue.getSize() > 0) {
-        const curr = queue.getFront();
-        queue.deque();
-        for (let j = 0; j < grid[curr].length; j++) {
-            if (grid[curr][j] === 1 && !visited[j]) {
-                visited[j] = true;
-                queue.enque(j);
-            }
-        }
-    }
+	const queue = new Queue();
+	visited[i] = true;
+	queue.enque(i);
+	while (queue.getSize() > 0) {
+		const curr = queue.getFront();
+		queue.deque();
+		for (let j = 0; j < grid[curr].length; j++) {
+			if (grid[curr][j] === 1 && !visited[j]) {
+				visited[j] = true;
+				queue.enque(j);
+			}
+		}
+	}
 };
 
 const findCircleNum2 = function (isConnected) {
-    const n = isConnected.length, visited = new Array(n);
-    visited.fill(false);
-    let result = 0;
-    for (let i = 0; i < n; i++) {
-        if (!visited[i]) {
-            bfs(isConnected, visited, i);
-            result++;
-        }
-    }
-    return result;
+	const n = isConnected.length,
+		visited = new Array(n);
+	visited.fill(false);
+	let result = 0;
+	for (let i = 0; i < n; i++) {
+		if (!visited[i]) {
+			bfs(isConnected, visited, i);
+			result++;
+		}
+	}
+	return result;
 };

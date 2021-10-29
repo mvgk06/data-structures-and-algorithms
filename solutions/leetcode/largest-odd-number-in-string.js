@@ -16,15 +16,15 @@ n - size of the string
 */
 
 const isOdd = (d) => {
-    return d === 1 || d === 3 || d === 5 || d === 7 || d === 9;
+	return d === 1 || d === 3 || d === 5 || d === 7 || d === 9;
 };
 
 const largestOddNumber = function (num) {
-    for (let i = num.length - 1; i >= 0; i--) {
-        const d = parseInt(num[i]);
-        if (isOdd(d)) {
-            return num.substring(0, i + 1);
-        }
-    }
-    return "";
+	for (let i = num.length - 1; i >= 0; i--) {
+		const d = parseInt(num[i]);
+		if (isOdd(d)) {
+			return num.substring(0, i + 1);
+		}
+	}
+	return '';
 };

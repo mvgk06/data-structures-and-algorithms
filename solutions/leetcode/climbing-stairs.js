@@ -43,46 +43,47 @@ n - number of stairs
 /* Top down */
 
 const climbStairsHelper = (n, currStair, memo) => {
-    if (currStair === n) {
-        return 1;
-    }
-    if (currStair > n) {
-        return 0;
-    }
-    if (memo[currStair] != -1) {
-        return memo[currStair];
-    }
-    const firstStair = climbStairsHelper(n, currStair + 1, memo);
-    const secondStair = climbStairsHelper(n, currStair + 2, memo);
-    memo[currStair] = firstStair + secondStair;
-    return memo[currStair];
+	if (currStair === n) {
+		return 1;
+	}
+	if (currStair > n) {
+		return 0;
+	}
+	if (memo[currStair] != -1) {
+		return memo[currStair];
+	}
+	const firstStair = climbStairsHelper(n, currStair + 1, memo);
+	const secondStair = climbStairsHelper(n, currStair + 2, memo);
+	memo[currStair] = firstStair + secondStair;
+	return memo[currStair];
 };
 
 const climbStairs = function (n) {
-    const memo = new Array(n).fill(-1);
-    return climbStairsHelper(n, 0, memo);
+	const memo = new Array(n).fill(-1);
+	return climbStairsHelper(n, 0, memo);
 };
 
 /* Bottom up */
 
 const climbStairs2 = function (n) {
-    const memo = new Array(n + 1).fill(0);
-    memo[n] = 1;
-    memo[n - 1] = 1;
-    for (let i = n - 2; i >= 0; i--) {
-        memo[i] = memo[i + 1] + memo[i + 2];
-    }
-    return memo[0];
+	const memo = new Array(n + 1).fill(0);
+	memo[n] = 1;
+	memo[n - 1] = 1;
+	for (let i = n - 2; i >= 0; i--) {
+		memo[i] = memo[i + 1] + memo[i + 2];
+	}
+	return memo[0];
 };
 
 /* Bottom up (space optimized) */
 
 const climbStairs3 = function (n) {
-    let first = 1, second = 1;
-    for (let i = n - 2; i >= 0; i--) {
-        const curr = first + second;
-        first = second;
-        second = curr;
-    }
-    return second;
+	let first = 1,
+		second = 1;
+	for (let i = n - 2; i >= 0; i--) {
+		const curr = first + second;
+		first = second;
+		second = curr;
+	}
+	return second;
 };

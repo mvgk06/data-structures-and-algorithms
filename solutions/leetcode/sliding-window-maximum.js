@@ -31,38 +31,39 @@ k - size of the window
 /* Brute force */
 
 const maxSlidingWindow = function (nums, k) {
-    const result = [];
-    for (let i = 0; i < (nums.length - k + 1); i++) {
-        let max = -Number.MAX_VALUE;
-        for (let j = i; j < i + k; j++) {
-            max = Math.max(max, nums[j]);
-        }
-        result.push(max);
-    }
-    return result;
+	const result = [];
+	for (let i = 0; i < nums.length - k + 1; i++) {
+		let max = -Number.MAX_VALUE;
+		for (let j = i; j < i + k; j++) {
+			max = Math.max(max, nums[j]);
+		}
+		result.push(max);
+	}
+	return result;
 };
-
 
 /* Sliding window */
 
-const Deque = require("../../data-structures/deque.js");
+const Deque = require('../../data-structures/deque.js');
 
 const maxSlidingWindow2 = function (nums, k) {
-    const deque = new Deque(), result = [];
-    let start = 0, end = 0;
-    while (end < nums.length) {
-        while (deque.getSize() != 0 && nums[end] > nums[deque.getRear()]) {
-            deque.pop();
-        }
-        deque.push(end);
-        if (end - start + 1 === k) {
-            result.push(nums[deque.getFront()]);
-            if (deque.getFront() === start) {
-                deque.deque();
-            }
-            start++;
-        }
-        end++;
-    }
-    return result;
+	const deque = new Deque(),
+		result = [];
+	let start = 0,
+		end = 0;
+	while (end < nums.length) {
+		while (deque.getSize() != 0 && nums[end] > nums[deque.getRear()]) {
+			deque.pop();
+		}
+		deque.push(end);
+		if (end - start + 1 === k) {
+			result.push(nums[deque.getFront()]);
+			if (deque.getFront() === start) {
+				deque.deque();
+			}
+			start++;
+		}
+		end++;
+	}
+	return result;
 };

@@ -31,21 +31,21 @@ n - number
 /* Division */
 
 const isPowerOfThree = function (n) {
-    if (n <= 0) {
-        return false;
-    }
-    while (n % 3 === 0) {
-        n = n / 3;
-    }
-    return n === 1;
+	if (n <= 0) {
+		return false;
+	}
+	while (n % 3 === 0) {
+		n = n / 3;
+	}
+	return n === 1;
 };
 
 /* Log */
 
 const isPowerOfThree2 = function (n) {
-    if (n <= 0) {
-        return false;
-    }
-    const x = Math.floor(Math.log(n) / Math.log(3));
-    return n === Math.pow(3, x);
+	if (n <= 0) {
+		return false;
+	}
+	const x = Math.floor(Math.log(n) / Math.log(3));
+	return n === Math.pow(3, x);
 };

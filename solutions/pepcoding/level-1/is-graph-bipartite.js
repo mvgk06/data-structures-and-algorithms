@@ -8,7 +8,7 @@ Approach
 
 1. DFS
 - For each uncolored node perform dfs to color it.
-- Color the current node with a color.
+- If the current node is not yet colored, then color it with the current color.
 - Go through all the adjacent nodes of the current node.
 - If the adjacent node is not colored, then recursively color it with the opposite color of the current node and check if the graph is bipartite.
 - If the graph is not bipartite, then return false.
@@ -38,7 +38,9 @@ e - number of edges
 /* DFS */
 
 const dfs = (graph, colors, curr, color) => {
-	colors[curr] = color;
+	if (colors[curr] === -1) {
+		colors[curr] = color;
+	}
 	for (const adjacent of graph[curr]) {
 		if (colors[adjacent] === -1) {
 			const isBipartite = dfs(graph, colors, adjacent, colors[curr] === 0 ? 1 : 0);
@@ -79,11 +81,7 @@ const bfs = (graph, colors, src) => {
 		queue.deque();
 		for (const adjacent of graph[curr]) {
 			if (colors[adjacent] === -1) {
-				if (colors[curr] === 0) {
-					colors[adjacent] = 1;
-				} else {
-					colors[adjacent] = 0;
-				}
+				colors[adjacent] = colors[curr] === 0 ? 1 : 0;
 				queue.enque(adjacent);
 			} else if (colors[adjacent] != -1 && colors[adjacent] === colors[curr]) {
 				return false;

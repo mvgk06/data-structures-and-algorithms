@@ -33,30 +33,32 @@ n - number of elements
 /* Prefix sum */
 
 const minStartValue = function (nums) {
-    const n = nums.length, prefix = new Array(n);
-    prefix[0] = nums[0];
-    let result = Math.min(1, prefix[0]);
-    for (let i = 1; i < n; i++) {
-        prefix[i] = prefix[i - 1] + nums[i];
-        result = Math.min(result, prefix[i]);
-    }
-    if (result < 0) {
-        return 1 + Math.abs(result);
-    }
-    return result;
+	const n = nums.length,
+		prefix = new Array(n);
+	prefix[0] = nums[0];
+	let result = Math.min(1, prefix[0]);
+	for (let i = 1; i < n; i++) {
+		prefix[i] = prefix[i - 1] + nums[i];
+		result = Math.min(result, prefix[i]);
+	}
+	if (result < 0) {
+		return 1 + Math.abs(result);
+	}
+	return result;
 };
 
 /* Prefix sum (space optimized) */
 
 const minStartValue2 = function (nums) {
-    const n = nums.length;
-    let sum = nums[0], result = Math.min(1, sum);
-    for (let i = 1; i < n; i++) {
-        sum += nums[i];
-        result = Math.min(result, sum);
-    }
-    if (result < 0) {
-        return 1 + Math.abs(result);
-    }
-    return result;
+	const n = nums.length;
+	let sum = nums[0],
+		result = Math.min(1, sum);
+	for (let i = 1; i < n; i++) {
+		sum += nums[i];
+		result = Math.min(result, sum);
+	}
+	if (result < 0) {
+		return 1 + Math.abs(result);
+	}
+	return result;
 };

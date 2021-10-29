@@ -20,36 +20,36 @@ sum - sum of the elements
 */
 
 const isPossibleToEat = (piles, h, mid) => {
-    let hrsSpentToEat = 0;
-    for (let i = 0; i < piles.length; i++) {
-        if (piles[i] < mid) {
-            hrsSpentToEat++;
-        }
-        else {
-            hrsSpentToEat += Math.ceil(piles[i] / mid);
-        }
-        if (hrsSpentToEat > h) {
-            return false;
-        }
-    }
-    return true;
+	let hrsSpentToEat = 0;
+	for (let i = 0; i < piles.length; i++) {
+		if (piles[i] < mid) {
+			hrsSpentToEat++;
+		} else {
+			hrsSpentToEat += Math.ceil(piles[i] / mid);
+		}
+		if (hrsSpentToEat > h) {
+			return false;
+		}
+	}
+	return true;
 };
 
 const minEatingSpeed = function (piles, h) {
-    let sum = 0;
-    for (let i = 0; i < piles.length; i++) {
-        sum += piles[i];
-    }
-    let start = 1, end = sum, result = -1;
-    while (start <= end) {
-        const mid = Math.floor(start + (end - start) / 2);
-        if (isPossibleToEat(piles, h, mid)) {
-            result = mid;
-            end = mid - 1;
-        }
-        else {
-            start = mid + 1;
-        }
-    }
-    return result;
+	let sum = 0;
+	for (let i = 0; i < piles.length; i++) {
+		sum += piles[i];
+	}
+	let start = 1,
+		end = sum,
+		result = -1;
+	while (start <= end) {
+		const mid = Math.floor(start + (end - start) / 2);
+		if (isPossibleToEat(piles, h, mid)) {
+			result = mid;
+			end = mid - 1;
+		} else {
+			start = mid + 1;
+		}
+	}
+	return result;
 };

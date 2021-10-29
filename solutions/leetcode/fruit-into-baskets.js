@@ -30,48 +30,48 @@ n - number of elements
 /* Brute force */
 
 const totalFruit = function (fruits) {
-    let result = 0;
-    const set = new Set();
-    for (let i = 0; i < fruits.length; i++) {
-        let count = 0;
-        for (let j = i; j < fruits.length; j++) {
-            set.add(fruits[j]);
-            count += 1;
-            if (set.size <= 2) {
-                result = Math.max(result, count);
-            }
-        }
-        set.clear();
-    }
-    return result;
+	let result = 0;
+	const set = new Set();
+	for (let i = 0; i < fruits.length; i++) {
+		let count = 0;
+		for (let j = i; j < fruits.length; j++) {
+			set.add(fruits[j]);
+			count += 1;
+			if (set.size <= 2) {
+				result = Math.max(result, count);
+			}
+		}
+		set.clear();
+	}
+	return result;
 };
 
 /* Sliding window */
 
 const totalFruit = function (fruits) {
-    let start = 0, end = 0, result = 0;
-    const map = new Map();
-    while (end < fruits.length) {
-        if (map.has(fruits[end])) {
-            map.set(fruits[end], map.get(fruits[end]) + 1);
-        }
-        else {
-            map.set(fruits[end], 1);
-        }
-        while (start < fruits.length && map.size > 2) {
-            if (map.has(fruits[start])) {
-                const count = map.get(fruits[start]);
-                if (count === 1) {
-                    map.delete(fruits[start]);
-                }
-                else {
-                    map.set(fruits[start], count - 1);
-                }
-            }
-            start++;
-        }
-        result = Math.max(result, end - start + 1);
-        end++;
-    }
-    return result;
+	let start = 0,
+		end = 0,
+		result = 0;
+	const map = new Map();
+	while (end < fruits.length) {
+		if (map.has(fruits[end])) {
+			map.set(fruits[end], map.get(fruits[end]) + 1);
+		} else {
+			map.set(fruits[end], 1);
+		}
+		while (start < fruits.length && map.size > 2) {
+			if (map.has(fruits[start])) {
+				const count = map.get(fruits[start]);
+				if (count === 1) {
+					map.delete(fruits[start]);
+				} else {
+					map.set(fruits[start], count - 1);
+				}
+			}
+			start++;
+		}
+		result = Math.max(result, end - start + 1);
+		end++;
+	}
+	return result;
 };

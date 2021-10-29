@@ -19,23 +19,23 @@ n - number of elements
 */
 
 const compress = function (chars) {
-    let i = 0, count = 1;
-    for (let j = 0; j < chars.length; j++) {
-        if (j + 1 < chars.length && chars[j] === chars[j + 1]) {
-            count++;
-        }
-        else {
-            chars[i] = chars[j];
-            i++;
-            if (count > 1) {
-                const s = count.toString();
-                for (let k = 0; k < s.length; k++) {
-                    chars[i] = s[k];
-                    i++;
-                }
-            }
-            count = 1;
-        }
-    }
-    return i;
+	let i = 0,
+		count = 1;
+	for (let j = 0; j < chars.length; j++) {
+		if (j + 1 < chars.length && chars[j] === chars[j + 1]) {
+			count++;
+		} else {
+			chars[i] = chars[j];
+			i++;
+			if (count > 1) {
+				const s = count.toString();
+				for (let k = 0; k < s.length; k++) {
+					chars[i] = s[k];
+					i++;
+				}
+			}
+			count = 1;
+		}
+	}
+	return i;
 };

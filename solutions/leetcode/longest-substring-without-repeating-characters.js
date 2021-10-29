@@ -30,38 +30,39 @@ n - size of the string
 /* Brute force */
 
 const lengthOfLongestSubstring = function (s) {
-    const set = new Set();
-    let result = 0;
-    for (let i = 0; i < s.length; i++) {
-        for (let j = i; j < s.length; j++) {
-            if (set.has(s[j])) {
-                break;
-            }
-            else {
-                set.add(s[j]);
-                result = Math.max(result, j - i + 1);
-            }
-        }
-        set.clear();
-    }
-    return result;
+	const set = new Set();
+	let result = 0;
+	for (let i = 0; i < s.length; i++) {
+		for (let j = i; j < s.length; j++) {
+			if (set.has(s[j])) {
+				break;
+			} else {
+				set.add(s[j]);
+				result = Math.max(result, j - i + 1);
+			}
+		}
+		set.clear();
+	}
+	return result;
 };
 
 /* Sliding window */
 
 const lengthOfLongestSubstring = function (s) {
-    const set = new Set();
-    let start = 0, end = 0, result = 0;
-    while (end < s.length) {
-        while (start < s.length && set.has(s[end])) {
-            if (set.has(s[start])) {
-                set.delete(s[start]);
-            }
-            start++;
-        }
-        set.add(s[end]);
-        result = Math.max(result, end - start + 1);
-        end++;
-    }
-    return result;
+	const set = new Set();
+	let start = 0,
+		end = 0,
+		result = 0;
+	while (end < s.length) {
+		while (start < s.length && set.has(s[end])) {
+			if (set.has(s[start])) {
+				set.delete(s[start]);
+			}
+			start++;
+		}
+		set.add(s[end]);
+		result = Math.max(result, end - start + 1);
+		end++;
+	}
+	return result;
 };

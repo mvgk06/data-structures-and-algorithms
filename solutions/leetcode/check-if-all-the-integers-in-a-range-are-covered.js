@@ -31,36 +31,36 @@ n - number of elements
 /* Brute force */
 
 const isCovered = function (ranges, left, right) {
-    for (let num = left; num <= right; num++) {
-        let exists = false;
-        for (let i = 0; i < ranges.length; i++) {
-            if (num >= ranges[i][0] && num <= ranges[i][1]) {
-                exists = true;
-                break;
-            }
-        }
-        if (!exists) {
-            return false;
-        }
-    }
-    return true;
+	for (let num = left; num <= right; num++) {
+		let exists = false;
+		for (let i = 0; i < ranges.length; i++) {
+			if (num >= ranges[i][0] && num <= ranges[i][1]) {
+				exists = true;
+				break;
+			}
+		}
+		if (!exists) {
+			return false;
+		}
+	}
+	return true;
 };
 
 /* Prefix Sum */
 
 const isCovered2 = function (ranges, left, right) {
-    const prefix = new Array(51).fill(0);
-    for (let i = 0; i < ranges.length; i++) {
-        prefix[ranges[i][0]] += 1;
-        prefix[ranges[i][1] + 1] -= 1;
-    }
-    for (let i = 1; i < prefix.length; i++) {
-        prefix[i] += prefix[i - 1];
-    }
-    for (let i = left; i <= right; i++) {
-        if (prefix[i] === 0) {
-            return false;
-        }
-    }
-    return true;
+	const prefix = new Array(51).fill(0);
+	for (let i = 0; i < ranges.length; i++) {
+		prefix[ranges[i][0]] += 1;
+		prefix[ranges[i][1] + 1] -= 1;
+	}
+	for (let i = 1; i < prefix.length; i++) {
+		prefix[i] += prefix[i - 1];
+	}
+	for (let i = left; i <= right; i++) {
+		if (prefix[i] === 0) {
+			return false;
+		}
+	}
+	return true;
 };

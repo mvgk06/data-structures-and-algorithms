@@ -34,44 +34,42 @@ n - number of nodes
 /* Recursive */
 
 const inorderHelper = (root, result) => {
-    if (root === null) {
-        return;
-    }
-    inorderHelper(root.left, result);
-    result.push(root.val);
-    inorderHelper(root.right, result);
+	if (root === null) {
+		return;
+	}
+	inorderHelper(root.left, result);
+	result.push(root.val);
+	inorderHelper(root.right, result);
 };
 
 const inorderTraversal = function (root) {
-    const result = [];
-    inorderHelper(root, result);
-    return result;
+	const result = [];
+	inorderHelper(root, result);
+	return result;
 };
 
 /* Iterative */
 
 const inorderTraversal2 = function (root) {
-    const result = [];
-    const stack = [];
-    stack.push([root, 1]);
-    while (stack.length > 0) {
-        const top = stack[stack.length - 1];
-        if (top[1] === 1) {
-            top[1]++;
-            if (top[0].left != null) {
-                stack.push([top[0].left, 1]);
-            }
-        }
-        else if (top[1] === 2) {
-            top[1]++;
-            if (top[0].right != null) {
-                stack.push([top[0].right, 1]);
-            }
-            result.push(top[0].val);
-        }
-        else {
-            stack.pop();
-        }
-    }
-    return result;
+	const result = [];
+	const stack = [];
+	stack.push([root, 1]);
+	while (stack.length > 0) {
+		const top = stack[stack.length - 1];
+		if (top[1] === 1) {
+			top[1]++;
+			if (top[0].left != null) {
+				stack.push([top[0].left, 1]);
+			}
+		} else if (top[1] === 2) {
+			top[1]++;
+			if (top[0].right != null) {
+				stack.push([top[0].right, 1]);
+			}
+			result.push(top[0].val);
+		} else {
+			stack.pop();
+		}
+	}
+	return result;
 };

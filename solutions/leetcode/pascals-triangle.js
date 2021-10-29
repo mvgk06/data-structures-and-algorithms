@@ -34,45 +34,45 @@ n - number of rows
 /* Top down */
 
 const generateHelper = (memo, i, j) => {
-    if (i < 0 || j < 0) {
-        return 0;
-    }
-    if (j === 0 || j === i) {
-        memo[i][j] = 1;
-        return memo[i][j];
-    }
-    if (memo[i][j] != -1) {
-        return memo[i][j];
-    }
-    const top = generateHelper(memo, i - 1, j);
-    const diagonal = generateHelper(memo, i - 1, j - 1);
-    memo[i][j] = top + diagonal;
-    return memo[i][j];
+	if (i < 0 || j < 0) {
+		return 0;
+	}
+	if (j === 0 || j === i) {
+		memo[i][j] = 1;
+		return memo[i][j];
+	}
+	if (memo[i][j] != -1) {
+		return memo[i][j];
+	}
+	const top = generateHelper(memo, i - 1, j);
+	const diagonal = generateHelper(memo, i - 1, j - 1);
+	memo[i][j] = top + diagonal;
+	return memo[i][j];
 };
 
 const generate = function (n) {
-    const memo = new Array(n);
-    for (let i = 0; i < n; i++) {
-        memo[i] = new Array(i + 1).fill(-1);
-    }
-    memo[0][0] = 1;
-    for (let j = 0; j < n; j++) {
-        generateHelper(memo, n - 1, j);
-    }
-    return memo;
+	const memo = new Array(n);
+	for (let i = 0; i < n; i++) {
+		memo[i] = new Array(i + 1).fill(-1);
+	}
+	memo[0][0] = 1;
+	for (let j = 0; j < n; j++) {
+		generateHelper(memo, n - 1, j);
+	}
+	return memo;
 };
 
 /* Bottom up */
 
 const generate2 = function (n) {
-    const memo = new Array(n);
-    for (let i = 0; i < n; i++) {
-        memo[i] = new Array(i + 1);
-        memo[i][0] = 1;
-        memo[i][i] = 1;
-        for (let j = 1; j < i; j++) {
-            memo[i][j] = memo[i - 1][j] + memo[i - 1][j - 1];
-        }
-    }
-    return memo;
+	const memo = new Array(n);
+	for (let i = 0; i < n; i++) {
+		memo[i] = new Array(i + 1);
+		memo[i][0] = 1;
+		memo[i][i] = 1;
+		for (let j = 1; j < i; j++) {
+			memo[i][j] = memo[i - 1][j] + memo[i - 1][j - 1];
+		}
+	}
+	return memo;
 };

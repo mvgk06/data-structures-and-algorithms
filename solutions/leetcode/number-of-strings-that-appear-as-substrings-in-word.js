@@ -29,29 +29,29 @@ m - number of elements in patterns
 /* Brute force */
 
 const numOfStrings = function (patterns, word) {
-    const set = new Set();
-    for (let i = 0; i < word.length; i++) {
-        for (let j = i; j < word.length; j++) {
-            set.add(word.substring(i, j + 1));
-        }
-    }
-    let result = 0;
-    for (let i = 0; i < patterns.length; i++) {
-        if (set.has(patterns[i])) {
-            result++;
-        }
-    }
-    return result;
+	const set = new Set();
+	for (let i = 0; i < word.length; i++) {
+		for (let j = i; j < word.length; j++) {
+			set.add(word.substring(i, j + 1));
+		}
+	}
+	let result = 0;
+	for (let i = 0; i < patterns.length; i++) {
+		if (set.has(patterns[i])) {
+			result++;
+		}
+	}
+	return result;
 };
 
 /* Pattern search */
 
 const numOfStrings2 = function (patterns, word) {
-    let result = 0;
-    for (let i = 0; i < patterns.length; i++) {
-        if (word.indexOf(patterns[i]) != -1) {
-            result++;
-        }
-    }
-    return result;
+	let result = 0;
+	for (let i = 0; i < patterns.length; i++) {
+		if (word.indexOf(patterns[i]) != -1) {
+			result++;
+		}
+	}
+	return result;
 };

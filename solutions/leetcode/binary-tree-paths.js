@@ -31,50 +31,50 @@ n - number of nodes
 /* DFS */
 
 const getPaths = (curr, path, result) => {
-    if (curr === null) {
-        return;
-    }
-    if (curr.left === null && curr.right === null) {
-        path += curr.val.toString();
-        result.push(path);
-        return;
-    }
-    getPaths(curr.left, path + `${curr.val}->`, result);
-    getPaths(curr.right, path + `${curr.val}->`, result);
+	if (curr === null) {
+		return;
+	}
+	if (curr.left === null && curr.right === null) {
+		path += curr.val.toString();
+		result.push(path);
+		return;
+	}
+	getPaths(curr.left, path + `${curr.val}->`, result);
+	getPaths(curr.right, path + `${curr.val}->`, result);
 };
 
 const binaryTreePaths = function (root) {
-    const result = [];
-    getPaths(root, "", result);
-    return result;
+	const result = [];
+	getPaths(root, '', result);
+	return result;
 };
 
 /* BFS */
 
-const Queue = require("../../data-structures/queue.js");
+const Queue = require('../../data-structures/queue.js');
 
 const getPaths = (src) => {
-    const queue = new Queue();
-    queue.enque([src, ""]);
-    const result = [];
-    while (queue.getSize() > 0) {
-        let [curr, path] = queue.getFront();
-        queue.deque();
-        if (curr.left === null && curr.right === null) {
-            path += curr.val.toString();
-            result.push(path);
-        }
-        if (curr.left != null) {
-            queue.enque([curr.left, path + `${curr.val}->`]);
-        }
-        if (curr.right != null) {
-            queue.enque([curr.right, path + `${curr.val}->`]);
-        }
-    }
-    return result;
+	const queue = new Queue();
+	queue.enque([src, '']);
+	const result = [];
+	while (queue.getSize() > 0) {
+		let [curr, path] = queue.getFront();
+		queue.deque();
+		if (curr.left === null && curr.right === null) {
+			path += curr.val.toString();
+			result.push(path);
+		}
+		if (curr.left != null) {
+			queue.enque([curr.left, path + `${curr.val}->`]);
+		}
+		if (curr.right != null) {
+			queue.enque([curr.right, path + `${curr.val}->`]);
+		}
+	}
+	return result;
 };
 
 const binaryTreePaths = function (root) {
-    const result = getPaths(root);
-    return result;
+	const result = getPaths(root);
+	return result;
 };

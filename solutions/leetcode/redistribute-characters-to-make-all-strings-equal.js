@@ -18,22 +18,21 @@ m - maximum length of each string
 */
 
 const makeEqual = function (words) {
-    const map = new Map();
-    for (let i = 0; i < words.length; i++) {
-        for (let j = 0; j < words[i].length; j++) {
-            const ch = words[i][j];
-            if (map.has(ch)) {
-                map.set(ch, map.get(ch) + 1);
-            }
-            else {
-                map.set(ch, 1);
-            }
-        }
-    }
-    for (const key of map.keys()) {
-        if (map.get(key) % words.length != 0) {
-            return false;
-        }
-    }
-    return true;
+	const map = new Map();
+	for (let i = 0; i < words.length; i++) {
+		for (let j = 0; j < words[i].length; j++) {
+			const ch = words[i][j];
+			if (map.has(ch)) {
+				map.set(ch, map.get(ch) + 1);
+			} else {
+				map.set(ch, 1);
+			}
+		}
+	}
+	for (const key of map.keys()) {
+		if (map.get(key) % words.length != 0) {
+			return false;
+		}
+	}
+	return true;
 };

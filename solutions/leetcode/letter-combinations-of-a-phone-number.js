@@ -29,60 +29,62 @@ n - number of digits
 /* Recursive */
 
 const letterCombinationsHelper = (digits, map, result, i, curr) => {
-    if (i === digits.length) {
-        result.push(curr);
-        return;
-    }
-    const string = map[digits[i]];
-    for (let j = 0; j < string.length; j++) {
-        letterCombinationsHelper(digits, map, result, i + 1, curr + string[j]);
-    }
+	if (i === digits.length) {
+		result.push(curr);
+		return;
+	}
+	const string = map[digits[i]];
+	for (let j = 0; j < string.length; j++) {
+		letterCombinationsHelper(digits, map, result, i + 1, curr + string[j]);
+	}
 };
 
 const letterCombinations = function (digits) {
-    if (digits.length === 0) {
-        return [];
-    }
-    const map = {
-        "2": "abc",
-        "3": "def",
-        "4": "ghi",
-        "5": "jkl",
-        "6": "mno",
-        "7": "pqrs",
-        "8": "tuv",
-        "9": "wxyz"
-    };
-    const result = [], curr = "";
-    letterCombinationsHelper(digits, map, result, 0, curr);
-    return result;
+	if (digits.length === 0) {
+		return [];
+	}
+	const map = {
+		2: 'abc',
+		3: 'def',
+		4: 'ghi',
+		5: 'jkl',
+		6: 'mno',
+		7: 'pqrs',
+		8: 'tuv',
+		9: 'wxyz',
+	};
+	const result = [],
+		curr = '';
+	letterCombinationsHelper(digits, map, result, 0, curr);
+	return result;
 };
 
 /* Iterative */
 
 const letterCombinations2 = function (digits) {
-    if (digits.length === 0) {
-        return [];
-    }
-    const map = {
-        "2": "abc",
-        "3": "def",
-        "4": "ghi",
-        "5": "jkl",
-        "6": "mno",
-        "7": "pqrs",
-        "8": "tuv",
-        "9": "wxyz"
-    };
-    let result = [""];
-    for (let i = 0; i < digits.length; i++) {
-        const str = map[digits[i]], curr = [];
-        for (let j = 0; j < result.length; j++) {
-            for (let k = 0; k < str.length; k++) {
-                curr.push(result[j] + str[k]);
-            }
-        }
-        result = [...curr];
-    }
-    return result;
+	if (digits.length === 0) {
+		return [];
+	}
+	const map = {
+		2: 'abc',
+		3: 'def',
+		4: 'ghi',
+		5: 'jkl',
+		6: 'mno',
+		7: 'pqrs',
+		8: 'tuv',
+		9: 'wxyz',
+	};
+	let result = [''];
+	for (let i = 0; i < digits.length; i++) {
+		const str = map[digits[i]],
+			curr = [];
+		for (let j = 0; j < result.length; j++) {
+			for (let k = 0; k < str.length; k++) {
+				curr.push(result[j] + str[k]);
+			}
+		}
+		result = [...curr];
+	}
+	return result;
 };

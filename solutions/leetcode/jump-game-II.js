@@ -35,44 +35,45 @@ k - maximum jump length
 /* Top down */
 
 const minJumps = (nums, i, memo) => {
-    if (i === nums.length - 1) {
-        memo[i] = 0;
-        return memo[i];
-    }
-    if (i > nums.length - 1) {
-        return Number.MAX_VALUE;
-    }
-    if (memo[i] != -1) {
-        return memo[i];
-    }
-    let moves = Number.MAX_VALUE;
-    for (let j = 1; j <= nums[i]; j++) {
-        moves = Math.min(moves, 1 + minJumps(nums, i + j, memo));
-    }
-    memo[i] = moves;
-    return memo[i];
+	if (i === nums.length - 1) {
+		memo[i] = 0;
+		return memo[i];
+	}
+	if (i > nums.length - 1) {
+		return Number.MAX_VALUE;
+	}
+	if (memo[i] != -1) {
+		return memo[i];
+	}
+	let moves = Number.MAX_VALUE;
+	for (let j = 1; j <= nums[i]; j++) {
+		moves = Math.min(moves, 1 + minJumps(nums, i + j, memo));
+	}
+	memo[i] = moves;
+	return memo[i];
 };
 
 const jump = function (nums) {
-    const memo = new Array(nums.length).fill(-1);
-    const result = minJumps(nums, 0, memo);
-    return result;
+	const memo = new Array(nums.length).fill(-1);
+	const result = minJumps(nums, 0, memo);
+	return result;
 };
 
 /* Bottom up */
 
 const jump2 = function (nums) {
-    const n = nums.length, memo = new Array(n).fill(-1);
-    memo[n - 1] = 0;
-    for (let i = n - 2; i >= 0; i--) {
-        let moves = Number.MAX_VALUE;
-        for (let j = 1; j <= nums[i]; j++) {
-            if (i + j < n) {
-                moves = Math.min(moves, 1 + memo[i + j]);
-            }
-        }
-        memo[i] = moves;
-    }
-    const result = memo[0];
-    return result;
+	const n = nums.length,
+		memo = new Array(n).fill(-1);
+	memo[n - 1] = 0;
+	for (let i = n - 2; i >= 0; i--) {
+		let moves = Number.MAX_VALUE;
+		for (let j = 1; j <= nums[i]; j++) {
+			if (i + j < n) {
+				moves = Math.min(moves, 1 + memo[i + j]);
+			}
+		}
+		memo[i] = moves;
+	}
+	const result = memo[0];
+	return result;
 };

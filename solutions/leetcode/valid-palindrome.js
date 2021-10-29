@@ -16,30 +16,28 @@ n - size of the string
 */
 
 const isAlphanumeric = (ch) => {
-    const c = ch.toLowerCase().charCodeAt(0);
-    return (c >= 48 && c <= 57 || c >= 97 && c <= 122);
+	const c = ch.toLowerCase().charCodeAt(0);
+	return (c >= 48 && c <= 57) || (c >= 97 && c <= 122);
 };
 
 const isPalindrome = function (s) {
-    let start = 0, end = s.length - 1;
-    while (start < end) {
-        if (isAlphanumeric(s[start])) {
-            if (isAlphanumeric(s[end])) {
-                if (s[start].toLowerCase() === s[end].toLowerCase()) {
-                    start++;
-                    end--;
-                }
-                else {
-                    return false;
-                }
-            }
-            else {
-                end--;
-            }
-        }
-        else {
-            start++;
-        }
-    }
-    return true;
+	let start = 0,
+		end = s.length - 1;
+	while (start < end) {
+		if (isAlphanumeric(s[start])) {
+			if (isAlphanumeric(s[end])) {
+				if (s[start].toLowerCase() === s[end].toLowerCase()) {
+					start++;
+					end--;
+				} else {
+					return false;
+				}
+			} else {
+				end--;
+			}
+		} else {
+			start++;
+		}
+	}
+	return true;
 };

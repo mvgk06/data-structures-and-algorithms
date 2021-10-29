@@ -17,31 +17,31 @@ n - number of elements
 */
 
 const summaryRanges = function (nums) {
-    const n = nums.length;
-    if (n === 0) {
-        return [];
-    }
-    if (n === 1) {
-        return [nums[0].toString()];
-    }
-    let i = 0, j = 1, result = [];
-    while (j < n) {
-        if (nums[j] != 1 + nums[j - 1]) {
-            if (j === i + 1) {
-                result.push(nums[i].toString());
-            }
-            else {
-                result.push(nums[i] + '->' + nums[j - 1]);
-            }
-            i = j;
-        }
-        j++;
-    }
-    if (j === i + 1) {
-        result.push(nums[i].toString());
-    }
-    else {
-        result.push(nums[i] + '->' + nums[j - 1]);
-    }
-    return result;
+	const n = nums.length;
+	if (n === 0) {
+		return [];
+	}
+	if (n === 1) {
+		return [nums[0].toString()];
+	}
+	let i = 0,
+		j = 1,
+		result = [];
+	while (j < n) {
+		if (nums[j] != 1 + nums[j - 1]) {
+			if (j === i + 1) {
+				result.push(nums[i].toString());
+			} else {
+				result.push(nums[i] + '->' + nums[j - 1]);
+			}
+			i = j;
+		}
+		j++;
+	}
+	if (j === i + 1) {
+		result.push(nums[i].toString());
+	} else {
+		result.push(nums[i] + '->' + nums[j - 1]);
+	}
+	return result;
 };

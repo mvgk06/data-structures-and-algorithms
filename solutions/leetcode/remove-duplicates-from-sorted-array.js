@@ -29,49 +29,48 @@ n - number of elements
 /* Brute force */
 
 const removeDuplicates = function (nums) {
-    const n = nums.length;
-    if (n === 0 || n === 1) {
-        return n;
-    }
-    const temp = new Array(n).fill(undefined);
-    temp[0] = nums[0];
-    let i = 0;
-    for (let j = 1; j < n; j++) {
-        if (nums[j] != temp[i]) {
-            temp[i + 1] = nums[j];
-            i++;
-        }
-    }
-    for (let k = 0; k < n; k++) {
-        if (temp[k] != undefined) {
-            nums[k] = temp[k];
-        }
-        else {
-            return k;
-        }
-    }
-    return n;
+	const n = nums.length;
+	if (n === 0 || n === 1) {
+		return n;
+	}
+	const temp = new Array(n).fill(undefined);
+	temp[0] = nums[0];
+	let i = 0;
+	for (let j = 1; j < n; j++) {
+		if (nums[j] != temp[i]) {
+			temp[i + 1] = nums[j];
+			i++;
+		}
+	}
+	for (let k = 0; k < n; k++) {
+		if (temp[k] != undefined) {
+			nums[k] = temp[k];
+		} else {
+			return k;
+		}
+	}
+	return n;
 };
 
 /* Two pointers */
 
 const removeDuplicates2 = function (nums) {
-    const n = nums.length;
-    if (n === 0 || n === 1) {
-        return n;
-    }
-    let i = 0, j = 1;
-    while (j < n) {
-        if (nums[i] === nums[j]) {
-            j++;
-        }
-        else {
-            const temp = nums[i + 1];
-            nums[i + 1] = nums[j];
-            nums[j] = temp;
-            i++;
-            j++;
-        }
-    }
-    return i + 1;
+	const n = nums.length;
+	if (n === 0 || n === 1) {
+		return n;
+	}
+	let i = 0,
+		j = 1;
+	while (j < n) {
+		if (nums[i] === nums[j]) {
+			j++;
+		} else {
+			const temp = nums[i + 1];
+			nums[i + 1] = nums[j];
+			nums[j] = temp;
+			i++;
+			j++;
+		}
+	}
+	return i + 1;
 };

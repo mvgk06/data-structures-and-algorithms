@@ -33,52 +33,52 @@ e - number of edges
 /* DFS */
 
 const dfs = (graph, visited, curr) => {
-    visited[curr] = true;
-    for (const adjacent of graph[curr]) {
-        if (!visited[adjacent]) {
-            dfs(graph, visited, adjacent);
-        }
-    }
+	visited[curr] = true;
+	for (const adjacent of graph[curr]) {
+		if (!visited[adjacent]) {
+			dfs(graph, visited, adjacent);
+		}
+	}
 };
 
 const canVisitAllRooms = function (rooms) {
-    const visited = new Array(rooms.length).fill(false);
-    dfs(rooms, visited, 0);
-    for (let i = 0; i < visited.length; i++) {
-        if (!visited[i]) {
-            return false;
-        }
-    }
-    return true;
+	const visited = new Array(rooms.length).fill(false);
+	dfs(rooms, visited, 0);
+	for (let i = 0; i < visited.length; i++) {
+		if (!visited[i]) {
+			return false;
+		}
+	}
+	return true;
 };
 
 /* BFS */
 
-const Queue = require("../../data-structures/queue");
+const Queue = require('../../data-structures/queue');
 
 const bfs = (graph, visited, src) => {
-    const queue = new Queue();
-    visited[src] = true;
-    queue.enque(src);
-    while (queue.getSize() > 0) {
-        const curr = queue.getFront();
-        queue.deque();
-        for (const adjacent of graph[curr]) {
-            if (!visited[adjacent]) {
-                visited[adjacent] = true;
-                queue.enque(adjacent);
-            }
-        }
-    }
+	const queue = new Queue();
+	visited[src] = true;
+	queue.enque(src);
+	while (queue.getSize() > 0) {
+		const curr = queue.getFront();
+		queue.deque();
+		for (const adjacent of graph[curr]) {
+			if (!visited[adjacent]) {
+				visited[adjacent] = true;
+				queue.enque(adjacent);
+			}
+		}
+	}
 };
 
 const canVisitAllRooms2 = function (rooms) {
-    const visited = new Array(rooms.length).fill(false);
-    bfs(rooms, visited, 0);
-    for (let i = 0; i < visited.length; i++) {
-        if (!visited[i]) {
-            return false;
-        }
-    }
-    return true;
+	const visited = new Array(rooms.length).fill(false);
+	bfs(rooms, visited, 0);
+	for (let i = 0; i < visited.length; i++) {
+		if (!visited[i]) {
+			return false;
+		}
+	}
+	return true;
 };

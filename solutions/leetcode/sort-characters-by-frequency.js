@@ -32,64 +32,62 @@ n - size of the string
 
 /* Heap */
 
-const Heap = require("../../data-structures/heap");
+const Heap = require('../../data-structures/heap');
 
 const frequencySort = function (s) {
-    const map = new Map();
-    for (let i = 0; i < s.length; i++) {
-        if (map.has(s.charAt(i))) {
-            map.set(s.charAt(i), map.get(s.charAt(i)) + 1);
-        }
-        else {
-            map.set(s.charAt(i), 1);
-        }
-    }
-    const maxHeap = new Heap((curr, parent) => curr.value > parent.value);
-    for (const key of map.keys()) {
-        maxHeap.insert(key, map.get(key));
-    }
-    const result = [];
-    while (maxHeap.getSize() > 0) {
-        const key = maxHeap.getTop().key;
-        result.push(key.repeat(map.get(key)));
-        maxHeap.delete();
-    }
-    return result.join("");
+	const map = new Map();
+	for (let i = 0; i < s.length; i++) {
+		if (map.has(s.charAt(i))) {
+			map.set(s.charAt(i), map.get(s.charAt(i)) + 1);
+		} else {
+			map.set(s.charAt(i), 1);
+		}
+	}
+	const maxHeap = new Heap((curr, parent) => curr.value > parent.value);
+	for (const key of map.keys()) {
+		maxHeap.insert(key, map.get(key));
+	}
+	const result = [];
+	while (maxHeap.getSize() > 0) {
+		const key = maxHeap.getTop().key;
+		result.push(key.repeat(map.get(key)));
+		maxHeap.delete();
+	}
+	return result.join('');
 };
 
 /* Bucket sort */
 
 const frequencySort2 = function (s) {
-    const map = new Map();
-    for (let i = 0; i < s.length; i++) {
-        if (map.has(s.charAt(i))) {
-            map.set(s.charAt(i), map.get(s.charAt(i)) + 1);
-        }
-        else {
-            map.set(s.charAt(i), 1);
-        }
-    }
-    const buckets = new Array(s.length + 1);
-    for (let i = 0; i < buckets.length; i++) {
-        buckets[i] = [];
-    }
-    for (const key of map.keys()) {
-        buckets[map.get(key)].push(key);
-    }
-    for (let i = 0; i < buckets.length; i++) {
-        buckets[i].sort((a, b) => {
-            if (a < b) {
-                return -1;
-            }
-            return 1;
-        });
-    }
-    const result = [];
-    for (let i = buckets.length - 1; i >= 0; i--) {
-        for (let j = 0; j < buckets[i].length; j++) {
-            const key = buckets[i][j];
-            result.push(key.repeat(i));
-        }
-    }
-    return result.join("");
+	const map = new Map();
+	for (let i = 0; i < s.length; i++) {
+		if (map.has(s.charAt(i))) {
+			map.set(s.charAt(i), map.get(s.charAt(i)) + 1);
+		} else {
+			map.set(s.charAt(i), 1);
+		}
+	}
+	const buckets = new Array(s.length + 1);
+	for (let i = 0; i < buckets.length; i++) {
+		buckets[i] = [];
+	}
+	for (const key of map.keys()) {
+		buckets[map.get(key)].push(key);
+	}
+	for (let i = 0; i < buckets.length; i++) {
+		buckets[i].sort((a, b) => {
+			if (a < b) {
+				return -1;
+			}
+			return 1;
+		});
+	}
+	const result = [];
+	for (let i = buckets.length - 1; i >= 0; i--) {
+		for (let j = 0; j < buckets[i].length; j++) {
+			const key = buckets[i][j];
+			result.push(key.repeat(i));
+		}
+	}
+	return result.join('');
 };

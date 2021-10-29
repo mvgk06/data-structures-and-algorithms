@@ -33,60 +33,60 @@ n - number of elements
 /* Brute force */
 
 const duplicateZeros = function (arr) {
-    const n = arr.length;
-    let i = 0;
-    while (i < n) {
-        if (arr[i] === 0) {
-            for (let j = n - 2; j >= i; j--) {
-                arr[j + 1] = arr[j];
-            }
-            i += 2;
-        }
-        else {
-            i++;
-        }
-    }
+	const n = arr.length;
+	let i = 0;
+	while (i < n) {
+		if (arr[i] === 0) {
+			for (let j = n - 2; j >= i; j--) {
+				arr[j + 1] = arr[j];
+			}
+			i += 2;
+		} else {
+			i++;
+		}
+	}
 };
 
 /* Two pointers */
 
 const duplicateZeros2 = function (arr) {
-    const n = arr.length, temp = new Array(n);
-    let i = 0, j = 0;
-    while (i < n && j < n) {
-        temp[j] = arr[i];
-        j++;
-        if (arr[i] === 0 && j < n) {
-            temp[j] = arr[i];
-            j++;
-        }
-        i++;
-    }
-    for (let i = 0; i < n; i++) {
-        arr[i] = temp[i];
-    }
+	const n = arr.length,
+		temp = new Array(n);
+	let i = 0,
+		j = 0;
+	while (i < n && j < n) {
+		temp[j] = arr[i];
+		j++;
+		if (arr[i] === 0 && j < n) {
+			temp[j] = arr[i];
+			j++;
+		}
+		i++;
+	}
+	for (let i = 0; i < n; i++) {
+		arr[i] = temp[i];
+	}
 };
-
 
 /* Count and duplicate */
 
 const duplicateZeros3 = function (arr) {
-    const n = arr.length;
-    let count = 0;
-    for (let i = 0; i < n; i++) {
-        if (arr[i] === 0) {
-            count++;
-        }
-    }
-    for (let i = n - 1; i >= 0; i--) {
-        if (i + count < n) {
-            arr[i + count] = arr[i];
-        }
-        if (arr[i] === 0) {
-            count -= 1;
-            if (i + count < n) {
-                arr[i + count] = arr[i];
-            }
-        }
-    }
+	const n = arr.length;
+	let count = 0;
+	for (let i = 0; i < n; i++) {
+		if (arr[i] === 0) {
+			count++;
+		}
+	}
+	for (let i = n - 1; i >= 0; i--) {
+		if (i + count < n) {
+			arr[i + count] = arr[i];
+		}
+		if (arr[i] === 0) {
+			count -= 1;
+			if (i + count < n) {
+				arr[i + count] = arr[i];
+			}
+		}
+	}
 };

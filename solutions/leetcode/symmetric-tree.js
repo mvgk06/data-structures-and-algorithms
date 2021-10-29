@@ -32,40 +32,40 @@ Space - O(n)
 /* DFS */
 
 const helper = (l, r) => {
-    if (l === null && r === null) {
-        return true;
-    }
-    if (l === null || r === null) {
-        return false;
-    }
-    return l.val === r.val && helper(l.left, r.right) && helper(l.right, r.left);
+	if (l === null && r === null) {
+		return true;
+	}
+	if (l === null || r === null) {
+		return false;
+	}
+	return l.val === r.val && helper(l.left, r.right) && helper(l.right, r.left);
 };
 
 const isSymmetric = function (root) {
-    return helper(root.left, root.right);
+	return helper(root.left, root.right);
 };
 
 /* BFS */
 
-const Queue = require("../../data-structures/queue.js");
+const Queue = require('../../data-structures/queue.js');
 
 const isSymmetric2 = function (root) {
-    const queue = new Queue();
-    queue.enque([root.left, root.right]);
-    while (queue.getSize() > 0) {
-        const [l, r] = queue.getFront();
-        queue.deque();
-        if (l === null && r === null) {
-            continue;
-        }
-        if (l === null || r === null) {
-            return false;
-        }
-        if (l.val != r.val) {
-            return false;
-        }
-        queue.enque([l.left, r.right]);
-        queue.enque([l.right, r.left]);
-    }
-    return true;
+	const queue = new Queue();
+	queue.enque([root.left, root.right]);
+	while (queue.getSize() > 0) {
+		const [l, r] = queue.getFront();
+		queue.deque();
+		if (l === null && r === null) {
+			continue;
+		}
+		if (l === null || r === null) {
+			return false;
+		}
+		if (l.val != r.val) {
+			return false;
+		}
+		queue.enque([l.left, r.right]);
+		queue.enque([l.right, r.left]);
+	}
+	return true;
 };

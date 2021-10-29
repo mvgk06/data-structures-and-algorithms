@@ -19,15 +19,15 @@ n - number of elements
 */
 
 const findMaxConsecutiveOnes = function (nums) {
-    let count = 0, result = 0;
-    for (let j = 0; j < nums.length; j++) {
-        if (nums[j] === 1) {
-            count++;
-        }
-        else {
-            count = 0;
-        }
-        result = Math.max(result, count);
-    }
-    return result;
+	let count = 0,
+		result = 0;
+	for (let j = 0; j < nums.length; j++) {
+		if (nums[j] === 1) {
+			count++;
+		} else {
+			count = 0;
+		}
+		result = Math.max(result, count);
+	}
+	return result;
 };

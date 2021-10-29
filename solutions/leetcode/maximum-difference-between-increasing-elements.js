@@ -28,28 +28,28 @@ n - number of elements
 /* Brute force */
 
 const maximumDifference = function (nums) {
-    let result = -1;
-    for (let i = 0; i < nums.length; i++) {
-        for (let j = i + 1; j < nums.length; j++) {
-            if (nums[i] < nums[j]) {
-                result = Math.max(result, nums[j] - nums[i]);
-            }
-        }
-    }
-    return result;
+	let result = -1;
+	for (let i = 0; i < nums.length; i++) {
+		for (let j = i + 1; j < nums.length; j++) {
+			if (nums[i] < nums[j]) {
+				result = Math.max(result, nums[j] - nums[i]);
+			}
+		}
+	}
+	return result;
 };
 
 /* Optimized */
 
 const maximumDifference2 = function (nums) {
-    let min = nums[0], result = -1;
-    for (let i = 1; i < nums.length; i++) {
-        if (min < nums[i]) {
-            result = Math.max(result, nums[i] - min);
-        }
-        else {
-            min = nums[i];
-        }
-    }
-    return result;
+	let min = nums[0],
+		result = -1;
+	for (let i = 1; i < nums.length; i++) {
+		if (min < nums[i]) {
+			result = Math.max(result, nums[i] - min);
+		} else {
+			min = nums[i];
+		}
+	}
+	return result;
 };

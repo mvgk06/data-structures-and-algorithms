@@ -30,50 +30,59 @@ n - number of elements
 /* Brute force */
 
 const longestSubarray = function (nums, limit) {
-    let result = 0;
-    for (let i = 0; i < nums.length; i++) {
-        let max = 0, min = Number.MAX_VALUE;
-        for (let j = i; j < nums.length; j++) {
-            max = Math.max(max, nums[j]);
-            min = Math.min(min, nums[j]);
-            if (Math.abs(max - min) <= limit) {
-                result = Math.max(result, j - i + 1);
-            }
-        }
-    }
-    return result;
+	let result = 0;
+	for (let i = 0; i < nums.length; i++) {
+		let max = 0,
+			min = Number.MAX_VALUE;
+		for (let j = i; j < nums.length; j++) {
+			max = Math.max(max, nums[j]);
+			min = Math.min(min, nums[j]);
+			if (Math.abs(max - min) <= limit) {
+				result = Math.max(result, j - i + 1);
+			}
+		}
+	}
+	return result;
 };
 
 /* Sliding window */
 
-const Deque = require("../../data-structures/deque.js");
+const Deque = require('../../data-structures/deque.js');
 
 const longestSubarray2 = function (nums, limit) {
-    let start = 0, end = 0, result = 0;
-    const maxDeque = new Deque(), minDeque = new Deque();
-    while (end < nums.length) {
-        while (maxDeque.getSize() != 0 && nums[end] > nums[maxDeque.getRear()]) {
-            maxDeque.pop();
-        }
-        maxDeque.push(end);
-        while (minDeque.getSize() != 0 && nums[end] < nums[minDeque.getRear()]) {
-            minDeque.pop();
-        }
-        minDeque.push(end);
-        let max = nums[maxDeque.getFront()], min = nums[minDeque.getFront()];
-        while (maxDeque.getSize() !== 0 && minDeque.getSize() !== 0 && Math.abs(max - min) > limit) {
-            if (maxDeque.getFront() === start) {
-                maxDeque.deque();
-                max = nums[maxDeque.getFront()];
-            }
-            if (minDeque.getFront() === start) {
-                minDeque.deque();
-                min = nums[minDeque.getFront()];
-            }
-            start++;
-        }
-        result = Math.max(result, end - start + 1);
-        end++;
-    }
-    return result;
+	let start = 0,
+		end = 0,
+		result = 0;
+	const maxDeque = new Deque(),
+		minDeque = new Deque();
+	while (end < nums.length) {
+		while (maxDeque.getSize() != 0 && nums[end] > nums[maxDeque.getRear()]) {
+			maxDeque.pop();
+		}
+		maxDeque.push(end);
+		while (minDeque.getSize() != 0 && nums[end] < nums[minDeque.getRear()]) {
+			minDeque.pop();
+		}
+		minDeque.push(end);
+		let max = nums[maxDeque.getFront()],
+			min = nums[minDeque.getFront()];
+		while (
+			maxDeque.getSize() !== 0 &&
+			minDeque.getSize() !== 0 &&
+			Math.abs(max - min) > limit
+		) {
+			if (maxDeque.getFront() === start) {
+				maxDeque.deque();
+				max = nums[maxDeque.getFront()];
+			}
+			if (minDeque.getFront() === start) {
+				minDeque.deque();
+				min = nums[minDeque.getFront()];
+			}
+			start++;
+		}
+		result = Math.max(result, end - start + 1);
+		end++;
+	}
+	return result;
 };

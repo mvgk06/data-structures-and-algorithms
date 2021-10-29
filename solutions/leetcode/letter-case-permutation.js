@@ -19,23 +19,23 @@ n - size of string
 */
 
 const helper = (string, i, curr, result) => {
-    if (i === string.length) {
-        result.push(curr);
-        return;
-    }
-    const char = string.charAt(i), charCode = string.charCodeAt(i);
-    if ((charCode >= 97 && charCode <= 122) || (charCode >= 65 && charCode <= 90)) {
-        helper(string, i + 1, curr + char.toLowerCase(), result);
-        helper(string, i + 1, curr + char.toUpperCase(), result);
-    }
-    else {
-        helper(string, i + 1, curr + char, result);
-    }
-    return;
+	if (i === string.length) {
+		result.push(curr);
+		return;
+	}
+	const char = string.charAt(i),
+		charCode = string.charCodeAt(i);
+	if ((charCode >= 97 && charCode <= 122) || (charCode >= 65 && charCode <= 90)) {
+		helper(string, i + 1, curr + char.toLowerCase(), result);
+		helper(string, i + 1, curr + char.toUpperCase(), result);
+	} else {
+		helper(string, i + 1, curr + char, result);
+	}
+	return;
 };
 
 const letterCasePermutation = function (s) {
-    const result = [];
-    helper(s, 0, "", result);
-    return result;
+	const result = [];
+	helper(s, 0, '', result);
+	return result;
 };

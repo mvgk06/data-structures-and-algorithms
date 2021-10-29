@@ -17,16 +17,17 @@ n - number of elements
 */
 
 const firstUniqChar = function (s) {
-    const count = new Array(26 + 1).fill(0), code = 96;
-    for (let i = 0; i < s.length; i++) {
-        const index = s[i].charCodeAt(0) - code;
-        count[index] += 1;
-    }
-    for (let i = 0; i < s.length; i++) {
-        const index = s[i].charCodeAt(0) - code;
-        if (count[index] === 1) {
-            return i;
-        }
-    }
-    return -1;
+	const count = new Array(26 + 1).fill(0),
+		code = 96;
+	for (let i = 0; i < s.length; i++) {
+		const index = s[i].charCodeAt(0) - code;
+		count[index] += 1;
+	}
+	for (let i = 0; i < s.length; i++) {
+		const index = s[i].charCodeAt(0) - code;
+		if (count[index] === 1) {
+			return i;
+		}
+	}
+	return -1;
 };

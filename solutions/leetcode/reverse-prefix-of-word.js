@@ -18,20 +18,21 @@ n - size of string
 */
 
 const reversePrefix = function (word, ch) {
-    const i = word.indexOf(ch);
-    if (i === -1) {
-        return word;
-    }
-    let start = 0, end = i;
-    const result = [];
-    while (end >= start) {
-        result.push(word[end]);
-        end--;
-    }
-    let curr = i + 1;
-    while (curr < word.length) {
-        result.push(word[curr]);
-        curr++;
-    }
-    return result.join("");
+	const i = word.indexOf(ch);
+	if (i === -1) {
+		return word;
+	}
+	let start = 0,
+		end = i;
+	const result = [];
+	while (end >= start) {
+		result.push(word[end]);
+		end--;
+	}
+	let curr = i + 1;
+	while (curr < word.length) {
+		result.push(word[curr]);
+		curr++;
+	}
+	return result.join('');
 };

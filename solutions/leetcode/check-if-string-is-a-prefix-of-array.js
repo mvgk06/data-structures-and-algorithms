@@ -17,16 +17,16 @@ n - number of strings
 */
 
 const isPrefixString = function (s, words) {
-    const prefix = new Array(s.length);
-    prefix[0] = words[0];
-    if (prefix[0] === s) {
-        return true;
-    }
-    for (let i = 1; i < words.length; i++) {
-        prefix[i] = prefix[i - 1] + words[i];
-        if (prefix[i] === s) {
-            return true;
-        }
-    }
-    return false;
+	const prefix = new Array(s.length);
+	prefix[0] = words[0];
+	if (prefix[0] === s) {
+		return true;
+	}
+	for (let i = 1; i < words.length; i++) {
+		prefix[i] = prefix[i - 1] + words[i];
+		if (prefix[i] === s) {
+			return true;
+		}
+	}
+	return false;
 };

@@ -43,55 +43,57 @@ n - number
 /* Top down */
 
 const tribHelper = (n, memo) => {
-    if (n <= 1) {
-        return n;
-    }
-    if (n === 2) {
-        return 1;
-    }
-    if (memo[n] != -1) {
-        return memo[n];
-    }
-    const first = tribHelper(n - 1, memo);
-    const second = tribHelper(n - 2, memo);
-    const third = tribHelper(n - 3, memo);
-    memo[n] = first + second + third;
-    return memo[n];
+	if (n <= 1) {
+		return n;
+	}
+	if (n === 2) {
+		return 1;
+	}
+	if (memo[n] != -1) {
+		return memo[n];
+	}
+	const first = tribHelper(n - 1, memo);
+	const second = tribHelper(n - 2, memo);
+	const third = tribHelper(n - 3, memo);
+	memo[n] = first + second + third;
+	return memo[n];
 };
 
 const tribonacci = function (n) {
-    const memo = new Array(n + 1).fill(-1);
-    return tribHelper(n, memo);
+	const memo = new Array(n + 1).fill(-1);
+	return tribHelper(n, memo);
 };
 
 /* Bottom up */
 
 const tribonacci2 = function (n) {
-    const memo = new Array(n + 1).fill(-1);
-    memo[0] = 0;
-    memo[1] = 1;
-    memo[2] = 1;
-    for (let i = 3; i < memo.length; i++) {
-        memo[i] = memo[i - 1] + memo[i - 2] + memo[i - 3];
-    }
-    return memo[n];
+	const memo = new Array(n + 1).fill(-1);
+	memo[0] = 0;
+	memo[1] = 1;
+	memo[2] = 1;
+	for (let i = 3; i < memo.length; i++) {
+		memo[i] = memo[i - 1] + memo[i - 2] + memo[i - 3];
+	}
+	return memo[n];
 };
 
 /* Bottom up (space optimized) */
 
 const tribonacci3 = function (n) {
-    let first = 0, second = 1, third = 1;
-    if (n === 0) {
-        return first;
-    }
-    if (n === 1) {
-        return second;
-    }
-    for (let i = 3; i <= n; i++) {
-        const next = first + second + third;
-        first = second;
-        second = third;
-        third = next;
-    }
-    return third;
+	let first = 0,
+		second = 1,
+		third = 1;
+	if (n === 0) {
+		return first;
+	}
+	if (n === 1) {
+		return second;
+	}
+	for (let i = 3; i <= n; i++) {
+		const next = first + second + third;
+		first = second;
+		second = third;
+		third = next;
+	}
+	return third;
 };

@@ -36,54 +36,54 @@ e - number of edges
 /* DFS */
 
 const numOfMinutes = function (n, headID, manager, informTime) {
-    const graph = new Array(n);
-    for (let i = 0; i < n; i++) {
-        graph[i] = [];
-    }
-    for (let i = 0; i < manager.length; i++) {
-        if (manager[i] != -1) {
-            graph[manager[i]].push(i);
-        }
-    }
-    let result = 0;
-    const dfs = (curr, currTime) => {
-        result = Math.max(result, currTime);
-        for (const adjacent of graph[curr]) {
-            dfs(adjacent, currTime + informTime[curr]);
-        }
-    };
-    dfs(headID, 0);
-    return result;
+	const graph = new Array(n);
+	for (let i = 0; i < n; i++) {
+		graph[i] = [];
+	}
+	for (let i = 0; i < manager.length; i++) {
+		if (manager[i] != -1) {
+			graph[manager[i]].push(i);
+		}
+	}
+	let result = 0;
+	const dfs = (curr, currTime) => {
+		result = Math.max(result, currTime);
+		for (const adjacent of graph[curr]) {
+			dfs(adjacent, currTime + informTime[curr]);
+		}
+	};
+	dfs(headID, 0);
+	return result;
 };
 
 /* BFS */
 
-const Queue = require("../../data-structures/queue");
+const Queue = require('../../data-structures/queue');
 
 const bfs = (graph, head, informTime) => {
-    const queue = new Queue();
-    queue.enque([head, 0]);
-    let result = 0;
-    while (queue.getSize() > 0) {
-        const [curr, currTime] = queue.getFront();
-        queue.deque();
-        result = Math.max(result, currTime);
-        for (const adjacent of graph[curr]) {
-            queue.enque([adjacent, currTime + informTime[curr]]);
-        }
-    }
-    return result;
+	const queue = new Queue();
+	queue.enque([head, 0]);
+	let result = 0;
+	while (queue.getSize() > 0) {
+		const [curr, currTime] = queue.getFront();
+		queue.deque();
+		result = Math.max(result, currTime);
+		for (const adjacent of graph[curr]) {
+			queue.enque([adjacent, currTime + informTime[curr]]);
+		}
+	}
+	return result;
 };
 
 const numOfMinutes2 = function (n, headID, manager, informTime) {
-    const graph = new Array(n);
-    for (let i = 0; i < n; i++) {
-        graph[i] = [];
-    }
-    for (let i = 0; i < manager.length; i++) {
-        if (manager[i] != -1) {
-            graph[manager[i]].push(i);
-        }
-    }
-    return bfs(graph, headID, informTime);
+	const graph = new Array(n);
+	for (let i = 0; i < n; i++) {
+		graph[i] = [];
+	}
+	for (let i = 0; i < manager.length; i++) {
+		if (manager[i] != -1) {
+			graph[manager[i]].push(i);
+		}
+	}
+	return bfs(graph, headID, informTime);
 };

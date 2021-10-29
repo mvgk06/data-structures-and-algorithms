@@ -19,20 +19,21 @@ n - maximum number of nodes from source to destination
 */
 
 const allPaths = (graph, curr, dest, path, result) => {
-    if (curr === dest) {
-        result.push([...path]);
-        return;
-    }
-    for (const adjacent of graph[curr]) {
-        path.push(adjacent);
-        allPaths(graph, adjacent, dest, path, result);
-        path.pop();
-    }
+	if (curr === dest) {
+		result.push([...path]);
+		return;
+	}
+	for (const adjacent of graph[curr]) {
+		path.push(adjacent);
+		allPaths(graph, adjacent, dest, path, result);
+		path.pop();
+	}
 };
 
 const allPathsSourceTarget = function (graph) {
-    const n = graph.length;
-    const path = [0], result = [];
-    allPaths(graph, 0, n - 1, path, result);
-    return result;
+	const n = graph.length;
+	const path = [0],
+		result = [];
+	allPaths(graph, 0, n - 1, path, result);
+	return result;
 };

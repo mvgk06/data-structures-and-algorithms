@@ -39,49 +39,56 @@ n - number of elements
 /* Bottom up */
 
 const maxScoreSightseeingPair = function (values) {
-    let left = values[0], result = 0;
-    for (let i = 1; i < values.length; i++) {
-        const curr = left + values[i] - i;
-        result = Math.max(result, curr);
-        left = Math.max(left, values[i] + i);
-    }
-    return result;
+	let left = values[0],
+		result = 0;
+	for (let i = 1; i < values.length; i++) {
+		const curr = left + values[i] - i;
+		result = Math.max(result, curr);
+		left = Math.max(left, values[i] + i);
+	}
+	return result;
 };
 
 /* Bottom up state machine */
 
 const maxScoreSightseeingPair2 = function (values) {
-    let s0 = 0, s1 = values[0], s2 = values[0], result = 0;
-    for (let i = 1; i < values.length; i++) {
-        const prevS0 = s0, prevS1 = s1, prevS2 = s2;
-        s1 = Math.max(prevS1, prevS0 + values[i] + i);
-        s2 = Math.max(prevS2, prevS1 + values[i] - i);
-        result = Math.max(result, s2);
-    }
-    return result;
+	let s0 = 0,
+		s1 = values[0],
+		s2 = values[0],
+		result = 0;
+	for (let i = 1; i < values.length; i++) {
+		const prevS0 = s0,
+			prevS1 = s1,
+			prevS2 = s2;
+		s1 = Math.max(prevS1, prevS0 + values[i] + i);
+		s2 = Math.max(prevS2, prevS1 + values[i] - i);
+		result = Math.max(result, s2);
+	}
+	return result;
 };
 
 /* Optimal path */
 
 const optimalPath = (values) => {
-    const path = {
-        left: [0],
-        right: 0,
-    };
-    let left = values[0], result = 0;
-    for (let i = 1; i < values.length; i++) {
-        const curr = left + values[i] - i;
-        if (curr > result) {
-            path.right = i;
-            result = curr;
-        }
-        if (values[i] + i > left) {
-            path.left.push(i);
-            left = values[i] + i;
-        }
-    }
-    while (path.left[path.left.length - 1] >= path.right) {
-        path.left.pop();
-    }
-    return [path.left[path.left.length - 1], path.right];
+	const path = {
+		left: [0],
+		right: 0,
+	};
+	let left = values[0],
+		result = 0;
+	for (let i = 1; i < values.length; i++) {
+		const curr = left + values[i] - i;
+		if (curr > result) {
+			path.right = i;
+			result = curr;
+		}
+		if (values[i] + i > left) {
+			path.left.push(i);
+			left = values[i] + i;
+		}
+	}
+	while (path.left[path.left.length - 1] >= path.right) {
+		path.left.pop();
+	}
+	return [path.left[path.left.length - 1], path.right];
 };

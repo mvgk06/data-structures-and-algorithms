@@ -32,38 +32,37 @@ n - number of elements
 /* Recursive */
 
 const searchHelper = (nums, target, start, end) => {
-    if (start > end) {
-        return -1;
-    }
-    const mid = Math.floor(start + (end - start) / 2);
-    if (nums[mid] === target) {
-        return mid;
-    }
-    else if (nums[mid] < target) {
-        return searchHelper(nums, target, mid + 1, end);
-    }
-    return searchHelper(nums, target, start, mid - 1);
+	if (start > end) {
+		return -1;
+	}
+	const mid = Math.floor(start + (end - start) / 2);
+	if (nums[mid] === target) {
+		return mid;
+	} else if (nums[mid] < target) {
+		return searchHelper(nums, target, mid + 1, end);
+	}
+	return searchHelper(nums, target, start, mid - 1);
 };
 
 const search = function (nums, target) {
-    return searchHelper(nums, target, 0, nums.length - 1);
+	return searchHelper(nums, target, 0, nums.length - 1);
 };
 
 /* Iterative */
 
 const search2 = function (nums, target) {
-    let start = 0, end = nums.length - 1, mid;
-    while (start <= end) {
-        mid = Math.floor(start + (end - start) / 2);
-        if (nums[mid] === target) {
-            return mid;
-        }
-        else if (nums[mid] < target) {
-            start = mid + 1;
-        }
-        else {
-            end = mid - 1;
-        }
-    }
-    return -1;
+	let start = 0,
+		end = nums.length - 1,
+		mid;
+	while (start <= end) {
+		mid = Math.floor(start + (end - start) / 2);
+		if (nums[mid] === target) {
+			return mid;
+		} else if (nums[mid] < target) {
+			start = mid + 1;
+		} else {
+			end = mid - 1;
+		}
+	}
+	return -1;
 };

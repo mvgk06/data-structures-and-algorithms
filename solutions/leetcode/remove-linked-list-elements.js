@@ -30,47 +30,45 @@ n - number of nodes
 /* Iterative */
 
 const removeElements = function (head, val) {
-    while (head != null) {
-        if (head.val === val) {
-            head = head.next;
-        }
-        else {
-            break;
-        }
-    }
-    let prev = null, curr = head;
-    while (curr != null) {
-        if (curr.val === val) {
-            prev.next = curr.next;
-            curr = curr.next;
-        }
-        else {
-            prev = curr;
-            curr = curr.next;
-        }
-    }
-    return head;
+	while (head != null) {
+		if (head.val === val) {
+			head = head.next;
+		} else {
+			break;
+		}
+	}
+	let prev = null,
+		curr = head;
+	while (curr != null) {
+		if (curr.val === val) {
+			prev.next = curr.next;
+			curr = curr.next;
+		} else {
+			prev = curr;
+			curr = curr.next;
+		}
+	}
+	return head;
 };
 
 /* Recursive */
 
 const removeHelper = (head, val) => {
-    if (head === null) {
-        return null;
-    }
-    const sublistHead = removeHelper(head.next, val);
-    if (head.val === val) {
-        head = sublistHead;
-    }
-    else {
-        head.next = sublistHead;
-    }
-    return head;
+	if (head === null) {
+		return null;
+	}
+	const sublistHead = removeHelper(head.next, val);
+	if (head.val === val) {
+		head = sublistHead;
+	} else {
+		head.next = sublistHead;
+	}
+	return head;
 };
 
 const removeElements2 = function (head, val) {
-    if (head === null) {
-        return null;
-    }
-    return removeHelper(head, val);
+	if (head === null) {
+		return null;
+	}
+	return removeHelper(head, val);
 };

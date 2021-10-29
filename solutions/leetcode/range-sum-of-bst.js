@@ -19,20 +19,20 @@ n - number of nodes
 */
 
 const rangeSumHelper = (root, low, high) => {
-    if (root === null) {
-        return 0;
-    }
-    if (root.val < low) {
-        return rangeSumHelper(root.right, low, high);
-    }
-    if (root.val > high) {
-        return rangeSumHelper(root.left, low, high);
-    }
-    const leftSum = rangeSumHelper(root.left, low, high);
-    const rightSum = rangeSumHelper(root.right, low, high);
-    return root.val + leftSum + rightSum;
+	if (root === null) {
+		return 0;
+	}
+	if (root.val < low) {
+		return rangeSumHelper(root.right, low, high);
+	}
+	if (root.val > high) {
+		return rangeSumHelper(root.left, low, high);
+	}
+	const leftSum = rangeSumHelper(root.left, low, high);
+	const rightSum = rangeSumHelper(root.right, low, high);
+	return root.val + leftSum + rightSum;
 };
 
 const rangeSumBST = function (root, low, high) {
-    return rangeSumHelper(root, low, high);
+	return rangeSumHelper(root, low, high);
 };

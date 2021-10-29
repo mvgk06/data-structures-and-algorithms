@@ -30,31 +30,31 @@ n - number of nodes
 /* Top down recursion */
 
 const helper = (root) => {
-    if (root === null) {
-        return true;
-    }
-    return root.val === 0 && helper(root.left) && helper(root.right);
+	if (root === null) {
+		return true;
+	}
+	return root.val === 0 && helper(root.left) && helper(root.right);
 };
 
 const pruneTree = function (root) {
-    if (root === null || helper(root)) {
-        return null;
-    }
-    root.left = pruneTree(root.left);
-    root.right = pruneTree(root.right);
-    return root;
+	if (root === null || helper(root)) {
+		return null;
+	}
+	root.left = pruneTree(root.left);
+	root.right = pruneTree(root.right);
+	return root;
 };
 
 /* Bottom up recursion */
 
 const pruneTree2 = function (root) {
-    if (root === null) {
-        return null;
-    }
-    root.left = pruneTree(root.left);
-    root.right = pruneTree(root.right);
-    if (root.val === 0 && !root.left && !root.right) {
-        return null;
-    }
-    return root;
+	if (root === null) {
+		return null;
+	}
+	root.left = pruneTree(root.left);
+	root.right = pruneTree(root.right);
+	if (root.val === 0 && !root.left && !root.right) {
+		return null;
+	}
+	return root;
 };

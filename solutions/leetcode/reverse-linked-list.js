@@ -28,27 +28,28 @@ Space - O(1)
 /* Recursion */
 
 const reverse = (prev, curr) => {
-    if (curr === null) {
-        return prev;
-    }
-    const next = curr.next;
-    curr.next = prev;
-    return reverse(curr, next);
+	if (curr === null) {
+		return prev;
+	}
+	const next = curr.next;
+	curr.next = prev;
+	return reverse(curr, next);
 };
 
 const reverseList = function (head) {
-    return reverse(null, head);
+	return reverse(null, head);
 };
 
 /* Iterative */
 
 const reverseList2 = function (head) {
-    let prev = null, curr = head;
-    while (curr != null) {
-        const next = curr.next;
-        curr.next = prev;
-        prev = curr;
-        curr = next;
-    }
-    return prev;
+	let prev = null,
+		curr = head;
+	while (curr != null) {
+		const next = curr.next;
+		curr.next = prev;
+		prev = curr;
+		curr = next;
+	}
+	return prev;
 };

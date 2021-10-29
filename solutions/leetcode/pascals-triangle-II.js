@@ -43,60 +43,60 @@ n - number of rows
 /* Top down */
 
 const helper = (memo, i, j) => {
-    if (i < 0 || j < 0) {
-        return 0;
-    }
-    if (j === 0 || j === i) {
-        memo[i][j] = 1;
-        return memo[i][j];
-    }
-    if (memo[i][j] != -1) {
-        return memo[i][j];
-    }
-    const top = helper(memo, i - 1, j);
-    const diagonal = helper(memo, i - 1, j - 1);
-    memo[i][j] = top + diagonal;
-    return memo[i][j];
+	if (i < 0 || j < 0) {
+		return 0;
+	}
+	if (j === 0 || j === i) {
+		memo[i][j] = 1;
+		return memo[i][j];
+	}
+	if (memo[i][j] != -1) {
+		return memo[i][j];
+	}
+	const top = helper(memo, i - 1, j);
+	const diagonal = helper(memo, i - 1, j - 1);
+	memo[i][j] = top + diagonal;
+	return memo[i][j];
 };
 
 const getRow = function (rowIndex) {
-    const memo = new Array(rowIndex + 1);
-    for (let i = 0; i <= rowIndex; i++) {
-        memo[i] = new Array(i + 1).fill(-1);
-    }
-    for (let j = 0; j <= rowIndex; j++) {
-        helper(memo, rowIndex, j);
-    }
-    return memo[rowIndex];
+	const memo = new Array(rowIndex + 1);
+	for (let i = 0; i <= rowIndex; i++) {
+		memo[i] = new Array(i + 1).fill(-1);
+	}
+	for (let j = 0; j <= rowIndex; j++) {
+		helper(memo, rowIndex, j);
+	}
+	return memo[rowIndex];
 };
 
 /* Bottom up */
 
 const getRow2 = function (rowIndex) {
-    const memo = new Array(rowIndex + 1);
-    for (let i = 0; i <= rowIndex; i++) {
-        memo[i] = new Array(i + 1);
-        memo[i][0] = 1;
-        memo[i][i] = 1;
-        for (let j = 1; j < i; j++) {
-            memo[i][j] = memo[i - 1][j - 1] + memo[i - 1][j];
-        }
-    }
-    return memo[rowIndex];
+	const memo = new Array(rowIndex + 1);
+	for (let i = 0; i <= rowIndex; i++) {
+		memo[i] = new Array(i + 1);
+		memo[i][0] = 1;
+		memo[i][i] = 1;
+		for (let j = 1; j < i; j++) {
+			memo[i][j] = memo[i - 1][j - 1] + memo[i - 1][j];
+		}
+	}
+	return memo[rowIndex];
 };
 
 /* Bottom up (space optimized) */
 
 const getRow3 = function (rowIndex) {
-    let prev = [];
-    for (let i = 0; i <= rowIndex; i++) {
-        const curr = new Array(i + 1);
-        curr[0] = 1;
-        curr[i] = 1;
-        for (let j = 1; j < i; j++) {
-            curr[j] = prev[j - 1] + prev[j];
-        }
-        prev = [...curr];
-    }
-    return prev;
+	let prev = [];
+	for (let i = 0; i <= rowIndex; i++) {
+		const curr = new Array(i + 1);
+		curr[0] = 1;
+		curr[i] = 1;
+		for (let j = 1; j < i; j++) {
+			curr[j] = prev[j - 1] + prev[j];
+		}
+		prev = [...curr];
+	}
+	return prev;
 };

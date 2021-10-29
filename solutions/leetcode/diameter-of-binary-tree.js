@@ -27,39 +27,39 @@ n - number of nodes
 /* Brute force */
 
 const longestPath = (root) => {
-    if (root === null) {
-        return 0;
-    }
-    const left = longestPath(root.left);
-    const right = longestPath(root.right);
-    return 1 + Math.max(left, right);
+	if (root === null) {
+		return 0;
+	}
+	const left = longestPath(root.left);
+	const right = longestPath(root.right);
+	return 1 + Math.max(left, right);
 };
 
 const diameterOfBinaryTree = function (root) {
-    if (root === null) {
-        return 0;
-    }
-    const leftPath = longestPath(root.left);
-    const rightPath = longestPath(root.right);
-    const curr = leftPath + rightPath;
-    const left = diameterOfBinaryTree(root.left);
-    const right = diameterOfBinaryTree(root.right);
-    return Math.max(curr, left, right);
+	if (root === null) {
+		return 0;
+	}
+	const leftPath = longestPath(root.left);
+	const rightPath = longestPath(root.right);
+	const curr = leftPath + rightPath;
+	const left = diameterOfBinaryTree(root.left);
+	const right = diameterOfBinaryTree(root.right);
+	return Math.max(curr, left, right);
 };
 
 /* Optimized */
 
 const diameterOfBinaryTree2 = function (root) {
-    let result = 0;
-    const longestPath = (root) => {
-        if (root === null) {
-            return 0;
-        }
-        const left = longestPath(root.left);
-        const right = longestPath(root.right);
-        result = Math.max(result, left + right);
-        return 1 + Math.max(left, right);
-    };
-    longestPath(root);
-    return result;
+	let result = 0;
+	const longestPath = (root) => {
+		if (root === null) {
+			return 0;
+		}
+		const left = longestPath(root.left);
+		const right = longestPath(root.right);
+		result = Math.max(result, left + right);
+		return 1 + Math.max(left, right);
+	};
+	longestPath(root);
+	return result;
 };

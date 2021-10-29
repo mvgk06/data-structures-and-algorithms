@@ -21,23 +21,23 @@ n - size of the string
 */
 
 const reverseWords = function (s) {
-    let i = s.length - 1, j = s.length;
-    const result = [];
-    while (i >= 0) {
-        if (s[i] != " ") {
-            i--;
-        }
-        else {
-            const str = s.substring(i + 1, j);
-            if (str.length > 0) {
-                result.push(str);
-            }
-            j = i;
-            i--;
-        }
-    }
-    if (s.substring(i + 1, j).length > 0) {
-        result.push(s.substring(i + 1, j));
-    }
-    return result.join(" ");
+	let i = s.length - 1,
+		j = s.length;
+	const result = [];
+	while (i >= 0) {
+		if (s[i] != ' ') {
+			i--;
+		} else {
+			const str = s.substring(i + 1, j);
+			if (str.length > 0) {
+				result.push(str);
+			}
+			j = i;
+			i--;
+		}
+	}
+	if (s.substring(i + 1, j).length > 0) {
+		result.push(s.substring(i + 1, j));
+	}
+	return result.join(' ');
 };

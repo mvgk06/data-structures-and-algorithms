@@ -45,61 +45,61 @@ n - number of columns
 /* Top down */
 
 const helper = (m, n, row, col, memo) => {
-    if (row >= m || col >= n) {
-        return 0;
-    }
-    if (row === m - 1 && col === n - 1) {
-        return 1;
-    }
-    if (memo[row][col] != -1) {
-        return memo[row][col];
-    }
-    const right = helper(m, n, row, col + 1, memo);
-    const bottom = helper(m, n, row + 1, col, memo);
-    memo[row][col] = right + bottom;
-    return memo[row][col];
+	if (row >= m || col >= n) {
+		return 0;
+	}
+	if (row === m - 1 && col === n - 1) {
+		return 1;
+	}
+	if (memo[row][col] != -1) {
+		return memo[row][col];
+	}
+	const right = helper(m, n, row, col + 1, memo);
+	const bottom = helper(m, n, row + 1, col, memo);
+	memo[row][col] = right + bottom;
+	return memo[row][col];
 };
 
 const uniquePaths = function (m, n) {
-    const memo = new Array(m);
-    for (let i = 0; i < memo.length; i++) {
-        memo[i] = new Array(n).fill(-1);
-    }
-    return helper(m, n, 0, 0, memo);
+	const memo = new Array(m);
+	for (let i = 0; i < memo.length; i++) {
+		memo[i] = new Array(n).fill(-1);
+	}
+	return helper(m, n, 0, 0, memo);
 };
 
 /* Bottom up */
 
 const uniquePaths2 = function (m, n) {
-    const memo = new Array(m);
-    for (let i = 0; i < memo.length; i++) {
-        memo[i] = new Array(n).fill(0);
-    }
-    for (let j = 0; j < n; j++) {
-        memo[m - 1][j] = 1;
-    }
-    for (let i = 0; i < m; i++) {
-        memo[i][n - 1] = 1;
-    }
-    for (let i = m - 2; i >= 0; i--) {
-        for (let j = n - 2; j >= 0; j--) {
-            memo[i][j] = memo[i][j + 1] + memo[i + 1][j];
-        }
-    }
-    return memo[0][0];
+	const memo = new Array(m);
+	for (let i = 0; i < memo.length; i++) {
+		memo[i] = new Array(n).fill(0);
+	}
+	for (let j = 0; j < n; j++) {
+		memo[m - 1][j] = 1;
+	}
+	for (let i = 0; i < m; i++) {
+		memo[i][n - 1] = 1;
+	}
+	for (let i = m - 2; i >= 0; i--) {
+		for (let j = n - 2; j >= 0; j--) {
+			memo[i][j] = memo[i][j + 1] + memo[i + 1][j];
+		}
+	}
+	return memo[0][0];
 };
 
 /* Bottom up (space optimized) */
 
 const uniquePaths3 = function (m, n) {
-    let next = new Array(n).fill(1);
-    for (let i = m - 2; i >= 0; i--) {
-        const curr = new Array(n);
-        curr[n - 1] = 1;
-        for (let j = n - 2; j >= 0; j--) {
-            curr[j] = curr[j + 1] + next[j];
-        }
-        next = [...curr];
-    }
-    return next[0];
+	let next = new Array(n).fill(1);
+	for (let i = m - 2; i >= 0; i--) {
+		const curr = new Array(n);
+		curr[n - 1] = 1;
+		for (let j = n - 2; j >= 0; j--) {
+			curr[j] = curr[j + 1] + next[j];
+		}
+		next = [...curr];
+	}
+	return next[0];
 };

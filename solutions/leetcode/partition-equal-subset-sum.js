@@ -53,129 +53,126 @@ sum - total sum
 /* Top down */
 
 const canPartitionHelper = (nums, i, sum, memo) => {
-    if (i < 0) {
-        if (sum === 0) {
-            return 1;
-        }
-        return 0;
-    }
-    if (memo[i][sum] != -1) {
-        return memo[i][sum];
-    }
-    if (nums[i] <= sum) {
-        const pick = canPartitionHelper(nums, i - 1, sum - nums[i], memo);
-        const dontPick = canPartitionHelper(nums, i - 1, sum, memo);
-        memo[i][sum] = (pick || dontPick);
-    }
-    else {
-        const dontPick = canPartitionHelper(nums, i - 1, sum, memo);
-        memo[i][sum] = dontPick;
-    }
-    return memo[i][sum];
+	if (i < 0) {
+		if (sum === 0) {
+			return 1;
+		}
+		return 0;
+	}
+	if (memo[i][sum] != -1) {
+		return memo[i][sum];
+	}
+	if (nums[i] <= sum) {
+		const pick = canPartitionHelper(nums, i - 1, sum - nums[i], memo);
+		const dontPick = canPartitionHelper(nums, i - 1, sum, memo);
+		memo[i][sum] = pick || dontPick;
+	} else {
+		const dontPick = canPartitionHelper(nums, i - 1, sum, memo);
+		memo[i][sum] = dontPick;
+	}
+	return memo[i][sum];
 };
 
 const canPartition = function (nums) {
-    let sum = 0;
-    for (let i = 0; i < nums.length; i++) {
-        sum += nums[i];
-    }
-    if (sum % 2 != 0) {
-        return false;
-    }
-    const memo = new Array(nums.length);
-    for (let i = 0; i < memo.length; i++) {
-        memo[i] = new Array((sum / 2) + 1).fill(-1);
-    }
-    const result = canPartitionHelper(nums, nums.length - 1, sum / 2, memo);
-    if (result === 1) {
-        return true;
-    }
-    return false;
+	let sum = 0;
+	for (let i = 0; i < nums.length; i++) {
+		sum += nums[i];
+	}
+	if (sum % 2 != 0) {
+		return false;
+	}
+	const memo = new Array(nums.length);
+	for (let i = 0; i < memo.length; i++) {
+		memo[i] = new Array(sum / 2 + 1).fill(-1);
+	}
+	const result = canPartitionHelper(nums, nums.length - 1, sum / 2, memo);
+	if (result === 1) {
+		return true;
+	}
+	return false;
 };
 
 /* Bottom up */
 
 const canPartition2 = function (nums) {
-    let sum = 0;
-    for (let i = 0; i < nums.length; i++) {
-        sum += nums[i];
-    }
-    if (sum % 2 != 0) {
-        return false;
-    }
-    const memo = new Array(nums.length + 1);
-    for (let i = 0; i < memo.length; i++) {
-        memo[i] = new Array((sum / 2) + 1).fill(-1);
-    }
-    for (let j = 0; j < memo[0].length; j++) {
-        memo[0][j] = 0;
-    }
-    for (let i = 0; i < memo.length; i++) {
-        memo[i][0] = 1;
-    }
-    for (let i = 1; i < memo.length; i++) {
-        for (let j = 1; j < memo[i].length; j++) {
-            if (nums[i - 1] <= j) {
-                memo[i][j] = (memo[i - 1][j - nums[i - 1]] || memo[i - 1][j]);
-            }
-            else {
-                memo[i][j] = memo[i - 1][j];
-            }
-        }
-    }
-    const result = memo[nums.length][sum / 2];
-    if (result === 1) {
-        return true;
-    }
-    return false;
+	let sum = 0;
+	for (let i = 0; i < nums.length; i++) {
+		sum += nums[i];
+	}
+	if (sum % 2 != 0) {
+		return false;
+	}
+	const memo = new Array(nums.length + 1);
+	for (let i = 0; i < memo.length; i++) {
+		memo[i] = new Array(sum / 2 + 1).fill(-1);
+	}
+	for (let j = 0; j < memo[0].length; j++) {
+		memo[0][j] = 0;
+	}
+	for (let i = 0; i < memo.length; i++) {
+		memo[i][0] = 1;
+	}
+	for (let i = 1; i < memo.length; i++) {
+		for (let j = 1; j < memo[i].length; j++) {
+			if (nums[i - 1] <= j) {
+				memo[i][j] = memo[i - 1][j - nums[i - 1]] || memo[i - 1][j];
+			} else {
+				memo[i][j] = memo[i - 1][j];
+			}
+		}
+	}
+	const result = memo[nums.length][sum / 2];
+	if (result === 1) {
+		return true;
+	}
+	return false;
 };
 
 /* Bottom up (space optimized) */
 
 const canPartition3 = function (nums) {
-    let sum = 0;
-    for (let i = 0; i < nums.length; i++) {
-        sum += nums[i];
-    }
-    if (sum % 2 != 0) {
-        return false;
-    }
-    let prevMemo = new Array(nums.length + 1).fill(0);
-    prevMemo[0] = 1;
-    for (let i = 1; i <= nums.length; i++) {
-        const currMemo = new Array(nums.length + 1);
-        currMemo[0] = 0;
-        for (let j = 1; j <= sum / 2; j++) {
-            if (nums[i - 1] <= j) {
-                currMemo[j] = (prevMemo[j - nums[i - 1]] || prevMemo[j]);
-            }
-            else {
-                currMemo[j] = prevMemo[j];
-            }
-        }
-        prevMemo = [...currMemo];
-    }
-    const result = prevMemo[sum / 2];
-    if (result === 1) {
-        return true;
-    }
-    return false;
+	let sum = 0;
+	for (let i = 0; i < nums.length; i++) {
+		sum += nums[i];
+	}
+	if (sum % 2 != 0) {
+		return false;
+	}
+	let prevMemo = new Array(nums.length + 1).fill(0);
+	prevMemo[0] = 1;
+	for (let i = 1; i <= nums.length; i++) {
+		const currMemo = new Array(nums.length + 1);
+		currMemo[0] = 0;
+		for (let j = 1; j <= sum / 2; j++) {
+			if (nums[i - 1] <= j) {
+				currMemo[j] = prevMemo[j - nums[i - 1]] || prevMemo[j];
+			} else {
+				currMemo[j] = prevMemo[j];
+			}
+		}
+		prevMemo = [...currMemo];
+	}
+	const result = prevMemo[sum / 2];
+	if (result === 1) {
+		return true;
+	}
+	return false;
 };
 
 /* Optimal path */
 
 const optimalPath = (nums, sum, memo) => {
-    const path = [];
-    let i = nums.length, j = sum / 2;
-    while (i > 0 && j > 0) {
-        if (nums[i - 1] <= j && memo[i][j] === memo[i - 1][j - nums[i - 1]]) {
-            path.push(i - 1);
-            j -= nums[i - 1];
-            i -= 1;
-        }
-        else {
-            i -= 1;
-        }
-    }
-    return path.reverse();
+	const path = [];
+	let i = nums.length,
+		j = sum / 2;
+	while (i > 0 && j > 0) {
+		if (nums[i - 1] <= j && memo[i][j] === memo[i - 1][j - nums[i - 1]]) {
+			path.push(i - 1);
+			j -= nums[i - 1];
+			i -= 1;
+		} else {
+			i -= 1;
+		}
+	}
+	return path.reverse();
 };

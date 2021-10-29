@@ -32,34 +32,33 @@ n - number of elements
 /* Linear search */
 
 const mySqrt = function (x) {
-    for (let i = 0; i <= x; i++) {
-        const sq = i * i;
-        if (sq === x) {
-            return i;
-        }
-        else if (sq > x) {
-            return i - 1;
-        }
-    }
+	for (let i = 0; i <= x; i++) {
+		const sq = i * i;
+		if (sq === x) {
+			return i;
+		} else if (sq > x) {
+			return i - 1;
+		}
+	}
 };
 
 /* Binary search */
 
 const mySqrt2 = function (x) {
-    let start = 0, end = x, result = -1;
-    while (start <= end) {
-        const mid = Math.floor(start + (end - start) / 2);
-        const sq = mid * mid;
-        if (sq === x) {
-            return mid;
-        }
-        else if (sq > x) {
-            result = mid - 1;
-            end = mid - 1;
-        }
-        else {
-            start = mid + 1;
-        }
-    }
-    return result;
+	let start = 0,
+		end = x,
+		result = -1;
+	while (start <= end) {
+		const mid = Math.floor(start + (end - start) / 2);
+		const sq = mid * mid;
+		if (sq === x) {
+			return mid;
+		} else if (sq > x) {
+			result = mid - 1;
+			end = mid - 1;
+		} else {
+			start = mid + 1;
+		}
+	}
+	return result;
 };

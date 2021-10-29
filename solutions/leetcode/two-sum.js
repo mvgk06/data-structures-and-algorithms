@@ -34,45 +34,43 @@ n - number of elements
 /* Sorting + Two pointers */
 
 const twoSum = function (nums, target) {
-    const n = nums.length;
-    const arr = new Array(n);
-    for (let i = 0; i < n; i++) {
-        arr[i] = [nums[i], i];
-    }
-    arr.sort((a, b) => {
-        if (a[0] < b[0]) {
-            return -1;
-        }
-        return 1;
-    });
-    let start = 0, end = n - 1;
-    while (start < end) {
-        const sum = arr[start][0] + arr[end][0];
-        if (sum === target) {
-            return [arr[start][1], arr[end][1]];
-        }
-        else if (sum < target) {
-            start++;
-        }
-        else {
-            end--;
-        }
-    }
-    return [-1, -1];
+	const n = nums.length;
+	const arr = new Array(n);
+	for (let i = 0; i < n; i++) {
+		arr[i] = [nums[i], i];
+	}
+	arr.sort((a, b) => {
+		if (a[0] < b[0]) {
+			return -1;
+		}
+		return 1;
+	});
+	let start = 0,
+		end = n - 1;
+	while (start < end) {
+		const sum = arr[start][0] + arr[end][0];
+		if (sum === target) {
+			return [arr[start][1], arr[end][1]];
+		} else if (sum < target) {
+			start++;
+		} else {
+			end--;
+		}
+	}
+	return [-1, -1];
 };
 
 /* Hashing */
 
 const twoSum2 = function (nums, target) {
-    const map = new Map();
-    for (let i = 0; i < nums.length; i++) {
-        const diff = target - nums[i];
-        if (map.has(diff)) {
-            return [map.get(diff), i];
-        }
-        else {
-            map.set(nums[i], i);
-        }
-    }
-    return [-1, -1];
+	const map = new Map();
+	for (let i = 0; i < nums.length; i++) {
+		const diff = target - nums[i];
+		if (map.has(diff)) {
+			return [map.get(diff), i];
+		} else {
+			map.set(nums[i], i);
+		}
+	}
+	return [-1, -1];
 };

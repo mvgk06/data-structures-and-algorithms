@@ -44,75 +44,72 @@ amount - total amount
 /* Top down */
 
 const changeHelper = (coins, amt, i, memo) => {
-    if (i < 0) {
-        if (amt === 0) {
-            return 1;
-        }
-        return 0;
-    }
-    if (memo[i][amt] != -1) {
-        return memo[i][amt];
-    }
-    if (coins[i] <= amt) {
-        const pick = changeHelper(coins, amt - coins[i], i, memo);
-        const dontPick = changeHelper(coins, amt, i - 1, memo);
-        memo[i][amt] = pick + dontPick;
-    }
-    else {
-        const dontPick = changeHelper(coins, amt, i - 1, memo);
-        memo[i][amt] = dontPick;
-    }
-    return memo[i][amt];
+	if (i < 0) {
+		if (amt === 0) {
+			return 1;
+		}
+		return 0;
+	}
+	if (memo[i][amt] != -1) {
+		return memo[i][amt];
+	}
+	if (coins[i] <= amt) {
+		const pick = changeHelper(coins, amt - coins[i], i, memo);
+		const dontPick = changeHelper(coins, amt, i - 1, memo);
+		memo[i][amt] = pick + dontPick;
+	} else {
+		const dontPick = changeHelper(coins, amt, i - 1, memo);
+		memo[i][amt] = dontPick;
+	}
+	return memo[i][amt];
 };
 
 const change = function (amount, coins) {
-    const memo = new Array(coins.length);
-    for (let i = 0; i < memo.length; i++) {
-        memo[i] = new Array(amount + 1).fill(-1);
-    }
-    return changeHelper(coins, amount, coins.length - 1, memo);
+	const memo = new Array(coins.length);
+	for (let i = 0; i < memo.length; i++) {
+		memo[i] = new Array(amount + 1).fill(-1);
+	}
+	return changeHelper(coins, amount, coins.length - 1, memo);
 };
 
 /* Bottom up */
 
 const change2 = function (amount, coins) {
-    const memo = new Array(coins.length + 1);
-    for (let i = 0; i < memo.length; i++) {
-        memo[i] = new Array(amount + 1).fill(0);
-    }
-    for (let i = 0; i < memo.length; i++) {
-        memo[i][0] = 1;
-    }
-    for (let i = 1; i < memo.length; i++) {
-        for (let j = 1; j < memo[i].length; j++) {
-            if (coins[i - 1] <= j) {
-                memo[i][j] = memo[i][j - coins[i - 1]] + memo[i - 1][j];
-            }
-            else {
-                memo[i][j] = memo[i - 1][j];
-            }
-        }
-    }
-    return memo[coins.length][amount];
+	const memo = new Array(coins.length + 1);
+	for (let i = 0; i < memo.length; i++) {
+		memo[i] = new Array(amount + 1).fill(0);
+	}
+	for (let i = 0; i < memo.length; i++) {
+		memo[i][0] = 1;
+	}
+	for (let i = 1; i < memo.length; i++) {
+		for (let j = 1; j < memo[i].length; j++) {
+			if (coins[i - 1] <= j) {
+				memo[i][j] = memo[i][j - coins[i - 1]] + memo[i - 1][j];
+			} else {
+				memo[i][j] = memo[i - 1][j];
+			}
+		}
+	}
+	return memo[coins.length][amount];
 };
 
 /* Bottom up (space optimized) */
 
 const change3 = function (amount, coins) {
-    let prevMemo = new Array(amount + 1).fill(0);
-    prevMemo[0] = 1;
-    for (let i = 1; i <= coins.length; i++) {
-        const currMemo = new Array(amount + 1);
-        currMemo[0] = 1;
-        for (let j = 1; j <= amount; j++) {
-            if (coins[i - 1] <= j) {
-                currMemo[j] = currMemo[j - coins[i - 1]] + prevMemo[j];
-            }
-            else {
-                currMemo[j] = prevMemo[j];
-            }
-        }
-        prevMemo = [...currMemo];
-    }
-    return prevMemo[amount];
+	let prevMemo = new Array(amount + 1).fill(0);
+	prevMemo[0] = 1;
+	for (let i = 1; i <= coins.length; i++) {
+		const currMemo = new Array(amount + 1);
+		currMemo[0] = 1;
+		for (let j = 1; j <= amount; j++) {
+			if (coins[i - 1] <= j) {
+				currMemo[j] = currMemo[j - coins[i - 1]] + prevMemo[j];
+			} else {
+				currMemo[j] = prevMemo[j];
+			}
+		}
+		prevMemo = [...currMemo];
+	}
+	return prevMemo[amount];
 };

@@ -37,51 +37,52 @@ n - number of elements
 /* Brute force */
 
 const moveZeroes = function (nums) {
-    const n = nums.length, temp = new Array(n);
-    let i = 0;
-    for (let j = 0; j < n; j++) {
-        if (nums[j] != 0) {
-            temp[i] = nums[j];
-            i++;
-        }
-    }
-    while (i < n) {
-        temp[i] = 0;
-        i++;
-    }
-    for (let j = 0; j < n; j++) {
-        nums[j] = temp[j];
-    }
+	const n = nums.length,
+		temp = new Array(n);
+	let i = 0;
+	for (let j = 0; j < n; j++) {
+		if (nums[j] != 0) {
+			temp[i] = nums[j];
+			i++;
+		}
+	}
+	while (i < n) {
+		temp[i] = 0;
+		i++;
+	}
+	for (let j = 0; j < n; j++) {
+		nums[j] = temp[j];
+	}
 };
 
 /* Copying in place */
 
 const moveZeroes2 = function (nums) {
-    const n = nums.length;
-    let i = 0;
-    for (let j = 0; j < n; j++) {
-        if (nums[j] != 0) {
-            nums[i] = nums[j];
-            i++;
-        }
-    }
-    while (i < n) {
-        nums[i] = 0;
-        i++;
-    }
+	const n = nums.length;
+	let i = 0;
+	for (let j = 0; j < n; j++) {
+		if (nums[j] != 0) {
+			nums[i] = nums[j];
+			i++;
+		}
+	}
+	while (i < n) {
+		nums[i] = 0;
+		i++;
+	}
 };
 
 /* Swapping */
 
 const moveZeroes3 = function (nums) {
-    let firstZero = 0;
-    for (let i = 0; i < nums.length; i++) {
-        if (nums[i] != 0) {
-            const temp = nums[i];
-            nums[i] = nums[firstZero];
-            nums[firstZero] = temp;
-            firstZero++;
-        }
-    }
-    return nums;
+	let firstZero = 0;
+	for (let i = 0; i < nums.length; i++) {
+		if (nums[i] != 0) {
+			const temp = nums[i];
+			nums[i] = nums[firstZero];
+			nums[firstZero] = temp;
+			firstZero++;
+		}
+	}
+	return nums;
 };

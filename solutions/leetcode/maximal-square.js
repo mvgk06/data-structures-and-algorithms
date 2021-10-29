@@ -46,84 +46,85 @@ n - number of columns
 /* Top down */
 
 const helper = (mat, i, j, memo) => {
-    if (i < 0 || j < 0) {
-        return 0;
-    }
-    if (memo[i][j] != -1) {
-        return memo[i][j];
-    }
-    const top = helper(mat, i - 1, j, memo);
-    const topLeft = helper(mat, i - 1, j - 1, memo);
-    const left = helper(mat, i, j - 1, memo);
-    memo[i][j] = 1 + Math.min(top, topLeft, left);
-    return memo[i][j];
+	if (i < 0 || j < 0) {
+		return 0;
+	}
+	if (memo[i][j] != -1) {
+		return memo[i][j];
+	}
+	const top = helper(mat, i - 1, j, memo);
+	const topLeft = helper(mat, i - 1, j - 1, memo);
+	const left = helper(mat, i, j - 1, memo);
+	memo[i][j] = 1 + Math.min(top, topLeft, left);
+	return memo[i][j];
 };
 
 const maximalSquare = function (matrix) {
-    const m = matrix.length, n = matrix[0].length;
-    const memo = new Array(m);
-    for (let i = 0; i < m; i++) {
-        memo[i] = new Array(n).fill(-1);
-    }
-    let result = 0;
-    for (let i = 0; i < m; i++) {
-        for (let j = 0; j < n; j++) {
-            if (matrix[i][j] === "0") {
-                memo[i][j] = 0;
-            }
-            else {
-                helper(matrix, i, j, memo);
-            }
-            result = Math.max(result, memo[i][j] * memo[i][j]);
-        }
-    }
-    return result;
+	const m = matrix.length,
+		n = matrix[0].length;
+	const memo = new Array(m);
+	for (let i = 0; i < m; i++) {
+		memo[i] = new Array(n).fill(-1);
+	}
+	let result = 0;
+	for (let i = 0; i < m; i++) {
+		for (let j = 0; j < n; j++) {
+			if (matrix[i][j] === '0') {
+				memo[i][j] = 0;
+			} else {
+				helper(matrix, i, j, memo);
+			}
+			result = Math.max(result, memo[i][j] * memo[i][j]);
+		}
+	}
+	return result;
 };
 
 /* Bottom up */
 
 const maximalSquare2 = function (matrix) {
-    const m = matrix.length, n = matrix[0].length;
-    const memo = new Array(m);
-    for (let i = 0; i < m; i++) {
-        memo[i] = new Array(n).fill(0);
-    }
-    let result = 0;
-    for (let i = 0; i < m; i++) {
-        for (let j = 0; j < n; j++) {
-            if (matrix[i][j] === "1") {
-                if (i > 0 && j > 0) {
-                    memo[i][j] = 1 + Math.min(memo[i - 1][j], memo[i - 1][j - 1], memo[i][j - 1]);
-                }
-                else {
-                    memo[i][j] = 1;
-                }
-            }
-            result = Math.max(result, memo[i][j] * memo[i][j]);
-        }
-    }
-    return result;
+	const m = matrix.length,
+		n = matrix[0].length;
+	const memo = new Array(m);
+	for (let i = 0; i < m; i++) {
+		memo[i] = new Array(n).fill(0);
+	}
+	let result = 0;
+	for (let i = 0; i < m; i++) {
+		for (let j = 0; j < n; j++) {
+			if (matrix[i][j] === '1') {
+				if (i > 0 && j > 0) {
+					memo[i][j] = 1 + Math.min(memo[i - 1][j], memo[i - 1][j - 1], memo[i][j - 1]);
+				} else {
+					memo[i][j] = 1;
+				}
+			}
+			result = Math.max(result, memo[i][j] * memo[i][j]);
+		}
+	}
+	return result;
 };
 
 /* Bottom up (space optimized) */
 
 const maximalSquare3 = function (matrix) {
-    const m = matrix.length, n = matrix[0].length;
-    let prev = new Array(n).fill(0), result = 0;
-    for (let i = 0; i < m; i++) {
-        const curr = new Array(n).fill(0);
-        for (let j = 0; j < n; j++) {
-            if (matrix[i][j] === "1") {
-                if (i > 0 && j > 0) {
-                    curr[j] = 1 + Math.min(prev[j], prev[j - 1], curr[j - 1]);
-                }
-                else {
-                    curr[j] = 1;
-                }
-            }
-            result = Math.max(result, curr[j] * curr[j]);
-        }
-        prev = [...curr];
-    }
-    return result;
+	const m = matrix.length,
+		n = matrix[0].length;
+	let prev = new Array(n).fill(0),
+		result = 0;
+	for (let i = 0; i < m; i++) {
+		const curr = new Array(n).fill(0);
+		for (let j = 0; j < n; j++) {
+			if (matrix[i][j] === '1') {
+				if (i > 0 && j > 0) {
+					curr[j] = 1 + Math.min(prev[j], prev[j - 1], curr[j - 1]);
+				} else {
+					curr[j] = 1;
+				}
+			}
+			result = Math.max(result, curr[j] * curr[j]);
+		}
+		prev = [...curr];
+	}
+	return result;
 };

@@ -32,42 +32,41 @@ n - number of nodes
 /* DFS */
 
 const isSame = (curr1, curr2) => {
-    if (curr1 === null && curr2 === null) {
-        return true;
-    }
-    if (curr1 === null || curr2 === null || curr1.val != curr2.val) {
-        return false;
-    }
-    return isSame(curr1.left, curr2.left) && isSame(curr1.right, curr2.right);
+	if (curr1 === null && curr2 === null) {
+		return true;
+	}
+	if (curr1 === null || curr2 === null || curr1.val != curr2.val) {
+		return false;
+	}
+	return isSame(curr1.left, curr2.left) && isSame(curr1.right, curr2.right);
 };
 
 const isSameTree = function (p, q) {
-    return isSame(p, q);
+	return isSame(p, q);
 };
 
 /* BFS */
 
-const Queue = require("../../data-structures/queue.js");
+const Queue = require('../../data-structures/queue.js');
 
 const isSameTree2 = function (p, q) {
-    const queue = new Queue();
-    queue.enque(p);
-    queue.enque(q);
-    while (queue.getSize() > 0) {
-        const curr1 = queue.getFront();
-        queue.deque();
-        const curr2 = queue.getFront();
-        queue.deque();
-        if (curr1 === null && curr2 === null) {
-            continue;
-        }
-        else if (curr1 === null || curr2 === null || curr1.val != curr2.val) {
-            return false;
-        }
-        queue.enque(curr1.left);
-        queue.enque(curr2.left);
-        queue.enque(curr1.right);
-        queue.enque(curr2.right);
-    }
-    return true;
+	const queue = new Queue();
+	queue.enque(p);
+	queue.enque(q);
+	while (queue.getSize() > 0) {
+		const curr1 = queue.getFront();
+		queue.deque();
+		const curr2 = queue.getFront();
+		queue.deque();
+		if (curr1 === null && curr2 === null) {
+			continue;
+		} else if (curr1 === null || curr2 === null || curr1.val != curr2.val) {
+			return false;
+		}
+		queue.enque(curr1.left);
+		queue.enque(curr2.left);
+		queue.enque(curr1.right);
+		queue.enque(curr2.right);
+	}
+	return true;
 };

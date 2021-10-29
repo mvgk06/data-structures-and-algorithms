@@ -22,31 +22,31 @@ n - number of nodes
 */
 
 const helper = (root, deleted, result) => {
-    if (root === null) {
-        return null;
-    }
-    if (deleted.has(root.val)) {
-        if (root.left != null && !deleted.has(root.left.val)) {
-            result.push(root.left);
-        }
-        if (root.right != null && !deleted.has(root.right.val)) {
-            result.push(root.right);
-        }
-    }
-    root.left = helper(root.left, deleted, result);
-    root.right = helper(root.right, deleted, result);
-    return deleted.has(root.val) ? null : root;
+	if (root === null) {
+		return null;
+	}
+	if (deleted.has(root.val)) {
+		if (root.left != null && !deleted.has(root.left.val)) {
+			result.push(root.left);
+		}
+		if (root.right != null && !deleted.has(root.right.val)) {
+			result.push(root.right);
+		}
+	}
+	root.left = helper(root.left, deleted, result);
+	root.right = helper(root.right, deleted, result);
+	return deleted.has(root.val) ? null : root;
 };
 
 const delNodes = function (root, arr) {
-    if (root === null) {
-        return [];
-    }
-    const deleted = new Set(arr);
-    const result = [];
-    helper(root, deleted, result);
-    if (!deleted.has(root.val)) {
-        result.push(root);
-    }
-    return result;
+	if (root === null) {
+		return [];
+	}
+	const deleted = new Set(arr);
+	const result = [];
+	helper(root, deleted, result);
+	if (!deleted.has(root.val)) {
+		result.push(root);
+	}
+	return result;
 };

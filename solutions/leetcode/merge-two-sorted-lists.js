@@ -17,35 +17,36 @@ n - number of nodes
 */
 
 const mergeTwoLists = function (l1, l2) {
-    if (l1 === null && l2 === null) {
-        return null;
-    }
-    if (l1 === null) {
-        return l2;
-    }
-    if (l2 === null) {
-        return l1;
-    }
-    let left = l1, right = l2, dummy = new ListNode(0), curr = dummy;
-    while (left != null && right != null) {
-        if (left.val <= right.val) {
-            curr.next = left;
-            curr = curr.next;
-            left = left.next;
-        }
-        else {
-            curr.next = right;
-            curr = curr.next;
-            right = right.next;
-        }
-    }
-    if (left != null) {
-        curr.next = left;
-        curr = curr.next;
-    }
-    else if (right != null) {
-        curr.next = right;
-        curr = curr.next;
-    }
-    return dummy.next;
+	if (l1 === null && l2 === null) {
+		return null;
+	}
+	if (l1 === null) {
+		return l2;
+	}
+	if (l2 === null) {
+		return l1;
+	}
+	let left = l1,
+		right = l2,
+		dummy = new ListNode(0),
+		curr = dummy;
+	while (left != null && right != null) {
+		if (left.val <= right.val) {
+			curr.next = left;
+			curr = curr.next;
+			left = left.next;
+		} else {
+			curr.next = right;
+			curr = curr.next;
+			right = right.next;
+		}
+	}
+	if (left != null) {
+		curr.next = left;
+		curr = curr.next;
+	} else if (right != null) {
+		curr.next = right;
+		curr = curr.next;
+	}
+	return dummy.next;
 };

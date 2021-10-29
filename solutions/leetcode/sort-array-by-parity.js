@@ -17,14 +17,14 @@ n - number of elements
 */
 
 const sortArrayByParity = function (nums) {
-    let firstOdd = 0;
-    for (let i = 0; i < nums.length; i++) {
-        if (nums[i] % 2 === 0) {
-            const temp = nums[i];
-            nums[i] = nums[firstOdd];
-            nums[firstOdd] = temp;
-            firstOdd++;
-        }
-    }
-    return nums;
+	let firstOdd = 0;
+	for (let i = 0; i < nums.length; i++) {
+		if (nums[i] % 2 === 0) {
+			const temp = nums[i];
+			nums[i] = nums[firstOdd];
+			nums[firstOdd] = temp;
+			firstOdd++;
+		}
+	}
+	return nums;
 };

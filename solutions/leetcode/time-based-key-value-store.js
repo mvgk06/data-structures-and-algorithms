@@ -26,31 +26,32 @@ n - number of elements
 */
 
 class TimeMap {
-    constructor() {
-        this.store = {};
-    }
-    set(key, value, timestamp) {
-        if (!this.store[key]) {
-            this.store[key] = [];
-        }
-        this.store[key].push({ value, timestamp });
-    }
-    get(key, timestamp) {
-        const arr = this.store[key];
-        if (!arr) {
-            return "";
-        }
-        let start = 0, end = arr.length - 1, result = "";
-        while (start <= end) {
-            const mid = Math.floor(start + (end - start) / 2);
-            if (arr[mid].timestamp <= timestamp) {
-                result = arr[mid].value;
-                start = mid + 1;
-            }
-            else {
-                end = mid - 1;
-            }
-        }
-        return result;
-    }
-};
+	constructor() {
+		this.store = {};
+	}
+	set(key, value, timestamp) {
+		if (!this.store[key]) {
+			this.store[key] = [];
+		}
+		this.store[key].push({ value, timestamp });
+	}
+	get(key, timestamp) {
+		const arr = this.store[key];
+		if (!arr) {
+			return '';
+		}
+		let start = 0,
+			end = arr.length - 1,
+			result = '';
+		while (start <= end) {
+			const mid = Math.floor(start + (end - start) / 2);
+			if (arr[mid].timestamp <= timestamp) {
+				result = arr[mid].value;
+				start = mid + 1;
+			} else {
+				end = mid - 1;
+			}
+		}
+		return result;
+	}
+}

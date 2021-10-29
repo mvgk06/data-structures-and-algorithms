@@ -33,54 +33,52 @@ n - size of the string
 /* Recursive */
 
 const helper = (s, i, j, charRemoved) => {
-    if (i >= j) {
-        return true;
-    }
-    if (s[i] === s[j]) {
-        return helper(s, i + 1, j - 1, charRemoved);
-    }
-    else {
-        if (charRemoved) {
-            return false;
-        }
-        return helper(s, i + 1, j, true) || helper(s, i, j - 1, true);
-    }
+	if (i >= j) {
+		return true;
+	}
+	if (s[i] === s[j]) {
+		return helper(s, i + 1, j - 1, charRemoved);
+	} else {
+		if (charRemoved) {
+			return false;
+		}
+		return helper(s, i + 1, j, true) || helper(s, i, j - 1, true);
+	}
 };
 
 const validPalindrome = function (s) {
-    return helper(s, 0, s.length - 1, false);
+	return helper(s, 0, s.length - 1, false);
 };
 
 /* Iterative */
 
 const isValid = (s, i, j) => {
-    while (i < j) {
-        if (s[i] === s[j]) {
-            i++;
-            j--;
-        }
-        else {
-            return false;
-        }
-    }
-    return true;
+	while (i < j) {
+		if (s[i] === s[j]) {
+			i++;
+			j--;
+		} else {
+			return false;
+		}
+	}
+	return true;
 };
 
 const validPalindrome2 = function (s) {
-    let i = 0, j = s.length - 1, charRemoved = false;
-    while (i < j) {
-        if (s[i] === s[j]) {
-            i++;
-            j--;
-        }
-        else {
-            if (charRemoved) {
-                return false;
-            }
-            else {
-                return isValid(s, i + 1, j) || isValid(s, i, j - 1);
-            }
-        }
-    }
-    return true;
+	let i = 0,
+		j = s.length - 1,
+		charRemoved = false;
+	while (i < j) {
+		if (s[i] === s[j]) {
+			i++;
+			j--;
+		} else {
+			if (charRemoved) {
+				return false;
+			} else {
+				return isValid(s, i + 1, j) || isValid(s, i, j - 1);
+			}
+		}
+	}
+	return true;
 };

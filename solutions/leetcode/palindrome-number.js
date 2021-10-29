@@ -32,33 +32,34 @@ n - number
 /* Two pointers */
 
 const isPalindrome = function (x) {
-    if (x < 0) {
-        return false;
-    }
-    const s = x.toString();
-    let i = 0, j = s.length - 1;
-    while (i < j) {
-        if (s[i] != s[j]) {
-            return false;
-        }
-        i++;
-        j--;
-    }
-    return true;
+	if (x < 0) {
+		return false;
+	}
+	const s = x.toString();
+	let i = 0,
+		j = s.length - 1;
+	while (i < j) {
+		if (s[i] != s[j]) {
+			return false;
+		}
+		i++;
+		j--;
+	}
+	return true;
 };
 
 /* Reverse the number */
 
 const isPalindrome2 = function (x) {
-    if (x < 0 || (x % 10 === 0 && x != 0)) {
-        return false;
-    }
-    let rev = 0;
-    while (rev < x) {
-        const digit = x % 10;
-        x = Math.floor(x / 10);
-        rev *= 10;
-        rev += digit;
-    }
-    return (rev === x || Math.floor(rev / 10) === x);
+	if (x < 0 || (x % 10 === 0 && x != 0)) {
+		return false;
+	}
+	let rev = 0;
+	while (rev < x) {
+		const digit = x % 10;
+		x = Math.floor(x / 10);
+		rev *= 10;
+		rev += digit;
+	}
+	return rev === x || Math.floor(rev / 10) === x;
 };

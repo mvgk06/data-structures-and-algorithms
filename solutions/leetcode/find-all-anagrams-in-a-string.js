@@ -31,65 +31,69 @@ m - size of string 2
 /* Brute force */
 
 const isAnagram = (sCount, pCount) => {
-    for (let i = 0; i < sCount.length; i++) {
-        if (sCount[i] != pCount[i]) {
-            return false;
-        }
-    }
-    return true;
+	for (let i = 0; i < sCount.length; i++) {
+		if (sCount[i] != pCount[i]) {
+			return false;
+		}
+	}
+	return true;
 };
 
 const findAnagrams = function (s, p) {
-    const result = [], pCount = new Array(26).fill(0);
-    for (let i = 0; i < p.length; i++) {
-        const id = p.charCodeAt(i) - 97;
-        pCount[id] += 1;
-    }
-    for (let i = 0; i < s.length; i++) {
-        const sCount = new Array(26).fill(0);
-        for (let j = i; j < s.length; j++) {
-            const id = s.charCodeAt(j) - 97;
-            sCount[id] += 1;
-            if (j - i + 1 === p.length && isAnagram(sCount, pCount)) {
-                result.push(i);
-            }
-        }
-    }
-    return result;
+	const result = [],
+		pCount = new Array(26).fill(0);
+	for (let i = 0; i < p.length; i++) {
+		const id = p.charCodeAt(i) - 97;
+		pCount[id] += 1;
+	}
+	for (let i = 0; i < s.length; i++) {
+		const sCount = new Array(26).fill(0);
+		for (let j = i; j < s.length; j++) {
+			const id = s.charCodeAt(j) - 97;
+			sCount[id] += 1;
+			if (j - i + 1 === p.length && isAnagram(sCount, pCount)) {
+				result.push(i);
+			}
+		}
+	}
+	return result;
 };
 
 /* Sliding window */
 
 const isAnagram2 = (sCount, pCount) => {
-    for (let i = 0; i < sCount.length; i++) {
-        if (sCount[i] != pCount[i]) {
-            return false;
-        }
-    }
-    return true;
+	for (let i = 0; i < sCount.length; i++) {
+		if (sCount[i] != pCount[i]) {
+			return false;
+		}
+	}
+	return true;
 };
 
 const findAnagrams2 = function (s, p) {
-    const result = [], pCount = new Array(26).fill(0), sCount = new Array(26).fill(0);
-    for (let i = 0; i < p.length; i++) {
-        const id = p.charCodeAt(i) - 97;
-        pCount[id] += 1;
-    }
-    let start = 0, end = 0;
-    while (end < s.length) {
-        const id = s.charCodeAt(end) - 97;
-        sCount[id] += 1;
-        if (end - start + 1 === p.length) {
-            if (isAnagram2(sCount, pCount)) {
-                result.push(start);
-            }
-            const id = s.charCodeAt(start) - 97;
-            if (sCount[id] > 0) {
-                sCount[id] -= 1;
-            }
-            start++;
-        }
-        end++;
-    }
-    return result;
+	const result = [],
+		pCount = new Array(26).fill(0),
+		sCount = new Array(26).fill(0);
+	for (let i = 0; i < p.length; i++) {
+		const id = p.charCodeAt(i) - 97;
+		pCount[id] += 1;
+	}
+	let start = 0,
+		end = 0;
+	while (end < s.length) {
+		const id = s.charCodeAt(end) - 97;
+		sCount[id] += 1;
+		if (end - start + 1 === p.length) {
+			if (isAnagram2(sCount, pCount)) {
+				result.push(start);
+			}
+			const id = s.charCodeAt(start) - 97;
+			if (sCount[id] > 0) {
+				sCount[id] -= 1;
+			}
+			start++;
+		}
+		end++;
+	}
+	return result;
 };

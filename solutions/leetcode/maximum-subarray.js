@@ -49,65 +49,68 @@ n - number of elements
 /* Brute force */
 
 const maxSubArray = function (nums) {
-    const n = nums.length;
-    let result = -Number.MAX_VALUE;
-    for (let i = 0; i < n; i++) {
-        let sum = 0;
-        for (let j = i; j < n; j++) {
-            sum += nums[j];
-            result = Math.max(result, sum);
-        }
-    }
-    return result;
+	const n = nums.length;
+	let result = -Number.MAX_VALUE;
+	for (let i = 0; i < n; i++) {
+		let sum = 0;
+		for (let j = i; j < n; j++) {
+			sum += nums[j];
+			result = Math.max(result, sum);
+		}
+	}
+	return result;
 };
 
 /* Top down */
 
 const helper = (nums, i, memo) => {
-    if (i === 0) {
-        memo[i] = nums[i];
-        return memo[i];
-    }
-    if (memo[i] != -1) {
-        return memo[i];
-    }
-    const maxSoFar = helper(nums, i - 1, memo);
-    memo[i] = Math.max(maxSoFar + nums[i], nums[i]);
-    return memo[i];
+	if (i === 0) {
+		memo[i] = nums[i];
+		return memo[i];
+	}
+	if (memo[i] != -1) {
+		return memo[i];
+	}
+	const maxSoFar = helper(nums, i - 1, memo);
+	memo[i] = Math.max(maxSoFar + nums[i], nums[i]);
+	return memo[i];
 };
 
 const maxSubArray2 = function (nums) {
-    const n = nums.length, memo = new Array(n).fill(-1);
-    helper(nums, n - 1, memo);
-    let result = -Number.MAX_VALUE;
-    for (let i = 0; i < n; i++) {
-        result = Math.max(result, memo[i]);
-    }
-    return result;
+	const n = nums.length,
+		memo = new Array(n).fill(-1);
+	helper(nums, n - 1, memo);
+	let result = -Number.MAX_VALUE;
+	for (let i = 0; i < n; i++) {
+		result = Math.max(result, memo[i]);
+	}
+	return result;
 };
 
 /* Bottom up */
 
 const maxSubArray3 = function (nums) {
-    const n = nums.length, memo = new Array(n).fill(-1);
-    memo[0] = nums[0];
-    let result = -Number.MAX_VALUE;
-    for (let i = 1; i < n; i++) {
-        memo[i] = Math.max(memo[i - 1] + nums[i], nums[i]);
-        result = Math.max(result, memo[i]);
-    }
-    return result;
+	const n = nums.length,
+		memo = new Array(n).fill(-1);
+	memo[0] = nums[0];
+	let result = -Number.MAX_VALUE;
+	for (let i = 1; i < n; i++) {
+		memo[i] = Math.max(memo[i - 1] + nums[i], nums[i]);
+		result = Math.max(result, memo[i]);
+	}
+	return result;
 };
 
 /* Bottom up (space optimized) */
 
 const maxSubArray4 = function (nums) {
-    const n = nums.length;
-    let maxSoFar = nums[0], result = nums[0];
-    for (let i = 1; i < n; i++) {
-        const currMax = Math.max(maxSoFar + nums[i], nums[i]);
-        result = Math.max(result, currMax);
-        maxSoFar = currMax;
-    }
-    return result;
+	const n = nums.length;
+	let maxSoFar = nums[0],
+		result = nums[0];
+	for (let i = 1; i < n; i++) {
+		const currMax = Math.max(maxSoFar + nums[i], nums[i]);
+		result = Math.max(result, currMax);
+		maxSoFar = currMax;
+	}
+	return result;
 };
