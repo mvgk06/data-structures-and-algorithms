@@ -81,7 +81,7 @@ const bfs = (graph, visited, curr) => {
 			if (!visited[adjacent]) {
 				visited[adjacent] = true;
 				queue.enque([adjacent, curr]);
-			} else if (visited[adjacent] && adjacent != parent[curr]) {
+			} else if (visited[adjacent] && adjacent != parent) {
 				return true;
 			}
 		}
