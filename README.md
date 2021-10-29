@@ -172,9 +172,9 @@ Implementation of common data structures and algorithms along with solutions to 
 
 </details>
 
-## Pepcoding Solutions [52]
+## Pepcoding Solutions [54]
 
-### Level 1 [52]
+### Level 1 [54]
 
 <details>
 
@@ -232,13 +232,15 @@ Implementation of common data structures and algorithms along with solutions to 
 
 <details>
 
-<summary>Tree [3]</summary>
+<summary>Tree [5]</summary>
 
 | Problem                                                  | Solution                                                                                                                                                                         |
 | :------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Size, Sum, Maximum and Height of a Binary Tree           | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/size-sum-maximum-and-height-of-a-binary-tree.js)            |
 | Level Order Traversal of Binary Tree                     | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/level-order-traversal-of-binary-tree.js)                    |
 | Iterative Pre, Post and Inorder Traversal of Binary Tree | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/iterative-pre-post-and-inorder-traversal-of-binary-tree.js) |
+| Find and NodeToRootPath in Binary Tree                   | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/find-and-node-to-root-path-in-binary-tree.js)               |
+| Print K Levels Down                                      | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/print-k-levels-down.js)                                     |
 
 </details>
 
