@@ -37,13 +37,14 @@ const bfs = (graph, visited, src, time) => {
 					result++;
 				}
 			}
-			time--;
 		}
+		time--;
 	}
-	console.log(result);
+	return result;
 };
 
 const solve = (n, graph, src, time) => {
 	const visited = new Array(n).fill(false);
-	bfs(graph, visited, src, time);
+	const result = bfs(graph, visited, src, time - 1);
+	console.log(result);
 };

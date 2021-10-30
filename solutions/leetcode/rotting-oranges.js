@@ -6,8 +6,8 @@ https://leetcode.com/problems/rotting-oranges/
 
 Approach
 - Enque all the position of the cells that contains rotten oranges into the queue.
-- Initialize the time taken to rot the oranges as -1. 
-- While the queue is not empty, deque a cell.
+- Initialize the time taken to rot the oranges as 0. 
+- While the queue is not empty, traverse each cell in the current level and deque a cell.
 - Visit all the adjacent cells and rot the oranges in that cell and enque their positions into the queue.
 - Increment the time taken.
 - If all the oranges got rotten, then return the time taken.
@@ -44,7 +44,7 @@ const orangesRotting = function (grid) {
 		[1, 0],
 		[0, -1],
 	];
-	let time = -1;
+	let time = 0;
 	while (queue.getSize() > 0) {
 		const size = queue.getSize();
 		for (let i = 0; i < size; i++) {
@@ -68,8 +68,8 @@ const orangesRotting = function (grid) {
 			}
 		}
 	}
-	if (time === -1) {
-		return 0;
+	if (time === 0) {
+		return time;
 	}
-	return time;
+	return time - 1;
 };
