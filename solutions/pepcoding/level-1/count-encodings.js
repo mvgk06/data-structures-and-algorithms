@@ -41,7 +41,7 @@ const countEncodings = (s, i, memo) => {
 	}
 	let result = 0;
 	if (s[i - 1] != '0' && s[i] != '0') {
-		if (s[i - 1] === '1' || s[i - 1] === '2') {
+		if (parseInt(s[i - 1] + s[i]) <= 26) {
 			result = countEncodings(s, i - 2, memo) + countEncodings(s, i - 1, memo);
 		} else {
 			result = countEncodings(s, i - 1, memo);
@@ -49,9 +49,9 @@ const countEncodings = (s, i, memo) => {
 	} else if (s[i - 1] != '0' && s[i] === '0') {
 		if (s[i - 1] === '1' || s[i - 1] === '2') {
 			result = countEncodings(s, i - 2, memo);
-		} else if (s[i - 1] === '0' && s[i] != '0') {
-			result = countEncodings(s, i - 1, memo);
 		}
+	} else if (s[i - 1] === '0' && s[i] != '0') {
+		result = countEncodings(s, i - 1, memo);
 	}
 	memo[i] = result;
 	return memo[i];
@@ -71,7 +71,7 @@ const solve2 = (s) => {
 		if (i === 0) {
 			memo[i] = 1;
 		} else if (s[i - 1] != '0' && s[i] != '0') {
-			if (s[i - 1] === '1' || s[i - 1] === '2') {
+			if (parseInt(s[i - 1] + s[i]) <= 26) {
 				memo[i] = (i - 2 >= 0 ? memo[i - 2] : 1) + memo[i - 1];
 			} else {
 				memo[i] = memo[i - 1];
