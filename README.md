@@ -172,9 +172,9 @@ Implementation of common data structures and algorithms along with solutions to 
 
 </details>
 
-## Pepcoding Solutions [55]
+## Pepcoding Solutions [60]
 
-### Level 1 [55]
+### Level 1 [60]
 
 <details>
 
@@ -211,7 +211,7 @@ Implementation of common data structures and algorithms along with solutions to 
 
 <details>
 
-<summary>Dynamic Programming and Greedy [12]</summary>
+<summary>Dynamic Programming and Greedy [13]</summary>
 
 | Problem                             | Solution                                                                                                                                                     |
 | :---------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -227,12 +227,13 @@ Implementation of common data structures and algorithms along with solutions to 
 | Fractional Knapsack                 | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/fractional-knapsack.js)                 |
 | Count Binary Strings                | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/count-binary-strings.js)                |
 | Arrange Buildings                   | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/arrange-buildings.js)                   |
+| Count Encodings                     | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/count-encodings.js)                     |
 
 </details>
 
 <details>
 
-<summary>Tree [6]</summary>
+<summary>Tree [7]</summary>
 
 | Problem                                                  | Solution                                                                                                                                                                         |
 | :------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -242,21 +243,25 @@ Implementation of common data structures and algorithms along with solutions to 
 | Find and NodeToRootPath in Binary Tree                   | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/find-and-node-to-root-path-in-binary-tree.js)               |
 | Print K Levels Down                                      | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/print-k-levels-down.js)                                     |
 | Print Nodes K Distance Away                              | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/print-nodes-k-distance-away.js)                             |
+| Path To Leaf From Root In Range                          | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/path-to-leaf-from-root-in-range.js)                         |
 
 </details>
 
 <details>
-<summary>Hashmap and Heap [1]</summary>
+
+<summary>Hashmap and Heap [3]</summary>
 
 | Problem                     | Solution                                                                                                                                             |
 | :-------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Highest Frequency Character | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/highest-frequency-character.js) |
+| Get Common Elements 1       | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/get-common-elements-1.js)       |
+| Get Common Elements 2       | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/get-common-elements-2.js)       |
 
 </details>
 
 <details>
 
-<summary>Graph [12]</summary>
+<summary>Graph [13]</summary>
 
 | Problem                             | Solution                                                                                                                                                     |
 | :---------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -272,5 +277,6 @@ Implementation of common data structures and algorithms along with solutions to 
 | Is Graph Cyclic                     | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/is-graph-cyclic.js)                     |
 | Is Graph Bipartite                  | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/is-graph-bipartite.js)                  |
 | Spread Of Infection                 | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/spread-of-infection.js)                 |
+| Order of Compilation                | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/order-of-compilation.js)                |
 
 </details>
