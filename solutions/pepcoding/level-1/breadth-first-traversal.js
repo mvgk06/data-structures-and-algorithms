@@ -8,7 +8,8 @@ Approach
 - Mark the current node as visited and enque it into the queue.
 - While the queue is not empty, deque the node and the path.
 - Print the node along with the path so far.
-- Visit all the adjacent nodes of the current node which are not yet visited, mark them as visited and enque them into the queue along with the updated path.
+- Traverse all the adjacent nodes of the current node.
+- If the adjacent node is not yet visited, then mark it as visited and enque it into the queue along with the updated path.
 
 Time - O(n+e)
 Space - O(n+e)

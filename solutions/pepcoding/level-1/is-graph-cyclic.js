@@ -9,8 +9,8 @@ Approach
 1. DFS
 - For each unvisited node perform dfs to visit the nodes.
 - Mark the current node as visited.
-- Recursively visit all the adjacent nodes of the current node.
-- If the adjacent node is not visited and if cycle exist, then return true.
+- Traverse all the adjacent nodes of the current node.
+- If the adjacent node is not yet visited, recursively visit that node and if a cycle exist, then return true.
 - Else if the adjacent node is visited and it is not equal to the parent node, then return true.
 - Else return false.
 
@@ -21,7 +21,7 @@ Space - O(n+e)
 - For each unvisited node perform bfs to visit the nodes.
 - Mark the current node as visited and enque it along with its parent (-1) as a pair into the queue.
 - While the queue is not empty, deque a pair containing a node and its parent.
-- Visit all the adjacent nodes of the current node.
+- Traverse all the adjacent nodes of the current node.
 - If the adjacent node is not yet visited, mark it as visited, enque it along with its parent (current node) as a pair into the queue.
 - Else if the adjacent node is visited and it is not equal to the parent node, then return true.
 - Else return false.

@@ -10,7 +10,7 @@ Approach
 - Store the indegree of all the nodes.
 - Enqueue all the nodes that has zero indegree.
 - While the queue is not empty, dequeue a node and print it.
-- Visit all the adjacent nodes and reduce its indegree. 
+- Traverse all the adjacent nodes and reduce its indegree. 
 - If the indegree of the adjacent node becomes zero, then enqueue it into the queue.
 
 Time - O(n)
@@ -22,7 +22,8 @@ Space - O(n)
 - Traverse all the adjacent nodes of the current node.
 - If the adjacent node is not yet visited, then recursively visit that node.
 - Once all the adjacent nodes of the current node are visited push the current node into the stack.
-- The reverse of the stack gives the order of compilation.
+- After visiting the nodes of each component, push the reverse of the stack (which gives the order of compilation of that component) into the result.
+- Print the result.
 
 Time - O(n)
 Space - O(n)
