@@ -9,10 +9,10 @@ Approach
 1. DFS
 - Perform dfs from the source node.
 - Mark the current node as visited.
-- Recursively visit all the adjacent nodes of the current node.
-- If the current node is visited, then return.
-- If any of the node is not visited, then return false.
-- Else return true. 
+- Traverse all the adjacent nodes of the current node.
+- If the adjacent node is not yet visited, then recursively visit that node.
+- If any of the node is not visited, then print false.
+- Else print true. 
 
 Time - O(n+e)
 Space - O(n+e)
@@ -21,9 +21,10 @@ Space - O(n+e)
 - Perform bfs from the source node.
 - Mark the current node as visited and enque it into the queue.
 - While the queue is not empty, deque a node.
-- Visit all the adjacent nodes of the current node which are not yet visited, mark them as visited and enque them into the queue.
-- If any of the node is not visited, then return false.
-- Else return true. 
+- Traverse all the adjacent nodes of the current node.
+- If the adjacent node is not yet visited, then mark it as visited and enque it into the queue.
+- If any of the node is not visited, then print false.
+- Else print true. 
 
 Time - O(n+e)
 Space - O(n+e)
@@ -36,12 +37,11 @@ e - number of edges
 /* DFS */
 
 const dfs = (graph, curr, visited) => {
-	if (visited[curr]) {
-		return;
-	}
 	visited[curr] = true;
 	for (const adjacent of graph[curr]) {
-		dfs(graph, adjacent, visited);
+		if (!visited[adjacent]) {
+			dfs(graph, adjacent, visited);
+		}
 	}
 };
 

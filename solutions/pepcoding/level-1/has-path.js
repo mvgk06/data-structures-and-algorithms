@@ -6,11 +6,9 @@ https://www.pepcoding.com/resources/online-java-foundation/graphs/has-path-offic
 
 Approach
 - Mark the current node as visited.
-- Recursively visit all the adjacent nodes of the current node and check if a path exists from the adjacent to the destination node.
-- If the path exists, then return true.
-- Else try other adjacent nodes.
+- Traverse all the adjacent nodes of the current node.
+- If the adjacent node is not yet visited, then recursively visit that node and if a path exist from the adjacent to the destination node, then return true.
 - Return false if no path exists.
-- If the current node is already visited, then return false.
 - If the destination node is reached, then return true.
 
 Time - O(n+e)
@@ -22,16 +20,15 @@ e - number of edges
 */
 
 const hasPath = (graph, curr, dest, visited) => {
-	if (visited[curr]) {
-		return false;
-	}
 	if (curr === dest) {
 		return true;
 	}
 	visited[curr] = true;
 	for (const adjacent of graph[curr]) {
-		if (hasPath(graph, adjacent, dest, visited)) {
-			return true;
+		if (!visited[adjacent]) {
+			if (hasPath(graph, adjacent, dest, visited)) {
+				return true;
+			}
 		}
 	}
 	return false;

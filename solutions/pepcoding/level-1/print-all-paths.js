@@ -6,9 +6,9 @@ https://www.pepcoding.com/resources/online-java-foundation/graphs/print-all-path
 
 Approach
 - Mark the current node as visited.
-- Recursively visit all the adjacent nodes of the current node.
+- Traverse all the adjacent nodes of the current node.
+- If the adjacent node is not yet visited, then recursively visit that node.
 - Backtrack and mark the current node as not visited.
-- If the current node is already visited, then return.
 - If the destination node is reached, then print the path and return.
 
 Time - O(n^n)
@@ -19,16 +19,15 @@ n - number of nodes
 */
 
 const printAllPaths = (graph, curr, dest, visited, path) => {
-	if (visited[curr]) {
-		return;
-	}
 	if (curr === dest) {
 		console.log(path);
 		return;
 	}
 	visited[curr] = true;
 	for (const adjacent of graph[curr]) {
-		printAllPaths(graph, adjacent, dest, visited, path + adjacent);
+		if (!visited[adjacent]) {
+			printAllPaths(graph, adjacent, dest, visited, path + adjacent);
+		}
 	}
 	visited[curr] = false;
 };

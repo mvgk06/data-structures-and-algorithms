@@ -17,18 +17,17 @@ n - number of nodes
 */
 
 const dfs = (graph, dest, visited, curr, weight, path, result) => {
-	if (visited[curr]) {
-		return;
-	}
 	if (curr === dest) {
 		result.push(`${path}@${weight}`);
+		return;
 	}
 	visited[curr] = true;
 	for (const [adjacent, adjacentWeight] of graph[curr]) {
-		dfs(graph, dest, visited, adjacent, weight + adjacentWeight, path + adjacent, result);
+		if (!visited[adjacent]) {
+			dfs(graph, dest, visited, adjacent, weight + adjacentWeight, path + adjacent, result);
+		}
 	}
 	visited[curr] = false;
-	return;
 };
 
 const solve = (n, graph, src, dest, criteria, k) => {
