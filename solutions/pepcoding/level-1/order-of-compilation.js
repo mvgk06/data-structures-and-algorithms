@@ -22,8 +22,7 @@ Space - O(n)
 - Traverse all the adjacent nodes of the current node.
 - If the adjacent node is not yet visited, then recursively visit that node.
 - Once all the adjacent nodes of the current node are visited push the current node into the stack.
-- After visiting the nodes of each component, push the reverse of the stack (which gives the order of compilation of that component) into the result.
-- Print the result.
+- Print the reverse of the stack.
 
 Time - O(n)
 Space - O(n)
@@ -78,15 +77,13 @@ const dfs = (graph, visited, curr, stack) => {
 const solve2 = (graph) => {
 	const n = graph.length,
 		visited = new Array(n).fill(false),
-		stack = [],
-		result = [];
+		stack = [];
 	for (let i = 0; i < n; i++) {
 		if (!visited[i]) {
 			dfs(graph, visited, i, stack);
-			result.push(...stack.reverse());
 		}
 	}
-	for (let i = 0; i < n; i++) {
-		console.log(result[i]);
+	for (let i = n - 1; i >= 0; i--) {
+		console.log(stack[i]);
 	}
 };
