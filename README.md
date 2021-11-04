@@ -174,9 +174,9 @@ Implementation of common data structures and algorithms along with solutions to 
 
 </details>
 
-## Pepcoding Solutions [64]
+## Pepcoding Solutions [68]
 
-### Level 1 [64]
+### Level 1 [68]
 
 <details>
 
@@ -213,7 +213,7 @@ Implementation of common data structures and algorithms along with solutions to 
 
 <details>
 
-<summary>Dynamic Programming and Greedy [13]</summary>
+<summary>Dynamic Programming [13]</summary>
 
 | Problem                             | Solution                                                                                                                                                     |
 | :---------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -235,7 +235,7 @@ Implementation of common data structures and algorithms along with solutions to 
 
 <details>
 
-<summary>Binary Tree [8]</summary>
+<summary>Binary Tree [12]</summary>
 
 | Problem                                                  | Solution                                                                                                                                                                         |
 | :------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -247,6 +247,10 @@ Implementation of common data structures and algorithms along with solutions to 
 | Print Nodes K Distance Away                              | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/print-nodes-k-distance-away.js)                             |
 | Path to Leaf from Root in Range                          | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/path-to-leaf-from-root-in-range.js)                         |
 | Transform to Left Cloned Tree                            | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/transform-to-left-cloned-tree.js)                           |
+| Transform to Normal from Left Cloned Tree                | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/transform-to-normal-from-left-cloned-tree.js)               |
+| Print Single Child Nodes                                 | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/print-single-child-nodes.js)                                |
+| Remove Leaves in Binary Tree                             | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/remove-leaves-in-binary-tree.js)                            |
+| Diameter of a Binary Tree                                | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/diameter-of-a-binary-tree.js)                               |
 
 </details>
 
