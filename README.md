@@ -16,16 +16,15 @@ Implementation of common data structures and algorithms along with solutions to 
 
 </details>
 
-## Leetcode Solutions [127]
+## Leetcode Solutions [129]
 
 <details>
 
-<summary>Easy [75]</summary>
+<summary>Easy [74]</summary>
 
 | #    | Problem                                                  | Solution                                                                                                                                                                 |
 | :--- | :------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1    | Two Sum                                                  | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/two-sum.js)                                                  |
-| 7    | Reverse Integer                                          | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/reverse-integer.js)                                          |
 | 9    | Palindrome Number                                        | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/palindrome-number.js)                                        |
 | 13   | Roman to Integer                                         | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/roman-to-integer.js)                                         |
 | 20   | Valid Parenthesis                                        | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/valid-parenthesis.js)                                        |
@@ -104,12 +103,13 @@ Implementation of common data structures and algorithms along with solutions to 
 
 <details>
 
-<summary>Medium [49]</summary>
+<summary>Medium [52]</summary>
 
 | #    | Problem                                                                    | Solution                                                                                                                                                                                   |
 | :--- | :------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 2    | Add Two Numbers                                                            | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/add-two-numbers.js)                                                            |
 | 3    | Longest Substring Without Repeating Characters                             | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/longest-substring-without-repeating-characters.js)                             |
+| 7    | Reverse Integer                                                            | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/reverse-integer.js)                                                            |
 | 17   | Letter Combinations of a Phone Number                                      | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/letter-combinations-of-a-phone-number.js)                                      |
 | 33   | Search in Rotated Sorted Array                                             | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/search-in-rotated-sorted-array.js)                                             |
 | 34   | Find First and Last Position of Element in Sorted Array                    | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/find-first-and-last-position-of-element-in-sorted-array.js)                    |
@@ -124,7 +124,9 @@ Implementation of common data structures and algorithms along with solutions to 
 | 162  | Find Peak Element                                                          | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/find-peak-element.js)                                                          |
 | 198  | House Robber                                                               | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/house-robber.js)                                                               |
 | 200  | Number of Islands                                                          | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/number-of-islands.js)                                                          |
+| 207  | Course Schedule                                                            | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/course-schedule.js)                                                            |
 | 209  | Minimum Size Subarray Sum                                                  | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/minimum-size-subarray-sum.js)                                                  |
+| 210  | Course Schedule II                                                         | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/course-schedule-II.js)                                                         |
 | 213  | House Robber II                                                            | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/house-robber-II.js)                                                            |
 | 221  | Maximal Square                                                             | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/maximal-square.js)                                                             |
 | 322  | Coin Change                                                                | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/coin-change.js)                                                                |
@@ -172,9 +174,9 @@ Implementation of common data structures and algorithms along with solutions to 
 
 </details>
 
-## Pepcoding Solutions [60]
+## Pepcoding Solutions [64]
 
-### Level 1 [60]
+### Level 1 [64]
 
 <details>
 
@@ -233,7 +235,7 @@ Implementation of common data structures and algorithms along with solutions to 
 
 <details>
 
-<summary>Tree [7]</summary>
+<summary>Binary Tree [8]</summary>
 
 | Problem                                                  | Solution                                                                                                                                                                         |
 | :------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -243,7 +245,20 @@ Implementation of common data structures and algorithms along with solutions to 
 | Find and NodeToRootPath in Binary Tree                   | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/find-and-node-to-root-path-in-binary-tree.js)               |
 | Print K Levels Down                                      | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/print-k-levels-down.js)                                     |
 | Print Nodes K Distance Away                              | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/print-nodes-k-distance-away.js)                             |
-| Path To Leaf From Root In Range                          | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/path-to-leaf-from-root-in-range.js)                         |
+| Path to Leaf from Root in Range                          | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/path-to-leaf-from-root-in-range.js)                         |
+| Transform to Left Cloned Tree                            | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/transform-to-left-cloned-tree.js)                           |
+
+</details>
+
+<details>
+
+<summary>Binary Search Tree [3]</summary>
+
+| Problem                          | Solution                                                                                                                                              |
+| :------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Size, Sum, Max, Min, Find in BST | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/size-sum-max-min-find-in-bst.js) |
+| Add Node to BST                  | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/add-node-to-bst.js)              |
+| Print in Range                   | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/print-in-range.js)               |
 
 </details>
 
