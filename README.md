@@ -174,9 +174,9 @@ Implementation of common data structures and algorithms along with solutions to 
 
 </details>
 
-## Pepcoding Solutions [68]
+## Pepcoding Solutions [71]
 
-### Level 1 [68]
+### Level 1 [71]
 
 <details>
 
@@ -235,7 +235,7 @@ Implementation of common data structures and algorithms along with solutions to 
 
 <details>
 
-<summary>Binary Tree [12]</summary>
+<summary>Binary Tree [15]</summary>
 
 | Problem                                                  | Solution                                                                                                                                                                         |
 | :------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -251,6 +251,9 @@ Implementation of common data structures and algorithms along with solutions to 
 | Print Single Child Nodes                                 | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/print-single-child-nodes.js)                                |
 | Remove Leaves in Binary Tree                             | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/remove-leaves-in-binary-tree.js)                            |
 | Diameter of a Binary Tree                                | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/diameter-of-a-binary-tree.js)                               |
+| Tilt of Binary Tree                                      | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/tilt-of-binary-tree.js)                                     |
+| Is a Binary Search Tree                                  | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/is-a-binary-search-tree.js)                                 |
+| Is Balanced Tree                                         | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/is-balanced-tree.js)                                        |
 
 </details>
 
