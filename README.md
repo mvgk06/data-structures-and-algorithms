@@ -174,9 +174,9 @@ Implementation of common data structures and algorithms along with solutions to 
 
 </details>
 
-## Pepcoding Solutions [73]
+## Pepcoding Solutions [77]
 
-### Level 1 [73]
+### Level 1 [77]
 
 <details>
 
@@ -230,6 +230,28 @@ Implementation of common data structures and algorithms along with solutions to 
 | Count Binary Strings                | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/count-binary-strings.js)                |
 | Arrange Buildings                   | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/arrange-buildings.js)                   |
 | Count Encodings                     | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/count-encodings.js)                     |
+
+</details>
+
+<details>
+
+<summary>Stack and Queue [1]</summary>
+
+| Problem            | Solution                                                                                                                                    |
+| :----------------- | :------------------------------------------------------------------------------------------------------------------------------------------ |
+| Duplicate Brackets | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/duplicate-brackets.js) |
+
+</details>
+
+<details>
+
+<summary>Linked List [3]</summary>
+
+| Problem                     | Solution                                                                                                                                             |
+| :-------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Add Last in Linked List     | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/add-last-in-linked-list.js)     |
+| Display a Linked List       | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/display-a-linked-list.js)       |
+| Remove First in Linked List | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/remove-first-in-linked-list.js) |
 
 </details>
 
