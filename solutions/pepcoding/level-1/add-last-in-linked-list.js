@@ -9,7 +9,6 @@ Approach
 - If the size is 0, then make the head and tail point to the current node.
 - Else set the next of tail as the current node and make the tail point to the current node.
 - Increment the size.
-- Print the list, size and the value of the tail.
 
 Time - O(1)
 Space - O(1)
@@ -28,15 +27,4 @@ const solve = (head, tail, size, value) => {
 		tail = node;
 	}
 	size++;
-	if (size === 0) {
-		console.log(0);
-		return;
-	}
-	let curr = head;
-	while (curr !== null) {
-		console.log(curr.value);
-		curr = curr.next;
-	}
-	console.log(size);
-	console.log(tail.value);
 };
