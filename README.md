@@ -174,9 +174,9 @@ Implementation of common data structures and algorithms along with solutions to 
 
 </details>
 
-## Pepcoding Solutions [71]
+## Pepcoding Solutions [73]
 
-### Level 1 [71]
+### Level 1 [73]
 
 <details>
 
@@ -235,7 +235,7 @@ Implementation of common data structures and algorithms along with solutions to 
 
 <details>
 
-<summary>Binary Tree [15]</summary>
+<summary>Binary Tree [16]</summary>
 
 | Problem                                                  | Solution                                                                                                                                                                         |
 | :------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -254,6 +254,7 @@ Implementation of common data structures and algorithms along with solutions to 
 | Tilt of Binary Tree                                      | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/tilt-of-binary-tree.js)                                     |
 | Is a Binary Search Tree                                  | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/is-a-binary-search-tree.js)                                 |
 | Is Balanced Tree                                         | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/is-balanced-tree.js)                                        |
+| Largest BST Subtree                                      | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/largest-bst-subtree.js)                                     |
 
 </details>
 
@@ -283,7 +284,7 @@ Implementation of common data structures and algorithms along with solutions to 
 
 <details>
 
-<summary>Graph [13]</summary>
+<summary>Graph [14]</summary>
 
 | Problem                             | Solution                                                                                                                                                     |
 | :---------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -294,6 +295,7 @@ Implementation of common data structures and algorithms along with solutions to 
 | Is Graph Connected                  | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/is-graph-connected.js)                  |
 | Number Of Islands                   | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/number-of-islands.js)                   |
 | Perfect Friends                     | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/perfect-friends.js)                     |
+| Hamiltonian Path and Cycle          | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/hamiltonian-path-and-cycle.js)          |
 | Knights Tour                        | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/knights-tour.js)                        |
 | Breadth First Traversal             | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/breadth-first-traversal.js)             |
 | Is Graph Cyclic                     | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/is-graph-cyclic.js)                     |
