@@ -174,9 +174,9 @@ Implementation of common data structures and algorithms along with solutions to 
 
 </details>
 
-## Pepcoding Solutions [77]
+## Pepcoding Solutions [81]
 
-### Level 1 [77]
+### Level 1 [81]
 
 <details>
 
@@ -235,23 +235,27 @@ Implementation of common data structures and algorithms along with solutions to 
 
 <details>
 
-<summary>Stack and Queue [1]</summary>
+<summary>Stack and Queue [2]</summary>
 
 | Problem            | Solution                                                                                                                                    |
 | :----------------- | :------------------------------------------------------------------------------------------------------------------------------------------ |
 | Duplicate Brackets | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/duplicate-brackets.js) |
+| Balanced Brackets  | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/balanced-brackets.js)  |
 
 </details>
 
 <details>
 
-<summary>Linked List [3]</summary>
+<summary>Linked List [6]</summary>
 
 | Problem                     | Solution                                                                                                                                             |
 | :-------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Add Last in Linked List     | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/add-last-in-linked-list.js)     |
 | Display a Linked List       | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/display-a-linked-list.js)       |
 | Remove First in Linked List | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/remove-first-in-linked-list.js) |
+| Get Value in Linked List    | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/get-value-in-linked-list.js)    |
+| Add First in Linked List    | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/add-first-in-linked-list.js)    |
+| Add at Index in Linked List | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/add-at-index-in-linked-list.js) |
 
 </details>
 
