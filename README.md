@@ -174,9 +174,9 @@ Implementation of common data structures and algorithms along with solutions to 
 
 </details>
 
-## Pepcoding Solutions [85]
+## Pepcoding Solutions [89]
 
-### Level 1 [85]
+### Level 1 [89]
 
 <details>
 
@@ -235,31 +235,35 @@ Implementation of common data structures and algorithms along with solutions to 
 
 <details>
 
-<summary>Stack and Queue [3]</summary>
+<summary>Stack and Queue [4]</summary>
 
 | Problem                           | Solution                                                                                                                                                   |
 | :-------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Duplicate Brackets                | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/duplicate-brackets.js)                |
 | Balanced Brackets                 | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/balanced-brackets.js)                 |
 | Next Greater Element to the Right | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/next-greater-element-to-the-right.js) |
+| Stock Span                        | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/stock-span.js)                        |
 
 </details>
 
 <details>
 
-<summary>Linked List [9]</summary>
+<summary>Linked List [12]</summary>
 
-| Problem                              | Solution                                                                                                                                                      |
-| :----------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Add Last in Linked List              | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/add-last-in-linked-list.js)              |
-| Display a Linked List                | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/display-a-linked-list.js)                |
-| Remove First in Linked List          | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/remove-first-in-linked-list.js)          |
-| Get Value in Linked List             | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/get-value-in-linked-list.js)             |
-| Add First in Linked List             | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/add-first-in-linked-list.js)             |
-| Add at Index in Linked List          | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/add-at-index-in-linked-list.js)          |
-| Remove Last in Linked List           | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/remove-last-in-linked-list.js)           |
-| Remove At Index in Linked List       | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/remove-at-index-in-linked-list.js)       |
-| Reverse a Linked List Data Iterative | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/reverse-a-linked-list-data-iterative.js) |
+| Problem                                 | Solution                                                                                                                                                         |
+| :-------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Add Last in Linked List                 | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/add-last-in-linked-list.js)                 |
+| Display a Linked List                   | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/display-a-linked-list.js)                   |
+| Remove First in Linked List             | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/remove-first-in-linked-list.js)             |
+| Get Value in Linked List                | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/get-value-in-linked-list.js)                |
+| Add First in Linked List                | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/add-first-in-linked-list.js)                |
+| Add at Index in Linked List             | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/add-at-index-in-linked-list.js)             |
+| Remove Last in Linked List              | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/remove-last-in-linked-list.js)              |
+| Remove At Index in Linked List          | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/remove-at-index-in-linked-list.js)          |
+| Reverse a Linked List Data Iterative    | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/reverse-a-linked-list-data-iterative.js)    |
+| Reverse a Linked List Pointer Iterative | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/reverse-a-linked-list-pointer-iterative.js) |
+| Linked List to Stack Adapter            | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/linked-list-to-stack-adapter.js)            |
+| Linked List to Queue Adapter            | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/linked-list-to-queue-adapter.js)            |
 
 </details>
 
