@@ -174,9 +174,9 @@ Implementation of common data structures and algorithms along with solutions to 
 
 </details>
 
-## Pepcoding Solutions [89]
+## Pepcoding Solutions [93]
 
-### Level 1 [89]
+### Level 1 [93]
 
 <details>
 
@@ -235,7 +235,7 @@ Implementation of common data structures and algorithms along with solutions to 
 
 <details>
 
-<summary>Stack and Queue [4]</summary>
+<summary>Stack and Queue [5]</summary>
 
 | Problem                           | Solution                                                                                                                                                   |
 | :-------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -243,12 +243,13 @@ Implementation of common data structures and algorithms along with solutions to 
 | Balanced Brackets                 | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/balanced-brackets.js)                 |
 | Next Greater Element to the Right | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/next-greater-element-to-the-right.js) |
 | Stock Span                        | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/stock-span.js)                        |
+| Largest Area Histogram            | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/largest-area-histogram.js)            |
 
 </details>
 
 <details>
 
-<summary>Linked List [12]</summary>
+<summary>Linked List [15]</summary>
 
 | Problem                                 | Solution                                                                                                                                                         |
 | :-------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -264,6 +265,9 @@ Implementation of common data structures and algorithms along with solutions to 
 | Reverse a Linked List Pointer Iterative | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/reverse-a-linked-list-pointer-iterative.js) |
 | Linked List to Stack Adapter            | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/linked-list-to-stack-adapter.js)            |
 | Linked List to Queue Adapter            | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/linked-list-to-queue-adapter.js)            |
+| Kth Node from End of Linked List        | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/kth-node-from-end-of-linked-list.js)        |
+| Mid of Linked List                      | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/mid-of-linked-list.js)                      |
+| Merge two Sorted Linked Lists           | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/merge-two-sorted-linked-lists.js)           |
 
 </details>
 
