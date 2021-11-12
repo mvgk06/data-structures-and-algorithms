@@ -5,7 +5,8 @@ Problem
 https://leetcode.com/problems/merge-two-sorted-lists/
 
 Approach
-- Use two pointers left and right initialized to the head of the two sorted lists.
+- Use two pointers left, right.
+- Make the left and right point to the head of the two sorted lists.
 - Compare the values of the left and right pointer and merge the two lists.
 - Return the head of the merged list.
 
@@ -30,23 +31,23 @@ const mergeTwoLists = function (l1, l2) {
 		right = l2,
 		dummy = new ListNode(0),
 		curr = dummy;
-	while (left != null && right != null) {
+	while (left !== null && right !== null) {
 		if (left.val <= right.val) {
 			curr.next = left;
-			curr = curr.next;
+			curr = left;
 			left = left.next;
 		} else {
 			curr.next = right;
-			curr = curr.next;
+			curr = right;
 			right = right.next;
 		}
 	}
-	if (left != null) {
+	if (left !== null) {
 		curr.next = left;
-		curr = curr.next;
-	} else if (right != null) {
+		curr = left;
+	} else if (right !== null) {
 		curr.next = right;
-		curr = curr.next;
+		curr = right;
 	}
 	return dummy.next;
 };
