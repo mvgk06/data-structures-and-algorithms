@@ -174,9 +174,9 @@ Implementation of common data structures and algorithms along with solutions to 
 
 </details>
 
-## Pepcoding Solutions [93]
+## Pepcoding Solutions [95]
 
-### Level 1 [93]
+### Level 1 [95]
 
 <details>
 
@@ -298,13 +298,15 @@ Implementation of common data structures and algorithms along with solutions to 
 
 <details>
 
-<summary>Binary Search Tree [3]</summary>
+<summary>Binary Search Tree [5]</summary>
 
 | Problem                          | Solution                                                                                                                                              |
 | :------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Size, Sum, Max, Min, Find in BST | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/size-sum-max-min-find-in-bst.js) |
 | Add Node to BST                  | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/add-node-to-bst.js)              |
+| Remove Node from BST             | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/remove-node-from-bst.js)         |
 | Print in Range                   | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/print-in-range.js)               |
+| Target Sum Pair in BST           | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/target-sum-pair-in-bst.js)       |
 
 </details>
 
