@@ -32,7 +32,7 @@ const solve = (head, k) => {
 	if (head === null) {
 		return;
 	}
-	let size = 1,
+	let size = 0,
 		curr = head;
 	while (curr !== null) {
 		curr = curr.next;
