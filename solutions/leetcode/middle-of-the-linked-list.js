@@ -6,44 +6,52 @@ https://leetcode.com/problems/middle-of-the-linked-list/
 
 Approach
 
-1. Count the nodes
-- Count the total number of nodes in the linked list.
+1. Count nodes
+- Count the total number of nodes.
+- Get the index of the middle node using the count of nodes.
 - Return the middle node.
 
 Time - O(n)
 Space - O(1)
 
-2. Slow and fast pointers
-- Initialize the slow and fast pointer as head.
+2. Two pointers
+- Use two pointers slow, fast.
+- Make the slow and fast point to the head.
 - Move the slow pointer by 1 node and fast pointer by 2 nodes.
 - Return the slow pointer which is the middle node.
 
 Time - O(n)
 Space - O(1)
 
-n - size of the linked list
+n - number of nodes
 
 */
 
-/* Count the nodes */
+/* Count nodes */
 
 const middleNode = function (head) {
-	let curr = head,
-		count = 0;
-	while (curr != null) {
-		count += 1;
-		curr = curr.next;
+	if (head === null) {
+		return;
 	}
-	let midIndex = Math.floor(count / 2);
-	(curr = head), (count = 0);
-	while (curr != null && count < midIndex) {
-		count += 1;
+	let size = 0,
+		curr = head;
+	while (curr !== null) {
 		curr = curr.next;
+		size++;
 	}
-	return curr;
+	let midIndex = Math.floor(size / 2),
+		currIndex = 0;
+	curr = head;
+	while (curr !== null) {
+		if (currIndex === midIndex) {
+			return curr;
+		}
+		curr = curr.next;
+		currIndex++;
+	}
 };
 
-/* Slow and fast pointers */
+/* Two pointers */
 
 const middleNode2 = function (head) {
 	let slow = head,
