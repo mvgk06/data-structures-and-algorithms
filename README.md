@@ -16,7 +16,7 @@ Implementation of common data structures and algorithms along with solutions to 
 
 </details>
 
-## Leetcode Solutions [129]
+## Leetcode Solutions [130]
 
 <details>
 
@@ -48,6 +48,7 @@ Implementation of common data structures and algorithms along with solutions to 
 | 226  | Invert Binary Tree                                       | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/invert-binary-tree.js)                                       |
 | 228  | Summary Ranges                                           | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/summary-ranges.js)                                           |
 | 234  | Palindrome Linked List                                   | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/palindrome-linked-list.js)                                   |
+| 235  | Lowest Common Ancestor of a Binary Search Tree           | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/lowest-common-ancestor-of-a-binary-search-tree.js)           |
 | 237  | Delete Node in a Linked List                             | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/delete-node-in-a-linked-list.js)                             |
 | 242  | Valid Anagram                                            | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/valid-anagram.js)                                            |
 | 257  | Binary Tree Paths                                        | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/binary-tree-paths.js)                                        |
@@ -68,7 +69,6 @@ Implementation of common data structures and algorithms along with solutions to 
 | 543  | Diameter of Binary Tree                                  | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/diameter-of-binary-tree.js)                                  |
 | 551  | Student Attendance Record I                              | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/student-attendance-record-I.js)                              |
 | 680  | Valid Palindrome II                                      | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/valid-palindrome-II.js)                                      |
-| 690  | Employee Importance                                      | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/employee-importance.js)                                      |
 | 704  | Binary Search                                            | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/binary-search.js)                                            |
 | 724  | Find Pivot Index                                         | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/find-pivot-index.js)                                         |
 | 733  | Flood Fill                                               | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/flood-fill.js)                                               |
@@ -103,7 +103,7 @@ Implementation of common data structures and algorithms along with solutions to 
 
 <details>
 
-<summary>Medium [52]</summary>
+<summary>Medium [53]</summary>
 
 | #    | Problem                                                                    | Solution                                                                                                                                                                                   |
 | :--- | :------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -136,6 +136,7 @@ Implementation of common data structures and algorithms along with solutions to 
 | 451  | Sort Characters By Frequency                                               | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/sort-characters-by-frequency.js)                                               |
 | 518  | Coin Change II                                                             | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/coin-change-II.js)                                                             |
 | 547  | Number of Provinces                                                        | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/number-of-provinces.js)                                                        |
+| 690  | Employee Importance                                                        | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/employee-importance.js)                                                        |
 | 695  | Max Area of Island                                                         | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/max-area-of-island.js)                                                         |
 | 784  | Letter Case Permutation                                                    | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/letter-case-permutation.js)                                                    |
 | 785  | Is Graph Bipartite?                                                        | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/is-graph-bipartite.js)                                                         |
@@ -174,9 +175,9 @@ Implementation of common data structures and algorithms along with solutions to 
 
 </details>
 
-## Pepcoding Solutions [100]
+## Pepcoding Solutions [103]
 
-### Level 1 [100]
+### Level 1 [103]
 
 <details>
 
@@ -249,7 +250,7 @@ Implementation of common data structures and algorithms along with solutions to 
 
 <details>
 
-<summary>Linked List [18]</summary>
+<summary>Linked List [20]</summary>
 
 | Problem                                   | Solution                                                                                                                                                           |
 | :---------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -271,6 +272,8 @@ Implementation of common data structures and algorithms along with solutions to 
 | Merge Sort a Linked List                  | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/merge-sort-a-linked-list.js)                  |
 | Remove Duplicates in a Sorted Linked List | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/remove-duplicates-in-a-sorted-linked-list.js) |
 | Odd Even Linked List                      | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/odd-even-linked-list.js)                      |
+| Display Reverse Recursive                 | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/display-reverse-recursive.js)                 |
+| Is Linked List a Palindrome               | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/is-linked-list-a-palindrome.js)               |
 
 </details>
 
@@ -301,7 +304,7 @@ Implementation of common data structures and algorithms along with solutions to 
 
 <details>
 
-<summary>Binary Search Tree [6]</summary>
+<summary>Binary Search Tree [7]</summary>
 
 | Problem                          | Solution                                                                                                                                              |
 | :------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -309,6 +312,7 @@ Implementation of common data structures and algorithms along with solutions to 
 | Add Node to BST                  | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/add-node-to-bst.js)              |
 | Remove Node from BST             | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/remove-node-from-bst.js)         |
 | Replace with Sum of Larger       | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/replace-with-sum-of-larger.js)   |
+| Lca of BST                       | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/lca-of-bst.js)                   |
 | Print in Range                   | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/print-in-range.js)               |
 | Target Sum Pair in BST           | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/target-sum-pair-in-bst.js)       |
 
