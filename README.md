@@ -16,11 +16,11 @@ Implementation of common data structures and algorithms along with solutions to 
 
 </details>
 
-## Leetcode Solutions [130]
+## Leetcode Solutions [131]
 
 <details>
 
-<summary>Easy [74]</summary>
+<summary>Easy [75]</summary>
 
 | #    | Problem                                                  | Solution                                                                                                                                                                 |
 | :--- | :------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -42,6 +42,7 @@ Implementation of common data structures and algorithms along with solutions to 
 | 119  | Pascal's Triangle II                                     | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/pascals-triangle-II.js)                                      |
 | 125  | Valid Palindrome                                         | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/valid-palindrome.js)                                         |
 | 136  | Single Number                                            | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/single-number.js)                                            |
+| 155  | Min Stack                                                | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/min-stack.js)                                                |
 | 169  | Majority Element                                         | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/majority-element.js)                                         |
 | 203  | Remove Linked List Elements                              | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/remove-linked-list-elements.js)                              |
 | 206  | Reverse Linked List                                      | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/leetcode/reverse-linked-list.js)                                      |
@@ -175,9 +176,9 @@ Implementation of common data structures and algorithms along with solutions to 
 
 </details>
 
-## Pepcoding Solutions [103]
+## Pepcoding Solutions [109]
 
-### Level 1 [103]
+### Level 1 [109]
 
 <details>
 
@@ -236,7 +237,7 @@ Implementation of common data structures and algorithms along with solutions to 
 
 <details>
 
-<summary>Stack and Queue [5]</summary>
+<summary>Stack and Queue [11]</summary>
 
 | Problem                           | Solution                                                                                                                                                   |
 | :-------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -245,6 +246,12 @@ Implementation of common data structures and algorithms along with solutions to 
 | Next Greater Element to the Right | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/next-greater-element-to-the-right.js) |
 | Stock Span                        | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/stock-span.js)                        |
 | Largest Area Histogram            | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/largest-area-histogram.js)            |
+| Normal Stack                      | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/normal-stack.js)                      |
+| Dynamic Stack                     | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/dynamic-stack.js)                     |
+| Minimum Stack - I                 | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/minimum-stack-I.js)                   |
+| Minimum Stack Constant Space      | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/minimum-stack-constant-space.js)      |
+| Normal Queue                      | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/normal-queue.js)                      |
+| Dynamic Queue                     | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/dynamic-queue.js)                     |
 
 </details>
 
