@@ -176,9 +176,9 @@ Implementation of common data structures and algorithms along with solutions to 
 
 </details>
 
-## Pepcoding Solutions [109]
+## Pepcoding Solutions [112]
 
-### Level 1 [109]
+### Level 1 [112]
 
 <details>
 
@@ -237,27 +237,29 @@ Implementation of common data structures and algorithms along with solutions to 
 
 <details>
 
-<summary>Stack and Queue [11]</summary>
+<summary>Stack and Queue [13]</summary>
 
-| Problem                           | Solution                                                                                                                                                   |
-| :-------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Duplicate Brackets                | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/duplicate-brackets.js)                |
-| Balanced Brackets                 | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/balanced-brackets.js)                 |
-| Next Greater Element to the Right | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/next-greater-element-to-the-right.js) |
-| Stock Span                        | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/stock-span.js)                        |
-| Largest Area Histogram            | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/largest-area-histogram.js)            |
-| Normal Stack                      | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/normal-stack.js)                      |
-| Dynamic Stack                     | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/dynamic-stack.js)                     |
-| Minimum Stack - I                 | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/minimum-stack-I.js)                   |
-| Minimum Stack Constant Space      | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/minimum-stack-constant-space.js)      |
-| Normal Queue                      | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/normal-queue.js)                      |
-| Dynamic Queue                     | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/dynamic-queue.js)                     |
+| Problem                               | Solution                                                                                                                                                       |
+| :------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Duplicate Brackets                    | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/duplicate-brackets.js)                    |
+| Balanced Brackets                     | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/balanced-brackets.js)                     |
+| Next Greater Element to the Right     | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/next-greater-element-to-the-right.js)     |
+| Stock Span                            | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/stock-span.js)                            |
+| Largest Area Histogram                | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/largest-area-histogram.js)                |
+| Normal Stack                          | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/normal-stack.js)                          |
+| Dynamic Stack                         | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/dynamic-stack.js)                         |
+| Minimum Stack - I                     | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/minimum-stack-I.js)                       |
+| Minimum Stack Constant Space          | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/minimum-stack-constant-space.js)          |
+| Normal Queue                          | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/normal-queue.js)                          |
+| Dynamic Queue                         | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/dynamic-queue.js)                         |
+| Queue to Stack Adapter Push Efficient | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/queue-to-stack-adapter-push-efficient.js) |
+| Queue to Stack Adapter Pop Efficient  | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/queue-to-stack-adapter-pop-efficient.js)  |
 
 </details>
 
 <details>
 
-<summary>Linked List [20]</summary>
+<summary>Linked List [21]</summary>
 
 | Problem                                   | Solution                                                                                                                                                           |
 | :---------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -280,6 +282,7 @@ Implementation of common data structures and algorithms along with solutions to 
 | Remove Duplicates in a Sorted Linked List | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/remove-duplicates-in-a-sorted-linked-list.js) |
 | Odd Even Linked List                      | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/odd-even-linked-list.js)                      |
 | Display Reverse Recursive                 | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/display-reverse-recursive.js)                 |
+| Reverse Linked List Pointer Recursive     | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/reverse-linked-list-pointer-recursive.js)     |
 | Is Linked List a Palindrome               | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms-in-js/tree/main/solutions/pepcoding/level-1/is-linked-list-a-palindrome.js)               |
 
 </details>
