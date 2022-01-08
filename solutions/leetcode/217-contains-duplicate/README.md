@@ -2,13 +2,6 @@
 
 ## Solution 1 - Brute force
 
--   For each element if another element exists with the same value, then return true.
--   Return false.
--   Complexity
-    -   Time - `O(n^2)`
-    -   Space - `O(1)`
-    -   Where `n` is the size of the array.
-
 ```js
 const containsDuplicate = function (nums) {
     for (let i = 0; i < nums.length; i++) {
@@ -22,15 +15,11 @@ const containsDuplicate = function (nums) {
 };
 ```
 
-## Solution 2 - Sort
+-   Time - `O(n^2)`
+-   Space - `O(1)`
+-   Where `n` is the size of the array.
 
--   Sort the input array in increasing order.
--   Traverse the input and if the current element is equal to the previous element, then return true.
--   Return false.
--   Complexity
-    -   Time - `O(nlogn)`
-    -   Space - `O(n)`
-    -   Where `n` is the size of the array.
+## Solution 2 - Sort
 
 ```js
 const containsDuplicate = function (nums) {
@@ -49,15 +38,11 @@ const containsDuplicate = function (nums) {
 };
 ```
 
-## Solution 3 - Hash set
+-   Time - `O(nlogn)`
+-   Space - `O(n)`
+-   Where `n` is the size of the array.
 
--   Traverse the input and if the current element already exist in the set, then return true.
--   Else add the current element to the set.
--   Return false.
--   Complexity
-    -   Time - `O(n)`
-    -   Space - `O(n)`
-    -   Where `n` is the size of the array.
+## Solution 3 - Hash set
 
 ```js
 const containsDuplicate = function (nums) {
@@ -72,3 +57,7 @@ const containsDuplicate = function (nums) {
     return false;
 };
 ```
+
+-   Time - `O(n)`
+-   Space - `O(n)`
+-   Where `n` is the size of the array.

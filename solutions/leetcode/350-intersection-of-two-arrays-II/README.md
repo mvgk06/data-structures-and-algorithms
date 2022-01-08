@@ -2,15 +2,6 @@
 
 ## Solution 1 - Hash map
 
--   Store the frequency of the elements from array 1 in a map.
--   Traverse the array 2 and if the current element exist in the map, then push it into the result, decrement the frequency in the map.
--   If the frequency of the element is 0, then remove it from the map.
--   Return the result.
--   Complexity
-    -   Time - `O(n+m)`
-    -   Space - `O(n)`
-    -   Where `n` and `m` are the size of two arrays.
-
 ```js
 const intersect = function (nums1, nums2) {
     const map = new Map();
@@ -34,3 +25,7 @@ const intersect = function (nums1, nums2) {
     return result;
 };
 ```
+
+-   Time - `O(n+m)`
+-   Space - `O(n)`
+-   Where `n` and `m` are the size of two arrays.

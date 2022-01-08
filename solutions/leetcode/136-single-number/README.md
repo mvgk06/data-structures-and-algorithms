@@ -2,12 +2,6 @@
 
 ## Solution 1 - Bit manipulation
 
--   XOR all the numbers in the array to get the unique number.
--   Complexity
-    -   Time - `O(n)`
-    -   Space - `O(1)`
-    -   Where `n` is the size of the array.
-
 ```js
 const singleNumber = function (nums) {
     let result = 0;
@@ -17,3 +11,7 @@ const singleNumber = function (nums) {
     return result;
 };
 ```
+
+-   Time - `O(n)`
+-   Space - `O(1)`
+-   Where `n` is the size of the array.

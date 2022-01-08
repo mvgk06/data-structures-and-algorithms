@@ -2,13 +2,6 @@
 
 ## Solution 1 - Two pointers
 
--   Use two pointers, `i` to keep track of the first zero and `j` to traverse the input.
--   Traverse the input array and if the current element is non-zero, then swap the elements at `i`, `j` and increment `i`.
--   Complexity
-    -   Time - `O(n)`
-    -   Space - `O(1)`
-    -   Where `n` is the size of the array.
-
 ```js
 const moveZeroes = function (nums) {
     let i = 0;
@@ -22,3 +15,7 @@ const moveZeroes = function (nums) {
     }
 };
 ```
+
+-   Time - `O(n)`
+-   Space - `O(1)`
+-   Where `n` is the size of the array.
