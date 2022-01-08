@@ -2,14 +2,6 @@
 
 ## Solution 1 - Sort
 
--   Sort the copy of the string in increasing order.
--   If the input string is equal to the sorted string, then return true.
--   Else return false.
--   Complexity
-    -   Time - `O(nlogn)`
-    -   Space - `O(n)`
-    -   Where `n` is the size of the string.
-
 ```js
 const checkString = function (s) {
     const sortedStr = s
@@ -25,14 +17,11 @@ const checkString = function (s) {
 };
 ```
 
-## Solution 2 - Check occurrence of `ba`
+-   Time - `O(nlogn)`
+-   Space - `O(n)`
+-   Where `n` is the size of the string.
 
--   Traverse the input string and if `a` appears after `b`, then return false.
--   Else return true.
--   Complexity
-    -   Time - `O(n)`
-    -   Space - `O(1)`
-    -   Where `n` is the size of the string.
+## Solution 2 - Check occurrence of `ba`
 
 ```js
 const checkString = function (s) {
@@ -45,14 +34,11 @@ const checkString = function (s) {
 };
 ```
 
-## Solution 3 - Check index of `a` and `b`
+-   Time - `O(n)`
+-   Space - `O(1)`
+-   Where `n` is the size of the string.
 
--   If the largest index of `a` is smaller than the smallest index of `b`, then return true.
--   Else return false.
--   Complexity
-    -   Time - `O(n)`
-    -   Space - `O(1)`
-    -   Where `n` is the size of the string.
+## Solution 3 - Check index of `a` and `b`
 
 ```js
 const checkString = function (s) {
@@ -68,3 +54,7 @@ const checkString = function (s) {
     return largestA < smallestB;
 };
 ```
+
+-   Time - `O(n)`
+-   Space - `O(1)`
+-   Where `n` is the size of the string.
