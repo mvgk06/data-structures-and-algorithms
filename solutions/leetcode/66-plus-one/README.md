@@ -2,14 +2,6 @@
 
 ## Solution 1 - Sum and carry
 
--   Initialize the carry as 1.
--   Traverse the array backwards, update the sum, push the unit digit of the sum into the result and update the carry.
--   Return the reverse of the result.
--   Complexity
-    -   Time - `O(n)`
-    -   Space - `O(1)`
-    -   Where `n` is the size of the array.
-
 ```js
 const plusOne = function (digits) {
     let carry = 1;
@@ -25,3 +17,7 @@ const plusOne = function (digits) {
     return result.reverse();
 };
 ```
+
+-   Time - `O(n)`
+-   Space - `O(1)`
+-   Where `n` is the size of the array.

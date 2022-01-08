@@ -2,12 +2,6 @@
 
 ## Solution 1 - Transpose + Reverse Rows
 
--   Transpose the matrix and reverse all the rows.
--   Complexity
-    -   Time - `O(n^2)`
-    -   Space - `O(1)`
-    -   Where `n` is the number of the rows and columns of the matrix.
-
 ```js
 const reverseDiagonal = (matrix, i, j) => {
     let start = [i, j],
@@ -52,3 +46,7 @@ const rotate = function (matrix) {
     reverseRows(matrix);
 };
 ```
+
+-   Time - `O(n^2)`
+-   Space - `O(1)`
+-   Where `n` is the number of the rows and columns of the matrix.

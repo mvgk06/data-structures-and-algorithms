@@ -2,14 +2,6 @@
 
 ## Solution 1 - Brute force
 
--   Copy the unique elements from the input array to a temp array.
--   Copy the unique elements from the temp array back to the input array.
--   Return the number of the unique elements.
--   Complexity
-    -   Time - `O(n)`
-    -   Space - `O(n)`
-    -   Where `n` is the size of the array.
-
 ```js
 const removeDuplicates = function (nums) {
     const n = nums.length;
@@ -32,15 +24,11 @@ const removeDuplicates = function (nums) {
 };
 ```
 
-## Solution 2 - Two pointers
+-   Time - `O(n)`
+-   Space - `O(n)`
+-   Where `n` is the size of the array.
 
--   Use two pointers, `i` to keep track of last index of the unique elements and `j` to to traverse the input.
--   If the current element is unique, then increment `i` and swap the values at `i` and `j`.
--   Return `i+1` which is the number of the unique elements.
--   Complexity
-    -   Time - `O(n)`
-    -   Space - `O(1)`
-    -   Where `n` is the size of the array.
+## Solution 2 - Two pointers
 
 ```js
 const removeDuplicates = function (nums) {
@@ -60,3 +48,7 @@ const removeDuplicates = function (nums) {
     return i + 1;
 };
 ```
+
+-   Time - `O(n)`
+-   Space - `O(1)`
+-   Where `n` is the size of the array.

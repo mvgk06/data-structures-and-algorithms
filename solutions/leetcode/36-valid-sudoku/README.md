@@ -2,13 +2,6 @@
 
 ## Solution 1 - Visited
 
--   Traverse the board and if the number already exists in the current row or col or grid, then return false.
--   Else mark the number as visited in the current row, col and grid.
--   Return true.
--   Complexity
-    -   Time - `O(1)`
-    -   Space - `O(1)`
-
 ```js
 const isValidSudoku = function (board) {
     const row = new Array(9);
@@ -41,3 +34,6 @@ const isValidSudoku = function (board) {
     return true;
 };
 ```
+
+-   Time - `O(1)`
+-   Space - `O(1)`

@@ -2,12 +2,6 @@
 
 ## Solution 1 - Brute force
 
--   Traverse all the pairs and if the sum of the current pair is equal to the target, then return the index of the pair.
--   Complexity
-    -   Time - `O(n^2)`
-    -   Space - `O(1)`
-    -   Where `n` is the size of the array.
-
 ```js
 const twoSum = function (nums, target) {
     for (let i = 0; i < nums.length; i++) {
@@ -20,18 +14,11 @@ const twoSum = function (nums, target) {
 };
 ```
 
-## Solution 2 - Two pointers
+-   Time - `O(n^2)`
+-   Space - `O(1)`
+-   Where `n` is the size of the array.
 
--   Create an array of pairs that contains the index and the element.
--   Sort the array in increasing order of elements.
--   Use two pointers, `i` and `j` to represent the pair.
--   If the sum of the current pair is equal to the target, then return the index of the pair.
--   Else if the sum of the current pair is less than the target, then move to the right.
--   Else move to the left.
--   Complexity
-    -   Time - `O(nlogn)`
-    -   Space - `O(n)`
-    -   Where `n` is the size of the array.
+## Solution 2 - Two pointers
 
 ```js
 const twoSum = function (nums, target) {
@@ -60,14 +47,11 @@ const twoSum = function (nums, target) {
 };
 ```
 
-## Solution 3 - Hash map
+-   Time - `O(nlogn)`
+-   Space - `O(n)`
+-   Where `n` is the size of the array.
 
--   Traverse the array and if the difference between the target and the current element exist in the map, then return the index of the pair.
--   Else store the current element and it's index in the map.
--   Complexity
-    -   Time - `O(n)`
-    -   Space - `O(n)`
-    -   Where `n` is the size of the array.
+## Solution 3 - Hash map
 
 ```js
 const twoSum = function (nums, target) {
@@ -82,3 +66,7 @@ const twoSum = function (nums, target) {
     }
 };
 ```
+
+-   Time - `O(n)`
+-   Space - `O(n)`
+-   Where `n` is the size of the array.
