@@ -2,15 +2,6 @@
 
 ## Solution 1 - Two pointers
 
--   Traverse the matrix and build a count array.
--   Use two pointers, `i` to keep track of the last bank with non-zero devices and `j` to traverse the input.
--   If the current bank has non-zero devices, then update the result and set `i` as `j`.
--   Return the result.
--   Complexity
-    -   Time - `O(mn)`
-    -   Space - `O(m)`
-    -   Where `m` is the number of rows and `n` is the number of columns of the matrix.
-
 ```js
 const numberOfBeams = function (bank) {
     const arr = new Array(bank.length).fill(0);
@@ -35,13 +26,11 @@ const numberOfBeams = function (bank) {
 };
 ```
 
-## Solution 2 - Two pointers (space optimized)
+-   Time - `O(mn)`
+-   Space - `O(m)`
+-   Where `m` is the number of rows and `n` is the number of columns of the matrix.
 
--   Instead of building a count array just keep track of the previous count.
--   Complexity
-    -   Time - `O(mn)`
-    -   Space - `O(1)`
-    -   Where `m` is the number of rows and `n` is the number of columns of the matrix.
+## Solution 2 - Two pointers (space optimized)
 
 ```js
 const numberOfBeams = function (bank) {
@@ -62,3 +51,7 @@ const numberOfBeams = function (bank) {
     return result;
 };
 ```
+
+-   Time - `O(mn)`
+-   Space - `O(1)`
+-   Where `m` is the number of rows and `n` is the number of columns of the matrix.
