@@ -41,18 +41,18 @@ const isValidBST = function (root) {
 ```js
 const isValidBST = function (root) {
     const queue = new Queue();
-    queue.enque([root, -Number.MAX_VALUE, Number.MAX_VALUE]);
+    queue.push([root, -Number.MAX_VALUE, Number.MAX_VALUE]);
     while (queue.getSize() > 0) {
         const [curr, min, max] = queue.getFront();
-        queue.deque();
+        queue.pop();
         if (curr.val <= min || curr.val >= max) {
             return false;
         }
         if (curr.left !== null) {
-            queue.enque([curr.left, min, curr.val]);
+            queue.push([curr.left, min, curr.val]);
         }
         if (curr.right !== null) {
-            queue.enque([curr.right, curr.val, max]);
+            queue.push([curr.right, curr.val, max]);
         }
     }
     return true;

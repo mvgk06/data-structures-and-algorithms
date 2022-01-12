@@ -27,18 +27,18 @@ const isSymmetric = function (root) {
 ```js
 const isSymmetric = function (root) {
     const queue = new Queue();
-    queue.enque([root.left, root.right]);
+    queue.push([root.left, root.right]);
     while (queue.getSize() > 0) {
         const [l, r] = queue.getFront();
-        queue.deque();
+        queue.pop();
         if (l === null && r === null) {
             continue;
         }
         if (l === null || r === null || l.val !== r.val) {
             return false;
         }
-        queue.enque([l.left, r.right]);
-        queue.enque([l.right, r.left]);
+        queue.push([l.left, r.right]);
+        queue.push([l.right, r.left]);
     }
     return true;
 };

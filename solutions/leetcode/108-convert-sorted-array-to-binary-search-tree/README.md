@@ -27,21 +27,21 @@ const sortedArrayToBST = function (nums) {
 
 ```js
 const sortedArrayToBST = function (nums) {
-    const queue = new MyQueue();
+    const queue = new Queue();
     const root = new TreeNode();
-    queue.enque([root, 0, nums.length - 1]);
+    queue.push([root, 0, nums.length - 1]);
     while (queue.getSize() > 0) {
         const [curr, start, end] = queue.getFront();
-        queue.deque();
+        queue.pop();
         const mid = Math.floor(start + (end - start) / 2);
         curr.val = nums[mid];
         curr.left = start <= mid - 1 ? new TreeNode() : null;
         curr.right = mid + 1 <= end ? new TreeNode() : null;
         if (curr.left !== null) {
-            queue.enque([curr.left, start, mid - 1]);
+            queue.push([curr.left, start, mid - 1]);
         }
         if (curr.right !== null) {
-            queue.enque([curr.right, mid + 1, end]);
+            queue.push([curr.right, mid + 1, end]);
         }
     }
     return root;

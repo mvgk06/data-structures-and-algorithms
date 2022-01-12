@@ -9,19 +9,19 @@ const levelOrder = function (root) {
     }
     const queue = new Queue(),
         result = [];
-    queue.enque(root);
+    queue.push(root);
     while (queue.getSize() > 0) {
         const size = queue.getSize();
         const level = [];
         for (let i = 1; i <= size; i++) {
             const curr = queue.getFront();
-            queue.deque();
+            queue.pop();
             level.push(curr.val);
             if (curr.left != null) {
-                queue.enque(curr.left);
+                queue.push(curr.left);
             }
             if (curr.right != null) {
-                queue.enque(curr.right);
+                queue.push(curr.right);
             }
         }
         result.push(level);
