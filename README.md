@@ -1,3 +1,3 @@
 ## About
 
-Implementation of common data structures and algorithms along with solutions to various problems in JavaScript.
+Implementation of common data structures and solutions to various coding problems.
