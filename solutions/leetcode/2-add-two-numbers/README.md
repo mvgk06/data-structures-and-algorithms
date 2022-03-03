@@ -2,34 +2,29 @@
 
 ## Solution 1 - Two pointers
 
-```js
-const addTwoNumbers = function (l1, l2) {
-    let left = l1,
-        right = l2,
-        carry = 0,
-        dummy = new ListNode(0),
-        curr = dummy;
-    while (left !== null || right !== null) {
-        let sum = (left ? left.val : 0) + (right ? right.val : 0) + carry;
-        if (sum > 9) {
-            carry = Math.floor(sum / 10);
-            sum = sum % 10;
-        } else {
-            carry = 0;
-        }
-        const node = new ListNode(sum);
-        curr.next = node;
-        curr = node;
-        left = left ? left.next : null;
-        right = right ? right.next : null;
-    }
-    if (carry !== 0) {
-        const node = new ListNode(carry);
-        curr.next = node;
-        curr = node;
-    }
-    return dummy.next;
-};
+```py
+class Solution:
+    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+        carry = 0
+        dummy = ListNode()
+        curr = dummy
+        while l1 or l2 or carry:
+            total = carry
+            if l1:
+                total += l1.val
+                l1 = l1.next
+            if l2:
+                total += l2.val
+                l2 = l2.next
+            if total > 9:
+                carry = total // 10
+                total = total % 10
+            else:
+                carry = 0
+            node = ListNode(total)
+            curr.next = node
+            curr = node
+        return dummy.next
 ```
 
 -   Time - `O(max(n,m))`
