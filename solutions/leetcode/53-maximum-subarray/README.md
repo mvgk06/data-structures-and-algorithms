@@ -2,29 +2,28 @@
 
 ## Solution 1 - Top down DP
 
-```js
-const helper = (nums, i, memo) => {
-    if (i < 0) {
-        return 0;
-    }
-    if (memo[i] !== -1) {
-        return memo[i];
-    }
-    const maxSoFar = helper(nums, i - 1, memo);
-    memo[i] = Math.max(maxSoFar + nums[i], nums[i]);
-    return memo[i];
-};
+```py
+from math import inf
 
-const maxSubArray = function (nums) {
-    const n = nums.length,
-        memo = new Array(n).fill(-1);
-    helper(nums, n - 1, memo);
-    let res = -Number.MAX_VALUE;
-    for (const sol of memo) {
-        res = Math.max(res, sol);
-    }
-    return res;
-};
+
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        n = len(nums)
+        memo = [-1 for i in range(n)]
+        self.helper(nums, n - 1, memo)
+        res = -inf
+        for val in memo:
+            res = max(res, val)
+        return res
+
+    def helper(self, nums, i, memo):
+        if i < 0:
+            return 0
+        if memo[i] != -1:
+            return memo[i]
+        maxSoFar = self.helper(nums, i - 1, memo)
+        memo[i] = max(maxSoFar + nums[i], nums[i])
+        return memo[i]
 ```
 
 -   The `memo[i]` represents the maximum subarray sum ending at `ith` index.
@@ -35,20 +34,17 @@ const maxSubArray = function (nums) {
 
 ## Solution 2 - Bottom up DP
 
-```js
-const maxSubArray = function (nums) {
-    const n = nums.length,
-        memo = new Array(n).fill(0);
-    memo[0] = nums[0];
-    for (let i = 1; i < n; i++) {
-        memo[i] = Math.max(memo[i - 1] + nums[i], nums[i]);
-    }
-    let res = -Number.MAX_VALUE;
-    for (const sol of memo) {
-        res = Math.max(res, sol);
-    }
-    return res;
-};
+```py
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        n = len(nums)
+        memo = [0 for i in range(n)]
+        memo[0] = nums[0]
+        res = memo[0]
+        for i in range(1, n):
+            memo[i] = max(memo[i-1]+nums[i], nums[i])
+            res = max(res, memo[i])
+        return res
 ```
 
 -   The `memo[i]` represents the maximum subarray sum ending at `ith` index.
@@ -59,18 +55,17 @@ const maxSubArray = function (nums) {
 
 ## Solution 3 - Bottom up DP (space optimized)
 
-```js
-const maxSubArray = function (nums) {
-    const n = nums.length;
-    let prev = nums[0],
-        res = prev;
-    for (let i = 1; i < n; i++) {
-        const curr = Math.max(prev + nums[i], nums[i]);
-        res = Math.max(res, curr);
-        prev = curr;
-    }
-    return res;
-};
+```py
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        n = len(nums)
+        prev = nums[0]
+        res = prev
+        for i in range(1, n):
+            curr = max(prev+nums[i], nums[i])
+            res = max(res, curr)
+            prev = curr
+        return res
 ```
 
 -   Time - `O(n)`
