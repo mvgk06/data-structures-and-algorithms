@@ -2,34 +2,25 @@
 
 ## Solution 1 - DFS
 
-```js
-const dfs = (graph, curr, dest, visited) => {
-    if (curr === dest) {
-        return true;
-    }
-    visited[curr] = true;
-    for (const adjacent of graph[curr]) {
-        if (!visited[adjacent]) {
-            if (dfs(graph, adjacent, dest, visited)) {
-                return true;
-            }
-        }
-    }
-    return false;
-};
+```py
+class Solution:
+    def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
+        graph = [[] for i in range(n)]
+        for [curr, adj] in edges:
+            graph[curr].append(adj)
+            graph[adj].append(curr)
+        visited = [False for i in range(n)]
+        return self.helper(graph, visited, source, destination)
 
-const validPath = function (n, edges, source, destination) {
-    const graph = new Array(n);
-    for (let i = 0; i < n; i++) {
-        graph[i] = [];
-    }
-    for (const [curr, adjacent] of edges) {
-        graph[curr].push(adjacent);
-        graph[adjacent].push(curr);
-    }
-    const visited = new Array(n).fill(false);
-    return dfs(graph, source, destination, visited);
-};
+    def helper(self, graph, visited, curr, dest):
+        if curr == dest:
+            return True
+        visited[curr] = True
+        for adj in graph[curr]:
+            if not visited[adj]:
+                if self.helper(graph, visited, adj, dest):
+                    return True
+        return False
 ```
 
 -   Time - `O(n+e)`
@@ -38,39 +29,32 @@ const validPath = function (n, edges, source, destination) {
 
 ## Solution 2 - BFS
 
-```js
-const bfs = (graph, src, dest, visited) => {
-    const queue = new Queue();
-    visited[src] = true;
-    queue.push(src);
-    while (queue.getSize() > 0) {
-        const curr = queue.getFront();
-        queue.pop();
-        if (curr === dest) {
-            return true;
-        }
-        for (const adjacent of graph[curr]) {
-            if (!visited[adjacent]) {
-                visited[adjacent] = true;
-                queue.push(adjacent);
-            }
-        }
-    }
-    return false;
-};
+```py
+from collections import deque
 
-const validPath = function (n, edges, source, destination) {
-    const graph = new Array(n);
-    for (let i = 0; i < n; i++) {
-        graph[i] = [];
-    }
-    for (const [curr, adjacent] of edges) {
-        graph[curr].push(adjacent);
-        graph[adjacent].push(curr);
-    }
-    const visited = new Array(n).fill(false);
-    return bfs(graph, source, destination, visited);
-};
+
+class Solution:
+    def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
+        graph = [[] for i in range(n)]
+        for [curr, adj] in edges:
+            graph[curr].append(adj)
+            graph[adj].append(curr)
+        visited = [False for i in range(n)]
+        return self.helper(graph, visited, source, destination)
+
+    def helper(self, graph, visited, src, dest):
+        q = deque()
+        q.appendleft(src)
+        visited[src] = True
+        while q:
+            curr = q.popleft()
+            if curr == dest:
+                return True
+            for adj in graph[curr]:
+                if not visited[adj]:
+                    visited[adj] = True
+                    q.appendleft(adj)
+        return False
 ```
 
 -   Time - `O(n+e)`
@@ -79,20 +63,14 @@ const validPath = function (n, edges, source, destination) {
 
 ## Solution 3 - Disjoint set
 
-```js
-const validPath = function (n, edges, source, destination) {
-    const ds = new DisjointSet(n);
-    for (const [curr, adjacent] of edges) {
-        const currRep = ds.find(curr),
-            adjacentRep = ds.find(adjacent);
-        if (currRep !== adjacentRep) {
-            ds.union(curr, adjacent);
-        }
-    }
-    const srcRep = ds.find(source),
-        destRep = ds.find(destination);
-    return srcRep === destRep;
-};
+```py
+class Solution:
+    def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
+        ds = DisjointSet(n)
+        for [curr, adj] in edges:
+            if ds.find(curr) != ds.find(adj):
+                ds.union(curr, adj)
+        return ds.find(source) == ds.find(destination)
 ```
 
 -   Time - `O(e)`

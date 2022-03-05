@@ -2,20 +2,19 @@
 
 ## Solution 1 - DFS
 
-```js
-const helper = (l, r) => {
-    if (l === null && r === null) {
-        return true;
-    }
-    if (l === null || r === null || l.val !== r.val) {
-        return false;
-    }
-    return helper(l.left, r.right) && helper(l.right, r.left);
-};
+```py
+class Solution:
+    def isSymmetric(self, root: Optional[TreeNode]) -> bool:
+        return self.helper(root.left, root.right)
 
-const isSymmetric = function (root) {
-    return helper(root.left, root.right);
-};
+    def helper(self, l, r):
+        if not l and not r:
+            return True
+
+        if not l or not r or l.val != r.val:
+            return False
+
+        return self.helper(l.left, r.right) and self.helper(l.right, r.left)
 ```
 
 -   Time - `O(n)`
@@ -24,24 +23,25 @@ const isSymmetric = function (root) {
 
 ## Solution 2 - BFS
 
-```js
-const isSymmetric = function (root) {
-    const queue = new Queue();
-    queue.push([root.left, root.right]);
-    while (queue.getSize() > 0) {
-        const [l, r] = queue.getFront();
-        queue.pop();
-        if (l === null && r === null) {
-            continue;
-        }
-        if (l === null || r === null || l.val !== r.val) {
-            return false;
-        }
-        queue.push([l.left, r.right]);
-        queue.push([l.right, r.left]);
-    }
-    return true;
-};
+```py
+from collections import deque
+
+
+class Solution:
+    def isSymmetric(self, root: Optional[TreeNode]) -> bool:
+        q = deque()
+        q.appendleft([root.left, root.right])
+        while q:
+            [l, r] = q.popleft()
+            if not l and not r:
+                continue
+
+            if not l or not r or l.val != r.val:
+                return False
+
+            q.appendleft([l.left, r.right])
+            q.appendleft([l.right, r.left])
+        return True
 ```
 
 -   Time - `O(n)`
