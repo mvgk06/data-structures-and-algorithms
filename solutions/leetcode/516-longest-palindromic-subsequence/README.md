@@ -25,7 +25,7 @@ class Solution:
         return memo[i][j]
 ```
 
-- The `memo[i][j]` represents the longest palindromic subsequence till the `ith`, `jth` index of both the strings.
+- The `memo[i][j]` represents the longest common subsequence till the `ith`, `jth` index of both the strings.
 - At each index, we can either move both the pointers or one of the pointer.
 - Time - `O(n*m)`
 - Space - `O(n*m)`
@@ -50,7 +50,7 @@ class Solution:
         return memo[i][j]
 ```
 
-- The `memo[i][j]` represents the longest palindromic subsequence when the size of the strings are `i` and `j`.
+- The `memo[i][j]` represents the longest common subsequence when the size of the strings are `i` and `j`.
 - At each index, we can either move both the pointers or one of the pointer.
 - Time - `O(n*m)`
 - Space - `O(n*m)`
