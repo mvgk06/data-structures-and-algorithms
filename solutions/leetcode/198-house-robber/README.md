@@ -2,24 +2,22 @@
 
 ## Solution 1 - Top down DP
 
-```js
-const helper = (nums, i, memo) => {
-    if (i < 0) {
-        return 0;
-    }
-    if (memo[i] !== -1) {
-        return memo[i];
-    }
-    const rob = nums[i] + helper(nums, i - 2, memo);
-    const dontRob = helper(nums, i - 1, memo);
-    memo[i] = Math.max(rob, dontRob);
-    return memo[i];
-};
+```py
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        n = len(nums)
+        memo = [-1 for i in range(n)]
+        return self.helper(nums, n-1, memo)
 
-const rob = function (nums) {
-    const memo = new Array(nums.length).fill(-1);
-    return helper(nums, nums.length - 1, memo);
-};
+    def helper(self, nums, i, memo):
+        if i < 0:
+            return 0
+        if memo[i] != -1:
+            return memo[i]
+        rob = nums[i]+self.helper(nums, i-2, memo)
+        dontRob = self.helper(nums, i-1, memo)
+        memo[i] = max(rob, dontRob)
+        return memo[i]
 ```
 
 -   The `memo[i]` represents the maximum money that can be robbed if we rob till the `ith` house.
@@ -30,17 +28,18 @@ const rob = function (nums) {
 
 ## Solution 2 - Bottom up DP
 
-```js
-const rob = function (nums) {
-    const n = nums.length,
-        memo = new Array(n);
-    memo[0] = nums[0];
-    memo[1] = Math.max(nums[0], nums[1]);
-    for (let i = 2; i < n; i++) {
-        memo[i] = Math.max(nums[i] + memo[i - 2], memo[i - 1]);
-    }
-    return memo[n - 1];
-};
+```py
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        n = len(nums)
+        if n == 1:
+            return nums[0]
+        memo = [0 for i in range(n)]
+        memo[0] = nums[0]
+        memo[1] = max(nums[0], nums[1])
+        for i in range(2, n):
+            memo[i] = max(nums[i] + memo[i-2], memo[i-1])
+        return memo[n-1]
 ```
 
 -   The `memo[i]` represents the maximum money that can be robbed if we rob till the `ith` house.
@@ -51,21 +50,19 @@ const rob = function (nums) {
 
 ## Solution 3 - Bottom up DP (space optimized)
 
-```js
-const rob = function (nums) {
-    const n = nums.length;
-    if (n === 1) {
-        return nums[0];
-    }
-    let prev2 = nums[0],
-        prev = Math.max(nums[0], nums[1]);
-    for (let i = 2; i < n; i++) {
-        const curr = Math.max(nums[i] + prev2, prev);
-        prev2 = prev;
-        prev = curr;
-    }
-    return prev;
-};
+```py
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        n = len(nums)
+        if n == 1:
+            return nums[0]
+        prev2 = nums[0]
+        prev = max(nums[0], nums[1])
+        for i in range(2, n):
+            curr = max(nums[i] + prev2, prev)
+            prev2 = prev
+            prev = curr
+        return prev
 ```
 
 -   Time - `O(n)`
