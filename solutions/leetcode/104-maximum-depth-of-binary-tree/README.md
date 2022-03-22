@@ -2,15 +2,14 @@
 
 ## Solution 1 - Bottom up DFS
 
-```js
-const maxDepth = function (root) {
-    if (root === null) {
-        return 0;
-    }
-    const left = maxDepth(root.left);
-    const right = maxDepth(root.right);
-    return 1 + Math.max(left, right);
-};
+```py
+class Solution:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        if root is None:
+            return 0
+        left = self.maxDepth(root.left)
+        right = self.maxDepth(root.right)
+        return 1 + max(left, right)
 ```
 
 -   Time - `O(n)`
@@ -19,30 +18,27 @@ const maxDepth = function (root) {
 
 ## Solution 2 - BFS
 
-```js
-const maxDepth = function (root) {
-    if (root === null) {
-        return 0;
-    }
-    const queue = new Queue();
-    queue.push(root);
-    let result = 0;
-    while (queue.getSize() > 0) {
-        const size = queue.getSize();
-        for (let i = 1; i <= size; i++) {
-            const curr = queue.getFront();
-            queue.pop();
-            if (curr.left !== null) {
-                queue.push(curr.left);
-            }
-            if (curr.right !== null) {
-                queue.push(curr.right);
-            }
-        }
-        result++;
-    }
-    return result;
-};
+```py
+from collections import deque
+
+
+class Solution:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        if root is None:
+            return 0
+        queue = deque()
+        queue.append(root)
+        res = 0
+        while queue:
+            n = len(queue)
+            for i in range(0, n):
+                curr = queue.popleft()
+                if curr.left is not None:
+                    queue.append(curr.left)
+                if curr.right is not None:
+                    queue.append(curr.right)
+            res += 1
+        return res
 ```
 
 -   Time - `O(n)`
