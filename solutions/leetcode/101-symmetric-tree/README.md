@@ -8,10 +8,10 @@ class Solution:
         return self.helper(root.left, root.right)
 
     def helper(self, l, r):
-        if not l and not r:
+        if l is None and r is None:
             return True
 
-        if not l or not r or l.val != r.val:
+        if l is None or r is None or l.val != r.val:
             return False
 
         return self.helper(l.left, r.right) and self.helper(l.right, r.left)
@@ -33,10 +33,10 @@ class Solution:
         q.appendleft([root.left, root.right])
         while q:
             [l, r] = q.popleft()
-            if not l and not r:
+            if l is None and r is None:
                 continue
 
-            if not l or not r or l.val != r.val:
+            if l is None or r is None or l.val != r.val:
                 return False
 
             q.appendleft([l.left, r.right])
