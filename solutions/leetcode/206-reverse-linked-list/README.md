@@ -2,19 +2,17 @@
 
 ## Solution 1 - Recursive
 
-```js
-const helper = (curr, prev) => {
-    if (curr === null) {
-        return prev;
-    }
-    const next = curr.next;
-    curr.next = prev;
-    return helper(next, curr);
-};
+```py
+class Solution:
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        return self.helper(head, None)
 
-const reverseList = function (head) {
-    return helper(head, null);
-};
+    def helper(self, curr, prev):
+        if curr is None:
+            return prev
+        next = curr.next
+        curr.next = prev
+        return self.helper(next, curr)
 ```
 
 -   Time - `O(n)`
@@ -23,18 +21,17 @@ const reverseList = function (head) {
 
 ## Solution 2 - Iterative
 
-```js
-const reverseList = function (head) {
-    let prev = null,
-        curr = head;
-    while (curr !== null) {
-        const next = curr.next;
-        curr.next = prev;
-        prev = curr;
-        curr = next;
-    }
-    return prev;
-};
+```py
+class Solution:
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        prev = None
+        curr = head
+        while curr is not None:
+            next = curr.next
+            curr.next = prev
+            prev = curr
+            curr = next
+        return prev
 ```
 
 -   Time - `O(n)`
