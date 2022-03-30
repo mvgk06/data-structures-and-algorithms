@@ -2,32 +2,29 @@
 
 ## Solution 1 - BFS
 
-```js
-const levelOrder = function (root) {
-    if (root === null) {
-        return [];
-    }
-    const queue = new Queue(),
-        result = [];
-    queue.push(root);
-    while (queue.getSize() > 0) {
-        const size = queue.getSize();
-        const level = [];
-        for (let i = 1; i <= size; i++) {
-            const curr = queue.getFront();
-            queue.pop();
-            level.push(curr.val);
-            if (curr.left != null) {
-                queue.push(curr.left);
-            }
-            if (curr.right != null) {
-                queue.push(curr.right);
-            }
-        }
-        result.push(level);
-    }
-    return result;
-};
+```py
+from collections import deque
+
+
+class Solution:
+    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        if root is None:
+            return []
+        q = deque()
+        q.append(root)
+        res = []
+        while q:
+            level = []
+            n = len(q)
+            for i in range(n):
+                curr = q.popleft()
+                level.append(curr.val)
+                if curr.left is not None:
+                    q.append(curr.left)
+                if curr.right is not None:
+                    q.append(curr.right)
+            res.append(level)
+        return res
 ```
 
 -   Time - `O(n)`
@@ -36,27 +33,21 @@ const levelOrder = function (root) {
 
 ## Solution 2 - DFS
 
-```js
-const dfs = (root, level, result) => {
-    if (root === null) {
-        return;
-    }
-    if (!result[level]) {
-        result[level] = [];
-    }
-    result[level].push(root.val);
-    dfs(root.left, level + 1, result);
-    dfs(root.right, level + 1, result);
-};
+```py
+class Solution:
+    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        res = []
+        self.helper(root, 0, res)
+        return res
 
-const levelOrder = function (root) {
-    if (root === null) {
-        return [];
-    }
-    const result = [];
-    dfs(root, 0, result);
-    return result;
-};
+    def helper(self, root, level, res):
+        if root is None:
+            return
+        if len(res) == level:
+            res.append([])
+        res[level].append(root.val)
+        self.helper(root.left, level+1, res)
+        self.helper(root.right, level+1, res)
 ```
 
 -   Time - `O(n)`
