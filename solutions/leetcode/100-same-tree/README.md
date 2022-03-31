@@ -2,16 +2,14 @@
 
 ## Solution 1 - DFS
 
-```js
-const isSameTree = function (p, q) {
-    if (p === null && q === null) {
-        return true;
-    }
-    if (p === null || q === null || p.val != q.val) {
-        return false;
-    }
-    return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
-};
+```py
+class Solution:
+    def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+        if p is None and q is None:
+            return True
+        if p is None or q is None or p.val != q.val:
+            return False
+        return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
 ```
 
 -   Time - `O(n)`
@@ -20,23 +18,23 @@ const isSameTree = function (p, q) {
 
 ## Solution 2 - BFS
 
-```js
-const isSameTree = function (p, q) {
-    const queue = new Queue();
-    queue.push([p, q]);
-    while (queue.getSize() > 0) {
-        const [p, q] = queue.getFront();
-        queue.pop();
-        if (p === null && q === null) {
-            continue;
-        } else if (p === null || q === null || p.val != q.val) {
-            return false;
-        }
-        queue.push([p.left, q.left]);
-        queue.push([p.right, q.right]);
-    }
-    return true;
-};
+```py
+from collections import deque
+
+
+class Solution:
+    def isSameTree(self, a: Optional[TreeNode], b: Optional[TreeNode]) -> bool:
+        q = deque()
+        q.append([a, b])
+        while q:
+            [a, b] = q.popleft()
+            if a is None and b is None:
+                continue
+            if a is None or b is None or a.val != b.val:
+                return False
+            q.append([a.left, b.left])
+            q.append([a.right, b.right])
+        return True
 ```
 
 -   Time - `O(n)`
