@@ -6,9 +6,9 @@
 class Solution:
     def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
         graph = [[] for i in range(n)]
-        for [curr, adj] in edges:
-            graph[curr].append(adj)
-            graph[adj].append(curr)
+        for [a, b] in edges:
+            graph[a].append(b)
+            graph[b].append(a)
         visited = [False for i in range(n)]
         return self.helper(graph, visited, source, destination)
 
@@ -36,16 +36,16 @@ from collections import deque
 class Solution:
     def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
         graph = [[] for i in range(n)]
-        for [curr, adj] in edges:
-            graph[curr].append(adj)
-            graph[adj].append(curr)
+        for [a, b] in edges:
+            graph[a].append(b)
+            graph[b].append(a)
         visited = [False for i in range(n)]
         return self.helper(graph, visited, source, destination)
 
     def helper(self, graph, visited, src, dest):
         q = deque()
-        q.appendleft(src)
         visited[src] = True
+        q.appendleft(src)
         while q:
             curr = q.popleft()
             if curr == dest:
@@ -67,9 +67,9 @@ class Solution:
 class Solution:
     def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
         ds = DisjointSet(n)
-        for [curr, adj] in edges:
-            if ds.find(curr) != ds.find(adj):
-                ds.union(curr, adj)
+        for [a, b] in edges:
+            if ds.find(a) != ds.find(b):
+                ds.union(a, b)
         return ds.find(source) == ds.find(destination)
 ```
 

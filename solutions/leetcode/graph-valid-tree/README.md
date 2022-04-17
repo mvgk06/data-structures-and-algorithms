@@ -79,10 +79,8 @@ class Solution:
         ds = DisjointSet(n)
         count = n
         for [a, b] in edges:
-            aRep = ds.find(a)
-            bRep = ds.find(b)
-            if aRep != bRep:
-                ds.union(aRep, bRep)
+            if ds.find(a) != ds.find(b):
+                ds.union(a, b)
                 count -= 1
             else:
                 return False
