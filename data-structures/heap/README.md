@@ -35,9 +35,11 @@ class Heap:
         if self._size > 0:
             val = self._arr[0]
             if self._size == 1:
+                self._arr.pop()
                 self._size -= 1
             else:
                 self._arr[0] = self._arr[self._size - 1]
+                self._arr.pop()
                 self._size -= 1
                 self._heapify(0)
             return val
