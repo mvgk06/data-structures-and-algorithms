@@ -9,7 +9,7 @@ Implementation of common data structures and solutions to various coding problem
 | Heap         | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/data-structures/heap)         |
 | Disjoint Set | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/data-structures/disjoint-set) |
 
-## Solutions [14]
+## Solutions [15]
 
 | Title                                                      | Solution                                                                                                                                                     |
 | :--------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -20,6 +20,7 @@ Implementation of common data structures and solutions to various coding problem
 | 261. Graph Valid Tree                                      | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/solutions/leetcode/graph-valid-tree)                                      |
 | 323. Number of Connected Components in an Undirected Graph | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/solutions/leetcode/number-of-connected-components-in-an-undirected-graph) |
 | 429. N-ary Tree Level Order Traversal                      | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/solutions/leetcode/n-ary-tree-level-order-traversal)                      |
+| 704. Binary Search                                         | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/solutions/leetcode/binary-search)                                         |
 | 797. All Paths from Source to Target                       | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/solutions/leetcode/all-paths-from-source-to-target)                       |
 | 994. Rotting Oranges                                       | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/solutions/leetcode/rotting-oranges)                                       |
 | 1059. All Paths from Source Lead to Destination            | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/solutions/leetcode/all-paths-from-source-lead-to-destination)             |
