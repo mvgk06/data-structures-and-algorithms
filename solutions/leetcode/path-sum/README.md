@@ -2,23 +2,17 @@
 
 ## Solution 1 - DFS
 
-```js
-const helper = (root, sum, target) => {
-    if (root === null) {
-        return false;
-    }
-    if (root.left === null && root.right === null) {
-        if (sum + root.val === target) {
-            return true;
-        }
-        return false;
-    }
-    return helper(root.left, sum + root.val, target) || helper(root.right, sum + root.val, target);
-};
+```py
+class Solution:
+    def hasPathSum(self, root: Optional[TreeNode], targetSum: int) -> bool:
+        return self.helper(root, 0, targetSum)
 
-const hasPathSum = function (root, targetSum) {
-    return helper(root, 0, targetSum);
-};
+    def helper(self, root, currSum, target):
+        if root is None:
+            return False
+        if root.left is None and root.right is None:
+            return currSum + root.val == target
+        return self.helper(root.left, currSum + root.val, target) or self.helper(root.right, currSum + root.val, target)
 ```
 
 -   Time - `O(n)`
@@ -27,30 +21,26 @@ const hasPathSum = function (root, targetSum) {
 
 ## Solution 2 - BFS
 
-```js
-const hasPathSum = function (root, targetSum) {
-    if (root === null) {
-        return false;
-    }
-    const queue = new Queue();
-    queue.push([root, 0]);
-    while (queue.getSize()) {
-        const [curr, sum] = queue.getFront();
-        queue.pop();
-        if (curr.left === null && curr.right === null) {
-            if (sum + curr.val === targetSum) {
-                return true;
-            }
-        }
-        if (curr.left !== null) {
-            queue.push([curr.left, sum + curr.val]);
-        }
-        if (curr.right !== null) {
-            queue.push([curr.right, sum + curr.val]);
-        }
-    }
-    return false;
-};
+```py
+from collections import deque
+
+
+class Solution:
+    def hasPathSum(self, root: Optional[TreeNode], targetSum: int) -> bool:
+        if root is None:
+            return False
+        q = deque()
+        q.append([root, 0])
+        while q:
+            [curr, currSum] = q.popleft()
+            if curr.left is None and curr.right is None:
+                if currSum + curr.val == targetSum:
+                    return True
+            if curr.left is not None:
+                q.append([curr.left, currSum + curr.val])
+            if curr.right is not None:
+                q.append([curr.right, currSum + curr.val])
+        return False
 ```
 
 -   Time - `O(n)`
