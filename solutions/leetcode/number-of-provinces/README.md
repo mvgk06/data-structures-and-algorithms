@@ -65,13 +65,13 @@ class Solution:
     def findCircleNum(self, isConnected: List[List[int]]) -> int:
         n = len(isConnected)
         ds = DisjointSet(n)
-		res=n
+        res = n
         for i in range(n):
             for j in range(n):
                 if i != j and isConnected[i][j] == 1:
                     if ds.find(i) != ds.find(j):
                         ds.union(i, j)
-						res-=1
+                        res -= 1
         return res
 ```
 
