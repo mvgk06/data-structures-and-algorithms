@@ -10,15 +10,15 @@ class Solution:
         res = 0
         for i in range(n):
             if not visited[i]:
-                self.dfs(n, isConnected, i, visited)
+                self.helper(n, isConnected, i, visited)
                 res += 1
         return res
 
-    def dfs(self, n, graph, i, visited):
+    def helper(self, n, graph, i, visited):
         visited[i] = True
         for j in range(n):
             if graph[i][j] == 1 and not visited[j]:
-                self.dfs(n, graph, j, visited)
+                self.helper(n, graph, j, visited)
 ```
 
 - Time - `O(n^2)`
@@ -38,11 +38,11 @@ class Solution:
         res = 0
         for i in range(n):
             if not visited[i]:
-                self.bfs(n, isConnected, i, visited)
+                self.helper(n, isConnected, i, visited)
                 res += 1
         return res
 
-    def bfs(self, n, graph, src, visited):
+    def helper(self, n, graph, src, visited):
         q = deque()
         visited[src] = True
         q.append(src)
@@ -69,9 +69,7 @@ class Solution:
         for i in range(n):
             for j in range(n):
                 if i != j and isConnected[i][j] == 1:
-                    iRep = ds.find(i)
-                    jRep = ds.find(j)
-                    if iRep != jRep:
+                    if ds.find(i) != ds.find(j):
                         ds.union(i, j)
 						res-=1
         return res
