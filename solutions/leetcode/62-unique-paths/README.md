@@ -54,15 +54,15 @@ class Solution:
 ```py
 class Solution:
     def uniquePaths(self, m: int, n: int) -> int:
-        nextRow = [0 for j in range(n)]
-        nextRow[n-1] = 1
+        next = [0 for j in range(n)]
+        next[n-1] = 1
         for i in range(m-1, -1, -1):
-            currRow = [0 for j in range(n)]
-            currRow[n-1] = 1
+            curr = [0 for j in range(n)]
+            curr[n-1] = 1
             for j in range(n-2, -1, -1):
-                currRow[j] = currRow[j+1]+nextRow[j]
-            nextRow = currRow
-        return nextRow[0]
+                curr[j] = curr[j+1]+next[j]
+            next = curr
+        return next[0]
 ```
 
 -   Time - `O(m*n)`
