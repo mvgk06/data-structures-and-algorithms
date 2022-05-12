@@ -2,24 +2,21 @@
 
 ## Solution 1 - Brute force
 
-```js
-const helper = (root) => {
-    if (root === null) {
-        return 0;
-    }
-    const left = helper(root.left),
-        right = helper(root.right);
-    return 1 + Math.max(left, right);
-};
+```py
+class Solution:
+    def isBalanced(self, root: Optional[TreeNode]) -> bool:
+        if root is None:
+            return True
+        left = self.helper(root.left)
+        right = self.helper(root.right)
+        return abs(left - right) <= 1 and self.isBalanced(root.left) and self.isBalanced(root.right)
 
-const isBalanced = function (root) {
-    if (root === null) {
-        return true;
-    }
-    const left = helper(root.left),
-        right = helper(root.right);
-    return Math.abs(left - right) <= 1 && isBalanced(root.left) && isBalanced(root.right);
-};
+    def helper(self, root):
+        if root is None:
+            return 0
+        left = self.helper(root.left)
+        right = self.helper(root.right)
+        return 1 + max(left, right)
 ```
 
 -   Time - `O(n^2)`
@@ -28,32 +25,26 @@ const isBalanced = function (root) {
 
 ## Solution 2 - Optimized
 
-```js
-const helper = (root) => {
-    if (root === null) {
-        return 0;
-    }
-    const left = helper(root.left);
-    if (left === -1) {
-        return -1;
-    }
-    const right = helper(root.right);
-    if (right === -1) {
-        return -1;
-    }
-    if (Math.abs(left - right) <= 1) {
-        return 1 + Math.max(left, right);
-    }
-    return -1;
-};
+```py
+class Solution:
+    def isBalanced(self, root: Optional[TreeNode]) -> bool:
+        height = self.helper(root)
+        if height == -1:
+            return False
+        return True
 
-const isBalanced = function (root) {
-    const height = helper(root);
-    if (height === -1) {
-        return false;
-    }
-    return true;
-};
+    def helper(self, root):
+        if root is None:
+            return 0
+        left = self.helper(root.left)
+        if left == -1:
+            return -1
+        right = self.helper(root.right)
+        if right == -1:
+            return -1
+        if abs(left - right) <= 1:
+            return 1 + max(left, right)
+        return -1
 ```
 
 -   Time - `O(n)`
