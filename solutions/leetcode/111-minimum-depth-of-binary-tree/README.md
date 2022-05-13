@@ -2,25 +2,18 @@
 
 ## Solution 1 - DFS
 
-```js
-const helper = (root) => {
-    if (root === null) {
-        return Number.MAX_VALUE;
-    }
-    if (root.left === null && root.right === null) {
-        return 1;
-    }
-    const left = helper(root.left);
-    const right = helper(root.right);
-    return 1 + Math.min(left, right);
-};
-
-const minDepth = function (root) {
-    if (root === null) {
-        return 0;
-    }
-    return helper(root);
-};
+```py
+class Solution:
+    def minDepth(self, root: Optional[TreeNode]) -> int:
+        if root is None:
+            return 0
+        if root.left is None and root.right is None:
+            return 1
+        if root.left is None:
+            return 1+self.minDepth(root.right)
+        if root.right is None:
+            return 1+self.minDepth(root.left)
+        return 1+min(self.minDepth(root.left), self.minDepth(root.right))
 ```
 
 -   Time - `O(n)`
@@ -29,32 +22,28 @@ const minDepth = function (root) {
 
 ## Solution 2 - BFS
 
-```js
-const minDepth = function (root) {
-    if (root === null) {
-        return 0;
-    }
-    let level = 1;
-    const queue = new Queue();
-    queue.push(root);
-    while (queue.getSize() > 0) {
-        const size = queue.getSize();
-        for (let i = 1; i <= size; i++) {
-            const curr = queue.getFront();
-            queue.pop();
-            if (curr.left === null && curr.right === null) {
-                return level;
-            }
-            if (curr.left !== null) {
-                queue.push(curr.left);
-            }
-            if (curr.right !== null) {
-                queue.push(curr.right);
-            }
-        }
-        level++;
-    }
-};
+```py
+from collections import deque
+
+
+class Solution:
+    def minDepth(self, root: Optional[TreeNode]) -> int:
+        if root is None:
+            return 0
+        level = 1
+        q = deque()
+        q.append(root)
+        while q:
+            n = len(q)
+            for i in range(n):
+                curr = q.popleft()
+                if curr.left is None and curr.right is None:
+                    return level
+                if curr.left is not None:
+                    q.append(curr.left)
+                if curr.right is not None:
+                    q.append(curr.right)
+            level += 1
 ```
 
 -   Time - `O(n)`
