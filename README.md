@@ -9,7 +9,7 @@ Implementation of common data structures and solutions to various coding problem
 | Heap         | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/data-structures/heap)         |
 | Disjoint Set | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/data-structures/disjoint-set) |
 
-## Solutions [21]
+## Solutions [22]
 
 | Title                                                      | Solution                                                                                                                                                     |
 | :--------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -20,6 +20,7 @@ Implementation of common data structures and solutions to various coding problem
 | 100. Same Tree                                             | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/solutions/leetcode/same-tree)                                             |
 | 102. Binary Tree Level Order Traversal                     | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/solutions/leetcode/binary-tree-level-order-traversal)                     |
 | 110. Balanced Binary Tree                                  | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/solutions/leetcode/balanced-binary-tree)                                  |
+| 111. Minimum Depth of Binary Tree                          | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/solutions/leetcode/minimum-depth-of-binary-tree)                          |
 | 112. Path Sum                                              | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/solutions/leetcode/path-sum)                                              |
 | 226. Invert Binary Tree                                    | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/solutions/leetcode/invert-binary-tree.js)                                 |
 | 261. Graph Valid Tree                                      | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/solutions/leetcode/graph-valid-tree)                                      |
