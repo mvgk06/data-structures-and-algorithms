@@ -1,32 +1,55 @@
 # Disjoint Set
 
-```py
-class DisjointSet:
-    def __init__(self, n):
-        self._parent = [i for i in range(n)]
-        self._rank = [0 for i in range(n)]
+```c++
+class DisjointSet
+{
+    vector<int> parent;
+    vector<int> rank;
 
-    def union(self, a, b):
-        aRep = self.find(a)
-        bRep = self.find(b)
-        if self._rank[aRep] < self._rank[bRep]:
-            self._parent[aRep] = bRep
-        elif self._rank[bRep] < self._rank[aRep]:
-            self._parent[bRep] = aRep
-        else:
-            self._parent[bRep] = aRep
-            self._rank[aRep] += 1
-
-    def find(self, a):
-        if self._parent[a] == a:
-            return a
-        aRep = self.find(self._parent[a])
-        self._parent[a] = aRep
-        return aRep
+public:
+    DisjointSet(int n)
+    {
+        for (int i = 0; i < n; i++)
+        {
+            parent.push_back(i);
+            rank.push_back(0);
+        }
+    }
+    int findSet(int a)
+    {
+        if (parent[a] == a)
+        {
+            return a;
+        }
+        int aRep = findSet(parent[a]);
+        parent[a] = aRep;
+        return aRep;
+    }
+    void unionSet(int a, int b)
+    {
+        int aRep = findSet(a), bRep = findSet(b);
+        if (aRep != bRep)
+        {
+            if (rank[aRep] < rank[bRep])
+            {
+                parent[aRep] = bRep;
+            }
+            else if (rank[bRep] < rank[aRep])
+            {
+                parent[bRep] = aRep;
+            }
+            else
+            {
+                parent[bRep] = aRep;
+                rank[aRep]++;
+            }
+        }
+    }
+};
 ```
 
--   Time
-    -   Union - `O(1)`
-    -   Find - `O(1)`
--   Space - `O(n)`
--   Where `n` is the number of nodes.
+- Time
+  - Union - `O(1)`
+  - Find - `O(1)`
+- Space - `O(n)`
+- Where `n` is the number of nodes.
