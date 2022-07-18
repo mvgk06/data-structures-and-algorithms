@@ -100,9 +100,8 @@ public:
             {
                 if (i != j && isConnected[i][j] == 1)
                 {
-                    if (ds.findSet(i) != ds.findSet(j))
+                    if (ds.unionSet(i, j))
                     {
-                        ds.unionSet(i, j);
                         res--;
                     }
                 }
