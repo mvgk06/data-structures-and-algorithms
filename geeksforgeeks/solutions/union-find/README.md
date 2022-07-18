@@ -38,7 +38,7 @@ public:
     }
     bool isConnected(int x, int y, int parent[], int rank[])
     {
-        return (find(x, parent) == find(y, parent));
+        return find(x, parent) == find(y, parent);
     }
 };
 ```
