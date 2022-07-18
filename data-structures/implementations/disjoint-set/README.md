@@ -25,7 +25,7 @@ public:
         parent[a] = aRep;
         return aRep;
     }
-    void unionSet(int a, int b)
+    bool unionSet(int a, int b)
     {
         int aRep = findSet(a), bRep = findSet(b);
         if (aRep != bRep)
@@ -43,7 +43,9 @@ public:
                 parent[bRep] = aRep;
                 rank[aRep]++;
             }
+            return true;
         }
+        return false;
     }
 };
 ```
