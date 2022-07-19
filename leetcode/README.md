@@ -1,4 +1,4 @@
-# Leetcode [5]
+# Leetcode [7]
 
 | Title                                                      | Solution                                                                                                                                                     |
 | :--------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -6,4 +6,6 @@
 | 261. Graph Valid Tree                                      | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/graph-valid-tree)                                      |
 | 323. Number of Connected Components in an Undirected Graph | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/number-of-connected-components-in-an-undirected-graph) |
 | 547. Number of Provinces                                   | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/number-of-provinces)                                   |
+| 724. Find Pivot Index                                      | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/find-pivot-index)                                      |
+| 1480. Running Sum of 1d Array                              | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/running-sum-of-1d-array)                               |
 | 1971. Find if Path Exists in Graph                         | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/find-if-path-exists-in-graph)                          |
