@@ -1,8 +1,9 @@
-# Leetcode [13]
+# Leetcode [14]
 
 | Title                                                      | Solution                                                                                                                                                     |
 | :--------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 21. Merge Two Sorted Lists                                 | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/merge-two-sorted-lists)                                |
+| 48. Rotate Image                                           | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/rotate-image)                                          |
 | 125. Valid Palindrome                                      | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/valid-palindrome)                                      |
 | 200. Number of Islands                                     | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/number-of-islands)                                     |
 | 206. Reverse Linked List                                   | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/reverse-linked-list)                                   |
