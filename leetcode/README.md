@@ -1,7 +1,10 @@
-# Leetcode [7]
+# Leetcode [10]
 
 | Title                                                      | Solution                                                                                                                                                     |
 | :--------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 21. Merge Two Sorted Lists                                 | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/merge-two-sorted-lists)                                |
+| 125. Valid Palindrome                                      | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/valid-palindrome)                                      |
+| 206. Reverse Linked List                                   | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/reverse-linked-list)                                   |
 | 210. Course Schedule II                                    | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/course-schedule-II)                                    |
 | 261. Graph Valid Tree                                      | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/graph-valid-tree)                                      |
 | 323. Number of Connected Components in an Undirected Graph | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/number-of-connected-components-in-an-undirected-graph) |
