@@ -1,8 +1,9 @@
-# Leetcode [16]
+# Leetcode [19]
 
 | Title                                                      | Solution                                                                                                                                                     |
 | :--------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 21. Merge Two Sorted Lists                                 | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/merge-two-sorted-lists)                                |
+| 35. Search Insert Position                                 | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/search-insert-position)                                |
 | 48. Rotate Image                                           | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/rotate-image)                                          |
 | 125. Valid Palindrome                                      | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/valid-palindrome)                                      |
 | 141. Linked List Cycle                                     | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/linked-list-cycle)                                     |
@@ -11,7 +12,9 @@
 | 210. Course Schedule II                                    | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/course-schedule-II)                                    |
 | 226. Invert Binary Tree                                    | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/invert-binary-tree)                                    |
 | 261. Graph Valid Tree                                      | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/graph-valid-tree)                                      |
+| 278. First Bad Version                                     | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/first-bad-version)                                     |
 | 323. Number of Connected Components in an Undirected Graph | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/number-of-connected-components-in-an-undirected-graph) |
+| 383. Ransom Note                                           | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/ransom-note)                                           |
 | 547. Number of Provinces                                   | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/number-of-provinces)                                   |
 | 704. Binary Search                                         | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/binary-search)                                         |
 | 724. Find Pivot Index                                      | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/find-pivot-index)                                      |
