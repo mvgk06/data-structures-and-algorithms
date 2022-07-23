@@ -1,4 +1,4 @@
-# Leetcode [19]
+# Leetcode [21]
 
 | Title                                                      | Solution                                                                                                                                                     |
 | :--------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -7,6 +7,7 @@
 | 48. Rotate Image                                           | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/rotate-image)                                          |
 | 125. Valid Palindrome                                      | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/valid-palindrome)                                      |
 | 141. Linked List Cycle                                     | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/linked-list-cycle)                                     |
+| 189. Rotate Array                                          | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/rotate-array)                                          |
 | 200. Number of Islands                                     | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/number-of-islands)                                     |
 | 206. Reverse Linked List                                   | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/reverse-linked-list)                                   |
 | 210. Course Schedule II                                    | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/course-schedule-II)                                    |
@@ -19,5 +20,6 @@
 | 704. Binary Search                                         | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/binary-search)                                         |
 | 724. Find Pivot Index                                      | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/find-pivot-index)                                      |
 | 876. Middle of the Linked List                             | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/middle-of-the-linked-list)                             |
+| 977. Squares of a Sorted Array                             | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/squares-of-sorted-array)                               |
 | 1480. Running Sum of 1d Array                              | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/running-sum-of-1d-array)                               |
 | 1971. Find if Path Exists in Graph                         | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/find-if-path-exists-in-graph)                          |
