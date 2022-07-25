@@ -1,4 +1,4 @@
-# Leetcode [21]
+# Leetcode [24]
 
 | Title                                                      | Solution                                                                                                                                                     |
 | :--------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -14,9 +14,12 @@
 | 226. Invert Binary Tree                                    | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/invert-binary-tree)                                    |
 | 261. Graph Valid Tree                                      | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/graph-valid-tree)                                      |
 | 278. First Bad Version                                     | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/first-bad-version)                                     |
+| 283. Move Zeroes                                           | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/move-zeroes)                                           |
 | 323. Number of Connected Components in an Undirected Graph | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/number-of-connected-components-in-an-undirected-graph) |
+| 344. Reverse String                                        | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/reverse-string)                                        |
 | 383. Ransom Note                                           | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/ransom-note)                                           |
 | 547. Number of Provinces                                   | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/number-of-provinces)                                   |
+| 557. Reverse Words in a String III                         | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/reverse-words-in-a-string-III)                         |
 | 704. Binary Search                                         | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/binary-search)                                         |
 | 724. Find Pivot Index                                      | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/find-pivot-index)                                      |
 | 876. Middle of the Linked List                             | [Code](https://github.com/mvganeshkumar06/data-structures-and-algorithms/tree/main/leetcode/solutions/middle-of-the-linked-list)                             |
